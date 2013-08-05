@@ -7,6 +7,7 @@
 //
 
 #import "ICAppDelegate.h"
+#import "ICTestViewController.h"
 
 @implementation ICAppDelegate
 
@@ -15,6 +16,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    ICTestViewController *testViewController = [[ICTestViewController alloc]
+                                            initWithDelegate:self];
+    self.window.rootViewController = testViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E7DAB37717AF217600D575B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB37617AF217600D575B7 /* Foundation.framework */; };
+		E7DAB38C17AF22A700D575B7 /* ICViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB38B17AF22A700D575B7 /* ICViewController.m */; };
+		E7DAB39017AF232000D575B7 /* ICView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB38F17AF232000D575B7 /* ICView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +27,11 @@
 /* Begin PBXFileReference section */
 		E7DAB37317AF217600D575B7 /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiCoffeeLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB37617AF217600D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E7DAB37A17AF217600D575B7 /* iCoffeeLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCoffeeLibrary-Prefix.pch"; sourceTree = "<group>"; };
+		E7DAB38A17AF22A700D575B7 /* ICViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICViewController.h; sourceTree = "<group>"; };
+		E7DAB38B17AF22A700D575B7 /* ICViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICViewController.m; sourceTree = "<group>"; };
+		E7DAB38E17AF232000D575B7 /* ICView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICView.h; sourceTree = "<group>"; };
+		E7DAB38F17AF232000D575B7 /* ICView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICView.m; sourceTree = "<group>"; };
+		E7DAB3C717AF275000D575B7 /* iCoffeeLibrary-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iCoffeeLibrary-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 		E7DAB36817AF217600D575B7 = {
 			isa = PBXGroup;
 			children = (
+				E7DAB3C617AF275000D575B7 /* Supporting Files */,
 				E7DAB37817AF217600D575B7 /* iCoffeeLibrary */,
 				E7DAB37517AF217600D575B7 /* Frameworks */,
 				E7DAB37417AF217600D575B7 /* Products */,
@@ -68,17 +75,52 @@
 		E7DAB37817AF217600D575B7 /* iCoffeeLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				E7DAB37917AF217600D575B7 /* Supporting Files */,
+				E7DAB38417AF223400D575B7 /* Controller */,
+				E7DAB38517AF223400D575B7 /* View */,
 			);
 			path = iCoffeeLibrary;
 			sourceTree = "<group>";
 		};
-		E7DAB37917AF217600D575B7 /* Supporting Files */ = {
+		E7DAB38417AF223400D575B7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E7DAB37A17AF217600D575B7 /* iCoffeeLibrary-Prefix.pch */,
+				E7DAB38917AF22A700D575B7 /* ICViewController */,
 			);
-			name = "Supporting Files";
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7DAB38517AF223400D575B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7DAB38D17AF22B600D575B7 /* ICView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7DAB38917AF22A700D575B7 /* ICViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E7DAB38A17AF22A700D575B7 /* ICViewController.h */,
+				E7DAB38B17AF22A700D575B7 /* ICViewController.m */,
+			);
+			path = ICViewController;
+			sourceTree = "<group>";
+		};
+		E7DAB38D17AF22B600D575B7 /* ICView */ = {
+			isa = PBXGroup;
+			children = (
+				E7DAB38E17AF232000D575B7 /* ICView.h */,
+				E7DAB38F17AF232000D575B7 /* ICView.m */,
+			);
+			path = ICView;
+			sourceTree = "<group>";
+		};
+		E7DAB3C617AF275000D575B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7DAB3C717AF275000D575B7 /* iCoffeeLibrary-Prefix.pch */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +174,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7DAB38C17AF22A700D575B7 /* ICViewController.m in Sources */,
+				E7DAB39017AF232000D575B7 /* ICView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +233,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/iCoffeeLibrary.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iCoffeeLibrary/iCoffeeLibrary-Prefix.pch";
+				GCC_PREFIX_HEADER = "Supporting Files/iCoffeeLibrary-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -201,7 +245,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/iCoffeeLibrary.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iCoffeeLibrary/iCoffeeLibrary-Prefix.pch";
+				GCC_PREFIX_HEADER = "Supporting Files/iCoffeeLibrary-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
