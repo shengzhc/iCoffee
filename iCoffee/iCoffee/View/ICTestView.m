@@ -7,6 +7,7 @@
 //
 
 #import "ICTestView.h"
+#import "UIView+ICServices.h"
 
 @implementation ICTestView
 
@@ -18,6 +19,9 @@
     if (self)
     {
         self.backgroundColor = [UIColor redColor];
+        ICView *v = [[ICView alloc] initWithFrame:CGRectZero delegate:self];
+        [self addSubview:v];
+        v.frame = [v alignedRectInSuperviewForSize:CGSizeZero offset:CGSizeZero options:ICAlignmentOptionsLeft];
     }
     
     return self;

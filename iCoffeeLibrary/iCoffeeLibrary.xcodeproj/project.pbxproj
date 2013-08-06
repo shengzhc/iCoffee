@@ -24,6 +24,9 @@
 		E761977617B0C32B000A94BA /* UIView+ICServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E761976317B0C32B000A94BA /* UIView+ICServices.m */; };
 		E761977717B0C32B000A94BA /* UIView+QuartzCore.m in Sources */ = {isa = PBXBuildFile; fileRef = E761976517B0C32B000A94BA /* UIView+QuartzCore.m */; };
 		E761977817B0C32B000A94BA /* UIView+Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = E761976717B0C32B000A94BA /* UIView+Transition.m */; };
+		E76197B517B0D165000A94BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197B417B0D165000A94BA /* UIKit.framework */; };
+		E76197B717B0D177000A94BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197B617B0D177000A94BA /* CoreGraphics.framework */; };
+		E76197BB17B0D316000A94BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197BA17B0D315000A94BA /* QuartzCore.framework */; };
 		E7DAB37717AF217600D575B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB37617AF217600D575B7 /* Foundation.framework */; };
 		E7DAB38C17AF22A700D575B7 /* ICViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB38B17AF22A700D575B7 /* ICViewController.m */; };
 		E7DAB39017AF232000D575B7 /* ICView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB38F17AF232000D575B7 /* ICView.m */; };
@@ -79,7 +82,10 @@
 		E761976717B0C32B000A94BA /* UIView+Transition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Transition.m"; sourceTree = "<group>"; };
 		E761977A17B0C3A5000A94BA /* ICLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLog.h; sourceTree = "<group>"; };
 		E761977B17B0C3A5000A94BA /* ICNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNotifications.h; sourceTree = "<group>"; };
-		E761977C17B0C5C0000A94BA /* ICLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICLibrary.h; sourceTree = "<group>"; };
+		E761977C17B0C5C0000A94BA /* ICLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ICLibrary.h; path = ../ICLibrary.h; sourceTree = "<group>"; };
+		E76197B417B0D165000A94BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E76197B617B0D177000A94BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E76197BA17B0D315000A94BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E7DAB37317AF217600D575B7 /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiCoffeeLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB37617AF217600D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7DAB38A17AF22A700D575B7 /* ICViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICViewController.h; sourceTree = "<group>"; };
@@ -94,6 +100,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E76197BB17B0D316000A94BA /* QuartzCore.framework in Frameworks */,
+				E76197B717B0D177000A94BA /* CoreGraphics.framework in Frameworks */,
+				E76197B517B0D165000A94BA /* UIKit.framework in Frameworks */,
 				E7DAB37717AF217600D575B7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +259,7 @@
 		E761977917B0C3A5000A94BA /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				E761977C17B0C5C0000A94BA /* ICLibrary.h */,
 				E761977A17B0C3A5000A94BA /* ICLog.h */,
 				E761977B17B0C3A5000A94BA /* ICNotifications.h */,
 			);
@@ -277,6 +287,9 @@
 		E7DAB37517AF217600D575B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E76197BA17B0D315000A94BA /* QuartzCore.framework */,
+				E76197B617B0D177000A94BA /* CoreGraphics.framework */,
+				E76197B417B0D165000A94BA /* UIKit.framework */,
 				E7DAB37617AF217600D575B7 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -289,7 +302,6 @@
 				E761972F17B0C26F000A94BA /* Utilities */,
 				E7DAB38417AF223400D575B7 /* Controller */,
 				E7DAB38517AF223400D575B7 /* View */,
-				E761977C17B0C5C0000A94BA /* ICLibrary.h */,
 			);
 			path = iCoffeeLibrary;
 			sourceTree = "<group>";

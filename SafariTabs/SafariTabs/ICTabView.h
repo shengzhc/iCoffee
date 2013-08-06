@@ -1,0 +1,16 @@
+//
+//  ICTabView.h
+//  SafariTabs
+//
+//  Created by Shengzhe Chen on 8/5/13.
+//  Copyright (c) 2013 iCoffee. All rights reserved.
+//
+
+#import "ICView.h"
+
+@interface ICTabView : ICView
+
+@property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, strong) UIScrollView *scrollView;
+
+@end
