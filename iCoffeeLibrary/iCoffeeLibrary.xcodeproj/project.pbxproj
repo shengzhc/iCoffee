@@ -79,6 +79,7 @@
 		E761976717B0C32B000A94BA /* UIView+Transition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Transition.m"; sourceTree = "<group>"; };
 		E761977A17B0C3A5000A94BA /* ICLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLog.h; sourceTree = "<group>"; };
 		E761977B17B0C3A5000A94BA /* ICNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNotifications.h; sourceTree = "<group>"; };
+		E761977C17B0C5C0000A94BA /* ICLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICLibrary.h; sourceTree = "<group>"; };
 		E7DAB37317AF217600D575B7 /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiCoffeeLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB37617AF217600D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7DAB38A17AF22A700D575B7 /* ICViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICViewController.h; sourceTree = "<group>"; };
@@ -288,6 +289,7 @@
 				E761972F17B0C26F000A94BA /* Utilities */,
 				E7DAB38417AF223400D575B7 /* Controller */,
 				E7DAB38517AF223400D575B7 /* View */,
+				E761977C17B0C5C0000A94BA /* ICLibrary.h */,
 			);
 			path = iCoffeeLibrary;
 			sourceTree = "<group>";
