@@ -12,5 +12,5 @@
 
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UIScrollView *scrollView;
-
+@property (nonatomic, strong) UILabel *headerLabel;
 @end

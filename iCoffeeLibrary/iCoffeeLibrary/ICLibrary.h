@@ -23,6 +23,8 @@
 #import "UIImageView+ICServices.h"
 #import "UILabel+ICServices.h"
 #import "UIView+ICServices.h"
+#import "UIView+QuartzCore.h"
+
 #import "ICGeometry.h"
 
 #endif

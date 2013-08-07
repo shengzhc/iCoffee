@@ -14,5 +14,6 @@
 + (CGFloat)screenHeigth;
 + (CGFloat)screenWidth;
 + (CGFloat)statusBarHeight;
++ (CGPoint)screenCenter;
 
 @end

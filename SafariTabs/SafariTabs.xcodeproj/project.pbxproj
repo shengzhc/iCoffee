@@ -39,7 +39,7 @@
 		E76197AF17B0CA34000A94BA /* ICTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICTabViewController.m; sourceTree = "<group>"; };
 		E76197B117B0CA45000A94BA /* ICTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICTabView.h; sourceTree = "<group>"; };
 		E76197B217B0CA45000A94BA /* ICTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICTabView.m; sourceTree = "<group>"; };
-		E76197BC17B0D536000A94BA /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libiCoffeeLibrary.a; path = "../iCoffeeLibrary/build/Release-iphoneos/libiCoffeeLibrary.a"; sourceTree = "<group>"; };
+		E76197BC17B0D536000A94BA /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiCoffeeLibrary.a; path = "../iCoffeeLibrary/build/Release-iphoneos/libiCoffeeLibrary.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +314,7 @@
 				E76197A817B0C861000A94BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -39,4 +39,11 @@
     return [UIApplication sharedApplication].statusBarFrame.size.height;
 }
 
++ (CGPoint)screenCenter
+{
+    return CGPointMake([UIScreen mainScreen].bounds.size.width/2.0,
+                       [UIScreen mainScreen].bounds.size.height/2.0);
+}
+
+
 @end
