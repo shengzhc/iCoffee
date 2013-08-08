@@ -21,9 +21,8 @@
                        delegate:delegate];
     if (self)
     {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor grayColor];
         self.pageControl = [[UIPageControl alloc] init];
-
         self.scrollView = [[UIScrollView alloc] init];
         self.scrollView.delegate = delegate;
         self.scrollView.showsHorizontalScrollIndicator = NO;

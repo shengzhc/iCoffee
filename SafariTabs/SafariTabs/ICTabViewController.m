@@ -133,22 +133,26 @@
 
 - (CGSize)pagePadding
 {
-    return CGSizeMake(10, 300);
+    return CGSizeMake(15, 300);
 }
 
 
 - (CGFloat)leftMargin
 {
-    return 60;
+    return 60 + 5;
 }
 
 
 - (CGFloat)rightMargin
 {
-    return 60;
+    return 60 + 5;
 }
 
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+#pragma mark Convenient
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 - (UIView *)pageAtIndex:(NSUInteger)index
 {
     if (index >= self.pages.count)
@@ -159,37 +163,116 @@
     return (UIView *)[self.pages objectAtIndex:index];
 }
 
-//////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////
-#pragma mark Convenient
-//////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////
-- (void)scrollToPage:(NSUInteger)pageIndex
+
+- (CGPoint)centerPointOfPage:(NSUInteger)pageIndex
 {
-    if (self.pageControl.currentPage == pageIndex)
-    {
-        return;
-    }
+    UIView *page = [self pageAtIndex:pageIndex];
+    return page.center;
 }
 
 
+- (CGPoint)convertPointToDevice:(CGPoint)point
+                       fromPageIndex:(NSUInteger)pageIndex
+{
+    UIView *page = [self pageAtIndex:pageIndex];
+    CGPoint pointInWindow = [page.superview convertPoint:point
+                                                  toView:nil];
+    CGPoint pointInScreen = [page.window convertPoint:pointInWindow
+                                             toWindow:nil];
+    
+    return pointInScreen;
+}
+
+
+- (CGPoint)centerPointOfPageInDevice:(NSUInteger)pageIndex
+{
+    return [self convertPointToDevice:[self centerPointOfPage:pageIndex]
+                        fromPageIndex:pageIndex];
+}
+
+
+- (NSUInteger)pageIndexOfScrollView
+{
+    CGPoint deviceCenter = CGPointMake([UIApplication sharedApplication].keyWindow.bounds.size.width/2.0,
+                                       [UIApplication sharedApplication].keyWindow.bounds.size.height/2.0);
+    
+    NSUInteger min = INT_MAX;
+    NSUInteger result;
+    NSUInteger pageIndex;
+    NSMutableString *log = [[NSMutableString alloc] init];
+    for (pageIndex = 0; pageIndex < self.pages.count; pageIndex++)
+    {
+        CGPoint pageCenter = [self centerPointOfPageInDevice:pageIndex];
+        [log appendString:NSStringFromCGPoint(pageCenter)];
+        if (min > abs(pageCenter.x - deviceCenter.x))
+        {
+            min = abs(pageCenter.x - deviceCenter.x);
+            result = pageIndex;
+        }
+    }
+    
+    NSLog(@"%i: %@", result, log);
+    return result;
+}
+
 - (void)adjustScrollViewFrame
 {
+    static CGPoint lastContentOffset;
+    
+    BOOL isLeft = self.scrollView.contentOffset.x - lastContentOffset.x > 0 ? YES : NO;
+
     CGPoint contentOffset = self.scrollView.contentOffset;
     CGRect rect = self.scrollView.frame;
     
-    if (contentOffset.x > 0)
+    self.pageControl.currentPage = [self pageIndexOfScrollView];
+    
+    if (isLeft)
     {
-        rect.origin.x = [self leftMargin] - contentOffset.x > 0 ? [self leftMargin] - contentOffset.x : 0;
-        rect.size.width = self.view.bounds.size.width - rect.origin.x;
+        if (rect.origin.x <= [self leftMargin] &&
+            rect.origin.x > 0)
+        {
+            rect.origin.x = rect.origin.x - contentOffset.x > 0 ? rect.origin.x - contentOffset.x : 0;
+            rect.size.width = self.view.bounds.size.width - rect.origin.x;
+            self.scrollView.frame = rect;
+            contentOffset.x = 0;
+            self.scrollView.contentOffset = contentOffset;
+        }
+        else if (rect.origin.x <= 0  &&
+                 (self.scrollView.contentSize.width - contentOffset.x <= self.view.bounds.size.width) &&
+                 self.view.bounds.size.width - (self.scrollView.contentSize.width - contentOffset.x) < [self rightMargin])
+        {
+            rect.origin.x = 0;
+            rect.size.width = self.scrollView.contentSize.width - contentOffset.x;
+            self.scrollView.frame = rect;
+        }
+    }
+    else
+    {
+        if (rect.origin.x <= 0 &&
+            self.scrollView.contentSize.width - contentOffset.x <= self.view.bounds.size.width &&
+            self.view.bounds.size.width - (self.scrollView.contentSize.width - contentOffset.x) < [self rightMargin])
+        {
+            rect.origin.x = 0;
+            rect.size.width = self.scrollView.contentSize.width - contentOffset.x;
+            self.scrollView.frame = rect;
+        }
+        else if (contentOffset.x < 0 &&
+                 rect.origin.x < [self leftMargin])
+        {
+            rect.origin.x = rect.origin.x - contentOffset.x;
+            if (rect.origin.x > [self leftMargin] + 5)
+            {
+                rect.origin.x = [self leftMargin] + 5;
+            }
+            
+            rect.size.width = self.view.bounds.size.width - rect.origin.x;
+            self.scrollView.frame = rect;
+            contentOffset.x = 0;
+            self.scrollView.contentOffset = contentOffset;
+        }
     }
     
-    if (contentOffset.x + 200 + [self pagePadding].width * 2 > self.scrollView.contentSize.width)
-    {
-        rect.size.width = self.scrollView.contentSize.width - contentOffset.x;
-    }
-    
-    self.scrollView.frame = rect;
+    lastContentOffset = self.scrollView.contentOffset;
 }
 
 //////////////////////////////////////////////////////////////
@@ -205,6 +288,7 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
+    
 }
 
 
@@ -215,6 +299,7 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
+    
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
@@ -224,11 +309,6 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+
 }
-
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
-}
-
 @end
