@@ -24,6 +24,7 @@
 #import "UILabel+ICServices.h"
 #import "UIView+ICServices.h"
 #import "UIView+QuartzCore.h"
+#import "UIScreen+ICServices.h"
 
 #import "ICGeometry.h"
 

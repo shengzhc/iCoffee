@@ -22,7 +22,10 @@
     if (self)
     {
         self.backgroundColor = [UIColor grayColor];
+        
         self.pageControl = [[UIPageControl alloc] init];
+        [self.pageControl addTarget:delegate action:@selector(pageControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+        
         self.scrollView = [[UIScrollView alloc] init];
         self.scrollView.delegate = delegate;
         self.scrollView.showsHorizontalScrollIndicator = NO;
@@ -32,10 +35,14 @@
                                                   font:[UIFont boldFontWithSize:12]
                                              textColor:[UIColor blackColor]];
         
+        self.leftWallView = [[UIView alloc] initWithFrame:CGRectZero];
+        self.rightWallView = [[UIView alloc] initWithFrame:CGRectZero];
         
         [self addSubview:self.headerLabel];
         [self addSubview:self.scrollView];
         [self addSubview:self.pageControl];
+        [self addSubview:self.leftWallView];
+        [self addSubview:self.rightWallView];
     }
     
     return self;
@@ -48,12 +55,18 @@
     self.headerLabel.frame = [self.headerLabel alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 20)
                                                                       offset:CGSizeMake(0, 50)
                                                                      options:(ICAlignmentOptionsTop | ICAlignmentOptionsHorizontalCenter)];
-    
+
     self.pageControl.frame = [self.pageControl alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 30)
                                                                       offset:CGSizeMake(0, 50)
                                                                      options:ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom];
 }
 
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    return !(CGRectContainsPoint(self.leftWallView.frame, point) ||
+             CGRectContainsPoint(self.rightWallView.frame, point));
+}
 
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "ICTabViewController.h"
+
 #import "ICTabView.h"
 
 @interface ICTabViewController ()
@@ -15,6 +16,13 @@
 @property (nonatomic, strong) NSMutableArray *pages;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
+
+@property (nonatomic, assign) CGPoint scrollViewVelocity;
+
+@property (nonatomic, strong) UIView *leftWallView;
+@property (nonatomic, strong) UIView *rightWallView;
+
+@property (nonatomic, assign) BOOL isPageControlled;
 
 @end
 
@@ -34,21 +42,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.isPageControlled = NO;
+    
     self.scrollView = self.view.scrollView;
     self.pageControl = self.view.pageControl;
-    self.scrollView.contentSize = [self scrollViewContentSize];
+    self.leftWallView = self.view.leftWallView;
+    self.rightWallView = self.view.rightWallView;
+    
     
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = self.pages.count;
+
+    self.scrollView.contentSize = [self scrollViewContentSize];
     
     for (UIView *page in self.pages)
     {
         [self.scrollView addSubview:page];
     }
     
-    self.scrollView.frame = [self.scrollView alignedRectInSuperviewForSize:CGSizeMake(self.view.bounds.size.width - [self leftMargin], 300)
-                                                                    offset:CGSizeMake([self leftMargin], 0)
-                                                                   options:(ICAlignmentOptionsLeft | ICAlignmentOptionsVerticalCenter)];
+    self.scrollView.frame = [self.scrollView alignedRectInSuperviewForSize:CGSizeMake(self.view.bounds.size.width, [self pageSize].height)
+                                                                    offset:CGSizeMake(0, 0)
+                                                                   options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsVerticalCenter)];
+    
+    self.leftWallView.frame = CGRectMake(0, self.scrollView.frame.origin.y, [self leftMargin], self.scrollView.frame.size.height);
+    self.rightWallView.frame = CGRectMake(0, self.scrollView.frame.origin.y, 0.1, self.scrollView.frame.size.height);
+    
 }
 
 
@@ -62,13 +81,13 @@
 {
     self.pages = [NSMutableArray array];
     
-    CGRect rect = CGRectMake(0, 0, 200, 300);
+    CGRect rect = CGRectMake(0, 0, [self pageSize].width, [self pageSize].height);
 
     // Soft Green
     UIView *v1 = [[UIView alloc] initWithFrame:rect];
     v1.backgroundColor = [UIColor colorWithHex:0x46E074];
     [v1 addCornersWithRadius:10];
-    v1.frame = CGRectMake([self pagePadding].width, 0, rect.size.width, rect.size.height);
+    v1.frame = CGRectMake([self pagePadding].width + [self leftMargin], 0, rect.size.width, rect.size.height);
     
     // Light Green-Yellow
     UIView *v2 = [[UIView alloc] initWithFrame:rect];
@@ -108,8 +127,18 @@
     [self.pages addObject:v4];
     [self.pages addObject:v5];
     [self.pages addObject:v6];
+    
+    [self setPageAlpha];
 }
 
+
+- (void)setPageAlpha
+{
+    for (UIView *page in self.pages)
+    {
+        page.alpha = rand()%2 == 0 ? 0.65 : 1;
+    }
+}
 
 - (CGSize)scrollViewContentSize
 {
@@ -127,6 +156,8 @@
         contentSize.height = contentSize.height > page.frame.size.height ? contentSize.height : page.frame.size.height;
     }
     
+    contentSize.width = contentSize.width + [self leftMargin] + [self rightMargin];
+    
     return contentSize;
 }
 
@@ -137,15 +168,20 @@
 }
 
 
+- (CGSize)pageSize
+{
+    return CGSizeMake(200, 300);
+}
+
 - (CGFloat)leftMargin
 {
-    return 60 + 5;
+    return 60;
 }
 
 
 - (CGFloat)rightMargin
 {
-    return 60 + 5;
+    return 60;
 }
 
 //////////////////////////////////////////////////////////////
@@ -190,11 +226,20 @@
                         fromPageIndex:pageIndex];
 }
 
-
+- (CGPoint)centerPointOfScreen
+{
+    return CGPointMake([UIApplication sharedApplication].keyWindow.bounds.size.width/2.0,
+                       [UIApplication sharedApplication].keyWindow.bounds.size.height/2.0);
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+#pragma mark Adjust
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 - (NSUInteger)pageIndexOfScrollView
 {
-    CGPoint deviceCenter = CGPointMake([UIApplication sharedApplication].keyWindow.bounds.size.width/2.0,
-                                       [UIApplication sharedApplication].keyWindow.bounds.size.height/2.0);
+    CGPoint deviceCenter = CGPointMake([UIScreen screenWidth]/2.0,
+                                       [UIScreen screenHeigth]/2.0);
     
     NSUInteger min = INT_MAX;
     NSUInteger result;
@@ -211,68 +256,44 @@
         }
     }
     
-    NSLog(@"%i: %@", result, log);
     return result;
 }
 
-- (void)adjustScrollViewFrame
-{
-    static CGPoint lastContentOffset;
-    
-    BOOL isLeft = self.scrollView.contentOffset.x - lastContentOffset.x > 0 ? YES : NO;
 
+- (void)adjustWallViewFrame
+{
     CGPoint contentOffset = self.scrollView.contentOffset;
-    CGRect rect = self.scrollView.frame;
     
-    self.pageControl.currentPage = [self pageIndexOfScrollView];
+    CGRect leftRect = self.leftWallView.frame;
+    leftRect.size.width = [self leftMargin] - contentOffset.x > 0 ? [self leftMargin] - contentOffset.x : 0.1;
+    self.leftWallView.frame = leftRect;
     
-    if (isLeft)
-    {
-        if (rect.origin.x <= [self leftMargin] &&
-            rect.origin.x > 0)
-        {
-            rect.origin.x = rect.origin.x - contentOffset.x > 0 ? rect.origin.x - contentOffset.x : 0;
-            rect.size.width = self.view.bounds.size.width - rect.origin.x;
-            self.scrollView.frame = rect;
-            contentOffset.x = 0;
-            self.scrollView.contentOffset = contentOffset;
-        }
-        else if (rect.origin.x <= 0  &&
-                 (self.scrollView.contentSize.width - contentOffset.x <= self.view.bounds.size.width) &&
-                 self.view.bounds.size.width - (self.scrollView.contentSize.width - contentOffset.x) < [self rightMargin])
-        {
-            rect.origin.x = 0;
-            rect.size.width = self.scrollView.contentSize.width - contentOffset.x;
-            self.scrollView.frame = rect;
-        }
-    }
-    else
-    {
-        if (rect.origin.x <= 0 &&
-            self.scrollView.contentSize.width - contentOffset.x <= self.view.bounds.size.width &&
-            self.view.bounds.size.width - (self.scrollView.contentSize.width - contentOffset.x) < [self rightMargin])
-        {
-            rect.origin.x = 0;
-            rect.size.width = self.scrollView.contentSize.width - contentOffset.x;
-            self.scrollView.frame = rect;
-        }
-        else if (contentOffset.x < 0 &&
-                 rect.origin.x < [self leftMargin])
-        {
-            rect.origin.x = rect.origin.x - contentOffset.x;
-            if (rect.origin.x > [self leftMargin] + 5)
-            {
-                rect.origin.x = [self leftMargin] + 5;
-            }
-            
-            rect.size.width = self.view.bounds.size.width - rect.origin.x;
-            self.scrollView.frame = rect;
-            contentOffset.x = 0;
-            self.scrollView.contentOffset = contentOffset;
-        }
-    }
+    CGRect rightRect = self.rightWallView.frame;
+    CGFloat distance = contentOffset.x + [UIScreen screenWidth] + [self rightMargin] - self.scrollView.contentSize.width;
+    distance = distance < 0 ? 0.1 : distance;
+    rightRect.origin.x = [UIScreen screenWidth] - distance;
+    rightRect.size.width = distance;
     
-    lastContentOffset = self.scrollView.contentOffset;
+    self.rightWallView.frame = rightRect;
+}
+
+- (void)adjustToPageIndex:(NSUInteger)pageIndex
+{
+    CGPoint point = [self centerPointOfPage:pageIndex];
+    point.x -= [self centerPointOfScreen].x;
+    point.y = 0;
+    [self.scrollView setContentOffset:point animated:YES];
+}
+
+- (void)adjustToPageCenter
+{
+    [self adjustToPageIndex:self.pageControl.currentPage];
+}
+
+
+- (CGFloat)alphaForPageIndex:(NSUInteger)pageIndex
+{
+    return 0.1;
 }
 
 //////////////////////////////////////////////////////////////
@@ -282,33 +303,53 @@
 //////////////////////////////////////////////////////////////
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    [self adjustScrollViewFrame];
-}
-
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    
+    [self adjustWallViewFrame];
+    if (!self.isPageControlled)
+    {
+        self.pageControl.currentPage = [self pageIndexOfScrollView];
+    }
 }
 
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-}
-
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
+    if (fabs(velocity.x) <= 0.0001)
+    {
+        [self adjustToPageCenter];
+        return;
+    }
     
+    self.scrollViewVelocity = velocity;
 }
+
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
+    CGFloat decelerationRate = scrollView.decelerationRate;
+    CGFloat time = fabsf(self.scrollViewVelocity.x / decelerationRate);
+    int64_t delayInSeconds = time * 0.8;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
+    {
+       [self adjustToPageCenter]; 
+    });
 }
 
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
-
+    self.isPageControlled = NO;
 }
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+#pragma mark UIPageControlDelegate
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+- (void)pageControlValueChanged:(id)sender
+{
+    self.isPageControlled = YES;
+    [self adjustToPageIndex:self.pageControl.currentPage];
+}
+
 @end
