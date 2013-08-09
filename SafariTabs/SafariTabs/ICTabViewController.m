@@ -16,12 +16,11 @@
 @property (nonatomic, strong) NSMutableArray *pages;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
-
-@property (nonatomic, assign) CGPoint scrollViewVelocity;
-
 @property (nonatomic, strong) UIView *leftWallView;
 @property (nonatomic, strong) UIView *rightWallView;
+@property (nonatomic, strong) UILabel *headerLabel;
 
+@property (nonatomic, assign) CGPoint scrollViewVelocity;
 @property (nonatomic, assign) BOOL isPageControlled;
 
 @end
@@ -49,10 +48,15 @@
     self.pageControl = self.view.pageControl;
     self.leftWallView = self.view.leftWallView;
     self.rightWallView = self.view.rightWallView;
-    
+    self.headerLabel = self.view.headerLabel;
     
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = self.pages.count;
+    [self.pageControl addObserver:self
+                       forKeyPath:@"currentPage"
+                          options:NSKeyValueObservingOptionNew context:nil];
+    
+    self.headerLabel.text = @"Page 1";
 
     self.scrollView.contentSize = [self scrollViewContentSize];
     
@@ -136,7 +140,7 @@
 {
     for (UIView *page in self.pages)
     {
-        page.backgroundColor = [UIColor colorWithHex:0xB9E619];
+        page.backgroundColor = [UIColor colorWithHex:0xFFFFFF];
     }
 }
 
@@ -375,6 +379,16 @@
 {
     self.isPageControlled = YES;
     [self adjustToPageIndex:self.pageControl.currentPage];
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (object == self.pageControl &&
+        [keyPath isEqualToString:@"currentPage"])
+    {
+        self.headerLabel.text = [NSString stringWithFormat:@"Page %i", self.pageControl.currentPage+1];
+    }
 }
 
 @end

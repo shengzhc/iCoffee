@@ -32,7 +32,7 @@
         self.scrollView.showsVerticalScrollIndicator = NO;
         
         self.headerLabel = [UILabel labelWithAlignment:NSTextAlignmentCenter
-                                                  font:[UIFont boldFontWithSize:12]
+                                                  font:[UIFont boldFontWithSize:20]
                                              textColor:[UIColor blackColor]];
         
         self.leftWallView = [[UIView alloc] initWithFrame:CGRectZero];
