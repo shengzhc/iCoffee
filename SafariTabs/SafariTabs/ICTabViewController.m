@@ -136,7 +136,7 @@
 {
     for (UIView *page in self.pages)
     {
-        page.alpha = rand()%2 == 0 ? 0.65 : 1;
+        page.backgroundColor = [UIColor colorWithHex:0xB9E619];
     }
 }
 
@@ -226,11 +226,7 @@
                         fromPageIndex:pageIndex];
 }
 
-- (CGPoint)centerPointOfScreen
-{
-    return CGPointMake([UIApplication sharedApplication].keyWindow.bounds.size.width/2.0,
-                       [UIApplication sharedApplication].keyWindow.bounds.size.height/2.0);
-}
+
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
 #pragma mark Adjust
@@ -260,6 +256,24 @@
 }
 
 
+- (CGFloat)alphaForPageIndex:(NSUInteger)pageIndex
+{
+    static CGFloat minAlpha = 0.2;
+    
+    CGPoint deviceCenter = [UIScreen screenCenter];
+    CGPoint pointOfPage = [self centerPointOfPageInDevice:pageIndex];
+    
+    CGFloat distance = fabsf(deviceCenter.x - pointOfPage.x);
+    CGFloat span = [self pageSize].width + 2 * [self pagePadding].width;
+    if (distance >= span)
+    {
+        return minAlpha;
+    }
+    
+    return minAlpha + (span - distance) * 0.8 / span;
+}
+
+
 - (void)adjustWallViewFrame
 {
     CGPoint contentOffset = self.scrollView.contentOffset;
@@ -277,13 +291,15 @@
     self.rightWallView.frame = rightRect;
 }
 
+
 - (void)adjustToPageIndex:(NSUInteger)pageIndex
 {
     CGPoint point = [self centerPointOfPage:pageIndex];
-    point.x -= [self centerPointOfScreen].x;
+    point.x -= [UIScreen screenCenter].x;
     point.y = 0;
     [self.scrollView setContentOffset:point animated:YES];
 }
+
 
 - (void)adjustToPageCenter
 {
@@ -291,11 +307,17 @@
 }
 
 
-- (CGFloat)alphaForPageIndex:(NSUInteger)pageIndex
+- (void)adjustAlphaForPages
 {
-    return 0.1;
+    NSMutableString *log = [[NSMutableString alloc] init];
+    for (NSUInteger pageIndex=0; pageIndex<self.pages.count; pageIndex++)
+    {
+        UIView *page = [self pageAtIndex:pageIndex];
+        [page setAlpha:[self alphaForPageIndex:pageIndex]];
+        [log appendString:[NSString stringWithFormat:@"%f, ", page.alpha]];
+    }
+//    NSLog(@"%@", log);
 }
-
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
 #pragma mark UIScrollViewDelegate
@@ -304,10 +326,13 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self adjustWallViewFrame];
+    
     if (!self.isPageControlled)
     {
         self.pageControl.currentPage = [self pageIndexOfScrollView];
     }
+    
+    [self adjustAlphaForPages];
 }
 
 
@@ -327,7 +352,7 @@
 {
     CGFloat decelerationRate = scrollView.decelerationRate;
     CGFloat time = fabsf(self.scrollViewVelocity.x / decelerationRate);
-    int64_t delayInSeconds = time * 0.8;
+    int64_t delayInSeconds = time * 0.95;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
     {
