@@ -16,8 +16,8 @@
 		E761979F17B0C861000A94BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E761979E17B0C861000A94BA /* Default.png */; };
 		E76197A117B0C861000A94BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E76197A017B0C861000A94BA /* Default@2x.png */; };
 		E76197A317B0C861000A94BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E76197A217B0C861000A94BA /* Default-568h@2x.png */; };
-		E76197B017B0CA34000A94BA /* ICTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76197AF17B0CA34000A94BA /* ICTabViewController.m */; };
-		E76197B317B0CA45000A94BA /* ICTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76197B217B0CA45000A94BA /* ICTabView.m */; };
+		E76197B017B0CA34000A94BA /* ICScrollTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76197AF17B0CA34000A94BA /* ICScrollTabViewController.m */; };
+		E76197B317B0CA45000A94BA /* ICScrollTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76197B217B0CA45000A94BA /* ICScrollTabView.m */; };
 		E76197BD17B0D536000A94BA /* libiCoffeeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197BC17B0D536000A94BA /* libiCoffeeLibrary.a */; };
 /* End PBXBuildFile section */
 
@@ -35,10 +35,10 @@
 		E761979E17B0C861000A94BA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E76197A017B0C861000A94BA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E76197A217B0C861000A94BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		E76197AE17B0CA34000A94BA /* ICTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICTabViewController.h; sourceTree = "<group>"; };
-		E76197AF17B0CA34000A94BA /* ICTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICTabViewController.m; sourceTree = "<group>"; };
-		E76197B117B0CA45000A94BA /* ICTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICTabView.h; sourceTree = "<group>"; };
-		E76197B217B0CA45000A94BA /* ICTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICTabView.m; sourceTree = "<group>"; };
+		E76197AE17B0CA34000A94BA /* ICScrollTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollTabViewController.h; sourceTree = "<group>"; };
+		E76197AF17B0CA34000A94BA /* ICScrollTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICScrollTabViewController.m; sourceTree = "<group>"; };
+		E76197B117B0CA45000A94BA /* ICScrollTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollTabView.h; sourceTree = "<group>"; };
+		E76197B217B0CA45000A94BA /* ICScrollTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICScrollTabView.m; sourceTree = "<group>"; };
 		E76197BC17B0D536000A94BA /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiCoffeeLibrary.a; path = "../iCoffeeLibrary/build/Release-iphoneos/libiCoffeeLibrary.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,8 +114,8 @@
 		E76197AC17B0CA01000A94BA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E76197AE17B0CA34000A94BA /* ICTabViewController.h */,
-				E76197AF17B0CA34000A94BA /* ICTabViewController.m */,
+				E76197AE17B0CA34000A94BA /* ICScrollTabViewController.h */,
+				E76197AF17B0CA34000A94BA /* ICScrollTabViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -123,8 +123,8 @@
 		E76197AD17B0CA08000A94BA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E76197B117B0CA45000A94BA /* ICTabView.h */,
-				E76197B217B0CA45000A94BA /* ICTabView.m */,
+				E76197B117B0CA45000A94BA /* ICScrollTabView.h */,
+				E76197B217B0CA45000A94BA /* ICScrollTabView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -197,8 +197,8 @@
 			files = (
 				E761979917B0C861000A94BA /* main.m in Sources */,
 				E761979D17B0C861000A94BA /* ICAppDelegate.m in Sources */,
-				E76197B017B0CA34000A94BA /* ICTabViewController.m in Sources */,
-				E76197B317B0CA45000A94BA /* ICTabView.m in Sources */,
+				E76197B017B0CA34000A94BA /* ICScrollTabViewController.m in Sources */,
+				E76197B317B0CA45000A94BA /* ICScrollTabView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

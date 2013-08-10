@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 iCoffee. All rights reserved.
 //
 
-#import "ICTabView.h"
+#import "ICScrollTabView.h"
 
-@interface ICTabView ()
+@interface ICScrollTabView ()
 
 @end
 
-@implementation ICTabView
+@implementation ICScrollTabView
 
 - (id)initWithFrame:(CGRect)frame
            delegate:(id < UIScrollViewDelegate >)delegate
@@ -24,7 +24,6 @@
         self.backgroundColor = [UIColor grayColor];
         
         self.pageControl = [[UIPageControl alloc] init];
-        [self.pageControl addTarget:delegate action:@selector(pageControlValueChanged:) forControlEvents:UIControlEventValueChanged];
         
         self.scrollView = [[UIScrollView alloc] init];
         self.scrollView.delegate = delegate;
@@ -48,12 +47,13 @@
     return self;
 }
 
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
     self.headerLabel.frame = [self.headerLabel alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 20)
-                                                                      offset:CGSizeMake(0, 50)
+                                                                      offset:CGSizeMake(0, 35)
                                                                      options:(ICAlignmentOptionsTop | ICAlignmentOptionsHorizontalCenter)];
 
     self.pageControl.frame = [self.pageControl alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 30)
@@ -62,12 +62,19 @@
 }
 
 
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
-    return !(CGRectContainsPoint(self.leftWallView.frame, point) ||
-             CGRectContainsPoint(self.rightWallView.frame, point));
+    if ([self.leftWallView pointInside:point withEvent:event])
+    {
+        return nil;
+    }
+    else if ([self.leftWallView pointInside:point withEvent:event])
+    {
+        return nil;
+    }
+    
+    return self.scrollView;
 }
-
 
 
 @end

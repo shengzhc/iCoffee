@@ -8,6 +8,6 @@
 
 #import "ICViewController.h"
 
-@interface ICTabViewController : ICViewController < UIScrollViewDelegate >
+@interface ICScrollTabViewController : ICViewController < UIScrollViewDelegate >
 
 @end

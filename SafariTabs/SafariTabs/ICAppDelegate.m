@@ -7,7 +7,7 @@
 //
 
 #import "ICAppDelegate.h"
-#import "ICTabViewController.h"
+#import "ICScrollTabViewController.h"
 
 @implementation ICAppDelegate
 
@@ -16,7 +16,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[ICTabViewController alloc] initWithDelegate:self];
+    self.window.rootViewController = [[ICScrollTabViewController alloc] initWithDelegate:self];
     [self.window makeKeyAndVisible];
     return YES;
 }

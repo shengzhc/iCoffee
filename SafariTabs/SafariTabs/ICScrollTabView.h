@@ -8,7 +8,7 @@
 
 #import "ICView.h"
 
-@interface ICTabView : ICView
+@interface ICScrollTabView : ICView
 
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UIScrollView *scrollView;
