@@ -7,13 +7,18 @@
 //
 
 #import "ICScrollTabViewController.h"
+#import "ICScrollPageViewController.h"
 
 #import "ICScrollTabView.h"
+#import "ICScrollPageView.h"
+
+#define PAGE_MAXIMAL 6
 
 @interface ICScrollTabViewController ()
 
 @property (nonatomic, strong) ICScrollTabView *view;
-@property (nonatomic, strong) NSMutableArray *pages;
+@property (nonatomic, strong) NSMutableDictionary *pageControllers;
+
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UIView *leftWallView;
@@ -30,7 +35,7 @@
     
     if (self)
     {
-        [self setupPages];
+        self.pageControllers = [NSMutableDictionary new];
     }
     
     return self;
@@ -55,16 +60,14 @@
 
     
     // Set up UIPageController
-    self.pageControl.currentPage = 0;
-    self.pageControl.numberOfPages = self.pages.count;
+    self.pageControl.numberOfPages = PAGE_MAXIMAL;
     [self.pageControl addObserver:self
                        forKeyPath:@"currentPage"
                           options:NSKeyValueObservingOptionNew context:nil];
+    self.pageControl.currentPage = 0;
     
-    for (UIView *page in self.pages)
-    {
-        [self.scrollView addSubview:page];
-    }
+    [self loadPageController:0];
+    [self loadPageController:1];
     
     self.scrollView.frame = [self.scrollView alignedRectInSuperviewForSize:CGSizeMake([self pageSize].width + [self pagePadding] * 2, [self pageSize].height)
                                                                     offset:CGSizeMake(0, 0)
@@ -84,60 +87,70 @@
 }
 
 
-- (void)setupPages
+- (CGRect)frameOfPageIndex:(NSUInteger)pageIndex
 {
-    self.pages = [NSMutableArray array];
-    CGRect rect = CGRectMake(0, 0, [self pageSize].width, [self pageSize].height);
+    CGSize size = CGSizeMake([self pageSize].width + 2 * [self pagePadding], [self pageSize].height);
+    return CGRectMake(pageIndex * size.width + [self pagePadding], 0,
+                      [self pageSize].width, [self pageSize].height);
+}
 
-    // Soft Green
-    UIView *v1 = [[UIView alloc] initWithFrame:rect];
-    v1.backgroundColor = [UIColor colorWithHex:0x46E074];
-    [v1 addCornersWithRadius:10];
-    v1.frame = CGRectMake([self pagePadding], 0, rect.size.width, rect.size.height);
-    v1.alpha = 1.0;
-    
-    // Light Green-Yellow
-    UIView *v2 = [[UIView alloc] initWithFrame:rect];
-    v2.backgroundColor = [UIColor colorWithHex:0xB9E619];
-    [v2 addCornersWithRadius:10];
-    v2.frame = CGRectMake(v1.horizontalEnding + 2 * [self pagePadding], 0, rect.size.width, rect.size.height);
-    v2.alpha = 0.2;
-    
-    // Mediate Purpple
-    UIView *v3 = [[UIView alloc] initWithFrame:rect];
-    v3.backgroundColor = [UIColor colorWithHex:0xB339A8];
-    [v3 addCornersWithRadius:10];
-    v3.frame = CGRectMake(v2.horizontalEnding + 2 * [self pagePadding], 0, rect.size.width, rect.size.height);
-    v3.alpha = 0.2;
 
-    // Shadow Blue
-    UIView *v4 = [[UIView alloc] initWithFrame:rect];
-    v4.backgroundColor = [UIColor colorWithHex:0x9DA9D1];
-    [v4 addCornersWithRadius:10];
-    v4.frame = CGRectMake(v3.horizontalEnding + 2 * [self pagePadding], 0, rect.size.width, rect.size.height);
-    [self.scrollView addSubview:v4];
-    v4.alpha = 0.2;
-
-    // Light Red
-    UIView *v5 = [[UIView alloc] initWithFrame:rect];
-    v5.backgroundColor = [UIColor colorWithHex:0xE85F4A];
-    [v5 addCornersWithRadius:10];
-    v5.frame = CGRectMake(v4.horizontalEnding + 2 * [self pagePadding], 0, rect.size.width, rect.size.height);
-    v5.alpha = 0.2;
-   
-    // Bright Yellow
-    UIView *v6 = [[UIView alloc] initWithFrame:rect];
-    v6.backgroundColor = [UIColor colorWithHex:0xFAEB14];
-    [v6 addCornersWithRadius:10];
-    v6.frame = CGRectMake(v5.horizontalEnding + 2 * [self pagePadding], 0, rect.size.width, rect.size.height);
-    v6.alpha = 0.2;
+- (UIColor *)colorOfPageIndex:(NSUInteger)pageIndex
+{
+    switch (pageIndex)
+    {
+        case 0:
+            return [UIColor colorWithHex:0x46E074];
+            break;
+        case 1:
+            return [UIColor colorWithHex:0xB9E619];
+            break;
+        case 2:
+            return [UIColor colorWithHex:0xB339A8];
+            break;
+        case 3:
+            return [UIColor colorWithHex:0xE85F4A];
+            break;
+        case 4:
+            return [UIColor colorWithHex:0x9DA9D1];
+            break;
+        case 5:
+            return [UIColor colorWithHex:0xFAEB14];
+            break;
+        default:
+            break;
+    }
     
-    [self.pages addObject:v1];
-    [self.pages addObject:v2];
-    [self.pages addObject:v3];
-    [self.pages addObject:v4];
-    [self.pages addObject:v5];
-    [self.pages addObject:v6];
+    return [UIColor whiteColor];
+}
+
+
+- (void)loadPageController:(NSUInteger)pageIndex
+{
+    NSString *key = [NSString stringWithFormat:@"%i", pageIndex];
+    
+    if (![self.pageControllers objectForKey:key])
+    {
+        ICScrollPageViewController *scrollPageViewController = [[ICScrollPageViewController alloc]
+                                                                initWithDelegate:self];
+        [self.pageControllers setObject:scrollPageViewController
+                                 forKey:key];
+    }
+    
+    ICScrollPageViewController *scrollPageViewController = (ICScrollPageViewController *)[self.pageControllers objectForKey:key];
+
+    if (!scrollPageViewController)
+    {
+        return;
+    }
+    
+    if (!scrollPageViewController.view.superview)
+    {
+        scrollPageViewController.view.frame = [self frameOfPageIndex:pageIndex];
+        [scrollPageViewController.view addCornersWithRadius:10];
+        scrollPageViewController.view.backgroundColor = [self colorOfPageIndex:pageIndex];
+        [self.scrollView addSubview:scrollPageViewController.view];
+    }
 }
 
 
@@ -157,19 +170,8 @@
 // Calculate the scrollview content size
 - (CGSize)scrollViewContentSize
 {
-    NSUInteger pageCount = self.pages.count;
-    
-    CGSize contentSize = CGSizeZero;
-    
-    for (NSUInteger i=0; i<pageCount; i++)
-    {
-        UIView *page = [self pageAtIndex:i];
-        contentSize.width += page.frame.size.width;
-        contentSize.width += 2 * [self pagePadding];
-        contentSize.height = contentSize.height > page.frame.size.height ? contentSize.height : page.frame.size.height;
-    }
-    
-    return contentSize;
+    return CGSizeMake( PAGE_MAXIMAL * ([self pageSize].width + [self pagePadding] * 2),
+                      [self pageSize].height);
 }
 
 
@@ -201,22 +203,28 @@
 #pragma mark Convenient
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
-- (UIView *)pageAtIndex:(NSUInteger)index
+- (ICScrollPageView *)pageAtIndex:(NSUInteger)index
 {
-    if (index >= self.pages.count)
+    if (index >= PAGE_MAXIMAL)
     {
         return nil;
     }
     
-    return (UIView *)[self.pages objectAtIndex:index];
+    NSString *key = [NSString stringWithFormat:@"%i", index];
+    
+    if ([self.pageControllers objectForKey:key])
+    {
+        return [(ICScrollPageViewController *)[self.pageControllers objectForKey:key] view];
+    }
+    
+    return nil;
 }
 
 
 // Calculate the center point of a page in scroll content view
 - (CGPoint)centerPointOfPage:(NSUInteger)pageIndex
 {
-    UIView *page = [self pageAtIndex:pageIndex];
-    return page.center;
+    return [[self pageAtIndex:pageIndex] center];
 }
 
 
@@ -224,10 +232,10 @@
 - (CGPoint)convertPointToDevice:(CGPoint)point
                        fromPageIndex:(NSUInteger)pageIndex
 {
-    UIView *page = [self pageAtIndex:pageIndex];
-    CGPoint pointInWindow = [page.superview convertPoint:point
+    ICScrollPageView *pageView = [self pageAtIndex:pageIndex];
+    CGPoint pointInWindow = [pageView.superview convertPoint:point
                                                   toView:nil];
-    CGPoint pointInScreen = [page.window convertPoint:pointInWindow
+    CGPoint pointInScreen = [pageView.window convertPoint:pointInWindow
                                              toWindow:nil];
     
     return pointInScreen;
@@ -246,25 +254,9 @@
 //////////////////////////////////////////////////////////////
 - (NSUInteger)pageIndexOfScrollView
 {
-    CGPoint deviceCenter = CGPointMake([UIScreen screenWidth]/2.0,
-                                       [UIScreen screenHeigth]/2.0);
-    
-    NSUInteger min = INT_MAX;
-    NSUInteger result;
-    NSUInteger pageIndex;
-    NSMutableString *log = [[NSMutableString alloc] init];
-    for (pageIndex = 0; pageIndex < self.pages.count; pageIndex++)
-    {
-        CGPoint pageCenter = [self centerPointOfPageInDevice:pageIndex];
-        [log appendString:NSStringFromCGPoint(pageCenter)];
-        if (min > abs(pageCenter.x - deviceCenter.x))
-        {
-            min = abs(pageCenter.x - deviceCenter.x);
-            result = pageIndex;
-        }
-    }
-    
-    return result;
+    CGFloat offset = self.scrollView.contentOffset.x + [self pageSize].width/2.0 + [self pagePadding];
+    NSInteger pageIndex = offset / ([self pageSize].width + 2 * [self pagePadding]);
+    return pageIndex >=0 ? pageIndex : 0;
 }
 
 
@@ -305,12 +297,33 @@
 }
 
 
+- (void)adjustAlphaForPageIndex:(NSUInteger)pageIndex
+                          alpha:(CGFloat)alpha
+{
+    ICScrollPageView *pageView = [self pageAtIndex:pageIndex];
+    [pageView setAlpha:alpha];
+}
+
+
 - (void)adjustAlphaForPages
 {
-    for (NSUInteger pageIndex=0; pageIndex<self.pages.count; pageIndex++)
+    NSUInteger pageIndex = self.pageControl.currentPage;
+    NSInteger previousPageIndex = pageIndex - 1;
+    NSInteger nextPageIndex = pageIndex + 1;
+    
+    [self adjustAlphaForPageIndex:pageIndex
+                            alpha:[self alphaForPageIndex:pageIndex]];
+    
+    if (previousPageIndex >= 0)
     {
-        UIView *page = [self pageAtIndex:pageIndex];
-        [page setAlpha:[self alphaForPageIndex:pageIndex]];
+        [self adjustAlphaForPageIndex:previousPageIndex
+                                alpha:[self alphaForPageIndex:previousPageIndex]];
+    }
+    
+    if (nextPageIndex < PAGE_MAXIMAL)
+    {
+        [self adjustAlphaForPageIndex:nextPageIndex
+                                alpha:[self alphaForPageIndex:nextPageIndex]];
     }
 }
 //////////////////////////////////////////////////////////////
@@ -321,9 +334,11 @@
 // Change the wall frame, alpha of pages, and page control value
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    self.pageControl.currentPage = [self pageIndexOfScrollView];
+    [self loadPageController:self.pageControl.currentPage - 1];
+    [self loadPageController:self.pageControl.currentPage + 1];
     [self adjustWallViewFrame];
     [self adjustAlphaForPages];
-    self.pageControl.currentPage = [self pageIndexOfScrollView];
 }
 
 
