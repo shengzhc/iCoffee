@@ -1,11 +1,31 @@
-Aug. 9th
+iCoffee: (9.15 v1.0)
 
-
-1. Features
-
-	. UIScrollView + PageControl
-	. Page Slider
+FEATURES
+	. UIScrollView + PageControl --- SC 
+	. Page Slider  --- Ark
 	. Design View for Coffees
 
 
-2. 
+MileStone:
+
+1. Aug. 16 21:00 (Feature 1 & 2)
+
+
+BrainStorm:
+
+
+Questions:
+
+
+Resources:
+
+
+TODO:
+
+
+	
+	
+	
+
+
+
