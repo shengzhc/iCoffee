@@ -20,7 +20,16 @@ Questions:
 Resources:
 
 
+Enhance:
+
+
+
 TODO:
+
+Aug. 10:
+
+1. Zoom in/out animation of single page view in SP --- SC
+2. Close Button on the left top corn of single page view --- SC
 
 
 	
