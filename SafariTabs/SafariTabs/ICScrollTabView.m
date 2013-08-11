@@ -66,14 +66,30 @@
 {
     if ([self.leftWallView pointInside:point withEvent:event])
     {
-        return nil;
+        return self;
     }
     else if ([self.leftWallView pointInside:point withEvent:event])
     {
-        return nil;
+        return self;
+    }
+ 
+    CGRect scrollRect = CGRectMake(0, self.scrollView.frame.origin.y, self.bounds.size.width, self.scrollView.frame.size.height);
+    
+    if (CGRectContainsPoint(scrollRect, point))
+    {
+        for (UIView *subview in self.scrollView.subviews)
+        {
+            CGPoint subPoint = [subview convertPoint:point fromView:self];
+            if (CGRectContainsPoint(subview.bounds, subPoint))
+            {
+                UIView *t = [subview hitTest:subPoint withEvent:event];
+                return t;
+            }
+        }
+        return self.scrollView;
     }
     
-    return self.scrollView;
+    return [super hitTest:point withEvent:event];
 }
 
 
