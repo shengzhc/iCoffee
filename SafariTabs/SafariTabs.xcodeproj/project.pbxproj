@@ -21,6 +21,8 @@
 		E76197BD17B0D536000A94BA /* libiCoffeeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197BC17B0D536000A94BA /* libiCoffeeLibrary.a */; };
 		E7F0FB8217B61E8200702E97 /* ICScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F0FB8117B61E8200702E97 /* ICScrollPageView.m */; };
 		E7F0FB8917B61EC000702E97 /* ICScrollPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F0FB8817B61EC000702E97 /* ICScrollPageViewController.m */; };
+		E7F0FB9417B7212500702E97 /* ICModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F0FB9317B7212500702E97 /* ICModalViewController.m */; };
+		E7F0FB9817B7213200702E97 /* ICModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F0FB9717B7213200702E97 /* ICModalView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,10 @@
 		E7F0FB8117B61E8200702E97 /* ICScrollPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICScrollPageView.m; sourceTree = "<group>"; };
 		E7F0FB8717B61EC000702E97 /* ICScrollPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollPageViewController.h; sourceTree = "<group>"; };
 		E7F0FB8817B61EC000702E97 /* ICScrollPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICScrollPageViewController.m; sourceTree = "<group>"; };
+		E7F0FB9217B7212500702E97 /* ICModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICModalViewController.h; sourceTree = "<group>"; };
+		E7F0FB9317B7212500702E97 /* ICModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICModalViewController.m; sourceTree = "<group>"; };
+		E7F0FB9617B7213200702E97 /* ICModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICModalView.h; sourceTree = "<group>"; };
+		E7F0FB9717B7213200702E97 /* ICModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICModalView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,8 @@
 				E76197AF17B0CA34000A94BA /* ICScrollTabViewController.m */,
 				E7F0FB8717B61EC000702E97 /* ICScrollPageViewController.h */,
 				E7F0FB8817B61EC000702E97 /* ICScrollPageViewController.m */,
+				E7F0FB9217B7212500702E97 /* ICModalViewController.h */,
+				E7F0FB9317B7212500702E97 /* ICModalViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -135,6 +143,8 @@
 				E76197B217B0CA45000A94BA /* ICScrollTabView.m */,
 				E7F0FB8017B61E8200702E97 /* ICScrollPageView.h */,
 				E7F0FB8117B61E8200702E97 /* ICScrollPageView.m */,
+				E7F0FB9617B7213200702E97 /* ICModalView.h */,
+				E7F0FB9717B7213200702E97 /* ICModalView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -211,6 +221,8 @@
 				E76197B317B0CA45000A94BA /* ICScrollTabView.m in Sources */,
 				E7F0FB8217B61E8200702E97 /* ICScrollPageView.m in Sources */,
 				E7F0FB8917B61EC000702E97 /* ICScrollPageViewController.m in Sources */,
+				E7F0FB9417B7212500702E97 /* ICModalViewController.m in Sources */,
+				E7F0FB9817B7213200702E97 /* ICModalView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

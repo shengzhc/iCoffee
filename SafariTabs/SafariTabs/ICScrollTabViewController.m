@@ -8,9 +8,9 @@
 
 #import "ICScrollTabViewController.h"
 #import "ICScrollPageViewController.h"
+#import "ICModalViewController.h"
 
 #import "ICScrollTabView.h"
-#import "ICScrollPageView.h"
 
 #define PAGE_MAXIMAL 6
 
@@ -222,28 +222,29 @@
 #pragma mark Convenient
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
-- (ICScrollPageView *)pageAtIndex:(NSUInteger)index
+
+- (ICScrollPageViewController *)pageViewControllerAtIndex:(NSUInteger)pageIndex
 {
-    if (index >= PAGE_MAXIMAL)
+    if (pageIndex >= PAGE_MAXIMAL)
     {
         return nil;
     }
     
-    NSString *key = [NSString stringWithFormat:@"%i", index];
+    NSString *key = [NSString stringWithFormat:@"%i", pageIndex];
     
-    if ([self.pageControllers objectForKey:key])
-    {
-        return [(ICScrollPageViewController *)[self.pageControllers objectForKey:key] view];
-    }
-    
-    return nil;
+    return [self.pageControllers objectForKey:key];
+}
+
+- (ICScrollPageView *)pageViewAtIndex:(NSUInteger)pageIndex
+{
+    return [self pageViewControllerAtIndex:pageIndex].view;
 }
 
 
 // Calculate the center point of a page in scroll content view
 - (CGPoint)centerPointOfPage:(NSUInteger)pageIndex
 {
-    return [[self pageAtIndex:pageIndex] center];
+    return [[self pageViewAtIndex:pageIndex] center];
 }
 
 
@@ -251,7 +252,7 @@
 - (CGPoint)convertPointToDevice:(CGPoint)point
                        fromPageIndex:(NSUInteger)pageIndex
 {
-    ICScrollPageView *pageView = [self pageAtIndex:pageIndex];
+    ICScrollPageView *pageView = [self pageViewAtIndex:pageIndex];
     CGPoint pointInWindow = [pageView.superview convertPoint:point
                                                   toView:nil];
     CGPoint pointInScreen = [pageView.window convertPoint:pointInWindow
@@ -319,7 +320,7 @@
 - (void)adjustAlphaForPageIndex:(NSUInteger)pageIndex
                           alpha:(CGFloat)alpha
 {
-    ICScrollPageView *pageView = [self pageAtIndex:pageIndex];
+    ICScrollPageView *pageView = [self pageViewAtIndex:pageIndex];
     [pageView setAlpha:alpha];
 }
 
@@ -360,6 +361,62 @@
     [self adjustAlphaForPages];
 }
 
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+#pragma mark Modal
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+- (ICViewController *)modalViewControllerForPageIndex:(NSUInteger)pageIndex
+{
+    ICModalViewController *modalViewController = [[ICModalViewController alloc] initWithDelegate:self];
+    return modalViewController;
+}
+
+- (void)presentModalViewControllerForPageIndex:(NSUInteger)pageIndex
+{
+    ICModalViewController *modalViewController = [[ICModalViewController alloc] initWithDelegate:self];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:modalViewController];
+    
+    nav.navigationBarHidden = YES;
+    modalViewController.view.frame = [self visiblePageRect];
+    modalViewController.view.alpha = .5;
+    modalViewController.view.userInteractionEnabled = NO;
+    [[UIApplication sharedApplication].keyWindow addSubview:modalViewController.view];
+    
+    [UIView animateWithDuration:.5
+                     animations:^
+    {
+        modalViewController.view.frame = self.view.bounds;
+        modalViewController.view.alpha = 1.0;
+        modalViewController.view.userInteractionEnabled = YES;
+    }
+                     completion:^(BOOL finished)
+    {
+        [modalViewController.view removeFromSuperview];
+        [self presentViewController:nav animated:NO completion:nil];
+    }];
+}
+
+
+- (void)cancelModalViewController:(ICModalViewController *)modalViewController
+{
+    [self dismissViewControllerAnimated:NO
+                             completion:^
+     {
+         [[UIApplication sharedApplication].keyWindow addSubview:modalViewController.view];
+         [UIView animateWithDuration:0.5
+                          animations:^
+          {
+              modalViewController.view.frame = [self visiblePageRect];
+              modalViewController.view.alpha = 0.5;
+          }
+                          completion:^(BOOL finished)
+          {
+              [modalViewController.view removeFromSuperview];
+          }];
+     }];
+}
 
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
@@ -374,7 +431,7 @@
 
 - (void)zoomPageViewToFullScreen:(NSUInteger)pageIndex
 {
-    ICScrollPageView *pageView = [self pageAtIndex:pageIndex];
+    ICScrollPageView *pageView = [self pageViewAtIndex:pageIndex];
     pageView.userInteractionEnabled = NO;
     
     CGRect fullScreenRect = [UIScreen mainScreen].bounds;
@@ -390,13 +447,14 @@
                      completion:^(BOOL finished)
      {
          pageView.userInteractionEnabled = YES;
+         [self presentModalViewControllerForPageIndex:pageIndex];
      }];
 }
 
 
 - (void)zoomPageViewToOrigin:(NSUInteger)pageIndex
 {
-    ICScrollPageView *pageView = [self pageAtIndex:pageIndex];
+    ICScrollPageView *pageView = [self pageViewAtIndex:pageIndex];
     pageView.userInteractionEnabled = NO;
     
     [UIView animateWithDuration:[self animationDuration]
@@ -412,8 +470,6 @@
          pageView.userInteractionEnabled = YES;
      }];
 }
-
-
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
 #pragma mark Page Click
@@ -436,13 +492,24 @@
     NSUInteger pageIndex = [self pageIndexOfController:sender];
     if (pageIndex != NSNotFound)
     {
-        if (sender.view.superview == self.scrollView)
+        if (self.pageControl.currentPage == pageIndex)
         {
-            [self zoomPageViewToFullScreen:pageIndex];
+            if (sender.view.superview == self.scrollView)
+            {
+                [self presentModalViewControllerForPageIndex:pageIndex];
+                //[self zoomPageViewToFullScreen:pageIndex];
+            }
+            else
+            {
+                //[self cancelModalViewController];
+                //[self zoomPageViewToOrigin:pageIndex];
+            }
         }
         else
         {
-            [self zoomPageViewToOrigin:pageIndex];
+            CGPoint contentOffset = [self frameOfPageIndex:pageIndex].origin;
+            contentOffset.x -= [self pagePadding];
+            [self.scrollView setContentOffset:contentOffset animated:YES];
         }
     }
 }

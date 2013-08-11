@@ -10,4 +10,6 @@
 
 @interface ICScrollTabViewController : ICViewController < UIScrollViewDelegate >
 
+- (UINavigationController *)modalViewControllerForPageIndex:(NSUInteger)pageIndex;
+
 @end
