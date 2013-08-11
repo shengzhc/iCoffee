@@ -29,4 +29,9 @@
 - (void)centerInParentVertically;
 - (void)centerInParent;
 
+
+- (CGPoint)pointInScreenWithPoint:(CGPoint)point;
+- (CGRect)rectInScreenCoordinate;
+
+
 @end

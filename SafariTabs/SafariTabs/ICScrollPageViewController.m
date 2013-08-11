@@ -10,6 +10,11 @@
 
 @interface ICScrollPageViewController ()
 
+@property (nonatomic, assign) CGRect originRect;
+@property (nonatomic, assign) CGRect originRectInScreen;
+
+@property (nonatomic, weak) UIView *originSuperview;
+
 @end
 
 @implementation ICScrollPageViewController
@@ -20,7 +25,6 @@
     
     if (self)
     {
-        
     }
     
     return self;
@@ -31,12 +35,18 @@
 {
     return [ICScrollPageView class];
 }
-
-
-- (void)viewWillDisappear:(BOOL)animated
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+#pragma mark Button
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+- (void)pageClicked:(id)sender
 {
-    [super viewWillDisappear:animated];
-    
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    if ([self.delegate respondsToSelector:@selector(pageClicked:)])
+    {
+        [self.delegate performSelector:@selector(pageClicked:)
+                            withObject:self];
+    }
 }
+
 @end

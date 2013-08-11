@@ -77,7 +77,13 @@
                                          [self leftMargin], self.scrollView.frame.size.height);
     self.rightWallView.frame = CGRectMake(0, self.scrollView.frame.origin.y, 0.1,
                                           self.scrollView.frame.size.height);
-    
+
+    int64_t delayInSeconds = .1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
+    {
+        [self scrollViewDidScroll:self.scrollView];
+    });
 }
 
 
@@ -127,6 +133,11 @@
 
 - (void)loadPageController:(NSUInteger)pageIndex
 {
+    if (pageIndex >= PAGE_MAXIMAL)
+    {
+        return;
+    }
+    
     NSString *key = [NSString stringWithFormat:@"%i", pageIndex];
     
     if (![self.pageControllers objectForKey:key])
@@ -196,6 +207,14 @@
 - (CGSize)pageSize
 {
     return CGSizeMake(200, 300);
+}
+
+
+- (CGRect)visiblePageRect
+{
+    return CGRectMake(self.scrollView.frame.origin.x + [self pagePadding],
+                      self.scrollView.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height,
+                      [self pageSize].width, [self pageSize].height);
 }
 
 //////////////////////////////////////////////////////////////
@@ -340,6 +359,94 @@
     [self adjustWallViewFrame];
     [self adjustAlphaForPages];
 }
+
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+#pragma mark Zoom Page
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+- (CGFloat)animationDuration
+{
+    return 0.5;
+}
+
+
+- (void)zoomPageViewToFullScreen:(NSUInteger)pageIndex
+{
+    ICScrollPageView *pageView = [self pageAtIndex:pageIndex];
+    pageView.userInteractionEnabled = NO;
+    
+    CGRect fullScreenRect = [UIScreen mainScreen].bounds;
+    [pageView removeFromSuperview];
+    
+    pageView.frame = [self visiblePageRect];
+    [[UIApplication sharedApplication].keyWindow addSubview:pageView];
+    [UIView animateWithDuration:[self animationDuration]
+                     animations:^
+     {
+         pageView.frame = fullScreenRect;
+     }
+                     completion:^(BOOL finished)
+     {
+         pageView.userInteractionEnabled = YES;
+     }];
+}
+
+
+- (void)zoomPageViewToOrigin:(NSUInteger)pageIndex
+{
+    ICScrollPageView *pageView = [self pageAtIndex:pageIndex];
+    pageView.userInteractionEnabled = NO;
+    
+    [UIView animateWithDuration:[self animationDuration]
+                     animations:^
+     {
+         pageView.frame = [self visiblePageRect];
+     }
+                     completion:^(BOOL finished)
+     {
+         [pageView removeFromSuperview];
+         pageView.frame = [self frameOfPageIndex:pageIndex];
+         [self.scrollView addSubview:pageView];
+         pageView.userInteractionEnabled = YES;
+     }];
+}
+
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+#pragma mark Page Click
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+- (NSUInteger)pageIndexOfController:(ICScrollPageViewController *)pageViewController
+{
+    if ([[self.pageControllers allValues] containsObject:pageViewController])
+    {
+        NSArray *keys = [self.pageControllers allKeysForObject:pageViewController];
+        NSString *key = keys[0];
+        return [key integerValue];
+    }
+    
+    return NSNotFound;
+}
+
+- (void)pageClicked:(ICScrollPageViewController *)sender
+{
+    NSUInteger pageIndex = [self pageIndexOfController:sender];
+    if (pageIndex != NSNotFound)
+    {
+        if (sender.view.superview == self.scrollView)
+        {
+            [self zoomPageViewToFullScreen:pageIndex];
+        }
+        else
+        {
+            [self zoomPageViewToOrigin:pageIndex];
+        }
+    }
+}
+
 
 
 @end

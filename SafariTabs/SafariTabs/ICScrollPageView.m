@@ -18,7 +18,8 @@
 
     if (self)
     {
-        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:delegate action:@selector(pageClicked:)];
+        [self addGestureRecognizer:tap];
     }
     
     return self;
@@ -28,12 +29,6 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-}
-
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
-{
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    return [super hitTest:point withEvent:event];
 }
 
 @end

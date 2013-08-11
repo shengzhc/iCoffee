@@ -123,5 +123,19 @@
 }
 
 
+- (CGPoint)pointInScreenWithPoint:(CGPoint)point
+{
+    CGPoint pointInWindow = [self convertPoint:point toView:self.window];
+    CGPoint pointInScreen = [self.window convertPoint:pointInWindow toWindow:nil];
+    return pointInScreen;
+}
+
+
+- (CGRect)rectInScreenCoordinate
+{
+    CGPoint origin = [self pointInScreenWithPoint:self.frame.origin];
+    return CGRectMake(origin.x, origin.y, self.frame.size.width, self.frame.size.height);
+}
+
 
 @end
