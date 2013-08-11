@@ -31,7 +31,10 @@ Aug. 10th
 1. Zoom in and out in the whole screen based on buttons (RESOLVED)
 2. Present a modal view controller that will contain the main view controllers (RESOLVED)
 	
-	
+Aug. 11st
+
+1. Optimize the code for Safari Tabs, and add README.txt for the project --- SC
+2. Umano top slider mock up --- SC
 
 
 
