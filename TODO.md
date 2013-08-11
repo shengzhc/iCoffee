@@ -22,8 +22,8 @@ Resources:
 
 TODO:
 
-1. Zoom in and out in the whole screen based on buttons
-2. Present a modal view controller that will contain the main view controllers.
+1. Zoom in and out in the whole screen based on buttons (RESOLVED)
+2. Present a modal view controller that will contain the main view controllers (RESOLVED)
 	
 	
 
