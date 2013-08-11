@@ -26,18 +26,10 @@ Enhance:
 
 TODO:
 
-<<<<<<< HEAD
-Aug. 10:
+Aug. 10th
 
-1. Zoom in/out animation of single page view in SP --- SC
-2. Close Button on the left top corn of single page view --- SC
-
-
-	
-=======
 1. Zoom in and out in the whole screen based on buttons (RESOLVED)
 2. Present a modal view controller that will contain the main view controllers (RESOLVED)
->>>>>>> shengzhc
 	
 	
 
