@@ -9,8 +9,15 @@
 #import "ICViewController.h"
 #import "ICUmanoView.h"
 
+#import "ICHeaderTableViewController.h"
+
 @interface ICUmanoViewController : ICViewController
 
 @property (nonatomic, strong) ICUmanoView *view;
+
+@property (nonatomic, strong) ICHeaderTableViewController *headerTableViewController;
+
+- (CGSize)headerSize;
+
 
 @end

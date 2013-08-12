@@ -10,4 +10,6 @@
 
 @interface ICUmanoView : ICView
 
+@property (nonatomic, strong) UIView *contentView;
+
 @end

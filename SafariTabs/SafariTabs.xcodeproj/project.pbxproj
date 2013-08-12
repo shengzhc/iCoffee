@@ -19,6 +19,7 @@
 		E76197B017B0CA34000A94BA /* ICScrollTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76197AF17B0CA34000A94BA /* ICScrollTabViewController.m */; };
 		E76197B317B0CA45000A94BA /* ICScrollTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76197B217B0CA45000A94BA /* ICScrollTabView.m */; };
 		E76197BD17B0D536000A94BA /* libiCoffeeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197BC17B0D536000A94BA /* libiCoffeeLibrary.a */; };
+		E7B29E8117B8A06B00BC7BBF /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7B29E8017B8A06B00BC7BBF /* README.txt */; };
 		E7F0FB8217B61E8200702E97 /* ICScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F0FB8117B61E8200702E97 /* ICScrollPageView.m */; };
 		E7F0FB8917B61EC000702E97 /* ICScrollPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F0FB8817B61EC000702E97 /* ICScrollPageViewController.m */; };
 		E7F0FB9417B7212500702E97 /* ICModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F0FB9317B7212500702E97 /* ICModalViewController.m */; };
@@ -44,6 +45,7 @@
 		E76197B117B0CA45000A94BA /* ICScrollTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollTabView.h; sourceTree = "<group>"; };
 		E76197B217B0CA45000A94BA /* ICScrollTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICScrollTabView.m; sourceTree = "<group>"; };
 		E76197BC17B0D536000A94BA /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiCoffeeLibrary.a; path = "../iCoffeeLibrary/build/Release-iphoneos/libiCoffeeLibrary.a"; sourceTree = "<group>"; };
+		E7B29E8017B8A06B00BC7BBF /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		E7F0FB8017B61E8200702E97 /* ICScrollPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollPageView.h; sourceTree = "<group>"; };
 		E7F0FB8117B61E8200702E97 /* ICScrollPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICScrollPageView.m; sourceTree = "<group>"; };
 		E7F0FB8717B61EC000702E97 /* ICScrollPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollPageViewController.h; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				E761979B17B0C861000A94BA /* ICAppDelegate.h */,
 				E761979C17B0C861000A94BA /* ICAppDelegate.m */,
 				E761979317B0C861000A94BA /* Supporting Files */,
+				E7B29E8017B8A06B00BC7BBF /* README.txt */,
 			);
 			path = SafariTabs;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				E761979F17B0C861000A94BA /* Default.png in Resources */,
 				E76197A117B0C861000A94BA /* Default@2x.png in Resources */,
 				E76197A317B0C861000A94BA /* Default-568h@2x.png in Resources */,
+				E7B29E8117B8A06B00BC7BBF /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

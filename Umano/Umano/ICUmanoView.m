@@ -7,7 +7,6 @@
 //
 
 #import "ICUmanoView.h"
-
 @interface ICUmanoView ()
 
 @property (nonatomic, strong) UINavigationBar *navigationBar;
@@ -19,12 +18,13 @@
 - (id)initWithFrame:(CGRect)frame
            delegate:(id)delegate
 {
-    self = [super initWithFrame:frame delegate:delegate];
+    self = [super initWithFrame:frame
+                       delegate:delegate];
     
     if (self)
     {
-        self.backgroundColor = [UIColor whiteColor];
-        
+        self.contentView = [[UIView alloc] initWithFrame:frame];
+        self.contentView.backgroundColor = [UIColor whiteColor];
         
         self.navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0.1, frame.size.width, 30)];
         [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg"]
@@ -36,13 +36,14 @@
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setBackgroundImage:[UIImage imageNamed:@"bbmenu"] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:delegate action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
         [button sizeToFit];
         UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithCustomView:button];
         [self.navigationBar setItems:[NSArray arrayWithObject:menuItem]];
         self.navigationBar.topItem.leftBarButtonItem = leftButton;
-        [self addSubview:self.navigationBar];
-        
+        [self.contentView addSubview:self.navigationBar];
+        [self addSubview:self.contentView];
+        [self.contentView addCornersWithRadius:10];
     }
     
     return self;
@@ -52,12 +53,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    self.contentView.frame = self.bounds;
 }
 
-
-- (void)clicked:(id)sender
-{
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-}
 
 @end

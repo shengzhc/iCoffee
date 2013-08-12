@@ -33,8 +33,9 @@ Aug. 10th
 	
 Aug. 11st
 
-1. Optimize the code for Safari Tabs, and add README.txt for the project --- SC
-2. Umano top slider mock up --- SC
+1. Optimize the code for Safari Tabs, and add README.txt for the project (RESOLVED) --- SC
+2. Umano top slider mock up (RESOLVED)--- SC
 
+Aug. 12nd
 
 
