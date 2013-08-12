@@ -19,6 +19,8 @@ Questions:
 
 Resources:
 
+Slide out navigation:
+http://www.raywenderlich.com/32054/how-to-create-a-slide-out-navigation-like-facebook-and-path
 
 Enhance:
 
@@ -36,5 +38,5 @@ Aug. 11st
 1. Optimize the code for Safari Tabs, and add README.txt for the project --- SC
 2. Umano top slider mock up --- SC
 
-
+3. Learning http://www.raywenderlich.com/32054/how-to-create-a-slide-out-navigation-like-facebook-and-path	--- ARK
 
