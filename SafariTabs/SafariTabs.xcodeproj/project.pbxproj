@@ -302,6 +302,7 @@
 		E76197A717B0C861000A94BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shengzhe Chen (WPHE937JRT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SafariTabs/SafariTabs-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../iCoffeeLibrary/iCoffeeLibrary/**";
@@ -309,6 +310,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C87101D4-0F12-4272-ABF4-D2077AA37306";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -316,6 +318,7 @@
 		E76197A817B0C861000A94BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shengzhe Chen (WPHE937JRT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SafariTabs/SafariTabs-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../iCoffeeLibrary/iCoffeeLibrary/**";
@@ -323,6 +326,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C87101D4-0F12-4272-ABF4-D2077AA37306";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
