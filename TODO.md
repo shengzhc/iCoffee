@@ -42,3 +42,6 @@ Aug. 11st
 Aug. 12nd
 
 1. Safari Tabs issue: zooming in frame is incorrect --- SC
+
+Aug. 13rd
+1. Finish the function of Slide out navigation.
