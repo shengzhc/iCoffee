@@ -24,8 +24,7 @@
 @interface ICCenterViewController : UIViewController
 
 @property (nonatomic, strong) UIView *centerView;
-@property (nonatomic, strong) UIButton *leftButton;
-@property (nonatomic, strong) UIButton *rightButton;
+@property (nonatomic, assign) NSInteger leftFlag;
 @property (nonatomic, assign) id<CenterViewControllerDelegate> delegate;
 
 @end

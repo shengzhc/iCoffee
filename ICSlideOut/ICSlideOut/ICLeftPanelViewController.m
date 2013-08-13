@@ -29,7 +29,7 @@
 {
     CGRect fullScreenFrame = [[UIScreen mainScreen] applicationFrame];
     _leftPanelView = [[UIView alloc] initWithFrame:fullScreenFrame];
-    _leftPanelView.backgroundColor = [UIColor blueColor];
+    _leftPanelView.backgroundColor = [UIColor whiteColor];
     self.view = _leftPanelView;
 }
 
