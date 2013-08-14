@@ -67,5 +67,7 @@
     }else{
         [self.delegate returnToCenter];
     }
+    
+    //NSLog(@"%d",self.leftFlag);
 }
 @end

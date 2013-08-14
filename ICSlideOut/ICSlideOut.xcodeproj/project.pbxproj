@@ -18,7 +18,9 @@
 		0748E7B217B98D63003A3C3D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0748E7B117B98D63003A3C3D /* Default-568h@2x.png */; };
 		0748E7BA17B98D87003A3C3D /* ICMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0748E7B917B98D87003A3C3D /* ICMainViewController.m */; };
 		0748E7BE17B98F61003A3C3D /* ICCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0748E7BD17B98F61003A3C3D /* ICCenterViewController.m */; };
-		0748E7C117B98F78003A3C3D /* ICLeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0748E7C017B98F78003A3C3D /* ICLeftPanelViewController.m */; };
+		0748E7C317BB24FC003A3C3D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0748E7C217BB24FC003A3C3D /* QuartzCore.framework */; };
+		0748E7C617BB2ADE003A3C3D /* ICLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0748E7C517BB2ADE003A3C3D /* ICLeftTableViewController.m */; };
+		0748E7C917BB2F8B003A3C3D /* ICLeftNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0748E7C817BB2F8B003A3C3D /* ICLeftNavigationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +41,11 @@
 		0748E7B917B98D87003A3C3D /* ICMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMainViewController.m; sourceTree = "<group>"; };
 		0748E7BC17B98F61003A3C3D /* ICCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCenterViewController.h; sourceTree = "<group>"; };
 		0748E7BD17B98F61003A3C3D /* ICCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCenterViewController.m; sourceTree = "<group>"; };
-		0748E7BF17B98F78003A3C3D /* ICLeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLeftPanelViewController.h; sourceTree = "<group>"; };
-		0748E7C017B98F78003A3C3D /* ICLeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICLeftPanelViewController.m; sourceTree = "<group>"; };
+		0748E7C217BB24FC003A3C3D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0748E7C417BB2ADE003A3C3D /* ICLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLeftTableViewController.h; sourceTree = "<group>"; };
+		0748E7C517BB2ADE003A3C3D /* ICLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICLeftTableViewController.m; sourceTree = "<group>"; };
+		0748E7C717BB2F8B003A3C3D /* ICLeftNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLeftNavigationViewController.h; sourceTree = "<group>"; };
+		0748E7C817BB2F8B003A3C3D /* ICLeftNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICLeftNavigationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0748E7C317BB24FC003A3C3D /* QuartzCore.framework in Frameworks */,
 				0748E79C17B98D63003A3C3D /* UIKit.framework in Frameworks */,
 				0748E79E17B98D63003A3C3D /* Foundation.framework in Frameworks */,
 				0748E7A017B98D63003A3C3D /* CoreGraphics.framework in Frameworks */,
@@ -77,6 +83,7 @@
 		0748E79A17B98D63003A3C3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0748E7C217BB24FC003A3C3D /* QuartzCore.framework */,
 				0748E79B17B98D63003A3C3D /* UIKit.framework */,
 				0748E79D17B98D63003A3C3D /* Foundation.framework */,
 				0748E79F17B98D63003A3C3D /* CoreGraphics.framework */,
@@ -116,8 +123,10 @@
 				0748E7B917B98D87003A3C3D /* ICMainViewController.m */,
 				0748E7BC17B98F61003A3C3D /* ICCenterViewController.h */,
 				0748E7BD17B98F61003A3C3D /* ICCenterViewController.m */,
-				0748E7BF17B98F78003A3C3D /* ICLeftPanelViewController.h */,
-				0748E7C017B98F78003A3C3D /* ICLeftPanelViewController.m */,
+				0748E7C717BB2F8B003A3C3D /* ICLeftNavigationViewController.h */,
+				0748E7C817BB2F8B003A3C3D /* ICLeftNavigationViewController.m */,
+				0748E7C417BB2ADE003A3C3D /* ICLeftTableViewController.h */,
+				0748E7C517BB2ADE003A3C3D /* ICLeftTableViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -192,7 +201,8 @@
 				0748E7AC17B98D63003A3C3D /* ICAppDelegate.m in Sources */,
 				0748E7BA17B98D87003A3C3D /* ICMainViewController.m in Sources */,
 				0748E7BE17B98F61003A3C3D /* ICCenterViewController.m in Sources */,
-				0748E7C117B98F78003A3C3D /* ICLeftPanelViewController.m in Sources */,
+				0748E7C617BB2ADE003A3C3D /* ICLeftTableViewController.m in Sources */,
+				0748E7C917BB2F8B003A3C3D /* ICLeftNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +317,7 @@
 				0748E7B717B98D63003A3C3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

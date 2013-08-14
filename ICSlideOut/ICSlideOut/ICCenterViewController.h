@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ICLeftPanelViewController.h"
+//#import "ICLeftPanelViewController.h"
 
 @protocol CenterViewControllerDelegate <NSObject>
 
