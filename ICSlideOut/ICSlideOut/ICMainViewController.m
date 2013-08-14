@@ -59,7 +59,7 @@
 -(void)returnToCenter
 {
     [UIView animateWithDuration:SLIDE_TIME delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        self.centerViewController.view.frame = CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height);
+        self.centerViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     }completion:^(BOOL finished){
         [self resetMainView];
     }];
@@ -82,6 +82,7 @@
     if (_leftNavigationViewController == nil) {
         _leftNavigationViewController = [[ICLeftNavigationViewController alloc] init];
         
+        _leftNavigationViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         [self.view addSubview:self.leftNavigationViewController.view];
         [self addChildViewController:_leftNavigationViewController];
         [_leftNavigationViewController didMoveToParentViewController:self];
@@ -98,7 +99,7 @@
     [self addShadowsToCenterView:YES withOffset:-2];
     
     [UIView animateWithDuration:SLIDE_TIME delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        self.centerViewController.view.frame = CGRectMake(self.view.frame.size.width-SLIDE_OFFSITE, 20, self.view.frame.size.width, self.view.frame.size.height);
+        self.centerViewController.view.frame = CGRectMake(self.view.frame.size.width-SLIDE_OFFSITE, 0, self.view.frame.size.width, self.view.frame.size.height);
     }completion:^(BOOL finished){
         self.centerViewController.leftFlag = 1;
     }];

@@ -30,11 +30,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    self.leftTableViewController = [[ICLeftTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    //self.leftTableViewController.tableView.frame = CGRectMake(0,44, self.view.frame.size.width, self.view.frame.size.height);
+        
+    self.leftTableViewController = [[ICLeftTableViewController alloc] initWithStyle:UITableViewScrollPositionNone];
     self.viewControllers = [NSArray arrayWithObject:self.leftTableViewController];
-    //NSLog(@"%f", self.leftTableViewController.tableView.frame.origin.y);
 }
 
 - (void)didReceiveMemoryWarning
