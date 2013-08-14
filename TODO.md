@@ -15,6 +15,7 @@ BrainStorm:
 
 
 Questions:
+Half of the first cell of a tableview is blocked by the navigation bar. --- ARK
 
 
 Resources:
@@ -37,11 +38,11 @@ Aug. 11st
 
 1. Optimize the code for Safari Tabs, and add README.txt for the project (RESOLVED) --- SC
 2. Umano top slider mock up (RESOLVED)--- SC
-3. Learning http://www.raywenderlich.com/32054/how-to-create-a-slide-out-navigation-like-facebook-and-path	--- ARK
+3. Learning http://www.raywenderlich.com/32054/how-to-create-a-slide-out-navigation-like-facebook-and-path(DONE)	--- ARK
 
 Aug. 12nd
 
 1. Safari Tabs issue: zooming in frame is incorrect --- SC
 
 Aug. 13rd
-1. Finish the function of Slide out navigation.
+1. Finish the function of Slide out navigation.(Need one more day) ---ARK
