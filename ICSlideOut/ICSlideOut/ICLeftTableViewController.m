@@ -130,6 +130,9 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    NSInteger number = indexPath.row;
+    NSLog(@"Select %d row.",number);
+    [self.myDelegate changeCenterView:number];
 }
 
 @end

@@ -22,6 +22,8 @@
 		0748E7C917BB2F8B003A3C3D /* ICLeftNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0748E7C817BB2F8B003A3C3D /* ICLeftNavigationViewController.m */; };
 		0751D33A17BC303B0099CE48 /* ICCenterNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0751D33917BC303B0099CE48 /* ICCenterNavigationViewController.m */; };
 		0751D33D17BC709B0099CE48 /* ICFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0751D33C17BC709B0099CE48 /* ICFirstViewController.m */; };
+		07FDAA1217BC832D00917579 /* ICSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FDAA1117BC832D00917579 /* ICSecondViewController.m */; };
+		07FDAA1517BC834400917579 /* ICThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FDAA1417BC834400917579 /* ICThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,10 @@
 		0751D33917BC303B0099CE48 /* ICCenterNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCenterNavigationViewController.m; sourceTree = "<group>"; };
 		0751D33B17BC709B0099CE48 /* ICFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICFirstViewController.h; sourceTree = "<group>"; };
 		0751D33C17BC709B0099CE48 /* ICFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICFirstViewController.m; sourceTree = "<group>"; };
+		07FDAA1017BC832D00917579 /* ICSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSecondViewController.h; sourceTree = "<group>"; };
+		07FDAA1117BC832D00917579 /* ICSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSecondViewController.m; sourceTree = "<group>"; };
+		07FDAA1317BC834400917579 /* ICThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICThirdViewController.h; sourceTree = "<group>"; };
+		07FDAA1417BC834400917579 /* ICThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICThirdViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,10 @@
 				0751D33917BC303B0099CE48 /* ICCenterNavigationViewController.m */,
 				0751D33B17BC709B0099CE48 /* ICFirstViewController.h */,
 				0751D33C17BC709B0099CE48 /* ICFirstViewController.m */,
+				07FDAA1017BC832D00917579 /* ICSecondViewController.h */,
+				07FDAA1117BC832D00917579 /* ICSecondViewController.m */,
+				07FDAA1317BC834400917579 /* ICThirdViewController.h */,
+				07FDAA1417BC834400917579 /* ICThirdViewController.m */,
 				0748E7C717BB2F8B003A3C3D /* ICLeftNavigationViewController.h */,
 				0748E7C817BB2F8B003A3C3D /* ICLeftNavigationViewController.m */,
 				0748E7C417BB2ADE003A3C3D /* ICLeftTableViewController.h */,
@@ -209,6 +219,8 @@
 				0748E7C917BB2F8B003A3C3D /* ICLeftNavigationViewController.m in Sources */,
 				0751D33A17BC303B0099CE48 /* ICCenterNavigationViewController.m in Sources */,
 				0751D33D17BC709B0099CE48 /* ICFirstViewController.m in Sources */,
+				07FDAA1217BC832D00917579 /* ICSecondViewController.m in Sources */,
+				07FDAA1517BC834400917579 /* ICThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

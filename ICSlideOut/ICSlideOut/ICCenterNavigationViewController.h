@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ICLeftTableViewController.h"
+
 
 @protocol CenterViewControllerDelegate <NSObject>
 
@@ -20,7 +22,7 @@
 @end
 
 
-@interface ICCenterNavigationViewController : UINavigationController
+@interface ICCenterNavigationViewController : UINavigationController<changeCenterViewProtocol>
 
 @property (nonatomic, strong) UIView *centerView;
 @property (nonatomic, assign) NSInteger leftFlag;

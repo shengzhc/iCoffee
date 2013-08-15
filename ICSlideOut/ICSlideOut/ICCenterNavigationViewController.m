@@ -8,16 +8,25 @@
 
 #import "ICCenterNavigationViewController.h"
 #import "ICFirstViewController.h"
+#import "ICSecondViewController.h"
+#import "ICThirdViewController.h"
+
 
 @interface ICCenterNavigationViewController ()
 
 @property (nonatomic, strong) ICFirstViewController *firstViewController;
+@property (nonatomic, strong) ICSecondViewController *secondViewController;
+@property (nonatomic, strong) ICThirdViewController *thirdViewController;
+@property (nonatomic, strong) NSArray *controllerArray;
 
 @end
 
 @implementation ICCenterNavigationViewController
 
 @synthesize firstViewController;
+@synthesize secondViewController;
+@synthesize thirdViewController;
+@synthesize controllerArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,10 +44,14 @@
 	// Do any additional setup after loading the view.
   
     firstViewController = [[ICFirstViewController alloc] init];
-    self.viewControllers = [NSArray arrayWithObject:firstViewController];
+    secondViewController = [[ICSecondViewController alloc] init];
+    thirdViewController = [[ICThirdViewController alloc] init];
     
-    firstViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self action:@selector(leftItemAction)];;
-
+    controllerArray = [NSArray arrayWithObjects:firstViewController,secondViewController,thirdViewController,nil];
+    
+    self.viewControllers = [NSArray arrayWithObject:[controllerArray objectAtIndex:0]];
+    
+    self.visibleViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self action:@selector(leftItemAction)];
     
 }
 
@@ -56,6 +69,16 @@
     }else{
         [self.centerDelegate returnToCenter];
     }
+}
+
+-(void)changeCenterView:(NSInteger)atRow
+{
+    NSLog(@"In CenterView: %d", atRow);
+    
+    self.viewControllers = [NSArray arrayWithObject:[controllerArray objectAtIndex:atRow]];
+    self.visibleViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self action:@selector(leftItemAction)];
+    
+    [self.centerDelegate returnToCenter];
 }
 
 @end

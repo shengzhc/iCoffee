@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ICLeftTableViewController.h"
+
 
 @interface ICLeftNavigationViewController : UINavigationController
+
+@property (nonatomic, strong) ICLeftTableViewController *leftTableViewController;
 
 @end

@@ -54,6 +54,7 @@
 {
     self.centerNavigationViewController = [[ICCenterNavigationViewController alloc] init];
     self.centerNavigationViewController.centerDelegate = self;
+    
     [self.view addSubview:self.centerNavigationViewController.view];
     [self addChildViewController:self.centerNavigationViewController];
     [self.centerNavigationViewController didMoveToParentViewController:self];
@@ -90,6 +91,7 @@
         [self.view addSubview:self.leftNavigationViewController.view];
         [self addChildViewController:leftNavigationViewController];
         [leftNavigationViewController didMoveToParentViewController:self];
+        leftNavigationViewController.leftTableViewController.myDelegate = self.centerNavigationViewController;
     }
     
     return leftNavigationViewController.view;
