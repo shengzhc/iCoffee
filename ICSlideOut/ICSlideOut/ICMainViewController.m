@@ -63,12 +63,15 @@
 -(void)returnToCenter
 {
    [UIView animateWithDuration:SLIDE_TIME delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        self.centerNavigationViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        self.centerNavigationViewController.view.frame = CGRectMake(self.view.frame.size.width, 0, self.view.frame.size.width, self.view.frame.size.height);
     }completion:^(BOOL finished){
-        [self resetMainView];
+        [UIView animateWithDuration:SLIDE_TIME delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.centerNavigationViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        }completion:^(BOOL finished){
+            [self resetMainView];
+        }];
     }];
 }
-
 
 -(void)resetMainView
 {
