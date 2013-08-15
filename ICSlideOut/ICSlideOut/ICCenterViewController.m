@@ -40,7 +40,7 @@
 
 -(void)loadView
 {
-    CGRect fullScreenFrame = [[UIScreen mainScreen] bounds];
+    CGRect fullScreenFrame = [[UIScreen mainScreen] applicationFrame];
     self.centerView = [[UIView alloc] initWithFrame:fullScreenFrame];
     self.centerView.backgroundColor = [UIColor lightGrayColor];
     
