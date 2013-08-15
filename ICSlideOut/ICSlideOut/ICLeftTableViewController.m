@@ -131,7 +131,7 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     NSInteger number = indexPath.row;
-    NSLog(@"Select %d row.",number);
+    
     [self.myDelegate changeCenterView:number];
 }
 

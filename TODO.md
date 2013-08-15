@@ -15,7 +15,8 @@ BrainStorm:
 
 
 Questions:
-Half of the first cell of a tableview is blocked by the navigation bar. --- ARK
+Half of the first cell of a tableview is blocked by the navigation bar (resolved). --- ARK
+
 
 
 Resources:
@@ -45,8 +46,13 @@ Aug. 12nd
 1. Safari Tabs issue: zooming in frame is incorrect (In process) --- SC
 
 Aug. 13rd
-1. Finish the function of Slide out navigation.(Need one more day) ---ARK
+1. Finish the function of Slide out navigation.(Done) ---ARK
 2. Request two days free for personal staff til Aug 14th.
 
 Aug. 14th
 1. Finish the Umano top slider feature and fix Safari Tabs frame issue. --- SC
+2. Use navigation view controllers.(DONE) --- ARK
+
+Aug. 15th
+1. Add gestures. (In process) --- ARK
+

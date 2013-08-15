@@ -18,6 +18,7 @@
 @property (nonatomic, strong) ICSecondViewController *secondViewController;
 @property (nonatomic, strong) ICThirdViewController *thirdViewController;
 @property (nonatomic, strong) NSArray *controllerArray;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeGestureRecognizer;
 
 @end
 
@@ -53,6 +54,9 @@
     
     self.visibleViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self action:@selector(leftItemAction)];
     
+    self.swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureHandler)];
+    [self.view addGestureRecognizer:self.swipeGestureRecognizer];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,12 +77,15 @@
 
 -(void)changeCenterView:(NSInteger)atRow
 {
-    NSLog(@"In CenterView: %d", atRow);
-    
     self.viewControllers = [NSArray arrayWithObject:[controllerArray objectAtIndex:atRow]];
     self.visibleViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self action:@selector(leftItemAction)];
     
     [self.centerDelegate returnToCenter];
+}
+
+-(void)swipeGestureHandler
+{
+    [self leftItemAction];
 }
 
 @end
