@@ -58,21 +58,23 @@
     
     self.visibleViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self action:@selector(leftItemAction)];
     
+    UIPanGestureRecognizer *panGesturerRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
+    panGesturerRecognizer.delegate = self;
+    
+    // [panGesturerRecognizer requireGestureRecognizerToFail:swipeToRight];
+    // [panGesturerRecognizer requireGestureRecognizerToFail:swipteToLeft];
+    [self.view addGestureRecognizer:panGesturerRecognizer];
+
+    
     UISwipeGestureRecognizer *swipeToRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToRightHandler)];
     swipeToRight.direction = UISwipeGestureRecognizerDirectionRight;
+        
     [self.view addGestureRecognizer:swipeToRight];
     
     UISwipeGestureRecognizer *swipteToLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToLeftHandler)];
     swipteToLeft.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:swipteToLeft];
     
-    UIPanGestureRecognizer *panGesturerRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
-    panGesturerRecognizer.delegate = self;
-    
-    [panGesturerRecognizer requireGestureRecognizerToFail:swipeToRight];
-    [panGesturerRecognizer requireGestureRecognizerToFail:swipteToLeft];
-    
-    [self.view addGestureRecognizer:panGesturerRecognizer];
     
 }
 
@@ -115,8 +117,13 @@
 -(void)panGestureHandler:(UIPanGestureRecognizer *)recognizer
 {
     CGPoint translation = [recognizer translationInView:self.view];
-    //NSLog(@"(%f,%f)",translation.x,translation.y);
-    [self.centerDelegate showLeftPanelWithPanGesture:translation.x];
+    
+    if ([recognizer state]==UIGestureRecognizerStateEnded) {
+        [self.centerDelegate showLeftPanelWithPanGesture:translation.x stateEnd:true];
+    }
+    else{
+        [self.centerDelegate showLeftPanelWithPanGesture:translation.x stateEnd:false];
+    }
 }
 
 /*
@@ -124,5 +131,5 @@
 {
     return YES;
 }
- */
+*/
 @end
