@@ -7,11 +7,13 @@
 //
 
 #import "ICUmanoViewController.h"
+#import "ICOverlayViewController.h"
+
 #import "ICHeaderTableView.h"
 
 @interface ICUmanoViewController ()
 
-@property (nonatomic, strong) UIView *overlayView;
+@property (nonatomic, strong) ICOverlayViewController *overlayViewController;
 
 @end
 
@@ -40,21 +42,6 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    self.headerTableViewController.view.frame = CGRectMake(0, -[self headerSize].height,
-                                                           self.view.bounds.size.width, [self headerSize].height);
-    
-    self.overlayView = [[UIView alloc] initWithFrame:self.view.bounds];
-    self.overlayView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
-    self.overlayView.hidden = YES;
-    
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc]
-                                                    initWithTarget:self
-                                                    action:@selector(scrollDown)];
-    [self.overlayView addGestureRecognizer:tapGestureRecognizer];
-    
-    self.headerTableViewController.view.hidden = YES;
-    [self.view addSubview:self.overlayView];
-    [self.view addSubview:self.headerTableViewController.view];
 }
 
 
@@ -72,6 +59,17 @@
     }
     
     return _headerTableViewController;
+}
+
+
+- (ICOverlayViewController *)overlayViewController
+{
+    if (!_overlayViewController)
+    {
+        _overlayViewController = [[ICOverlayViewController alloc] initWithDelegate:self];
+    }
+    
+    return _overlayViewController;
 }
 
 - (UIColor *)colorForIndexPath:(NSIndexPath *)indexPath
@@ -118,13 +116,13 @@
 
 - (void)scrollUp
 {
-    self.overlayView.hidden = NO;
+    self.overlayViewController.view.hidden = NO;
     self.headerTableViewController.view.hidden = NO;
     [UIView animateWithDuration:.3 animations:^
     {
-        self.overlayView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.5];
+        self.overlayViewController.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:[self maximalAlaph]];
         self.headerTableViewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, [self headerSize].height);
-        self.view.contentView.frame = CGRectMake(0, [self headerSize].height + 5, self.view.bounds.size.width, self.view.bounds.size.height);
+        self.view.contentView.frame = CGRectMake(0, [self headerSize].height, self.view.bounds.size.width, self.view.bounds.size.height);
     }
                      completion:^(BOOL finished)
     {
@@ -147,22 +145,132 @@
      {
          [UIView animateWithDuration:.3
                           animations:^{
-             self.overlayView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
+             self.overlayViewController.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
              self.headerTableViewController.view.frame = CGRectMake(0, -[self headerSize].height, self.view.bounds.size.width, [self headerSize].height);
              self.view.contentView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
          }
                           completion:^(BOOL finished)
          {
-             self.overlayView.hidden = YES;
+             self.overlayViewController.view.hidden = YES;
              self.headerTableViewController.view.hidden = YES;
+             [self scrollEnd];
          }];
      }];
 }
 
-
-- (void)clicked:(id)sender
+- (CGFloat)maximalAlaph
 {
-    [self scrollUp];
+    return 0.9;
 }
+
+- (UIColor *)overlayColorWithRect:(CGRect)rect
+{
+    float distance = rect.origin.y;
+    float maximal = [self headerSize].height;
+    return [[UIColor blackColor] colorWithAlphaComponent:([self maximalAlaph] * distance / maximal)];
+}
+
+- (void)overlayView:(ICOverlayView *)overlayView didChangeOffset:(CGPoint)offset
+{
+    CGRect contentFrame = self.view.contentView.frame;
+    CGRect headerTableFrame = self.headerTableViewController.view.frame;
+    contentFrame.origin.y += offset.y;
+    headerTableFrame.origin.y += offset.y;
+    
+    if (contentFrame.origin.y > [self headerSize].height)
+    {
+        contentFrame.origin.y = [self headerSize].height;
+        headerTableFrame.origin.y = 0;
+    }
+    else if (contentFrame.origin.y <= 0)
+    {
+        contentFrame.origin.y = 0;
+        headerTableFrame.origin.y = -[self headerSize].height;
+    }
+    
+    self.view.contentView.frame = contentFrame;
+    self.headerTableViewController.view.frame = headerTableFrame;
+    self.overlayViewController.view.backgroundColor = [self overlayColorWithRect:contentFrame];
+}
+
+- (void)overlayViewDidEndTouch:(ICOverlayView *)overlayView
+{
+    CGRect contentFrame = self.view.contentView.frame;
+    CGRect headerTableFrame = self.headerTableViewController.view.frame;
+    
+    __block BOOL isShow = YES;
+    
+    if (contentFrame.origin.y > self.view.bounds.size.height/2.0 - [UIApplication sharedApplication].statusBarFrame.size.height/2.0)
+    {
+        contentFrame.origin.y = [self headerSize].height;
+        headerTableFrame.origin.y = 0;
+        isShow = YES;
+    }
+    else
+    {
+        contentFrame.origin.y = 0;
+        headerTableFrame.origin.y = -[self headerSize].height;
+        isShow = NO;
+    }
+    
+    [UIView animateWithDuration:.3
+                     animations:^
+    {
+        if (isShow)
+        {
+            self.overlayViewController.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:[self maximalAlaph]];
+        }
+        else
+        {
+            self.overlayViewController.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
+        }
+        self.headerTableViewController.view.frame = headerTableFrame;
+        self.view.contentView.frame = contentFrame;
+    }
+                     completion:^(BOOL finished)
+    {
+        if (!isShow)
+        {
+            self.overlayViewController.view.hidden = YES;
+            self.headerTableViewController.view.hidden = YES;
+            [self scrollEnd];
+        }
+    }];
+}
+
+- (void)settingButtonClicked:(id)sender
+{
+    self.overlayViewController.view.frame = self.view.bounds;
+    self.overlayViewController.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
+    self.overlayViewController.view.hidden = YES;
+    [self.view addSubview:self.overlayViewController.view];
+    
+    
+    self.headerTableViewController.view.frame = CGRectMake(0, -[self headerSize].height,
+                                                           self.view.bounds.size.width, [self headerSize].height);
+    
+    self.headerTableViewController.view.hidden = YES;
+    [self.view addSubview:self.headerTableViewController.view];
+    
+    double delayInSeconds = .1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self scrollUp];
+    });
+    
+}
+
+
+- (void)scrollEnd
+{
+    [self.overlayViewController.view removeFromSuperview];
+    _overlayViewController = nil;
+    [self.headerTableViewController.view removeFromSuperview];
+    _headerTableViewController = nil;
+}
+
+
+
+
 
 @end

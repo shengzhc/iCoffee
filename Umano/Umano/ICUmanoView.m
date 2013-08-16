@@ -32,11 +32,15 @@
         
         UINavigationItem *menuItem = [[UINavigationItem alloc] initWithTitle:@""];
         
-        [menuItem setTitleView:[UILabel labelWithFrame:CGRectMake(0, 0, 20, 20) text:@"Umano" alignment:NSTextAlignmentCenter font:[UIFont boldSystemFontOfSize:20] textColor:[UIColor blackColor]]];
+        [menuItem setTitleView:[UILabel labelWithFrame:CGRectMake(0, 0, 20, 20)
+                                                  text:@"iCoffee"
+                                             alignment:NSTextAlignmentCenter
+                                                  font:[UIFont boldSystemFontOfSize:20]
+                                             textColor:[UIColor blackColor]]];
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setBackgroundImage:[UIImage imageNamed:@"bbmenu"] forState:UIControlStateNormal];
-        [button addTarget:delegate action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:delegate action:@selector(settingButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [button sizeToFit];
         UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithCustomView:button];
         [self.navigationBar setItems:[NSArray arrayWithObject:menuItem]];

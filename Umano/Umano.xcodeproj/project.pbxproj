@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7614DC917BDE82C005070ED /* ICOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7614DC817BDE82C005070ED /* ICOverlayViewController.m */; };
+		E7614DCC17BDE83C005070ED /* ICOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7614DCB17BDE83C005070ED /* ICOverlayView.m */; };
 		E7B29E5817B7FEAA00BC7BBF /* ICHeaderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B29E5717B7FEAA00BC7BBF /* ICHeaderTableView.m */; };
 		E7B29E5B17B7FECD00BC7BBF /* ICHeaderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B29E5A17B7FECD00BC7BBF /* ICHeaderTableViewController.m */; };
 		E7B29E5E17B8017E00BC7BBF /* icon-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E7B29E5C17B8017E00BC7BBF /* icon-settings.png */; };
@@ -42,6 +44,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7614DC717BDE82C005070ED /* ICOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICOverlayViewController.h; sourceTree = "<group>"; };
+		E7614DC817BDE82C005070ED /* ICOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICOverlayViewController.m; sourceTree = "<group>"; };
+		E7614DCA17BDE83C005070ED /* ICOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICOverlayView.h; sourceTree = "<group>"; };
+		E7614DCB17BDE83C005070ED /* ICOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICOverlayView.m; sourceTree = "<group>"; };
 		E7B29E5617B7FEAA00BC7BBF /* ICHeaderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICHeaderTableView.h; sourceTree = "<group>"; };
 		E7B29E5717B7FEAA00BC7BBF /* ICHeaderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICHeaderTableView.m; sourceTree = "<group>"; };
 		E7B29E5917B7FECD00BC7BBF /* ICHeaderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICHeaderTableViewController.h; sourceTree = "<group>"; };
@@ -178,6 +184,8 @@
 				E7E7EF3D17B76A9600C841CC /* ICUmanoViewController.m */,
 				E7B29E5917B7FECD00BC7BBF /* ICHeaderTableViewController.h */,
 				E7B29E5A17B7FECD00BC7BBF /* ICHeaderTableViewController.m */,
+				E7614DC717BDE82C005070ED /* ICOverlayViewController.h */,
+				E7614DC817BDE82C005070ED /* ICOverlayViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -189,6 +197,8 @@
 				E7E7EF4017B76AA500C841CC /* ICUmanoView.m */,
 				E7B29E5617B7FEAA00BC7BBF /* ICHeaderTableView.h */,
 				E7B29E5717B7FEAA00BC7BBF /* ICHeaderTableView.m */,
+				E7614DCA17BDE83C005070ED /* ICOverlayView.h */,
+				E7614DCB17BDE83C005070ED /* ICOverlayView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -283,6 +293,8 @@
 				E7E7EF4117B76AA500C841CC /* ICUmanoView.m in Sources */,
 				E7B29E5817B7FEAA00BC7BBF /* ICHeaderTableView.m in Sources */,
 				E7B29E5B17B7FECD00BC7BBF /* ICHeaderTableViewController.m in Sources */,
+				E7614DC917BDE82C005070ED /* ICOverlayViewController.m in Sources */,
+				E7614DCC17BDE83C005070ED /* ICOverlayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
