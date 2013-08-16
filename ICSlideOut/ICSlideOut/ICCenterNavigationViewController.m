@@ -60,22 +60,8 @@
     
     UIPanGestureRecognizer *panGesturerRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
     panGesturerRecognizer.delegate = self;
-    
-    // [panGesturerRecognizer requireGestureRecognizerToFail:swipeToRight];
-    // [panGesturerRecognizer requireGestureRecognizerToFail:swipteToLeft];
     [self.view addGestureRecognizer:panGesturerRecognizer];
 
-    
-    UISwipeGestureRecognizer *swipeToRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToRightHandler)];
-    swipeToRight.direction = UISwipeGestureRecognizerDirectionRight;
-        
-    [self.view addGestureRecognizer:swipeToRight];
-    
-    UISwipeGestureRecognizer *swipteToLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToLeftHandler)];
-    swipteToLeft.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:swipteToLeft];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -102,18 +88,6 @@
     [self.centerDelegate returnToCenter];
 }
 
--(void)swipeToRightHandler
-{
-    [self.centerDelegate showLeftPanel];
-}
-
--(void)swipeToLeftHandler
-{
-    if (_leftFlag==RIGHT) {
-        [self.centerDelegate returnToCenterByGesture];
-    }
-}
-
 -(void)panGestureHandler:(UIPanGestureRecognizer *)recognizer
 {
     CGPoint translation = [recognizer translationInView:self.view];
@@ -126,10 +100,4 @@
     }
 }
 
-/*
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    return YES;
-}
-*/
 @end

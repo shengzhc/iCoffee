@@ -24,6 +24,9 @@
 @property (nonatomic, strong) ICLeftNavigationViewController *leftNavigationViewController;
 @property (nonatomic, assign) BOOL isLeftPanelLive;
 
+-(void)moveViewWithOptions:(double)slideTime withX:(double)x position:(NSInteger)position;
+-(void)moveViewWithoutOptions:(double)slideTime withX:(double)x;
+
 @end
 
 @implementation ICMainViewController
@@ -78,14 +81,6 @@
     }];
 }
 
--(void)returnToCenterByGesture{
-    [UIView animateWithDuration:SLIDE_TIME delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        self.centerNavigationViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    }completion:^(BOOL finished){
-        [self resetMainView];
-    }];
-}
-
 -(void)resetMainView
 {
     if(leftNavigationViewController!=nil)
@@ -96,6 +91,31 @@
         [self addShadowsToCenterView:NO withOffset:0.0f];
         self.isLeftPanelLive = false;
     }
+}
+
+-(void)moveViewWithOptions:(double)slideTime withX:(double)x position:(NSInteger)position
+{
+    [UIView animateWithDuration:slideTime delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        self.centerNavigationViewController.view.frame = CGRectMake(x, 0, self.view.frame.size.width, self.view.frame.size.height);
+    }completion:^(BOOL finished){
+        if (position==CENTER) {
+            [self resetMainView];
+        }
+        else if(position==RIGHT){
+            self.centerNavigationViewController.leftFlag = RIGHT;
+        }
+    }];
+}
+
+-(void)moveViewWithoutOptions:(double)slideTime withX:(double)x
+{
+    [UIView animateWithDuration:0 animations:^{
+        self.centerNavigationViewController.view.frame = CGRectMake(x, 0, self.view.frame.size.width, self.view.frame.size.height);
+    }];
+}
+
+-(void)returnToCenterByGesture{
+    [self moveViewWithOptions:SLIDE_TIME withX:0 position:CENTER];
 }
 
 -(UIView *)setupLeftView
@@ -120,11 +140,7 @@
     [self.view sendSubviewToBack:childView];
     
     [self addShadowsToCenterView:YES withOffset:-2];
-    [UIView animateWithDuration:SLIDE_TIME delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        self.centerNavigationViewController.view.frame=CGRectMake(self.view.frame.size.width-SLIDE_OFFSITE, 0, self.view.frame.size.width, self.view.frame.size.height);
-    }completion:^(BOOL finished){
-        self.centerNavigationViewController.leftFlag = RIGHT;
-    }];
+    [self moveViewWithOptions:SLIDE_TIME withX:(self.view.frame.size.width-SLIDE_OFFSITE) position:RIGHT];
 }
 
 -(void)showLeftPanelWithPanGesture:(double)offset stateEnd:(BOOL)state
@@ -150,42 +166,26 @@
                 [self returnToCenterByGesture];
             }
             else{
-                [UIView animateWithDuration:SLIDE_TIME delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-                    self.centerNavigationViewController.view.frame = CGRectMake(size.width - SLIDE_OFFSITE, 0, size.width, size.height);
-                }completion:^(BOOL finished){
-                    self.centerNavigationViewController.leftFlag = RIGHT;
-                }];
+                [self moveViewWithOptions:SLIDE_TIME withX:size.width - SLIDE_OFFSITE position:RIGHT];
             }
         }
         else if(state==false){
             if (position.x<size.width-SLIDE_OFFSITE) {
-                [UIView animateWithDuration:0.0f animations:^{
-                    self.centerNavigationViewController.view.frame = CGRectMake(offset, 0, self.view.frame.size.width, self.view.frame.size.height);
-                }];
+                [self moveViewWithoutOptions:0 withX:offset];
             }else{
-                [UIView animateWithDuration:SLIDE_TIME delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-                    self.centerNavigationViewController.view.frame = CGRectMake(size.width - SLIDE_OFFSITE, 0, size.width, size.height);
-                }completion:^(BOOL finished){
-                    self.centerNavigationViewController.leftFlag = RIGHT;
-                }];
+                [self moveViewWithOptions:SLIDE_TIME withX:size.width-SLIDE_OFFSITE position:RIGHT];
             }
         }
     }else if(viewState==RIGHT){
         if (state==true) {
             if (position.x>size.width-SLIDE_OFFSITE-30) {
-                [UIView animateWithDuration:0.0f delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-                    self.centerNavigationViewController.view.frame = CGRectMake(size.width - SLIDE_OFFSITE, 0, size.width, size.height);
-                }completion:^(BOOL finished){
-                    
-                }];
+                [self moveViewWithOptions:SLIDE_TIME withX:size.width-SLIDE_OFFSITE position:RIGHT];
             }else{
                 [self returnToCenterByGesture];
             }
         }else{
             if(position.x>0){
-                [UIView animateWithDuration:0.0f animations:^{
-                    self.centerNavigationViewController.view.frame = CGRectMake(size.width-SLIDE_OFFSITE+offset, 0, size.width, size.height);
-                }];
+                [self moveViewWithoutOptions:0 withX:size.width-SLIDE_OFFSITE+offset];
             }else{
                 [self returnToCenterByGesture];
             }
