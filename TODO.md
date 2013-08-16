@@ -57,3 +57,6 @@ Aug. 15th
 1. Add gestures. (In process) --- ARK
 2. Add scrollling behavior for Umano scroll up. --- SC
 3. Learn ttf font. --- SC
+
+Aug. 16th
+1. World map choosing (potential). --- SC
