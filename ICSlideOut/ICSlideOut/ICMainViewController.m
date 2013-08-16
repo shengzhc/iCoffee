@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong) ICCenterNavigationViewController * centerNavigationViewController;
 @property (nonatomic, strong) ICLeftNavigationViewController *leftNavigationViewController;
+@property (nonatomic, assign) BOOL isSwiping;
 
 @end
 
@@ -32,6 +33,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.isSwiping = false;
     }
     return self;
 }
@@ -70,6 +72,14 @@
         }completion:^(BOOL finished){
             [self resetMainView];
         }];
+    }];
+}
+
+-(void)returnToCenterByGesture{
+    [UIView animateWithDuration:SLIDE_TIME delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        self.centerNavigationViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    }completion:^(BOOL finished){
+        [self resetMainView];
     }];
 }
 
@@ -113,6 +123,31 @@
     }];
 }
 
+-(void)showLeftPanelWithPanGesture:(double)offset
+{
+    CGPoint position = self.view.frame.origin;
+    CGSize size = self.view.frame.size;
+    
+    if(self.isSwiping==false){
+        UIView *childView = [self setupLeftView];
+        [self.view sendSubviewToBack:childView];
+        [self addShadowsToCenterView:YES withOffset:-2];
+        self.isSwiping = true;
+    }
+    
+    if (position.x<size.width/2) {
+        [UIView animateWithDuration:0.0f animations:^{
+            self.centerNavigationViewController.view.frame = CGRectMake(offset, 0, self.view.frame.size.width, self.view.frame.size.height);
+        }];
+    }else if(position.x>=size.width/2&&position.x<size.width-SLIDE_OFFSITE){
+        [UIView animateWithDuration:SLIDE_TIME delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.centerNavigationViewController.view.frame = CGRectMake(size.width - SLIDE_OFFSITE, 0, size.width, size.height);
+        }completion:^(BOOL finished){
+
+        }];
+    }
+}
+
 -(void)addShadowsToCenterView:(BOOL)status withOffset:(double)offset
 {
     if(status){
@@ -125,7 +160,5 @@
         [centerNavigationViewController.view.layer setShadowOffset:CGSizeMake(offset, offset)];
     }
 }
-
-
 
 @end

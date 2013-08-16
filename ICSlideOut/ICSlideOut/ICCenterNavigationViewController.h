@@ -15,9 +15,11 @@
 @optional
 -(void)showLeftPanel;
 -(void)showRightPanel;
+-(void)showLeftPanelWithPanGesture:(double)offset;
 
 @required
 -(void)returnToCenter;
+-(void)returnToCenterByGesture;
 
 @end
 

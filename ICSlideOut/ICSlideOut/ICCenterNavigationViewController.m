@@ -11,8 +11,11 @@
 #import "ICSecondViewController.h"
 #import "ICThirdViewController.h"
 
+#define CENTER 0
+#define RIGHT 1
+#define LEFT 2
 
-@interface ICCenterNavigationViewController ()
+@interface ICCenterNavigationViewController ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) ICFirstViewController *firstViewController;
 @property (nonatomic, strong) ICSecondViewController *secondViewController;
@@ -34,7 +37,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _leftFlag = 0;
+        _leftFlag = CENTER;
+        self.delegate = self;
     }
     return self;
 }
@@ -54,8 +58,21 @@
     
     self.visibleViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self action:@selector(leftItemAction)];
     
-    self.swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureHandler)];
-    [self.view addGestureRecognizer:self.swipeGestureRecognizer];
+    UISwipeGestureRecognizer *swipeToRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToRightHandler)];
+    swipeToRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeToRight];
+    
+    UISwipeGestureRecognizer *swipteToLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToLeftHandler)];
+    swipteToLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:swipteToLeft];
+    
+    UIPanGestureRecognizer *panGesturerRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
+    panGesturerRecognizer.delegate = self;
+    
+    [panGesturerRecognizer requireGestureRecognizerToFail:swipeToRight];
+    [panGesturerRecognizer requireGestureRecognizerToFail:swipteToLeft];
+    
+    [self.view addGestureRecognizer:panGesturerRecognizer];
     
 }
 
@@ -68,7 +85,7 @@
 
 -(void)leftItemAction
 {
-    if(_leftFlag==0){
+    if(_leftFlag==CENTER){
         [self.centerDelegate showLeftPanel];
     }else{
         [self.centerDelegate returnToCenter];
@@ -83,9 +100,29 @@
     [self.centerDelegate returnToCenter];
 }
 
--(void)swipeGestureHandler
+-(void)swipeToRightHandler
 {
-    [self leftItemAction];
+    [self.centerDelegate showLeftPanel];
 }
 
+-(void)swipeToLeftHandler
+{
+    if (_leftFlag==RIGHT) {
+        [self.centerDelegate returnToCenterByGesture];
+    }
+}
+
+-(void)panGestureHandler:(UIPanGestureRecognizer *)recognizer
+{
+    CGPoint translation = [recognizer translationInView:self.view];
+    //NSLog(@"(%f,%f)",translation.x,translation.y);
+    [self.centerDelegate showLeftPanelWithPanGesture:translation.x];
+}
+
+/*
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+ */
 @end
