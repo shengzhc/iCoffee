@@ -52,11 +52,13 @@ Aug. 13rd
 Aug. 14th
 1. Finish the Umano top slider feature and fix Safari Tabs frame issue. (RESOLVED) --- SC
 2. Use navigation view controllers.(DONE) --- ARK
+3. Add scrollling behavior for Umano scroll up. (RESOLVED) --- SC
+
 
 Aug. 15th
 1. Add gestures. (In process) --- ARK
-2. Add scrollling behavior for Umano scroll up. --- SC
-3. Learn ttf font. --- SC
+2. Learn how to import ttf font. --- SC
+3. Meeting about the design of how to display coffees. --- Group
 
 Aug. 16th
 1. World map choosing (potential). --- SC
