@@ -387,7 +387,7 @@
     [UIView animateWithDuration:.5
                      animations:^
     {
-        modalViewController.view.frame = self.view.bounds;
+        modalViewController.view.frame = self.view.frame;
         modalViewController.view.alpha = 1.0;
         modalViewController.view.userInteractionEnabled = YES;
     }
@@ -434,7 +434,7 @@
     ICScrollPageView *pageView = [self pageViewAtIndex:pageIndex];
     pageView.userInteractionEnabled = NO;
     
-    CGRect fullScreenRect = [UIScreen mainScreen].bounds;
+    CGRect fullScreenRect = [[UIScreen mainScreen] applicationFrame];
     [pageView removeFromSuperview];
     
     pageView.frame = [self visiblePageRect];
@@ -487,6 +487,7 @@
     return NSNotFound;
 }
 
+
 - (void)pageClicked:(ICScrollPageViewController *)sender
 {
     NSUInteger pageIndex = [self pageIndexOfController:sender];
@@ -497,12 +498,6 @@
             if (sender.view.superview == self.scrollView)
             {
                 [self presentModalViewControllerForPageIndex:pageIndex];
-                //[self zoomPageViewToFullScreen:pageIndex];
-            }
-            else
-            {
-                //[self cancelModalViewController];
-                //[self zoomPageViewToOrigin:pageIndex];
             }
         }
         else
