@@ -11,7 +11,7 @@
 
 #import "ICHeaderTableViewController.h"
 
-@interface ICUmanoViewController : ICViewController
+@interface ICUmanoViewController : ICViewController < ICHeaderTableViewDelegate >
 
 @property (nonatomic, strong) ICUmanoView *view;
 
