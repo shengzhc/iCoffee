@@ -43,11 +43,11 @@ Aug. 11st
 
 Aug. 12nd
 
-1. Safari Tabs issue: zooming in frame is incorrect (In process) --- SC
+1. Safari Tabs issue: zooming in frame is incorrect (RESOLVED) --- SC
 
 Aug. 13rd
 1. Finish the function of Slide out navigation.(Done) ---ARK
-2. Request two days free for personal staff til Aug 14th.
+
 
 Aug. 14th
 1. Finish the Umano top slider feature and fix Safari Tabs frame issue. --- SC
