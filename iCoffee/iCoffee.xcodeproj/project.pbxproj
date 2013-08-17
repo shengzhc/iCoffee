@@ -7,30 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E794F6E717BFD33100F729A1 /* ICMainMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F6E617BFD33100F729A1 /* ICMainMediator.m */; };
+		E794F6EF17BFD3AC00F729A1 /* ICWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F6EE17BFD3AC00F729A1 /* ICWelcomeViewController.m */; };
+		E794F6F217BFD3BA00F729A1 /* ICWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F6F117BFD3BA00F729A1 /* ICWelcomeView.m */; };
+		E794F6F517BFD4A300F729A1 /* ICUView.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F6F417BFD4A300F729A1 /* ICUView.m */; };
 		E7DAB34C17AF203B00D575B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34B17AF203B00D575B7 /* UIKit.framework */; };
 		E7DAB34E17AF203B00D575B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34D17AF203B00D575B7 /* Foundation.framework */; };
 		E7DAB35017AF203B00D575B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34F17AF203B00D575B7 /* CoreGraphics.framework */; };
 		E7DAB3A617AF248400D575B7 /* ICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB39A17AF248400D575B7 /* ICAppDelegate.m */; };
-		E7DAB3B117AF25BA00D575B7 /* ICTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB3B017AF25BA00D575B7 /* ICTestViewController.m */; };
 		E7DAB3BB17AF25FF00D575B7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7DAB3B317AF25FF00D575B7 /* Default-568h@2x.png */; };
 		E7DAB3BC17AF25FF00D575B7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E7DAB3B417AF25FF00D575B7 /* Default.png */; };
 		E7DAB3BD17AF25FF00D575B7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7DAB3B517AF25FF00D575B7 /* Default@2x.png */; };
 		E7DAB3BE17AF25FF00D575B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7DAB3B617AF25FF00D575B7 /* InfoPlist.strings */; };
 		E7DAB3BF17AF25FF00D575B7 /* iCoffee-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7DAB3B817AF25FF00D575B7 /* iCoffee-Info.plist */; };
 		E7DAB3C017AF25FF00D575B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB3BA17AF25FF00D575B7 /* main.m */; };
-		E7DAB3C517AF262600D575B7 /* ICTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB3C417AF262600D575B7 /* ICTestView.m */; };
 		E7DAB3C917AF28AA00D575B7 /* libiCoffeeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB3C817AF28AA00D575B7 /* libiCoffeeLibrary.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E794F6E517BFD33100F729A1 /* ICMainMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMainMediator.h; sourceTree = "<group>"; };
+		E794F6E617BFD33100F729A1 /* ICMainMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMainMediator.m; sourceTree = "<group>"; };
+		E794F6ED17BFD3AC00F729A1 /* ICWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICWelcomeViewController.h; sourceTree = "<group>"; };
+		E794F6EE17BFD3AC00F729A1 /* ICWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICWelcomeViewController.m; sourceTree = "<group>"; };
+		E794F6F017BFD3BA00F729A1 /* ICWelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICWelcomeView.h; sourceTree = "<group>"; };
+		E794F6F117BFD3BA00F729A1 /* ICWelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICWelcomeView.m; sourceTree = "<group>"; };
+		E794F6F317BFD4A300F729A1 /* ICUView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUView.h; sourceTree = "<group>"; };
+		E794F6F417BFD4A300F729A1 /* ICUView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUView.m; sourceTree = "<group>"; };
 		E7DAB34717AF203B00D575B7 /* iCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB34B17AF203B00D575B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7DAB34D17AF203B00D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7DAB34F17AF203B00D575B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E7DAB39917AF248400D575B7 /* ICAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICAppDelegate.h; sourceTree = "<group>"; };
 		E7DAB39A17AF248400D575B7 /* ICAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICAppDelegate.m; sourceTree = "<group>"; };
-		E7DAB3AF17AF25BA00D575B7 /* ICTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICTestViewController.h; sourceTree = "<group>"; };
-		E7DAB3B017AF25BA00D575B7 /* ICTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICTestViewController.m; sourceTree = "<group>"; };
 		E7DAB3B317AF25FF00D575B7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E7DAB3B417AF25FF00D575B7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E7DAB3B517AF25FF00D575B7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -38,8 +46,6 @@
 		E7DAB3B817AF25FF00D575B7 /* iCoffee-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iCoffee-Info.plist"; sourceTree = "<group>"; };
 		E7DAB3B917AF25FF00D575B7 /* iCoffee-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iCoffee-Prefix.pch"; sourceTree = "<group>"; };
 		E7DAB3BA17AF25FF00D575B7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E7DAB3C317AF262600D575B7 /* ICTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICTestView.h; sourceTree = "<group>"; };
-		E7DAB3C417AF262600D575B7 /* ICTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICTestView.m; sourceTree = "<group>"; };
 		E7DAB3C817AF28AA00D575B7 /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiCoffeeLibrary.a; path = "/Users/shengzhc/Desktop/iCoffee/iCoffeeLibrary/build/Release-iphoneos/libiCoffeeLibrary.a"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +64,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E794F6EB17BFD3A000F729A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E794F6ED17BFD3AC00F729A1 /* ICWelcomeViewController.h */,
+				E794F6EE17BFD3AC00F729A1 /* ICWelcomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E794F6EC17BFD3A000F729A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E794F6F017BFD3BA00F729A1 /* ICWelcomeView.h */,
+				E794F6F117BFD3BA00F729A1 /* ICWelcomeView.m */,
+				E794F6F317BFD4A300F729A1 /* ICUView.h */,
+				E794F6F417BFD4A300F729A1 /* ICUView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E7DAB33C17AF203A00D575B7 = {
 			isa = PBXGroup;
 			children = (
@@ -90,9 +116,9 @@
 		E7DAB35117AF203B00D575B7 /* iCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				E794F6EB17BFD3A000F729A1 /* Controller */,
+				E794F6EC17BFD3A000F729A1 /* View */,
 				E7DAB39817AF248400D575B7 /* Application */,
-				E7DAB39B17AF248400D575B7 /* Controller */,
-				E7DAB3A517AF248400D575B7 /* View */,
 			);
 			path = iCoffee;
 			sourceTree = "<group>";
@@ -102,26 +128,10 @@
 			children = (
 				E7DAB39917AF248400D575B7 /* ICAppDelegate.h */,
 				E7DAB39A17AF248400D575B7 /* ICAppDelegate.m */,
+				E794F6E517BFD33100F729A1 /* ICMainMediator.h */,
+				E794F6E617BFD33100F729A1 /* ICMainMediator.m */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		E7DAB39B17AF248400D575B7 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				E7DAB3AF17AF25BA00D575B7 /* ICTestViewController.h */,
-				E7DAB3B017AF25BA00D575B7 /* ICTestViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		E7DAB3A517AF248400D575B7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E7DAB3C317AF262600D575B7 /* ICTestView.h */,
-				E7DAB3C417AF262600D575B7 /* ICTestView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		E7DAB3B217AF25FF00D575B7 /* Supporting Files */ = {
@@ -206,9 +216,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7DAB3A617AF248400D575B7 /* ICAppDelegate.m in Sources */,
-				E7DAB3B117AF25BA00D575B7 /* ICTestViewController.m in Sources */,
 				E7DAB3C017AF25FF00D575B7 /* main.m in Sources */,
-				E7DAB3C517AF262600D575B7 /* ICTestView.m in Sources */,
+				E794F6E717BFD33100F729A1 /* ICMainMediator.m in Sources */,
+				E794F6EF17BFD3AC00F729A1 /* ICWelcomeViewController.m in Sources */,
+				E794F6F217BFD3BA00F729A1 /* ICWelcomeView.m in Sources */,
+				E794F6F517BFD4A300F729A1 /* ICUView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

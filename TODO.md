@@ -92,7 +92,7 @@ Aug. 14th
 Aug. 15th
 1. Add gestures. (DONE) --- ARK
 2. Learn how to import ttf font. --- SC
-3. Meeting about the design of how to display coffees. --- Group
+3. Meeting about the design of how to display coffees. (RESOLVED) --- Group
 
 
 Aug. 16th

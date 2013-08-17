@@ -7,7 +7,7 @@
 //
 
 #import "ICAppDelegate.h"
-#import "ICTestViewController.h"
+#import "ICMainMediator.h"
 
 @implementation ICAppDelegate
 
@@ -17,9 +17,10 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    ICTestViewController *testViewController = [[ICTestViewController alloc]
-                                            initWithDelegate:self];
-    self.window.rootViewController = testViewController;
+    ICMainMediator *mediator = [[ICMainMediator alloc] initWithDelegate:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mediator];
+    [navigationController setNavigationBarHidden:YES];
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
