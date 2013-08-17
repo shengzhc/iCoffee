@@ -1,13 +1,13 @@
 //
-//  ICWelcomeViewController.h
+//  ICScrollPageView.h
 //  iCoffee
 //
 //  Created by Shengzhe Chen on 8/17/13.
 //  Copyright (c) 2013 iCoffee. All rights reserved.
 //
 
-#import "ICViewController.h"
+#import "ICView.h"
 
-@interface ICWelcomeViewController : ICViewController
+@interface ICScrollPageView : ICView
 
 @end

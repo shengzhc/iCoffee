@@ -8,6 +8,11 @@
 
 #import "ICViewController.h"
 
-@interface ICWelcomeViewController : ICViewController
+#import "ICWelcomeView.h"
+#import "ICScrollViewDatasource.h"
+
+@interface ICWelcomeViewController : ICViewController < ICScrollViewDatasource >
+
+@property (nonatomic, strong) ICWelcomeView *view;
 
 @end

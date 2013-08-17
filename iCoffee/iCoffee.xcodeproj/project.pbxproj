@@ -10,7 +10,12 @@
 		E794F6E717BFD33100F729A1 /* ICMainMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F6E617BFD33100F729A1 /* ICMainMediator.m */; };
 		E794F6EF17BFD3AC00F729A1 /* ICWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F6EE17BFD3AC00F729A1 /* ICWelcomeViewController.m */; };
 		E794F6F217BFD3BA00F729A1 /* ICWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F6F117BFD3BA00F729A1 /* ICWelcomeView.m */; };
-		E794F6F517BFD4A300F729A1 /* ICUView.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F6F417BFD4A300F729A1 /* ICUView.m */; };
+		E794F6F917BFDB4E00F729A1 /* ICUView.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F6F817BFDB4E00F729A1 /* ICUView.m */; };
+		E794F6FC17BFDB6400F729A1 /* ICScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F6FB17BFDB6400F729A1 /* ICScrollPageView.m */; };
+		E794F70317BFE03F00F729A1 /* ICScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F70217BFE03F00F729A1 /* ICScrollImageView.m */; };
+		E794F70717BFE58900F729A1 /* welcomescroll_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70417BFE58900F729A1 /* welcomescroll_1.png */; };
+		E794F70817BFE58900F729A1 /* welcomescroll_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70517BFE58900F729A1 /* welcomescroll_2.png */; };
+		E794F70917BFE58900F729A1 /* welcomescroll_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70617BFE58900F729A1 /* welcomescroll_3.png */; };
 		E7DAB34C17AF203B00D575B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34B17AF203B00D575B7 /* UIKit.framework */; };
 		E7DAB34E17AF203B00D575B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34D17AF203B00D575B7 /* Foundation.framework */; };
 		E7DAB35017AF203B00D575B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34F17AF203B00D575B7 /* CoreGraphics.framework */; };
@@ -31,8 +36,16 @@
 		E794F6EE17BFD3AC00F729A1 /* ICWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICWelcomeViewController.m; sourceTree = "<group>"; };
 		E794F6F017BFD3BA00F729A1 /* ICWelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICWelcomeView.h; sourceTree = "<group>"; };
 		E794F6F117BFD3BA00F729A1 /* ICWelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICWelcomeView.m; sourceTree = "<group>"; };
-		E794F6F317BFD4A300F729A1 /* ICUView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUView.h; sourceTree = "<group>"; };
-		E794F6F417BFD4A300F729A1 /* ICUView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUView.m; sourceTree = "<group>"; };
+		E794F6F717BFDB4E00F729A1 /* ICUView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUView.h; sourceTree = "<group>"; };
+		E794F6F817BFDB4E00F729A1 /* ICUView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUView.m; sourceTree = "<group>"; };
+		E794F6FA17BFDB6400F729A1 /* ICScrollPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollPageView.h; sourceTree = "<group>"; };
+		E794F6FB17BFDB6400F729A1 /* ICScrollPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICScrollPageView.m; sourceTree = "<group>"; };
+		E794F70017BFDE1700F729A1 /* ICScrollViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollViewDatasource.h; sourceTree = "<group>"; };
+		E794F70117BFE03F00F729A1 /* ICScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollImageView.h; sourceTree = "<group>"; };
+		E794F70217BFE03F00F729A1 /* ICScrollImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICScrollImageView.m; sourceTree = "<group>"; };
+		E794F70417BFE58900F729A1 /* welcomescroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_1.png; sourceTree = "<group>"; };
+		E794F70517BFE58900F729A1 /* welcomescroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_2.png; sourceTree = "<group>"; };
+		E794F70617BFE58900F729A1 /* welcomescroll_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_3.png; sourceTree = "<group>"; };
 		E7DAB34717AF203B00D575B7 /* iCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB34B17AF203B00D575B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7DAB34D17AF203B00D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,17 +89,57 @@
 		E794F6EC17BFD3A000F729A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E794F6F617BFDB1C00F729A1 /* Base */,
 				E794F6F017BFD3BA00F729A1 /* ICWelcomeView.h */,
 				E794F6F117BFD3BA00F729A1 /* ICWelcomeView.m */,
-				E794F6F317BFD4A300F729A1 /* ICUView.h */,
-				E794F6F417BFD4A300F729A1 /* ICUView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E794F6F617BFDB1C00F729A1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E794F6F717BFDB4E00F729A1 /* ICUView.h */,
+				E794F6F817BFDB4E00F729A1 /* ICUView.m */,
+				E794F6FA17BFDB6400F729A1 /* ICScrollPageView.h */,
+				E794F6FB17BFDB6400F729A1 /* ICScrollPageView.m */,
+				E794F70017BFDE1700F729A1 /* ICScrollViewDatasource.h */,
+				E794F70117BFE03F00F729A1 /* ICScrollImageView.h */,
+				E794F70217BFE03F00F729A1 /* ICScrollImageView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E794F6FD17BFDC3B00F729A1 /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				E794F6FE17BFDC3B00F729A1 /* Font */,
+				E794F6FF17BFDC3B00F729A1 /* image */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
+		E794F6FE17BFDC3B00F729A1 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		E794F6FF17BFDC3B00F729A1 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				E794F70417BFE58900F729A1 /* welcomescroll_1.png */,
+				E794F70517BFE58900F729A1 /* welcomescroll_2.png */,
+				E794F70617BFE58900F729A1 /* welcomescroll_3.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 		E7DAB33C17AF203A00D575B7 = {
 			isa = PBXGroup;
 			children = (
+				E794F6FD17BFDC3B00F729A1 /* Bundle */,
 				E7DAB3B217AF25FF00D575B7 /* Supporting Files */,
 				E7DAB35117AF203B00D575B7 /* iCoffee */,
 				E7DAB34A17AF203B00D575B7 /* Frameworks */,
@@ -205,6 +258,9 @@
 				E7DAB3BD17AF25FF00D575B7 /* Default@2x.png in Resources */,
 				E7DAB3BE17AF25FF00D575B7 /* InfoPlist.strings in Resources */,
 				E7DAB3BF17AF25FF00D575B7 /* iCoffee-Info.plist in Resources */,
+				E794F70717BFE58900F729A1 /* welcomescroll_1.png in Resources */,
+				E794F70817BFE58900F729A1 /* welcomescroll_2.png in Resources */,
+				E794F70917BFE58900F729A1 /* welcomescroll_3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +276,9 @@
 				E794F6E717BFD33100F729A1 /* ICMainMediator.m in Sources */,
 				E794F6EF17BFD3AC00F729A1 /* ICWelcomeViewController.m in Sources */,
 				E794F6F217BFD3BA00F729A1 /* ICWelcomeView.m in Sources */,
-				E794F6F517BFD4A300F729A1 /* ICUView.m in Sources */,
+				E794F6F917BFDB4E00F729A1 /* ICUView.m in Sources */,
+				E794F6FC17BFDB6400F729A1 /* ICScrollPageView.m in Sources */,
+				E794F70317BFE03F00F729A1 /* ICScrollImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

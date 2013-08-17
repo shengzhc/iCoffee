@@ -99,6 +99,13 @@ Aug. 16th
 1. Make gestures perfect. (In progess)--- ARK
 2. Code review.(In progress) --- ARK 
 
+
+Aug. 17th
+1. Content : Scroll View with page controller, one page with one item, items should be limited, 
+	except (Click item will transfer to detail) (RESOLVED) --- SC
+2. Bottom menu bar: from bottom up with finger dragging (icon in middle) or touch (icon at two sides) --- SC
+
+
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
 2. Coffee bean object

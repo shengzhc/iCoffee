@@ -8,9 +8,9 @@
 
 #import "ICWelcomeViewController.h"
 
-#import "ICWelcomeView.h"
-
 @interface ICWelcomeViewController ()
+
+@property (nonatomic, strong) NSMutableArray *scrollPageDatasource;
 
 @end
 
@@ -22,7 +22,7 @@
     
     if (self)
     {
-        
+        [self setupScrollPageDataSource];
     }
     
     return self;
@@ -32,6 +32,35 @@
 - (Class)viewClass
 {
     return [ICWelcomeView class];
+}
+
+
+- (void)setupScrollPageDataSource
+{
+    NSArray *datasource = @[
+                            @{@"image": @"welcomescroll_1", @"text":@"Yellow Gradient"},
+                            @{@"image": @"welcomescroll_2", @"text":@"Purple Gradient"},
+                            @{@"image": @"welcomescroll_3", @"text":@"Green Gradient"}
+                            ];
+    
+    self.scrollPageDatasource = [datasource mutableCopy];
+}
+
+
+- (NSUInteger)numberOfSrollPages:(UIScrollView *)scrollView
+{
+    return [self.scrollPageDatasource count];
+}
+
+
+- (NSDictionary *)scrollPageDictionaryForIndex:(NSUInteger)pageIndex
+{
+    if (pageIndex > self.scrollPageDatasource.count)
+    {
+        return nil;
+    }
+    
+    return self.scrollPageDatasource[pageIndex];
 }
 
 @end

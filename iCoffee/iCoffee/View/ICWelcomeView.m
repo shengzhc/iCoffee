@@ -7,28 +7,137 @@
 //
 
 #import "ICWelcomeView.h"
+#import "ICScrollImageView.h"
+
+@interface ICWelcomeView ()
+
+@end
 
 @implementation ICWelcomeView
 
 
-- (id)initWithFrame:(CGRect)frame delegate:(id)delegate
+- (id)initWithFrame:(CGRect)frame
+           delegate:(id)delegate
 {
     self = [super initWithFrame:frame
                        delegate:delegate];
     
     if (self)
     {
-        self.backgroundColor = [UIColor greenColor];
+        self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
+        self.scrollView.pagingEnabled = YES;
+        self.scrollView.clipsToBounds = NO;
+        self.scrollView.bounces = NO;
+        self.scrollView.showsHorizontalScrollIndicator = NO;
+        self.scrollView.showsVerticalScrollIndicator = NO;
+        self.scrollView.delegate = self;
+        
+        [self scrollViewLoadContent:self.scrollView];
+        
+        [self.contentView addSubview:self.scrollView];
+    
+        [self scrollToPageIndex:1 animated:NO];
     }
     
     return self;
 }
 
 
+- (void)scrollViewLoadContent:(UIScrollView *)scrollView
+{
+    NSUInteger count = [self.delegate numberOfSrollPages:scrollView];
+    NSUInteger cycleCount = count + 2;
+    NSUInteger xOffset = [self scrollPageSize].width;
+    for (NSUInteger index = 0; index < cycleCount; index++)
+    {
+        NSDictionary *data;
+        if (index == 0)
+        {
+            data = [self.delegate scrollPageDictionaryForIndex:count-1];
+        }
+        else if (index == cycleCount - 1)
+        {
+            data = [self.delegate scrollPageDictionaryForIndex:0];
+        }
+        else
+        {
+            data = [self.delegate scrollPageDictionaryForIndex:index - 1];
+        }
+        
+        ICScrollImageView *page = [[ICScrollImageView alloc] initWithFrame:[self scrollPageFrameForIndex:index]
+                                                                  delegate:self.delegate
+                                                                 imageName:[data valueForKey:@"image"]
+                                                                      text:[data valueForKey:@"text"]];
+        [scrollView addSubview:page];
+        xOffset += [self scrollPageSize].width;
+    }
+    
+    scrollView.contentSize = CGSizeMake([self scrollPageSize].width * cycleCount, [self scrollPageSize].height);
+}
+
+
+- (CGRect)scrollPageFrameForIndex:(NSUInteger)pageIndex
+{
+    NSUInteger count = [self.delegate numberOfSrollPages:self.scrollView] + 2;
+    if (pageIndex > count)
+    {
+        return CGRectZero;
+    }
+    
+    return CGRectMake(pageIndex * [self scrollPageSize].width, 0, [self scrollPageSize].width, [self scrollPageSize].height);
+}
+
+
+- (CGSize)scrollPageSize
+{
+    return CGSizeMake(320, 200);
+}
+
+
+- (void)scrollToPageIndex:(NSUInteger)pageIndex
+                 animated:(BOOL)animated
+{
+    NSUInteger count = [self.delegate numberOfSrollPages:self.scrollView] + 2;
+    
+    if (pageIndex >= count)
+    {
+        return;
+    }
+
+    [self.scrollView setContentOffset:CGPointMake([self scrollPageSize].width * pageIndex, 0)
+                             animated:animated];
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    self.contentView.frame = self.bounds;
+    
+    self.scrollView.frame = [self.scrollView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 200)
+                                                                    offset:CGSizeMake(0, 10)
+                                                                   options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
 }
 
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSUInteger count = [self.delegate numberOfSrollPages:scrollView];
+    
+    if (scrollView.contentOffset.x < [self scrollPageSize].width)
+    {
+        [self scrollToPageIndex:count animated:NO];
+    }
+    else if (scrollView.contentOffset.x >= [self scrollPageSize].width * (count + 1))
+    {
+        [self scrollToPageIndex:1 animated:NO];
+    }
+}
+
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
 
 @end
