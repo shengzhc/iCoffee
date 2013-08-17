@@ -1,17 +1,51 @@
 iCoffee: (9.15 v1.0)
 
 FEATURES
-	. UIScrollView + PageControl --- SC 
-	. Page Slider  --- Ark
+	. UIScrollView + PageControl --- SC (DONE)
+	. Page Slider  --- Ark (DONE)
 	. Design View for Coffees
+	. Bottom Menu from Bottom up with finger swipping and potentially touch
+		--- Content: big icons with label text
+	. Bottom menu content:  Coffee Category, Coffee Make, Coffee Culture, (Find near shop), Settings, Favorites,
+	. Header bar: Be simple, white, left button with home, middle with icon/text to show position
+	. Recommending Content: One Scroll View with a content one page.
+
+Theme:
+1. Color: Milky + Transparent & Flat Design
+
+Process:
+1. Launching / Loading (Clean) White + Icon + Simple effect --- UI
+2. Show recommending items (news, coffees, shares...)
+
+Design:
+1. Recommending Page:
+	i. Header Bar: Be simple, color correspond to whole design, left home button, middle with icon/text to show current position --- Ark
+   ii. Content : Scroll View with page controller, one page with one item, items should be limited. Click item will transfer to detail.  --- SC
+  iii. Bottom menu bar: from bottom up with finger dragging (icon in middle) or touch (icon at two sides) --- SC
+   iv. Bottom menu bar content: a. Coffee Category (coffee bean category) b. Coffee Make (cooking ways) c. Coffee Culture (Timeline) --- SC
+   								d. Favorite e. Find near shop (Call Map API) f. Settings (nosiy sounds)
+    v. small animated widget: a. Sound ON/OFF --- Ark
+
+2. Coffee Bean
+	i. Header Bar : #...
+   ii. Content :  Table View like Umano with all kinds of coffee beans --- Ark (H)
+  iii, iv, v : #...
+
+3. Coffee Bean Detail Page
+	i. Header Bar : #...
+   ii. Content : Based on Content, right now just display color, maybe add like, share to small widget button --- Ark (H)
+  iii, iv, v : #...
 
 
 MileStone:
-
-1. Aug. 16 21:00 (Feature 1 & 2)
-
+1. Aug. 16 21:00 (Feature 1 & 2) (CHECKED)
+2. Aug. 23 17:00 (Structure)
 
 BrainStorm:
+1. Launching: Coffee Color -> Mixed Color -> Milky Color
+2. Little Button animation to show different features
+3. Bottom menu bar (AMC)
+4. Coffee Culture using timeline
 
 
 Questions:
@@ -62,6 +96,22 @@ Aug. 15th
 
 
 Aug. 16th
-1. World map choosing (potential). --- SC
-2. Make gestures perfect. (In progess)--- ARK
-3. Code review.(In progress) --- ARK 
+1. Make gestures perfect. (In progess)--- ARK
+2. Code review.(In progress) --- ARK 
+
+Aug. 17th - Aug. 23 (Backend)
+1. Set up backend architecture
+2. Coffee bean object
+{
+	"name":string
+	"origin":string
+	"rating":decimal
+	"description":
+	"image":
+	"id":
+}
+return [{}, {}, {}]
+3. Coffee Make object
+{
+	TBD
+}
