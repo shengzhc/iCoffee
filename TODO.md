@@ -46,7 +46,7 @@ BrainStorm:
 2. Little Button animation to show different features
 3. Bottom menu bar (AMC)
 4. Coffee Culture using timeline
-
+5. Under Welcome Screen, show new, we can add a dynamic posting to show the recently message that is posted by the people ( NEED API Support)
 
 Questions:
 Half of the first cell of a tableview is blocked by the navigation bar (resolved). --- ARK
