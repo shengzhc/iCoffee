@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E74D6B0117C0B15F00B13B60 /* BalloonOpen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E76C68CD17C04F5F002BBF3C /* BalloonOpen.ttf */; };
-		E74D6B0317C0B21F00B13B60 /* racpc3d.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E74D6B0217C0B21F00B13B60 /* racpc3d.ttf */; };
-		E74D6B0517C0B22700B13B60 /* fearfactor3d.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E74D6B0417C0B22700B13B60 /* fearfactor3d.ttf */; };
 		E76C68AA17C0282C002BBF3C /* bottom_bar_arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E76C68A617C0282C002BBF3C /* bottom_bar_arrow_down@2x.png */; };
 		E76C68AB17C0282C002BBF3C /* bottom_bar_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = E76C68A717C0282C002BBF3C /* bottom_bar_arrow_down.png */; };
 		E76C68B917C03711002BBF3C /* bottom_bar_arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = E76C68B717C03711002BBF3C /* bottom_bar_arrow_up.png */; };
@@ -55,11 +53,10 @@
 		E7DAB3BF17AF25FF00D575B7 /* iCoffee-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7DAB3B817AF25FF00D575B7 /* iCoffee-Info.plist */; };
 		E7DAB3C017AF25FF00D575B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB3BA17AF25FF00D575B7 /* main.m */; };
 		E7DAB3C917AF28AA00D575B7 /* libiCoffeeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB3C817AF28AA00D575B7 /* libiCoffeeLibrary.a */; };
+		E7E4779217C132BE000C1FA1 /* FunRaiser.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E4779017C132BE000C1FA1 /* FunRaiser.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E74D6B0217C0B21F00B13B60 /* racpc3d.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = racpc3d.ttf; sourceTree = "<group>"; };
-		E74D6B0417C0B22700B13B60 /* fearfactor3d.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fearfactor3d.ttf; sourceTree = "<group>"; };
 		E76C68A617C0282C002BBF3C /* bottom_bar_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_bar_arrow_down@2x.png"; sourceTree = "<group>"; };
 		E76C68A717C0282C002BBF3C /* bottom_bar_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar_arrow_down.png; sourceTree = "<group>"; };
 		E76C68B717C03711002BBF3C /* bottom_bar_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar_arrow_up.png; sourceTree = "<group>"; };
@@ -131,6 +128,7 @@
 		E7DAB3B917AF25FF00D575B7 /* iCoffee-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iCoffee-Prefix.pch"; sourceTree = "<group>"; };
 		E7DAB3BA17AF25FF00D575B7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E7DAB3C817AF28AA00D575B7 /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiCoffeeLibrary.a; path = "/Users/shengzhc/Desktop/iCoffee/iCoffeeLibrary/build/Release-iphoneos/libiCoffeeLibrary.a"; sourceTree = "<absolute>"; };
+		E7E4779017C132BE000C1FA1 /* FunRaiser.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FunRaiser.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,8 +343,7 @@
 		E794F6FE17BFDC3B00F729A1 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				E74D6B0417C0B22700B13B60 /* fearfactor3d.ttf */,
-				E74D6B0217C0B21F00B13B60 /* racpc3d.ttf */,
+				E7E4779017C132BE000C1FA1 /* FunRaiser.ttf */,
 				E76C68CD17C04F5F002BBF3C /* BalloonOpen.ttf */,
 			);
 			path = Font;
@@ -506,8 +503,7 @@
 				E76C68CA17C04D3C002BBF3C /* menu_find.png in Resources */,
 				E76C68CB17C04D3C002BBF3C /* menu_culture.png in Resources */,
 				E76C68CC17C04D3C002BBF3C /* menu_brew.png in Resources */,
-				E74D6B0317C0B21F00B13B60 /* racpc3d.ttf in Resources */,
-				E74D6B0517C0B22700B13B60 /* fearfactor3d.ttf in Resources */,
+				E7E4779217C132BE000C1FA1 /* FunRaiser.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,9 +26,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>FunRaiser.ttf</string>
 		<string>BalloonOpen.ttf</string>
-		<string>fearfactor3d.ttf</string>
-		<string>racpc3d.ttf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

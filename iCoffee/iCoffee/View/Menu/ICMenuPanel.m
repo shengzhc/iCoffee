@@ -33,38 +33,38 @@
         self.beanButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
                                                      delegate:self
                                                     imageName:@"menu_bean"
-                                                         text:@"bean"];
+                                                         text:@"Bean"];
         [self.beanButton sizeToFit];
     
         self.brewButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
                                                      delegate:self
                                                     imageName:@"menu_brew"
-                                                         text:@"brew"];
+                                                         text:@"Brew"];
         [self.brewButton sizeToFit];
         
         self.cultureButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
                                                      delegate:self
                                                     imageName:@"menu_culture"
-                                                         text:@"culture"];
+                                                         text:@"Culture"];
         [self.cultureButton sizeToFit];
 
         
         self.favoriteButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
                                                         delegate:self
                                                        imageName:@"menu_favorite"
-                                                            text:@"favorite"];
+                                                            text:@"Favorite"];
         [self.favoriteButton sizeToFit];
         
         self.findButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
                                                         delegate:self
                                                        imageName:@"menu_find"
-                                                            text:@"find"];
+                                                            text:@"Find"];
         [self.findButton sizeToFit];
         
         self.settingButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
                                                         delegate:self
                                                        imageName:@"menu_setting"
-                                                            text:@"setting"];
+                                                            text:@"Setting"];
         [self.settingButton sizeToFit];
         
         
@@ -90,7 +90,7 @@
 {
     [super layoutSubviews];
     
-    CGFloat topping = 5;
+    CGFloat topping = 1;
     
     self.beanButton.frame = [self.beanButton alignedRectInSuperviewForSize:[self buttonSize]
                                                                     offset:CGSizeMake(10, topping)

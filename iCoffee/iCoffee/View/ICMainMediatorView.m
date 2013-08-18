@@ -72,7 +72,7 @@
         [UIView animateWithDuration:[self animationDuration]
                          animations:^
         {
-            self.bottomBarView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0];
+           //self.bottomBarView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0];
             self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarSize]
                                                                                   offset:CGSizeMake(0, 0)
                                                                                  options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
@@ -89,7 +89,7 @@
         [UIView animateWithDuration:[self animationDuration]
                          animations:^
          {
-             self.bottomBarView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
+             //self.bottomBarView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
              self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarExpandSize]
                                                                                    offset:CGSizeMake(0, 0)
                                                                                   options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
