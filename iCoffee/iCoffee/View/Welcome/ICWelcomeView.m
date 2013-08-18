@@ -34,7 +34,7 @@
         
         [self scrollViewLoadContent:self.scrollView];
         
-        [self.contentView addSubview:self.scrollView];
+        [self addSubview:self.scrollView];
     
         [self scrollToPageIndex:1 animated:NO];
     }
@@ -111,8 +111,6 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    self.contentView.frame = self.bounds;
     
     self.scrollView.frame = [self.scrollView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 200)
                                                                     offset:CGSizeMake(0, 10)

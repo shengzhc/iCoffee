@@ -1,5 +1,5 @@
 //
-//  ICUView.h
+//  ICMainMediatorVIew.h
 //  iCoffee
 //
 //  Created by Shengzhe Chen on 8/17/13.
@@ -8,10 +8,14 @@
 
 #import "ICView.h"
 
-@interface ICUView : ICView
+@class ICBottomBarView;
+
+@interface ICMainMediatorView : ICView
 
 @property (nonatomic, strong) ICView *headerBarView;
+@property (nonatomic, strong) ICBottomBarView *bottomBarView;
 @property (nonatomic, strong) ICView *contentView;
-@property (nonatomic, strong) ICView *bottomBarView;
+
+- (void)toggleBottomBarView;
 
 @end

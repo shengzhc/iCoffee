@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 iCoffee. All rights reserved.
 //
 
-#import "ICUView.h"
+#import "ICView.h"
 #import "ICScrollViewDatasource.h"
 
-@interface ICWelcomeView : ICUView < UIScrollViewDelegate >
+@interface ICWelcomeView : ICView < UIScrollViewDelegate >
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, weak) id < ICScrollViewDatasource > delegate;
