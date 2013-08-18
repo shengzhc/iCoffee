@@ -23,9 +23,11 @@
     
     if (self)
     {
+        self.backgroundColor = [UIColor whiteColor];
+        
         self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
         self.scrollView.pagingEnabled = YES;
-        self.scrollView.clipsToBounds = NO;
+        self.scrollView.clipsToBounds = YES;
         self.scrollView.bounces = NO;
         self.scrollView.showsHorizontalScrollIndicator = NO;
         self.scrollView.showsVerticalScrollIndicator = NO;

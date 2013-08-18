@@ -23,8 +23,11 @@
     
     if (self)
     {
+        self.backgroundColor = [UIColor blackColor];
+        
         self.contentView = [[ICView alloc] initWithFrame:CGRectZero
                                                 delegate:delegate];
+        self.contentView.backgroundColor = [UIColor blackColor];
         
         self.bottomBarView = [[ICBottomBarView alloc] initWithFrame:CGRectZero
                                                            delegate:self];
