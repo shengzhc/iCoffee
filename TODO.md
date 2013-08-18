@@ -108,7 +108,7 @@ Aug. 17th
 Aug. 18th
 1. Add Swipe behavior to Bottom menu bar, which can have, but not necessarily (RESOLVED) --- SC
 2. Figure out import ttf and change the font family (RESOLVED) --- SC
-3. Review code --- SC
+3. Review code (RESOLVED) ---  SC
 4. Add animation for bottom menu button transition
 
 Aug. 17th - Aug. 23 (Backend)
