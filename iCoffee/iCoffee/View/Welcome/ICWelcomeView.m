@@ -15,7 +15,6 @@
 
 @implementation ICWelcomeView
 
-
 - (id)initWithFrame:(CGRect)frame
            delegate:(id)delegate
 {
@@ -43,6 +42,30 @@
 }
 
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.scrollView.frame = [self.scrollView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 200)
+                                                                    offset:CGSizeMake(0, 10)
+                                                                   options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
+}
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark Configuration
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (CGSize)scrollPageSize
+{
+    return CGSizeMake(320, 200);
+}
+
+
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark Convenient
+///////////////////////////////////////////
+///////////////////////////////////////////
 - (void)scrollViewLoadContent:(UIScrollView *)scrollView
 {
     NSUInteger count = [self.delegate numberOfSrollPages:scrollView];
@@ -88,12 +111,6 @@
 }
 
 
-- (CGSize)scrollPageSize
-{
-    return CGSizeMake(320, 200);
-}
-
-
 - (void)scrollToPageIndex:(NSUInteger)pageIndex
                  animated:(BOOL)animated
 {
@@ -108,16 +125,12 @@
                              animated:animated];
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    self.scrollView.frame = [self.scrollView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 200)
-                                                                    offset:CGSizeMake(0, 10)
-                                                                   options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
-}
 
-
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark Touch
+///////////////////////////////////////////
+///////////////////////////////////////////
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     NSUInteger count = [self.delegate numberOfSrollPages:scrollView];
@@ -130,12 +143,6 @@
     {
         [self scrollToPageIndex:1 animated:NO];
     }
-}
-
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
-    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 @end

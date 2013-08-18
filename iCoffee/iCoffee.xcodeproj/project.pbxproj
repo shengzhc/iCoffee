@@ -50,7 +50,6 @@
 		E7DAB3BC17AF25FF00D575B7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E7DAB3B417AF25FF00D575B7 /* Default.png */; };
 		E7DAB3BD17AF25FF00D575B7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7DAB3B517AF25FF00D575B7 /* Default@2x.png */; };
 		E7DAB3BE17AF25FF00D575B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7DAB3B617AF25FF00D575B7 /* InfoPlist.strings */; };
-		E7DAB3BF17AF25FF00D575B7 /* iCoffee-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7DAB3B817AF25FF00D575B7 /* iCoffee-Info.plist */; };
 		E7DAB3C017AF25FF00D575B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB3BA17AF25FF00D575B7 /* main.m */; };
 		E7DAB3C917AF28AA00D575B7 /* libiCoffeeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB3C817AF28AA00D575B7 /* libiCoffeeLibrary.a */; };
 		E7E4779217C132BE000C1FA1 /* FunRaiser.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E4779017C132BE000C1FA1 /* FunRaiser.ttf */; };
@@ -489,7 +488,6 @@
 				E7DAB3BC17AF25FF00D575B7 /* Default.png in Resources */,
 				E7DAB3BD17AF25FF00D575B7 /* Default@2x.png in Resources */,
 				E7DAB3BE17AF25FF00D575B7 /* InfoPlist.strings in Resources */,
-				E7DAB3BF17AF25FF00D575B7 /* iCoffee-Info.plist in Resources */,
 				E794F70717BFE58900F729A1 /* welcomescroll_1.png in Resources */,
 				E794F70817BFE58900F729A1 /* welcomescroll_2.png in Resources */,
 				E794F70917BFE58900F729A1 /* welcomescroll_3.png in Resources */,

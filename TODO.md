@@ -106,9 +106,10 @@ Aug. 17th
 2. Bottom menu bar: from bottom up with finger dragging (icon in middle) or touch (icon at two sides) (RESOLVED) --- SC
 
 Aug. 18th
-1. Add Swipe behavior to Bottom menu bar, which can have, but not necessarily --- SC
-2. Figure out import ttf and change the font family --- SC
+1. Add Swipe behavior to Bottom menu bar, which can have, but not necessarily (RESOLVED) --- SC
+2. Figure out import ttf and change the font family (RESOLVED) --- SC
 3. Review code --- SC
+4. Add animation for bottom menu button transition
 
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture

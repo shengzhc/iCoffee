@@ -16,6 +16,7 @@
 
 @end
 
+
 @implementation ICMenuButton
 
 - (id)initWithFrame:(CGRect)frame
@@ -66,18 +67,33 @@
                                                                    options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
 }
 
-
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark Configuration
+///////////////////////////////////////////
+///////////////////////////////////////////
 - (UIColor *)hightlightColor
 {
     return [[UIColor blackColor] colorWithAlphaComponent:.2];
 }
 
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark Convenient
+///////////////////////////////////////////
+///////////////////////////////////////////
 - (void)setPressedState:(BOOL)pressed
 {
     self.buttonImageView.highlighted = pressed;
     self.titleLabel.highlighted = pressed;
 }
 
+
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark Touch 
+///////////////////////////////////////////
+///////////////////////////////////////////
 - (void)menuButtonClicked:(id)sender
 {
     if ([self.delegate respondsToSelector:@selector(menuButtonClicked:)])
@@ -86,6 +102,7 @@
                             withObject:self];
     }
 }
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
