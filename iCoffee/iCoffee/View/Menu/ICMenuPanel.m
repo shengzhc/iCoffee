@@ -74,6 +74,8 @@
         [self addSubview:self.favoriteButton];
         [self addSubview:self.findButton];
         [self addSubview:self.settingButton];
+        
+        [self addShadowWithColor:[UIColor blackColor]];
     }
     
     return self;
@@ -117,27 +119,33 @@
 {
     if (sender == self.beanButton)
     {
-        NSLog(@"Bean");
+        [self.delegate attemptPerformSelector:@selector(beanButtonClicked:)
+                                   withObject:sender];
     }
     else if (sender == self.brewButton)
     {
-        NSLog(@"Brew");
+        [self.delegate attemptPerformSelector:@selector(brewButtonClicked:)
+                                   withObject:sender];
     }
     else if (sender == self.cultureButton)
     {
-        NSLog(@"Culture");
+        [self.delegate attemptPerformSelector:@selector(cultureButtonClicked:)
+                                   withObject:sender];
     }
     else if (sender == self.favoriteButton)
     {
-        NSLog(@"Favorite");
+        [self.delegate attemptPerformSelector:@selector(favoriteButtonClicked:)
+                                   withObject:sender];
     }
     else if (sender == self.findButton)
     {
-        NSLog(@"Find");
+        [self.delegate attemptPerformSelector:@selector(findButtonClicked:)
+                                   withObject:sender];
     }
     else if (sender == self.settingButton)
     {
-        NSLog(@"Setting");
+        [self.delegate attemptPerformSelector:@selector(settingButtonClicked:)
+                                   withObject:sender];
     }
 }
 

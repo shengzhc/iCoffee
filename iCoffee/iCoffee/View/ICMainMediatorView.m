@@ -68,10 +68,8 @@
     
     if (isOpen)
     {
-        [self.bottomBarView.arrowButton setBackgroundImage:[UIImage imageNamed:@"bottom_bar_arrow_up"]
-                          forState:UIControlStateNormal];
         
-        [UIView animateWithDuration:.5
+        [UIView animateWithDuration:[self animationDuration]
                          animations:^
         {
             self.bottomBarView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0];
@@ -81,27 +79,33 @@
         }
                          completion:^(BOOL finished)
         {
+            [self.bottomBarView.arrowButton setBackgroundImage:[UIImage imageNamed:@"bottom_bar_arrow_up"]
+                                                      forState:UIControlStateNormal];
         }];
     }
     else
     {
-        [self.bottomBarView.arrowButton setBackgroundImage:[UIImage imageNamed:@"bottom_bar_arrow_down"]
-                                                  forState:UIControlStateNormal];
         
-        [UIView animateWithDuration:.5
+        [UIView animateWithDuration:[self animationDuration]
                          animations:^
          {
              self.bottomBarView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
              self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarExpandSize]
                                                                                    offset:CGSizeMake(0, 0)
                                                                                   options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
-
          }
                          completion:^(BOOL finished)
          {
-             
+             [self.bottomBarView.arrowButton setBackgroundImage:[UIImage imageNamed:@"bottom_bar_arrow_down"]
+                                                       forState:UIControlStateNormal];
          }];
     }
+}
+
+
+- (CGFloat)animationDuration
+{
+    return 0.3;
 }
 
 @end

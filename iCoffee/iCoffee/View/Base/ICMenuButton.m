@@ -110,7 +110,11 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self setPressedState:NO];
-    [self menuButtonClicked:self];
+    UITouch *touch = [touches anyObject];
+    if (touch.view == self.titleLabel || touch.view == self.buttonImageView)
+    {
+        [self menuButtonClicked:self];
+    }
 }
 
 @end
