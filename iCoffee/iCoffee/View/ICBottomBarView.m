@@ -1,0 +1,67 @@
+//
+//  ICBottomBarView.m
+//  iCoffee
+//
+//  Created by Shengzhe Chen on 8/17/13.
+//  Copyright (c) 2013 iCoffee. All rights reserved.
+//
+
+#import "ICBottomBarView.h"
+#import "ICMenuPanel.h"
+
+@interface ICBottomBarView ()
+
+@property (nonatomic, strong) UIImageView *backgroundImageView;
+@property (nonatomic, strong) ICMenuPanel *menuPanelView;
+
+@end
+
+@implementation ICBottomBarView
+
+- (id)initWithFrame:(CGRect)frame
+           delegate:(id)delegate
+{
+    self = [super initWithFrame:frame
+                       delegate:delegate];
+
+    if (self)
+    {
+        self.backgroundImageView = [[UIImageView alloc] init];
+        
+        self.arrowButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.arrowButton setBackgroundImage:[UIImage imageNamed:@"bottom_bar_arrow_up"]
+                                    forState:UIControlStateNormal];
+        [self.arrowButton sizeToFit];
+        [self.arrowButton addTarget:delegate
+                             action:@selector(bottomBarButtonClicked:)
+                   forControlEvents:UIControlEventTouchUpInside];
+        
+        self.menuPanelView = [[ICMenuPanel alloc] initWithFrame:CGRectZero
+                                                       delegate:delegate];
+        
+        [self addSubview:self.backgroundImageView];
+        [self addSubview:self.arrowButton];
+        [self addSubview:self.menuPanelView];
+    }
+    
+    return self;
+}
+
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.backgroundImageView.frame = [self.backgroundImageView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 30)
+                                                                                      offset:CGSizeMake(0, 0)
+                                                                                     options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
+    
+    self.arrowButton.frame = [self.arrowButton alignedRectInSuperviewForSize:self.arrowButton.bounds.size
+                                                                      offset:CGSizeMake(0, 5)
+                                                                     options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
+    self.menuPanelView.frame = [self.menuPanelView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 200)
+                                                                          offset:CGSizeMake(0, 30)
+                                                                         options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
+}
+
+@end

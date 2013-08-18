@@ -7,11 +7,15 @@
 //
 
 #import "ICMainMediator.h"
-
 #import "ICWelcomeViewController.h"
+
+#import "ICMainMediatorView.h"
 
 @interface ICMainMediator ()
 
+@property (nonatomic, strong) ICMainMediatorView *view;
+
+@property (nonatomic, strong) ICViewController *currentViewController;
 @property (nonatomic, strong) ICWelcomeViewController *welcomeViewController;
 
 @end
@@ -31,11 +35,16 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated
+- (Class)viewClass
 {
-    [super viewWillAppear:animated];
-    [self.navigationController pushViewController:self.welcomeViewController
-                                         animated:NO];
+    return [ICMainMediatorView class];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self showViewController:self.welcomeViewController];
 }
 
 
@@ -48,5 +57,22 @@
     
     return _welcomeViewController;
 }
+
+
+- (void)showViewController:(ICViewController *)viewController
+{
+    [self.currentViewController.view removeFromSuperview];
+    self.currentViewController = viewController;
+
+    viewController.view.frame = self.view.contentView.bounds;
+    [self.view.contentView addSubview:viewController.view];
+}
+
+
+- (void)bottomBarButtonClicked:(id)sender
+{
+    [self.view toggleBottomBarView];
+}
+
 
 @end
