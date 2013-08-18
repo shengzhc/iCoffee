@@ -103,8 +103,12 @@ Aug. 16th
 Aug. 17th
 1. Content : Scroll View with page controller, one page with one item, items should be limited, 
 	except (Click item will transfer to detail) (RESOLVED) --- SC
-2. Bottom menu bar: from bottom up with finger dragging (icon in middle) or touch (icon at two sides) --- SC
+2. Bottom menu bar: from bottom up with finger dragging (icon in middle) or touch (icon at two sides) (RESOLVED) --- SC
 
+Aug. 18th
+1. Add Swipe behavior to Bottom menu bar, which can have, but not necessarily --- SC
+2. Figure out import ttf and change the font family --- SC
+3. Review code --- SC
 
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
