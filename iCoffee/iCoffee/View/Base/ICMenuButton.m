@@ -40,8 +40,8 @@
         self.titleLabel = [UILabel labelWithFrame:CGRectZero
                                              text:text
                                         alignment:NSTextAlignmentCenter
-                                                 font:[UIFont fontWithSize:12]
-                                            textColor:[UIColor whiteColor]];
+                                                 font:[UIFont fontWithName:@"BalloonOpen" size:16]
+                                            textColor:[UIColor grayColor]];
         [self.titleLabel setHighlightedTextColor:[self hightlightColor]];
         
         [self.titleLabel sizeToFit];

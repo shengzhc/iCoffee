@@ -374,7 +374,7 @@
 		E7DAB36A17AF217600D575B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = iCoffee;
 			};
 			buildConfigurationList = E7DAB36D17AF217600D575B7 /* Build configuration list for PBXProject "iCoffeeLibrary" */;

@@ -8,6 +8,7 @@
 
 #import "ICBottomBarView.h"
 #import "ICMenuPanel.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ICBottomBarView ()
 
