@@ -27,7 +27,7 @@
                                                 delegate:delegate];
         
         self.bottomBarView = [[ICBottomBarView alloc] initWithFrame:CGRectZero
-                                                           delegate:delegate];
+                                                           delegate:self];
 
         [self addSubview:self.contentView];
         [self addSubview:self.bottomBarView];
@@ -72,7 +72,6 @@
         [UIView animateWithDuration:[self animationDuration]
                          animations:^
         {
-           //self.bottomBarView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0];
             self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarSize]
                                                                                   offset:CGSizeMake(0, 0)
                                                                                  options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
@@ -89,7 +88,6 @@
         [UIView animateWithDuration:[self animationDuration]
                          animations:^
          {
-             //self.bottomBarView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
              self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarExpandSize]
                                                                                    offset:CGSizeMake(0, 0)
                                                                                   options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
@@ -107,5 +105,97 @@
 {
     return 0.3;
 }
+
+
+- (void)bottomBarButtonClicked:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(bottomBarButtonClicked:)])
+    {
+        [self.delegate performSelector:@selector(bottomBarButtonClicked:)
+                            withObject:sender];
+    }
+}
+
+
+- (void)beanButtonClicked:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(beanButtonClicked:)])
+    {
+        [self.delegate performSelector:@selector(beanButtonClicked:)
+                            withObject:sender];
+    }
+}
+
+
+- (void)brewButtonClicked:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(brewButtonClicked:)])
+    {
+        [self.delegate performSelector:@selector(brewButtonClicked:)
+                            withObject:sender];
+    }}
+
+
+- (void)cultureButtonClicked:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(cultureButtonClicked:)])
+    {
+        [self.delegate performSelector:@selector(cultureButtonClicked:)
+                            withObject:sender];
+    }
+}
+
+
+- (void)favoriteButtonClicked:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(favoriteButtonClicked:)])
+    {
+        [self.delegate performSelector:@selector(favoriteButtonClicked:)
+                            withObject:sender];
+    }
+}
+
+
+- (void)findButtonClicked:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(findButtonClicked:)])
+    {
+        [self.delegate performSelector:@selector(findButtonClicked:)
+                            withObject:sender];
+    }
+}
+
+
+- (void)settingButtonClicked:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(settingButtonClicked:)])
+    {
+        [self.delegate performSelector:@selector(settingButtonClicked:)
+                            withObject:sender];
+    }
+}
+
+
+- (void)swipeUpDidEnd:(UISwipeGestureRecognizer *)swipeGesetureRecognizer
+{
+    BOOL isOpen = self.bottomBarView.frame.size.height > [self bottomBarSize].height+1;
+
+    if (!isOpen)
+    {
+        [self bottomBarButtonClicked:nil];
+    }
+}
+
+
+- (void)swipeDownDidEnd:(UISwipeGestureRecognizer *)swipeGestureRecognizer
+{
+    BOOL isOpen = self.bottomBarView.frame.size.height > [self bottomBarSize].height+1;
+    
+    if (isOpen)
+    {
+        [self bottomBarButtonClicked:nil];
+    }
+}
+
 
 @end

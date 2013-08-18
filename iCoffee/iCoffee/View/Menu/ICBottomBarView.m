@@ -33,6 +33,7 @@
                                                alpha:1.0];
         [self addShadowWithColor:[UIColor blackColor] opacity:0.2 radius:0.8 offset:CGSizeMake(0, -2)];
         self.backgroundImageView = [[UIImageView alloc] init];
+        self.backgroundImageView.userInteractionEnabled = YES;
         
         self.arrowButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.arrowButton setBackgroundImage:[UIImage imageNamed:@"bottom_bar_arrow_up"]
@@ -44,6 +45,16 @@
         
         self.menuPanelView = [[ICMenuPanel alloc] initWithFrame:CGRectZero
                                                        delegate:delegate];
+        
+        UISwipeGestureRecognizer *swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:delegate
+                                                                                                       action:@selector(swipeUpDidEnd:)];
+        swipeUpGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+        [self addGestureRecognizer:swipeUpGestureRecognizer];
+        
+        UISwipeGestureRecognizer *swipeDownGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:delegate
+                                                                                                         action:@selector(swipeDownDidEnd:)];
+        swipeDownGestureRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+        [self addGestureRecognizer:swipeDownGestureRecognizer];
         
         [self addSubview:self.backgroundImageView];
         [self addSubview:self.arrowButton];
@@ -69,5 +80,8 @@
                                                                           offset:CGSizeMake(0, 30)
                                                                          options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
 }
+
+
+
 
 @end

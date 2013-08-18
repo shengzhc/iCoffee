@@ -91,6 +91,7 @@
     [super layoutSubviews];
     
     CGFloat topping = 1;
+    CGFloat verticalPadding = 10;
     
     self.beanButton.frame = [self.beanButton alignedRectInSuperviewForSize:[self buttonSize]
                                                                     offset:CGSizeMake(10, topping)
@@ -102,13 +103,13 @@
                                                                     offset:CGSizeMake(self.brewButton.horizontalEnding, topping)
                                                                    options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
     self.favoriteButton.frame = [self.cultureButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                          offset:CGSizeMake(10, self.beanButton.verticalEnding + topping)
+                                                                          offset:CGSizeMake(10, self.beanButton.verticalEnding + verticalPadding)
                                                                          options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
     self.findButton.frame = [self.cultureButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                          offset:CGSizeMake(self.favoriteButton.horizontalEnding, self.brewButton.verticalEnding + topping)
+                                                                          offset:CGSizeMake(self.favoriteButton.horizontalEnding, self.brewButton.verticalEnding + verticalPadding)
                                                                          options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
     self.settingButton.frame = [self.cultureButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                          offset:CGSizeMake(self.findButton.horizontalEnding, self.cultureButton.verticalEnding + topping)
+                                                                          offset:CGSizeMake(self.findButton.horizontalEnding, self.cultureButton.verticalEnding + verticalPadding)
                                                                          options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
 
     
