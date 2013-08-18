@@ -109,7 +109,7 @@ Aug. 18th
 1. Add Swipe behavior to Bottom menu bar, which can have, but not necessarily (RESOLVED) --- SC
 2. Figure out import ttf and change the font family (RESOLVED) --- SC
 3. Review code (RESOLVED) ---  SC
-4. Add animation for bottom menu button transition
+4. Add animation for bottom menu button transition (RESOLVED) --- SC 
 
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
