@@ -24,7 +24,7 @@
     {
         [self setupScrollPageDataSource];
     }
-    
+
     return self;
 }
 
@@ -34,12 +34,6 @@
     return [ICWelcomeView class];
 }
 
-
-
-- (NSString *)headerBarTitle
-{
-    return @"iCoffee";
-}
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark Configuration
@@ -54,6 +48,12 @@
                             ];
     
     self.scrollPageDatasource = [datasource mutableCopy];
+}
+
+
+- (NSString *)headerBarTitle
+{
+    return @"iCoffee";
 }
 
 

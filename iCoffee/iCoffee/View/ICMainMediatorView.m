@@ -58,7 +58,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.contentView.frame = [self.contentView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height - [self headerBarSize].height)
+    self.contentView.frame = [self.contentView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height - [self headerBarSize].height - [self bottomBarSize].height)
                                                                       offset:CGSizeMake(0, self.headerBarView.verticalEnding)
                                                                      options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
 }
@@ -71,7 +71,7 @@
 ///////////////////////////////////////////
 - (CGSize)bottomBarSize
 {
-    return CGSizeMake(self.bounds.size.width, 30);
+    return CGSizeMake(self.bounds.size.width, 32);
 }
 
 
@@ -83,7 +83,7 @@
 
 - (CGSize)headerBarSize
 {
-    return CGSizeMake(self.bounds.size.width, 30);
+    return CGSizeMake(self.bounds.size.width, 32);
 }
 
 

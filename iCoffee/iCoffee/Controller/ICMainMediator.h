@@ -7,7 +7,8 @@
 //
 
 #import "ICViewController.h"
+#import <iAd/iAd.h>
 
-@interface ICMainMediator : ICViewController
+@interface ICMainMediator : ICViewController < ADBannerViewDelegate >
 
 @end

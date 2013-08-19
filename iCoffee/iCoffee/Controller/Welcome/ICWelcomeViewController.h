@@ -7,6 +7,7 @@
 //
 
 #import "ICViewController.h"
+#import <iAd/iAd.h>
 
 #import "ICWelcomeView.h"
 #import "ICScrollViewDatasource.h"

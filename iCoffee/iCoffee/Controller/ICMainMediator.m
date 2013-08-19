@@ -22,6 +22,7 @@
 @interface ICMainMediator ()
 
 @property (nonatomic, strong) ICMainMediatorView *view;
+@property (nonatomic, strong) ADBannerView *banner;
 
 @property (nonatomic, strong) ICViewController *currentViewController;
 
@@ -43,7 +44,15 @@
     
     if (self)
     {
-        
+        if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)])
+        {
+            self.banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+        }
+        else
+        {
+            self.banner = [[ADBannerView alloc] init];
+        }
+        self.banner.delegate = delegate;
     }
     
     return self;
@@ -156,6 +165,12 @@
         return;
     }
     
+    if ([self.currentViewController isKindOfClass:[ICWelcomeViewController class]])
+    {
+        self.banner.delegate = nil;
+        [self.banner removeFromSuperview];
+    }
+    
     NSString *headerBarTitle = @"";
     if ([viewController respondsToSelector:@selector(headerBarTitle)])
     {
@@ -184,9 +199,66 @@
         self.currentViewController.view.alpha = 1.0;
         [self.currentViewController.view removeFromSuperview];
         self.currentViewController = viewController;
+        
+        if ([viewController isKindOfClass:[ICWelcomeViewController class]])
+        {
+            self.banner.delegate = self;
+            [self.view insertSubview:self.banner
+                        aboveSubview:self.view.contentView];
+            [self layoutBannerView:self.banner];
+        }
     }];
 }
 
+
+- (void)layoutBannerView:(ADBannerView *)banner
+{
+    CGSize size = banner.bounds.size;
+    
+    if (banner.bannerLoaded)
+    {
+        banner.frame = [banner alignedRectInSuperviewForSize:size
+                                                      offset:CGSizeMake(0, 32)
+                                                     options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
+    }
+    else
+    {
+        banner.frame = [banner alignedRectInSuperviewForSize:size
+                                                      offset:CGSizeMake(0, 32)
+                                                     options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
+    }
+
+}
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark ADBannerViewDelegate
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    [self layoutBannerView:banner];
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
+
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    [self layoutBannerView:banner];
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
+
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    return YES;
+}
+
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
 
 ///////////////////////////////////////////
 ///////////////////////////////////////////
