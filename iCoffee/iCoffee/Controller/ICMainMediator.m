@@ -9,7 +9,7 @@
 #import "ICMainMediator.h"
 
 #import "ICWelcomeViewController.h"
-#import "ICBeanViewController.h"
+#import "ICBeanTableViewController.h"
 #import "ICBrewViewController.h"
 #import "ICCultureViewController.h"
 #import "ICFavoriteViewController.h"
@@ -27,7 +27,7 @@
 @property (nonatomic, strong) ICViewController *currentViewController;
 
 @property (nonatomic, strong) ICWelcomeViewController *welcomeViewController;
-@property (nonatomic, strong) ICBeanViewController *beanViewController;
+@property (nonatomic, strong) ICBeanTableViewController *beanTableViewController;
 @property (nonatomic, strong) ICBrewViewController *brewViewController;
 @property (nonatomic, strong) ICCultureViewController *cultureViewController;
 @property (nonatomic, strong) ICFavoriteViewController *favoriteViewController;
@@ -87,14 +87,14 @@
 }
 
 
-- (ICBeanViewController *)beanViewController
+- (ICBeanTableViewController *)beanTableViewController
 {
-    if (!_beanViewController)
+    if (!_beanTableViewController)
     {
-        _beanViewController = [[ICBeanViewController alloc] initWithDelegate:self];
+        _beanTableViewController = [[ICBeanTableViewController alloc] initWithDelegate:self];
     }
     
-    return _beanViewController;
+    return _beanTableViewController;
 }
 
 
@@ -280,7 +280,7 @@
 - (void)beanButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
-    [self showViewController:self.beanViewController];
+    [self showViewController:self.beanTableViewController];
 }
 
 

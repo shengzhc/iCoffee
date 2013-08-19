@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07E855E917C29141000CD833 /* ICBeanTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855E817C29141000CD833 /* ICBeanTableView.m */; };
 		E74D6B0117C0B15F00B13B60 /* BalloonOpen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E76C68CD17C04F5F002BBF3C /* BalloonOpen.ttf */; };
 		E76C68AA17C0282C002BBF3C /* bottom_bar_arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E76C68A617C0282C002BBF3C /* bottom_bar_arrow_down@2x.png */; };
 		E76C68AB17C0282C002BBF3C /* bottom_bar_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = E76C68A717C0282C002BBF3C /* bottom_bar_arrow_down.png */; };
@@ -33,7 +34,7 @@
 		E76C690F17C0A964002BBF3C /* ICFavoriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C690E17C0A964002BBF3C /* ICFavoriteView.m */; };
 		E76C691217C0A970002BBF3C /* ICFindView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691117C0A970002BBF3C /* ICFindView.m */; };
 		E76C691517C0A980002BBF3C /* ICSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691417C0A980002BBF3C /* ICSettingView.m */; };
-		E76C691817C0AB18002BBF3C /* ICBeanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691717C0AB18002BBF3C /* ICBeanViewController.m */; };
+		E76C691817C0AB18002BBF3C /* ICBeanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691717C0AB18002BBF3C /* ICBeanTableViewController.m */; };
 		E76C691B17C0AB57002BBF3C /* ICBrewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691A17C0AB57002BBF3C /* ICBrewViewController.m */; };
 		E76C691E17C0AB6C002BBF3C /* ICCultureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691D17C0AB6C002BBF3C /* ICCultureViewController.m */; };
 		E76C692117C0AB7B002BBF3C /* ICFavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C692017C0AB7B002BBF3C /* ICFavoriteViewController.m */; };
@@ -60,6 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07E855E717C29141000CD833 /* ICBeanTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanTableView.h; sourceTree = "<group>"; };
+		07E855E817C29141000CD833 /* ICBeanTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanTableView.m; sourceTree = "<group>"; };
 		E76C68A617C0282C002BBF3C /* bottom_bar_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_bar_arrow_down@2x.png"; sourceTree = "<group>"; };
 		E76C68A717C0282C002BBF3C /* bottom_bar_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar_arrow_down.png; sourceTree = "<group>"; };
 		E76C68B717C03711002BBF3C /* bottom_bar_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar_arrow_up.png; sourceTree = "<group>"; };
@@ -102,8 +105,8 @@
 		E76C691117C0A970002BBF3C /* ICFindView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICFindView.m; sourceTree = "<group>"; };
 		E76C691317C0A980002BBF3C /* ICSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSettingView.h; sourceTree = "<group>"; };
 		E76C691417C0A980002BBF3C /* ICSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSettingView.m; sourceTree = "<group>"; };
-		E76C691617C0AB18002BBF3C /* ICBeanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanViewController.h; sourceTree = "<group>"; };
-		E76C691717C0AB18002BBF3C /* ICBeanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanViewController.m; sourceTree = "<group>"; };
+		E76C691617C0AB18002BBF3C /* ICBeanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanTableViewController.h; sourceTree = "<group>"; };
+		E76C691717C0AB18002BBF3C /* ICBeanTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanTableViewController.m; sourceTree = "<group>"; };
 		E76C691917C0AB57002BBF3C /* ICBrewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBrewViewController.h; sourceTree = "<group>"; };
 		E76C691A17C0AB57002BBF3C /* ICBrewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBrewViewController.m; sourceTree = "<group>"; };
 		E76C691C17C0AB6C002BBF3C /* ICCultureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCultureViewController.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 			children = (
 				E76C690417C0A916002BBF3C /* ICBeanView.h */,
 				E76C690517C0A916002BBF3C /* ICBeanView.m */,
+				07E855E717C29141000CD833 /* ICBeanTableView.h */,
+				07E855E817C29141000CD833 /* ICBeanTableView.m */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
@@ -246,8 +251,8 @@
 		E76C68F717C0A8DF002BBF3C /* Bean */ = {
 			isa = PBXGroup;
 			children = (
-				E76C691617C0AB18002BBF3C /* ICBeanViewController.h */,
-				E76C691717C0AB18002BBF3C /* ICBeanViewController.m */,
+				E76C691617C0AB18002BBF3C /* ICBeanTableViewController.h */,
+				E76C691717C0AB18002BBF3C /* ICBeanTableViewController.m */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
@@ -309,13 +314,13 @@
 		E794F6EB17BFD3A000F729A1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E76C68FC17C0A8DF002BBF3C /* ICMainMediator.h */,
+				E76C68FD17C0A8DF002BBF3C /* ICMainMediator.m */,
 				E76C68F717C0A8DF002BBF3C /* Bean */,
 				E76C68F817C0A8DF002BBF3C /* Brew */,
 				E76C68F917C0A8DF002BBF3C /* Culture */,
 				E76C68FA17C0A8DF002BBF3C /* Favorite */,
 				E76C68FB17C0A8DF002BBF3C /* Find */,
-				E76C68FC17C0A8DF002BBF3C /* ICMainMediator.h */,
-				E76C68FD17C0A8DF002BBF3C /* ICMainMediator.m */,
 				E76C68FE17C0A8DF002BBF3C /* Setting */,
 				E76C68FF17C0A8DF002BBF3C /* Welcome */,
 			);
@@ -325,6 +330,8 @@
 		E794F6EC17BFD3A000F729A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E76C68E517C0A8BF002BBF3C /* ICMainMediatorView.h */,
+				E76C68E617C0A8BF002BBF3C /* ICMainMediatorView.m */,
 				E7A2612A17C1A25800983DC4 /* Header */,
 				E76C68D817C0A8BF002BBF3C /* Base */,
 				E76C68E017C0A8BF002BBF3C /* Bean */,
@@ -332,8 +339,6 @@
 				E76C68E217C0A8BF002BBF3C /* Culture */,
 				E76C68E317C0A8BF002BBF3C /* Favorite */,
 				E76C68E417C0A8BF002BBF3C /* Find */,
-				E76C68E517C0A8BF002BBF3C /* ICMainMediatorView.h */,
-				E76C68E617C0A8BF002BBF3C /* ICMainMediatorView.m */,
 				E76C68E717C0A8BF002BBF3C /* Menu */,
 				E76C68EC17C0A8BF002BBF3C /* Setting */,
 				E76C68ED17C0A8BF002BBF3C /* Welcome */,
@@ -554,13 +559,14 @@
 				E76C690F17C0A964002BBF3C /* ICFavoriteView.m in Sources */,
 				E76C691217C0A970002BBF3C /* ICFindView.m in Sources */,
 				E76C691517C0A980002BBF3C /* ICSettingView.m in Sources */,
-				E76C691817C0AB18002BBF3C /* ICBeanViewController.m in Sources */,
+				E76C691817C0AB18002BBF3C /* ICBeanTableViewController.m in Sources */,
 				E76C691B17C0AB57002BBF3C /* ICBrewViewController.m in Sources */,
 				E76C691E17C0AB6C002BBF3C /* ICCultureViewController.m in Sources */,
 				E76C692117C0AB7B002BBF3C /* ICFavoriteViewController.m in Sources */,
 				E76C692417C0AB89002BBF3C /* ICFindViewController.m in Sources */,
 				E76C692717C0AB97002BBF3C /* ICSettingViewController.m in Sources */,
 				E7A2612D17C1A26300983DC4 /* ICHeaderBarView.m in Sources */,
+				07E855E917C29141000CD833 /* ICBeanTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

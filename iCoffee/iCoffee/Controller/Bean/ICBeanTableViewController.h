@@ -1,5 +1,5 @@
 //
-//  ICBeanViewController.h
+//  ICBeanTableViewController.h
 //  iCoffee
 //
 //  Created by Shengzhe Chen on 8/18/13.
@@ -8,6 +8,6 @@
 
 #import "ICViewController.h"
 
-@interface ICBeanViewController : ICViewController
+@interface ICBeanTableViewController : ICViewController
 
 @end
