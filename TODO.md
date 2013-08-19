@@ -112,7 +112,7 @@ Aug. 18th
 4. Add animation for bottom menu button transition (RESOLVED) --- SC 
 
 Aug. 19th
-1. Do research on iAd --- SC
+1. Do research on iAd (RESOLVED) --- SC
 2. Research on Google Places API ( 2 days ) --- SC
 
 Aug. 17th - Aug. 23 (Backend)
