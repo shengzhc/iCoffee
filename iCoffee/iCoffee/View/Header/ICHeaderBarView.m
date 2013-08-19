@@ -78,7 +78,7 @@
 
 - (UIFont *)textFont
 {
-    return [UIFont fontWithSize:16];
+    return [UIFont fontWithName:@"FunRaiser" size:20];
 }
 
 

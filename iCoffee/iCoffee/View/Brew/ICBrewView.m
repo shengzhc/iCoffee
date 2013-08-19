@@ -18,7 +18,7 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor yellowColor];
+        self.backgroundColor = [UIColor redColor];
     }
     
     return self;
