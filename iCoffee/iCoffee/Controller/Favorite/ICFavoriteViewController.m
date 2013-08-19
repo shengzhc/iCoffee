@@ -33,4 +33,9 @@
     return [ICFavoriteView class];
 }
 
+
+- (NSString *)headerBarTitle
+{
+    return @"Favorite";
+}
 @end

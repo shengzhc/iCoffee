@@ -33,4 +33,9 @@
     return [ICBrewView class];
 }
 
+
+- (NSString *)headerBarTitle
+{
+    return @"Brew";
+}
 @end

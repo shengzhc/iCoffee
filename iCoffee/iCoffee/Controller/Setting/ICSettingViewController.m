@@ -33,4 +33,10 @@
     return [ICSettingView class];
 }
 
+
+
+- (NSString *)headerBarTitle
+{
+    return @"Setting";
+}
 @end

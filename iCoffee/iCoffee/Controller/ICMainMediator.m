@@ -17,6 +17,7 @@
 #import "ICSettingViewController.h"
 
 #import "ICMainMediatorView.h"
+#import "ICHeaderBarView.h"
 
 @interface ICMainMediator ()
 
@@ -155,6 +156,12 @@
         return;
     }
     
+    NSString *headerBarTitle = @"";
+    if ([viewController respondsToSelector:@selector(headerBarTitle)])
+    {
+        headerBarTitle = [viewController performSelector:@selector(headerBarTitle)];
+    }
+    
     CGRect destFrame = self.view.contentView.bounds;
     CGRect originFrame = CGRectMake(destFrame.size.width, 0, destFrame.size.width, destFrame.size.height);
 
@@ -162,6 +169,8 @@
     
     viewController.view.frame = originFrame;
     [self.view.contentView addSubview:viewController.view];
+    [self.view.headerBarView setTitleLabelText:headerBarTitle];
+    
     [UIView animateWithDuration:.5
                      animations:^
     {
@@ -187,6 +196,12 @@
 - (void)bottomBarButtonClicked:(id)sender
 {
     [self.view toggleBottomBarView];
+}
+
+
+- (void)homeButtonClicked:(id)sender
+{
+    [self showViewController:self.welcomeViewController];
 }
 
 
@@ -228,8 +243,7 @@
 - (void)settingButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
-    //[self showViewController:self.settingViewController];
-    [self showViewController:self.welcomeViewController];
+    [self showViewController:self.settingViewController];
 }
 
 @end

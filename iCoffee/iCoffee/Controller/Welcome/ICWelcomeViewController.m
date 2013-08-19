@@ -34,6 +34,12 @@
     return [ICWelcomeView class];
 }
 
+
+
+- (NSString *)headerBarTitle
+{
+    return @"iCoffee";
+}
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark Configuration

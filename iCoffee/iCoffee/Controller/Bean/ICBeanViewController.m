@@ -32,4 +32,10 @@
     return [ICBeanView class];
 }
 
+
+- (NSString *)headerBarTitle
+{
+    return @"Bean";
+}
+
 @end

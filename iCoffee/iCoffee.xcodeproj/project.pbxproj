@@ -42,6 +42,9 @@
 		E794F70717BFE58900F729A1 /* welcomescroll_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70417BFE58900F729A1 /* welcomescroll_1.png */; };
 		E794F70817BFE58900F729A1 /* welcomescroll_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70517BFE58900F729A1 /* welcomescroll_2.png */; };
 		E794F70917BFE58900F729A1 /* welcomescroll_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70617BFE58900F729A1 /* welcomescroll_3.png */; };
+		E7A2612D17C1A26300983DC4 /* ICHeaderBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A2612C17C1A26300983DC4 /* ICHeaderBarView.m */; };
+		E7A2613417C1AAA800983DC4 /* icon_home.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A2613217C1AAA800983DC4 /* icon_home.png */; };
+		E7A2613517C1AAA800983DC4 /* icon_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A2613317C1AAA800983DC4 /* icon_home@2x.png */; };
 		E7DAB34C17AF203B00D575B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34B17AF203B00D575B7 /* UIKit.framework */; };
 		E7DAB34E17AF203B00D575B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34D17AF203B00D575B7 /* Foundation.framework */; };
 		E7DAB35017AF203B00D575B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34F17AF203B00D575B7 /* CoreGraphics.framework */; };
@@ -113,6 +116,10 @@
 		E794F70417BFE58900F729A1 /* welcomescroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_1.png; sourceTree = "<group>"; };
 		E794F70517BFE58900F729A1 /* welcomescroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_2.png; sourceTree = "<group>"; };
 		E794F70617BFE58900F729A1 /* welcomescroll_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_3.png; sourceTree = "<group>"; };
+		E7A2612B17C1A26300983DC4 /* ICHeaderBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICHeaderBarView.h; sourceTree = "<group>"; };
+		E7A2612C17C1A26300983DC4 /* ICHeaderBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICHeaderBarView.m; sourceTree = "<group>"; };
+		E7A2613217C1AAA800983DC4 /* icon_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home.png; sourceTree = "<group>"; };
+		E7A2613317C1AAA800983DC4 /* icon_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_home@2x.png"; sourceTree = "<group>"; };
 		E7DAB34717AF203B00D575B7 /* iCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB34B17AF203B00D575B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7DAB34D17AF203B00D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -315,6 +322,7 @@
 		E794F6EC17BFD3A000F729A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7A2612A17C1A25800983DC4 /* Header */,
 				E76C68D817C0A8BF002BBF3C /* Base */,
 				E76C68E017C0A8BF002BBF3C /* Bean */,
 				E76C68E117C0A8BF002BBF3C /* Brew */,
@@ -351,6 +359,8 @@
 		E794F6FF17BFDC3B00F729A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E7A2613217C1AAA800983DC4 /* icon_home.png */,
+				E7A2613317C1AAA800983DC4 /* icon_home@2x.png */,
 				E76C68C117C04D3B002BBF3C /* menu_favorite.png */,
 				E76C68C217C04D3B002BBF3C /* menu_setting.png */,
 				E76C68C317C04D3B002BBF3C /* menu_bean.png */,
@@ -366,6 +376,15 @@
 				E794F70617BFE58900F729A1 /* welcomescroll_3.png */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		E7A2612A17C1A25800983DC4 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				E7A2612B17C1A26300983DC4 /* ICHeaderBarView.h */,
+				E7A2612C17C1A26300983DC4 /* ICHeaderBarView.m */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		E7DAB33C17AF203A00D575B7 = {
@@ -502,6 +521,8 @@
 				E76C68CB17C04D3C002BBF3C /* menu_culture.png in Resources */,
 				E76C68CC17C04D3C002BBF3C /* menu_brew.png in Resources */,
 				E7E4779217C132BE000C1FA1 /* FunRaiser.ttf in Resources */,
+				E7A2613417C1AAA800983DC4 /* icon_home.png in Resources */,
+				E7A2613517C1AAA800983DC4 /* icon_home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +556,7 @@
 				E76C692117C0AB7B002BBF3C /* ICFavoriteViewController.m in Sources */,
 				E76C692417C0AB89002BBF3C /* ICFindViewController.m in Sources */,
 				E76C692717C0AB97002BBF3C /* ICSettingViewController.m in Sources */,
+				E7A2612D17C1A26300983DC4 /* ICHeaderBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

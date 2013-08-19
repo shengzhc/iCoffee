@@ -33,4 +33,9 @@
     return [ICCultureView class];
 }
 
+
+- (NSString *)headerBarTitle
+{
+    return @"Culture";
+}
 @end

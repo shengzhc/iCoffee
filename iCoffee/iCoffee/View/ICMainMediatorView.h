@@ -9,10 +9,11 @@
 #import "ICView.h"
 
 @class ICBottomBarView;
+@class ICHeaderBarView;
 
 @interface ICMainMediatorView : ICView
 
-@property (nonatomic, strong) ICView *headerBarView;
+@property (nonatomic, strong) ICHeaderBarView *headerBarView;
 @property (nonatomic, strong) ICBottomBarView *bottomBarView;
 @property (nonatomic, strong) ICView *contentView;
 

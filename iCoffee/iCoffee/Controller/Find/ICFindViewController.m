@@ -33,4 +33,9 @@
     return [ICFindView class];
 }
 
+
+- (NSString *)headerBarTitle
+{
+    return @"Find";
+}
 @end

@@ -8,6 +8,7 @@
 
 #import "ICMainMediatorView.h"
 #import "ICBottomBarView.h"
+#import "ICHeaderBarView.h"
 
 @interface ICMainMediatorView ()
 
@@ -25,6 +26,11 @@
     {
         self.backgroundColor = [UIColor blackColor];
         
+        self.headerBarView = [[ICHeaderBarView alloc] initWithFrame:CGRectZero
+                                                           delegate:self
+                                                          imageName:@"icon_home"
+                                                               text:@""];
+        
         self.contentView = [[ICView alloc] initWithFrame:CGRectZero
                                                 delegate:delegate];
         self.contentView.backgroundColor = [UIColor blackColor];
@@ -33,7 +39,12 @@
                                                            delegate:self];
 
         [self addSubview:self.contentView];
+        [self addSubview:self.headerBarView];
         [self addSubview:self.bottomBarView];
+        
+        self.headerBarView.frame = [self.headerBarView alignedRectInSuperviewForSize:[self headerBarSize]
+                                                                              offset:CGSizeMake(0, 0)
+                                                                             options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
         
         self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarSize]
                                                                               offset:CGSizeMake(0, 0)
@@ -47,8 +58,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.contentView.frame = [self.contentView alignedRectInSuperviewForSize:self.bounds.size
-                                                                      offset:CGSizeMake(0, 0)
+    self.contentView.frame = [self.contentView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height - [self headerBarSize].height)
+                                                                      offset:CGSizeMake(0, self.headerBarView.verticalEnding)
                                                                      options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
 }
 
@@ -70,6 +81,10 @@
 }
 
 
+- (CGSize)headerBarSize
+{
+    return CGSizeMake(self.bounds.size.width, 30);
+}
 
 
 - (CGFloat)animationDuration
@@ -124,6 +139,16 @@
 #pragma mark Touch
 ///////////////////////////////////////////
 ///////////////////////////////////////////
+- (void)homeButtonClicked:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(homeButtonClicked:)])
+    {
+        [self.delegate performSelector:@selector(homeButtonClicked:)
+                            withObject:sender];
+    }
+}
+
+
 - (void)bottomBarButtonClicked:(id)sender
 {
     if ([self.delegate respondsToSelector:@selector(bottomBarButtonClicked:)])
