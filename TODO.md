@@ -51,6 +51,9 @@ BrainStorm:
 Questions:
 Half of the first cell of a tableview is blocked by the navigation bar (resolved). --- ARK
 
+Build code and git standards. 
+Communicat first before modifying others' codes. 
+
 
 
 Resources:
@@ -114,6 +117,8 @@ Aug. 18th
 Aug. 19th
 1. Do research on iAd (RESOLVED) --- SC
 2. Research on Google Places API ( 2 days ) --- SC
+3. Beans table view and Detail View. --- ARK
+
 
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
