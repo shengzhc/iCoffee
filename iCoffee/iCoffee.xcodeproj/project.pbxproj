@@ -226,10 +226,10 @@
 			children = (
 				E76C690417C0A916002BBF3C /* ICBeanView.h */,
 				E76C690517C0A916002BBF3C /* ICBeanView.m */,
-				07E855EA17C2B347000CD833 /* ICBeanDetailView.h */,
-				07E855EB17C2B347000CD833 /* ICBeanDetailView.m */,
 				07ADBEC917C315A30083B3AF /* ICBeanCell.h */,
 				07ADBECA17C315A30083B3AF /* ICBeanCell.m */,
+				07E855EA17C2B347000CD833 /* ICBeanDetailView.h */,
+				07E855EB17C2B347000CD833 /* ICBeanDetailView.m */,
 			);
 			path = Bean;
 			sourceTree = "<group>";

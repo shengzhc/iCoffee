@@ -18,18 +18,44 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor purpleColor];
+        self.backgroundColor = [UIColor whiteColor];
         
         _testLabel = [UILabel labelWithFrame:CGRectMake(0, 0, 150 ,44 ) text:@"Test View" alignment:NSTextAlignmentCenter];
         [self addSubview:_testLabel];
+        
+        UIPanGestureRecognizer *panGesturerRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
+        panGesturerRecognizer.delegate = self;
+        [self addGestureRecognizer:panGesturerRecognizer];
+        
+        [self addShadowWithColor:[UIColor blackColor]
+                         opacity:0.2
+                          radius:0.0f
+                          offset:CGSizeMake(-3, 0)];
+
     }
     
     return self;
 }
 
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+}
+
+
+-(void)panGestureHandler:(UIPanGestureRecognizer *)recognizer
+{
+    CGPoint translation = [recognizer translationInView:self];
+    
+    if ([recognizer state] == UIGestureRecognizerStateEnded)
+    {
+        [self.delegate moveDetailViewWithTranslation:translation.x withGestureState:true];
+    }
+    else
+    {
+        [self.delegate moveDetailViewWithTranslation:translation.x withGestureState:false];
+    }
 }
 
 @end

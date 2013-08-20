@@ -8,8 +8,18 @@
 
 #import "ICView.h"
 
-@interface ICBeanDetailView : ICView
+@protocol gestureProtocol <NSObject>
+
+-(void)moveDetailViewWithTranslation:(CGFloat)translationX withGestureState:(BOOL)state;
+
+@end
+
+
+@interface ICBeanDetailView : ICView<UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UILabel *testLabel;
+@property (nonatomic, assign) NSInteger row;
+@property (nonatomic, weak) id<gestureProtocol> delegate;
+
 
 @end

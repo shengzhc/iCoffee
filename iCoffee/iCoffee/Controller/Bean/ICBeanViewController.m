@@ -11,10 +11,12 @@
 
 #import "ICBeanView.h"
 #import "ICBeanCell.h"
+#import "ICBeanDetailView.h"
 
 @interface ICBeanViewController ()
 
 @property (nonatomic, strong) NSArray *beans;
+@property (nonatomic, strong) ICBeanDetailViewController *beanDetailViewController;
 
 @end
 
@@ -46,11 +48,22 @@
     
 }
 
+
+- (ICBeanDetailViewController *)beanDetailViewController
+{
+    if (!_beanDetailViewController)
+    {
+        _beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self];
+    }
+    
+    return _beanDetailViewController;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 #pragma mark TableViewDatasource & Delegate
 //////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -86,14 +99,35 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    ICBeanDetailViewController *detailViewController = [[ICBeanDetailViewController alloc]
-                                                        initWithDelegate:self];
+    
+    CGRect endFrame = self.view.frame;
+    CGRect startFrame = CGRectMake(endFrame.origin.x+endFrame.size.width, endFrame.origin.y, endFrame.size.width, endFrame.size.height);
+    
+    self.beanDetailViewController.view.frame = startFrame;
+    
+    [self.view addSubview:self.beanDetailViewController.view];
+    
+    [UIView animateWithDuration:.3f
+                     animations:^
+    {
+        self.beanDetailViewController.view.frame = endFrame;
+    }
+                     completion:^(BOOL finished)
+    {
+    }];
 }
 
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75.0;
+}
+
+
+- (void)resetView
+{
+    [_beanDetailViewController.view removeFromSuperview];
+    _beanDetailViewController = nil;
 }
 
 @end

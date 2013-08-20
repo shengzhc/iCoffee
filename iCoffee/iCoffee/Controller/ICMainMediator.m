@@ -203,9 +203,18 @@
     }
                     completion:^(BOOL finished)
     {
+        
+        
+        
         self.currentViewController.view.frame = destFrame;
         self.currentViewController.view.alpha = 1.0;
 
+        if([self.currentViewController respondsToSelector:@selector(resetView)])
+        {
+            [self.currentViewController performSelector:@selector(resetView)];
+        }
+        
+        
         [self.currentViewController.view removeFromSuperview];
         self.currentViewController = viewController;
         
