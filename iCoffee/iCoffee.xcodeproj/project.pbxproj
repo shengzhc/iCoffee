@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07E855E917C29141000CD833 /* ICBeanTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855E817C29141000CD833 /* ICBeanTableView.m */; };
+		07E855EC17C2B347000CD833 /* ICBeanDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EB17C2B347000CD833 /* ICBeanDetailView.m */; };
+		07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */; };
 		E74D6B0117C0B15F00B13B60 /* BalloonOpen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E76C68CD17C04F5F002BBF3C /* BalloonOpen.ttf */; };
 		E76C68AA17C0282C002BBF3C /* bottom_bar_arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E76C68A617C0282C002BBF3C /* bottom_bar_arrow_down@2x.png */; };
 		E76C68AB17C0282C002BBF3C /* bottom_bar_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = E76C68A717C0282C002BBF3C /* bottom_bar_arrow_down.png */; };
@@ -63,6 +65,10 @@
 /* Begin PBXFileReference section */
 		07E855E717C29141000CD833 /* ICBeanTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanTableView.h; sourceTree = "<group>"; };
 		07E855E817C29141000CD833 /* ICBeanTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanTableView.m; sourceTree = "<group>"; };
+		07E855EA17C2B347000CD833 /* ICBeanDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanDetailView.h; sourceTree = "<group>"; };
+		07E855EB17C2B347000CD833 /* ICBeanDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanDetailView.m; sourceTree = "<group>"; };
+		07E855ED17C2B365000CD833 /* ICBeanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanDetailViewController.h; sourceTree = "<group>"; };
+		07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanDetailViewController.m; sourceTree = "<group>"; };
 		E76C68A617C0282C002BBF3C /* bottom_bar_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_bar_arrow_down@2x.png"; sourceTree = "<group>"; };
 		E76C68A717C0282C002BBF3C /* bottom_bar_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar_arrow_down.png; sourceTree = "<group>"; };
 		E76C68B717C03711002BBF3C /* bottom_bar_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_bar_arrow_up.png; sourceTree = "<group>"; };
@@ -179,6 +185,8 @@
 				E76C690517C0A916002BBF3C /* ICBeanView.m */,
 				07E855E717C29141000CD833 /* ICBeanTableView.h */,
 				07E855E817C29141000CD833 /* ICBeanTableView.m */,
+				07E855EA17C2B347000CD833 /* ICBeanDetailView.h */,
+				07E855EB17C2B347000CD833 /* ICBeanDetailView.m */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
@@ -253,6 +261,8 @@
 			children = (
 				E76C691617C0AB18002BBF3C /* ICBeanTableViewController.h */,
 				E76C691717C0AB18002BBF3C /* ICBeanTableViewController.m */,
+				07E855ED17C2B365000CD833 /* ICBeanDetailViewController.h */,
+				07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
@@ -567,6 +577,8 @@
 				E76C692717C0AB97002BBF3C /* ICSettingViewController.m in Sources */,
 				E7A2612D17C1A26300983DC4 /* ICHeaderBarView.m in Sources */,
 				07E855E917C29141000CD833 /* ICBeanTableView.m in Sources */,
+				07E855EC17C2B347000CD833 /* ICBeanDetailView.m in Sources */,
+				07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

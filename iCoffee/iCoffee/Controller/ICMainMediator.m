@@ -15,11 +15,12 @@
 #import "ICFavoriteViewController.h"
 #import "ICFindViewController.h"
 #import "ICSettingViewController.h"
+#import "ICBeanDetailViewController.h"
 
 #import "ICMainMediatorView.h"
 #import "ICHeaderBarView.h"
 
-@interface ICMainMediator ()
+@interface ICMainMediator () <selectRowProtocol>
 
 @property (nonatomic, strong) ICMainMediatorView *view;
 @property (nonatomic, strong) ADBannerView *banner;
@@ -33,6 +34,7 @@
 @property (nonatomic, strong) ICFavoriteViewController *favoriteViewController;
 @property (nonatomic, strong) ICFindViewController *findViewController;
 @property (nonatomic, strong) ICSettingViewController *settingViewController;
+@property (nonatomic, strong) ICBeanDetailViewController *beanDetailViewController;
 
 @end
 
@@ -150,6 +152,15 @@
     }
     
     return _settingViewController;
+}
+
+-(ICBeanDetailViewController *)beanDetailViewController
+{
+    if (_beanDetailViewController) {
+        _beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self];
+    }
+    
+    return _beanDetailViewController;
 }
 
 
@@ -316,6 +327,13 @@
 {
     [self bottomBarButtonClicked:nil];
     [self showViewController:self.settingViewController];
+}
+
+#pragma tableSelected
+-(void)tableSelectedAtRow:(NSInteger)row
+{
+    NSLog(@"Main Test!");
+    [self showViewController:self.beanDetailViewController];
 }
 
 @end

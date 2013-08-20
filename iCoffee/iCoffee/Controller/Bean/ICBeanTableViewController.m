@@ -45,7 +45,8 @@
     if(self.beanTableView==nil){
         self.beanTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen screenWidth], [UIScreen screenHeigth]-44) style:UITableViewStylePlain];
         self.beanTableView.dataSource = self;
-        self.delegate = self;
+        self.beanTableView.delegate = self;
+        
         [self.view addSubview:self.beanTableView];
     }
 }
@@ -73,6 +74,15 @@
     
     cell.textLabel.text = @"Test";
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger number = indexPath.row;
+    NSLog(@"%d number in row.",number);
+    
+    [self.delegate tableSelectedAtRow:number];
+    
 }
 
 @end

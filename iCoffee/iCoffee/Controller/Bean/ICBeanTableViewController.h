@@ -8,6 +8,15 @@
 
 #import "ICViewController.h"
 
+@protocol selectRowProtocol <NSObject>
+
+-(void)tableSelectedAtRow:(NSInteger)row;
+
+@end
+
+
 @interface ICBeanTableViewController : ICViewController
+
+@property (nonatomic, assign) id<selectRowProtocol> delegate;
 
 @end
