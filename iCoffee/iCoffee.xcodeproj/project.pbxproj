@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ADBECA17C315A30083B3AF /* ICBeanCell.m */; };
-		07E855E917C29141000CD833 /* ICBeanTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855E817C29141000CD833 /* ICBeanTableView.m */; };
 		07E855EC17C2B347000CD833 /* ICBeanDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EB17C2B347000CD833 /* ICBeanDetailView.m */; };
 		07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */; };
 		E74D6B0117C0B15F00B13B60 /* BalloonOpen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E76C68CD17C04F5F002BBF3C /* BalloonOpen.ttf */; };
@@ -37,12 +36,13 @@
 		E76C690F17C0A964002BBF3C /* ICFavoriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C690E17C0A964002BBF3C /* ICFavoriteView.m */; };
 		E76C691217C0A970002BBF3C /* ICFindView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691117C0A970002BBF3C /* ICFindView.m */; };
 		E76C691517C0A980002BBF3C /* ICSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691417C0A980002BBF3C /* ICSettingView.m */; };
-		E76C691817C0AB18002BBF3C /* ICBeanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691717C0AB18002BBF3C /* ICBeanTableViewController.m */; };
+		E76C691817C0AB18002BBF3C /* ICBeanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691717C0AB18002BBF3C /* ICBeanViewController.m */; };
 		E76C691B17C0AB57002BBF3C /* ICBrewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691A17C0AB57002BBF3C /* ICBrewViewController.m */; };
 		E76C691E17C0AB6C002BBF3C /* ICCultureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C691D17C0AB6C002BBF3C /* ICCultureViewController.m */; };
 		E76C692117C0AB7B002BBF3C /* ICFavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C692017C0AB7B002BBF3C /* ICFavoriteViewController.m */; };
 		E76C692417C0AB89002BBF3C /* ICFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C692317C0AB89002BBF3C /* ICFindViewController.m */; };
 		E76C692717C0AB97002BBF3C /* ICSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C692617C0AB97002BBF3C /* ICSettingViewController.m */; };
+		E773385417C32DF9004EEEFF /* bean.json in Resources */ = {isa = PBXBuildFile; fileRef = E773385317C32DF9004EEEFF /* bean.json */; };
 		E794F70717BFE58900F729A1 /* welcomescroll_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70417BFE58900F729A1 /* welcomescroll_1.png */; };
 		E794F70817BFE58900F729A1 /* welcomescroll_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70517BFE58900F729A1 /* welcomescroll_2.png */; };
 		E794F70917BFE58900F729A1 /* welcomescroll_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70617BFE58900F729A1 /* welcomescroll_3.png */; };
@@ -66,8 +66,6 @@
 /* Begin PBXFileReference section */
 		07ADBEC917C315A30083B3AF /* ICBeanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanCell.h; sourceTree = "<group>"; };
 		07ADBECA17C315A30083B3AF /* ICBeanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanCell.m; sourceTree = "<group>"; };
-		07E855E717C29141000CD833 /* ICBeanTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanTableView.h; sourceTree = "<group>"; };
-		07E855E817C29141000CD833 /* ICBeanTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanTableView.m; sourceTree = "<group>"; };
 		07E855EA17C2B347000CD833 /* ICBeanDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanDetailView.h; sourceTree = "<group>"; };
 		07E855EB17C2B347000CD833 /* ICBeanDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanDetailView.m; sourceTree = "<group>"; };
 		07E855ED17C2B365000CD833 /* ICBeanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanDetailViewController.h; sourceTree = "<group>"; };
@@ -114,8 +112,8 @@
 		E76C691117C0A970002BBF3C /* ICFindView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICFindView.m; sourceTree = "<group>"; };
 		E76C691317C0A980002BBF3C /* ICSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSettingView.h; sourceTree = "<group>"; };
 		E76C691417C0A980002BBF3C /* ICSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSettingView.m; sourceTree = "<group>"; };
-		E76C691617C0AB18002BBF3C /* ICBeanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanTableViewController.h; sourceTree = "<group>"; };
-		E76C691717C0AB18002BBF3C /* ICBeanTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanTableViewController.m; sourceTree = "<group>"; };
+		E76C691617C0AB18002BBF3C /* ICBeanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanViewController.h; sourceTree = "<group>"; };
+		E76C691717C0AB18002BBF3C /* ICBeanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanViewController.m; sourceTree = "<group>"; };
 		E76C691917C0AB57002BBF3C /* ICBrewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBrewViewController.h; sourceTree = "<group>"; };
 		E76C691A17C0AB57002BBF3C /* ICBrewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBrewViewController.m; sourceTree = "<group>"; };
 		E76C691C17C0AB6C002BBF3C /* ICCultureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCultureViewController.h; sourceTree = "<group>"; };
@@ -126,6 +124,7 @@
 		E76C692317C0AB89002BBF3C /* ICFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICFindViewController.m; sourceTree = "<group>"; };
 		E76C692517C0AB97002BBF3C /* ICSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSettingViewController.h; sourceTree = "<group>"; };
 		E76C692617C0AB97002BBF3C /* ICSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSettingViewController.m; sourceTree = "<group>"; };
+		E773385317C32DF9004EEEFF /* bean.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bean.json; sourceTree = "<group>"; };
 		E794F70417BFE58900F729A1 /* welcomescroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_1.png; sourceTree = "<group>"; };
 		E794F70517BFE58900F729A1 /* welcomescroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_2.png; sourceTree = "<group>"; };
 		E794F70617BFE58900F729A1 /* welcomescroll_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_3.png; sourceTree = "<group>"; };
@@ -186,8 +185,6 @@
 			children = (
 				E76C690417C0A916002BBF3C /* ICBeanView.h */,
 				E76C690517C0A916002BBF3C /* ICBeanView.m */,
-				07E855E717C29141000CD833 /* ICBeanTableView.h */,
-				07E855E817C29141000CD833 /* ICBeanTableView.m */,
 				07E855EA17C2B347000CD833 /* ICBeanDetailView.h */,
 				07E855EB17C2B347000CD833 /* ICBeanDetailView.m */,
 				07ADBEC917C315A30083B3AF /* ICBeanCell.h */,
@@ -264,8 +261,8 @@
 		E76C68F717C0A8DF002BBF3C /* Bean */ = {
 			isa = PBXGroup;
 			children = (
-				E76C691617C0AB18002BBF3C /* ICBeanTableViewController.h */,
-				E76C691717C0AB18002BBF3C /* ICBeanTableViewController.m */,
+				E76C691617C0AB18002BBF3C /* ICBeanViewController.h */,
+				E76C691717C0AB18002BBF3C /* ICBeanViewController.m */,
 				07E855ED17C2B365000CD833 /* ICBeanDetailViewController.h */,
 				07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */,
 			);
@@ -326,6 +323,14 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		E773385217C32DE1004EEEFF /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				E773385317C32DF9004EEEFF /* bean.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		E794F6EB17BFD3A000F729A1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +369,7 @@
 		E794F6FD17BFDC3B00F729A1 /* Bundle */ = {
 			isa = PBXGroup;
 			children = (
+				E773385217C32DE1004EEEFF /* JSON */,
 				E794F6FE17BFDC3B00F729A1 /* Font */,
 				E794F6FF17BFDC3B00F729A1 /* image */,
 			);
@@ -547,6 +553,7 @@
 				E7E4779217C132BE000C1FA1 /* FunRaiser.ttf in Resources */,
 				E7A2613417C1AAA800983DC4 /* icon_home.png in Resources */,
 				E7A2613517C1AAA800983DC4 /* icon_home@2x.png in Resources */,
+				E773385417C32DF9004EEEFF /* bean.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,14 +581,13 @@
 				E76C690F17C0A964002BBF3C /* ICFavoriteView.m in Sources */,
 				E76C691217C0A970002BBF3C /* ICFindView.m in Sources */,
 				E76C691517C0A980002BBF3C /* ICSettingView.m in Sources */,
-				E76C691817C0AB18002BBF3C /* ICBeanTableViewController.m in Sources */,
+				E76C691817C0AB18002BBF3C /* ICBeanViewController.m in Sources */,
 				E76C691B17C0AB57002BBF3C /* ICBrewViewController.m in Sources */,
 				E76C691E17C0AB6C002BBF3C /* ICCultureViewController.m in Sources */,
 				E76C692117C0AB7B002BBF3C /* ICFavoriteViewController.m in Sources */,
 				E76C692417C0AB89002BBF3C /* ICFindViewController.m in Sources */,
 				E76C692717C0AB97002BBF3C /* ICSettingViewController.m in Sources */,
 				E7A2612D17C1A26300983DC4 /* ICHeaderBarView.m in Sources */,
-				07E855E917C29141000CD833 /* ICBeanTableView.m in Sources */,
 				07E855EC17C2B347000CD833 /* ICBeanDetailView.m in Sources */,
 				07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */,
 				07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */,

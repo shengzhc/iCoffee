@@ -27,6 +27,7 @@
 		E76197B517B0D165000A94BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197B417B0D165000A94BA /* UIKit.framework */; };
 		E76197B717B0D177000A94BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197B617B0D177000A94BA /* CoreGraphics.framework */; };
 		E76197BB17B0D316000A94BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197BA17B0D315000A94BA /* QuartzCore.framework */; };
+		E773385817C32F29004EEEFF /* ICLocalizable.m in Sources */ = {isa = PBXBuildFile; fileRef = E773385717C32F29004EEEFF /* ICLocalizable.m */; };
 		E7DAB37717AF217600D575B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB37617AF217600D575B7 /* Foundation.framework */; };
 		E7DAB38C17AF22A700D575B7 /* ICViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB38B17AF22A700D575B7 /* ICViewController.m */; };
 		E7DAB39017AF232000D575B7 /* ICView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB38F17AF232000D575B7 /* ICView.m */; };
@@ -86,6 +87,8 @@
 		E76197B417B0D165000A94BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E76197B617B0D177000A94BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E76197BA17B0D315000A94BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E773385617C32F29004EEEFF /* ICLocalizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLocalizable.h; sourceTree = "<group>"; };
+		E773385717C32F29004EEEFF /* ICLocalizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICLocalizable.m; sourceTree = "<group>"; };
 		E7DAB37317AF217600D575B7 /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiCoffeeLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB37617AF217600D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7DAB38A17AF22A700D575B7 /* ICViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICViewController.h; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 		E761972F17B0C26F000A94BA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E773385517C32EA1004EEEFF /* Tool */,
 				E761973817B0C32B000A94BA /* Categories */,
 			);
 			path = Utilities;
@@ -264,6 +268,15 @@
 				E761977B17B0C3A5000A94BA /* ICNotifications.h */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		E773385517C32EA1004EEEFF /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E773385617C32F29004EEEFF /* ICLocalizable.h */,
+				E773385717C32F29004EEEFF /* ICLocalizable.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		E7DAB36817AF217600D575B7 = {
@@ -418,6 +431,7 @@
 				E761977617B0C32B000A94BA /* UIView+ICServices.m in Sources */,
 				E761977717B0C32B000A94BA /* UIView+QuartzCore.m in Sources */,
 				E761977817B0C32B000A94BA /* UIView+Transition.m in Sources */,
+				E773385817C32F29004EEEFF /* ICLocalizable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

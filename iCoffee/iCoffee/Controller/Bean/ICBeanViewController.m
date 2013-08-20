@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 iCoffee. All rights reserved.
 //
 
-#import "ICBeanTableViewController.h"
+#import "ICBeanViewController.h"
 #import "ICBeanView.h"
 #import "ICBeanCell.h"
 
-@interface ICBeanTableViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ICBeanViewController ()
 
-@property (nonatomic, strong) UITableView *beanTableView;
+@property (nonatomic, strong) NSArray *beans;
 
 @end
 
-@implementation ICBeanTableViewController
+@implementation ICBeanViewController
 
 - (id)initWithDelegate:(id)delegate
 {
@@ -24,11 +24,13 @@
     
     if (self)
     {        
-        
+        self.beans = [ICLocalizable jsonArrayWithFile:@"bean"
+                                                 type:@"json"];
     }
     
     return self;
 }
+
 
 - (Class)viewClass
 {
@@ -42,18 +44,12 @@
     
 }
 
--(void)viewDidLoad{
-    if(self.beanTableView==nil){
-        self.beanTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height - 64) style:UITableViewStylePlain];
-        self.beanTableView.dataSource = self;
-        self.beanTableView.delegate = self;
-        
-        [self.view addSubview:self.beanTableView];
-    }
-}
-
-#pragma tableView Functions
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+#pragma mark TableViewDatasource & Delegate
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
@@ -64,9 +60,11 @@
     return 20;
 }
 
+
 -(ICBeanCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* cellIdentifier = @"cell";
+    
     ICBeanCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if(cell==nil){
@@ -79,6 +77,7 @@
     return cell;
 }
 
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger number = indexPath.row;
@@ -87,6 +86,7 @@
     [self.delegate tableSelectedAtRow:number];
     
 }
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

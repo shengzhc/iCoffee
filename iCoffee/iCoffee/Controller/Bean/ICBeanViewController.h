@@ -15,7 +15,7 @@
 @end
 
 
-@interface ICBeanTableViewController : ICViewController
+@interface ICBeanViewController : ICViewController  < UITableViewDelegate,UITableViewDataSource >
 
 @property (nonatomic, assign) id<selectRowProtocol> delegate;
 

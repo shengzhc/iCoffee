@@ -10,4 +10,6 @@
 
 @interface ICBeanView : ICView
 
+@property (nonatomic, strong) UITableView *tableView;
+
 @end

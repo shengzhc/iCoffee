@@ -9,7 +9,7 @@
 #import "ICMainMediator.h"
 
 #import "ICWelcomeViewController.h"
-#import "ICBeanTableViewController.h"
+#import "ICBeanViewController.h"
 #import "ICBrewViewController.h"
 #import "ICCultureViewController.h"
 #import "ICFavoriteViewController.h"
@@ -28,7 +28,7 @@
 @property (nonatomic, strong) ICViewController *currentViewController;
 
 @property (nonatomic, strong) ICWelcomeViewController *welcomeViewController;
-@property (nonatomic, strong) ICBeanTableViewController *beanTableViewController;
+@property (nonatomic, strong) ICBeanViewController *beanTableViewController;
 @property (nonatomic, strong) ICBrewViewController *brewViewController;
 @property (nonatomic, strong) ICCultureViewController *cultureViewController;
 @property (nonatomic, strong) ICFavoriteViewController *favoriteViewController;
@@ -89,11 +89,11 @@
 }
 
 
-- (ICBeanTableViewController *)beanTableViewController
+- (ICBeanViewController *)beanTableViewController
 {
     if (!_beanTableViewController)
     {
-        _beanTableViewController = [[ICBeanTableViewController alloc] initWithDelegate:self];
+        _beanTableViewController = [[ICBeanViewController alloc] initWithDelegate:self];
     }
     
     return _beanTableViewController;

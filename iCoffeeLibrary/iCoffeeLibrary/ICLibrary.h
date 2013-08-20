@@ -27,5 +27,6 @@
 #import "UIScreen+ICServices.h"
 
 #import "ICGeometry.h"
+#import "ICLibrary.h"
 
 #endif
