@@ -55,6 +55,7 @@
 		E772C78617C3BC21004F5EA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78517C3BC21004F5EA1 /* SystemConfiguration.framework */; };
 		E772C78817C3BC2B004F5EA1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78717C3BC2B004F5EA1 /* OpenGLES.framework */; };
 		E772C78A17C3BC35004F5EA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78917C3BC35004F5EA1 /* QuartzCore.framework */; };
+		E772C78F17C3E962004F5EA1 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E772C78E17C3E962004F5EA1 /* GoogleMaps.bundle */; };
 		E773385417C32DF9004EEEFF /* bean.json in Resources */ = {isa = PBXBuildFile; fileRef = E773385317C32DF9004EEEFF /* bean.json */; };
 		E794F70717BFE58900F729A1 /* welcomescroll_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70417BFE58900F729A1 /* welcomescroll_1.png */; };
 		E794F70817BFE58900F729A1 /* welcomescroll_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70517BFE58900F729A1 /* welcomescroll_2.png */; };
@@ -150,6 +151,7 @@
 		E772C78517C3BC21004F5EA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E772C78717C3BC2B004F5EA1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E772C78917C3BC35004F5EA1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E772C78E17C3E962004F5EA1 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		E773385317C32DF9004EEEFF /* bean.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bean.json; sourceTree = "<group>"; };
 		E794F70417BFE58900F729A1 /* welcomescroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_1.png; sourceTree = "<group>"; };
 		E794F70517BFE58900F729A1 /* welcomescroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_2.png; sourceTree = "<group>"; };
@@ -362,6 +364,14 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		E772C78D17C3E95B004F5EA1 /* Bundles */ = {
+			isa = PBXGroup;
+			children = (
+				E772C78E17C3E962004F5EA1 /* GoogleMaps.bundle */,
+			);
+			path = Bundles;
+			sourceTree = "<group>";
+		};
 		E773385217C32DE1004EEEFF /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +418,7 @@
 		E794F6FD17BFDC3B00F729A1 /* Bundle */ = {
 			isa = PBXGroup;
 			children = (
+				E772C78D17C3E95B004F5EA1 /* Bundles */,
 				E773385217C32DE1004EEEFF /* JSON */,
 				E794F6FE17BFDC3B00F729A1 /* Font */,
 				E794F6FF17BFDC3B00F729A1 /* image */,
@@ -606,6 +617,7 @@
 				E7A2613417C1AAA800983DC4 /* icon_home.png in Resources */,
 				E7A2613517C1AAA800983DC4 /* icon_home@2x.png in Resources */,
 				E773385417C32DF9004EEEFF /* bean.json in Resources */,
+				E772C78F17C3E962004F5EA1 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

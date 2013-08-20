@@ -7,8 +7,6 @@
 //
 
 #import "ICAppDelegate.h"
-#import <GoogleMaps/GoogleMaps.h>
-
 #import "ICMainMediator.h"
 
 @implementation ICAppDelegate
