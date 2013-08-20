@@ -19,6 +19,9 @@
     if (self)
     {
         self.backgroundColor = [UIColor purpleColor];
+        
+        _testLabel = [UILabel labelWithFrame:CGRectMake(0, 0, 150 ,44 ) text:@"Test View" alignment:NSTextAlignmentCenter];
+        [self addSubview:_testLabel];
     }
     
     return self;

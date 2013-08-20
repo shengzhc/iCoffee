@@ -10,4 +10,6 @@
 
 @interface ICBeanDetailView : ICView
 
+@property (nonatomic, strong) UILabel *testLabel;
+
 @end

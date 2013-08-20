@@ -34,15 +34,10 @@
     return @"Bean Detail";
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
 -(void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"This is Controller for view %d", self.rowNumber);
+    ICBeanDetailView *beanDetailView = (ICBeanDetailView *)self.view;
+    beanDetailView.testLabel.text = [[NSString alloc] initWithFormat:@"Label %d",self.rowNumber];
 }
 
 - (void)didReceiveMemoryWarning
