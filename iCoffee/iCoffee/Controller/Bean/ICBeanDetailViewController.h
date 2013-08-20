@@ -10,4 +10,6 @@
 
 @interface ICBeanDetailViewController : ICViewController
 
+@property (nonatomic,assign) NSInteger rowNumber;
+
 @end

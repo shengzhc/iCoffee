@@ -156,7 +156,7 @@
 
 -(ICBeanDetailViewController *)beanDetailViewController
 {
-    if (_beanDetailViewController) {
+    if (!_beanDetailViewController) {
         _beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self];
     }
     
@@ -332,8 +332,9 @@
 #pragma tableSelected
 -(void)tableSelectedAtRow:(NSInteger)row
 {
-    NSLog(@"Main Test!");
     [self showViewController:self.beanDetailViewController];
+    
+    self.beanDetailViewController.rowNumber = row;
 }
 
 @end
