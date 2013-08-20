@@ -30,6 +30,7 @@
                                                                      zoom:12];
         self.gmsMapView = [GMSMapView mapWithFrame:CGRectZero
                                             camera:camera];
+        self.gmsMapView.settings.compassButton = YES;
         [self addSubview:self.gmsMapView];
     }
     

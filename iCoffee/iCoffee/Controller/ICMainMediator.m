@@ -28,7 +28,7 @@
 @property (nonatomic, strong) ICViewController *currentViewController;
 
 @property (nonatomic, strong) ICWelcomeViewController *welcomeViewController;
-@property (nonatomic, strong) ICBeanViewController *beanTableViewController;
+@property (nonatomic, strong) ICBeanViewController *beanViewController;
 @property (nonatomic, strong) ICBrewViewController *brewViewController;
 @property (nonatomic, strong) ICCultureViewController *cultureViewController;
 @property (nonatomic, strong) ICFavoriteViewController *favoriteViewController;
@@ -53,7 +53,8 @@
         {
             self.banner = [[ADBannerView alloc] init];
         }
-        self.banner.delegate = delegate;
+
+        [self.banner cancelBannerViewAction];
     }
     
     return self;
@@ -76,7 +77,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 ///////////////////////////////////////////
@@ -95,14 +95,14 @@
 }
 
 
-- (ICBeanViewController *)beanTableViewController
+- (ICBeanViewController *)beanViewController
 {
-    if (!_beanTableViewController)
+    if (!_beanViewController)
     {
-        _beanTableViewController = [[ICBeanViewController alloc] initWithDelegate:self];
+        _beanViewController = [[ICBeanViewController alloc] initWithDelegate:self];
     }
     
-    return _beanTableViewController;
+    return _beanViewController;
 }
 
 
@@ -185,8 +185,6 @@
         headerBarTitle = [viewController performSelector:@selector(headerBarTitle)];
     }
     
-    [self.currentViewController dismissViewControllerAnimated:YES
-                                                   completion:nil];
     CGRect destFrame = self.view.contentView.bounds;
     CGRect originFrame = CGRectMake(destFrame.size.width, 0, destFrame.size.width, destFrame.size.height);
 
@@ -218,6 +216,9 @@
                         aboveSubview:self.view.contentView];
             [self layoutBannerView:self.banner];
         }
+        
+        [self cleanupViewController];
+     
     }];
 }
 
@@ -239,6 +240,45 @@
                                                      options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
     }
 
+}
+
+
+- (void)cleanupViewController
+{
+    if (_welcomeViewController != self.currentViewController)
+    {
+        _welcomeViewController = nil;
+    }
+    
+    if (_beanViewController != self.currentViewController)
+    {
+        _beanViewController = nil;
+    }
+    
+    if (_brewViewController != self.currentViewController)
+    {
+        _brewViewController = nil;
+    }
+    
+    if (_cultureViewController != self.currentViewController)
+    {
+        _cultureViewController = nil;
+    }
+    
+    if (_favoriteViewController != self.currentViewController)
+    {
+        _favoriteViewController = nil;
+    }
+    
+    if (_findViewController != self.currentViewController)
+    {
+        _findViewController = nil;
+    }
+    
+    if (_settingViewController != self.currentViewController)
+    {
+        _settingViewController = nil;
+    }
 }
 ///////////////////////////////////////////
 ///////////////////////////////////////////
@@ -282,7 +322,7 @@
 - (void)beanButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
-    [self showViewController:self.beanTableViewController];
+    [self showViewController:self.beanViewController];
 }
 
 
