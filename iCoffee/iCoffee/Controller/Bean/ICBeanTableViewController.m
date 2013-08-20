@@ -8,6 +8,7 @@
 
 #import "ICBeanTableViewController.h"
 #import "ICBeanView.h"
+#import "ICBeanCell.h"
 
 @interface ICBeanTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -43,7 +44,7 @@
 
 -(void)viewDidLoad{
     if(self.beanTableView==nil){
-        self.beanTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen screenWidth], [UIScreen screenHeigth]-44) style:UITableViewStylePlain];
+        self.beanTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height - 64) style:UITableViewStylePlain];
         self.beanTableView.dataSource = self;
         self.beanTableView.delegate = self;
         
@@ -63,16 +64,18 @@
     return 20;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(ICBeanCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* cellIdentifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    ICBeanCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if(cell==nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[ICBeanCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = @"Test";
+    cell.primaryLabel.text = [[NSString alloc] initWithFormat:@"Cell %d", indexPath.row];
+    cell.secondaryLabel.text = @"subtitle";
+    
     return cell;
 }
 
@@ -83,6 +86,11 @@
     
     [self.delegate tableSelectedAtRow:number];
     
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75.0f;
 }
 
 @end

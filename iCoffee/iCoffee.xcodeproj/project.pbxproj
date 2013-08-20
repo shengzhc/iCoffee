@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ADBECA17C315A30083B3AF /* ICBeanCell.m */; };
 		07E855E917C29141000CD833 /* ICBeanTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855E817C29141000CD833 /* ICBeanTableView.m */; };
 		07E855EC17C2B347000CD833 /* ICBeanDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EB17C2B347000CD833 /* ICBeanDetailView.m */; };
 		07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */; };
@@ -63,6 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07ADBEC917C315A30083B3AF /* ICBeanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanCell.h; sourceTree = "<group>"; };
+		07ADBECA17C315A30083B3AF /* ICBeanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanCell.m; sourceTree = "<group>"; };
 		07E855E717C29141000CD833 /* ICBeanTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanTableView.h; sourceTree = "<group>"; };
 		07E855E817C29141000CD833 /* ICBeanTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanTableView.m; sourceTree = "<group>"; };
 		07E855EA17C2B347000CD833 /* ICBeanDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanDetailView.h; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				07E855E817C29141000CD833 /* ICBeanTableView.m */,
 				07E855EA17C2B347000CD833 /* ICBeanDetailView.h */,
 				07E855EB17C2B347000CD833 /* ICBeanDetailView.m */,
+				07ADBEC917C315A30083B3AF /* ICBeanCell.h */,
+				07ADBECA17C315A30083B3AF /* ICBeanCell.m */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
@@ -579,6 +584,7 @@
 				07E855E917C29141000CD833 /* ICBeanTableView.m in Sources */,
 				07E855EC17C2B347000CD833 /* ICBeanDetailView.m in Sources */,
 				07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */,
+				07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
