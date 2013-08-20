@@ -11,10 +11,13 @@
 
 #import "ICBeanView.h"
 #import "ICBeanCell.h"
+#import "ICBeanDetailView.h"
 
 @interface ICBeanViewController ()
 
 @property (nonatomic, strong) NSArray *beans;
+@property (nonatomic, strong) ICBeanDetailView *beanDetailView;
+@property (nonatomic, strong) ICBeanDetailViewController *beanDetailViewController;
 
 @end
 
@@ -86,14 +89,33 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    ICBeanDetailViewController *detailViewController = [[ICBeanDetailViewController alloc]
-                                                        initWithDelegate:self];
+    
+    CGRect endFrame = self.view.frame;
+    CGRect startFrame = CGRectMake(endFrame.origin.x+endFrame.size.width, endFrame.origin.y, endFrame.size.width, endFrame.size.height);
+    
+    if (self.beanDetailViewController == nil) {
+        self.beanDetailViewController = [[ICBeanDetailViewController alloc] init];
+    }
+    
+    self.beanDetailViewController.view.frame = startFrame;
+    
+    [self.view addSubview:self.beanDetailViewController.view];
+    
+    [UIView animateWithDuration:0.5f animations:^{
+        self.beanDetailViewController.view.frame = endFrame;
+    }completion:^(BOOL finished){
+        
+    }];
 }
-
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75.0;
+}
+
+-(void)resetView
+{
+    [self.beanDetailViewController.view removeFromSuperview];
 }
 
 @end
