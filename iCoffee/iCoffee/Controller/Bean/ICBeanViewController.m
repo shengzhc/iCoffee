@@ -16,7 +16,6 @@
 @interface ICBeanViewController ()
 
 @property (nonatomic, strong) NSArray *beans;
-@property (nonatomic, strong) ICBeanDetailView *beanDetailView;
 @property (nonatomic, strong) ICBeanDetailViewController *beanDetailViewController;
 
 @end
@@ -64,7 +63,7 @@
 //////////////////////////////////////////////////////////////////////////////////////
 #pragma mark TableViewDatasource & Delegate
 //////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;

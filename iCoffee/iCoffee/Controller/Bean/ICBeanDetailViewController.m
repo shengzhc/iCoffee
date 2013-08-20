@@ -43,14 +43,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
 }
-
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
 
 #pragma gesture
 -(void)moveDetailViewWithTranslation:(CGFloat)translationX withGestureState:(BOOL)state
@@ -81,5 +75,4 @@
         }
     }
 }
-
 @end

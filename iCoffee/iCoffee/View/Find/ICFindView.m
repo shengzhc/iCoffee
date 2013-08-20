@@ -30,7 +30,14 @@
                                                                      zoom:12];
         self.gmsMapView = [GMSMapView mapWithFrame:CGRectZero
                                             camera:camera];
+        self.gmsMapView.settings.compassButton = YES;
+        self.gmsMapView.settings.myLocationButton = YES;
+        CLLocationCoordinate2D position = CLLocationCoordinate2DMake(1.285, 103.848);
+        GMSMarker *marker = [GMSMarker markerWithPosition:position];
+        marker.title = @"Hello World";
+        marker.map = self.gmsMapView;
         [self addSubview:self.gmsMapView];
+        
     }
     
     return self;

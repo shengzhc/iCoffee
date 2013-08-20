@@ -19,11 +19,14 @@
     {
         _primaryLabel = [[UILabel alloc] init];
         _primaryLabel.textAlignment = NSTextAlignmentLeft;
+        _primaryLabel.backgroundColor = [UIColor clearColor];
         
         _secondaryLabel = [[UILabel alloc] init];
         _secondaryLabel.textAlignment = NSTextAlignmentLeft;
+        _secondaryLabel.backgroundColor = [UIColor clearColor];
         
         _primaryImageView = [[UIImageView alloc] init];
+        _primaryImageView.backgroundColor = [UIColor clearColor];
         
         [self.contentView addSubview:_primaryLabel];
         [self.contentView addSubview:_secondaryLabel];
