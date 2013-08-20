@@ -46,7 +46,6 @@
     
 }
 
-
 #pragma gesture
 -(void)moveDetailViewWithTranslation:(CGFloat)translationX withGestureState:(BOOL)state
 {
@@ -76,5 +75,4 @@
         }
     }
 }
-
 @end

@@ -26,6 +26,8 @@
         UIPanGestureRecognizer *panGesturerRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
         panGesturerRecognizer.delegate = self;
         [self addGestureRecognizer:panGesturerRecognizer];
+        
+        [self addShadowWithColor:[UIColor blackColor] opacity:0.2 radius:0.0f offset:CGSizeMake(-3, 0)];
 
     }
     

@@ -11,6 +11,7 @@
 
 #import "ICBeanView.h"
 #import "ICBeanCell.h"
+#import "ICBeanDetailView.h"
 
 @interface ICBeanViewController ()
 
@@ -47,11 +48,22 @@
     
 }
 
+
+- (ICBeanDetailViewController *)beanDetailViewController
+{
+    if (!_beanDetailViewController)
+    {
+        _beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self];
+    }
+    
+    return _beanDetailViewController;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 #pragma mark TableViewDatasource & Delegate
 //////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -91,29 +103,31 @@
     CGRect endFrame = self.view.frame;
     CGRect startFrame = CGRectMake(endFrame.origin.x+endFrame.size.width, endFrame.origin.y, endFrame.size.width, endFrame.size.height);
     
-    if (self.beanDetailViewController == nil) {
-        self.beanDetailViewController = [[ICBeanDetailViewController alloc] init];
-    }
-    
     self.beanDetailViewController.view.frame = startFrame;
     
     [self.view addSubview:self.beanDetailViewController.view];
     
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:.3f
+                     animations:^
+    {
         self.beanDetailViewController.view.frame = endFrame;
-    }completion:^(BOOL finished){
-        
+    }
+                     completion:^(BOOL finished)
+    {
     }];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75.0;
 }
 
--(void)resetView
+
+- (void)resetView
 {
-    [self.beanDetailViewController.view removeFromSuperview];
+    [_beanDetailViewController.view removeFromSuperview];
+    _beanDetailViewController = nil;
 }
 
 @end
