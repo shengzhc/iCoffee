@@ -46,30 +46,46 @@
     
 }
 
-#pragma gesture
--(void)moveDetailViewWithTranslation:(CGFloat)translationX withGestureState:(BOOL)state
+
+
+- (void)moveDetailViewWithTranslation:(CGFloat)translationX
+                     withGestureState:(BOOL)state
 {
-    if (translationX<0) {
+    if (translationX<0)
+    {
         return;
     }
     
     CGRect frame = [self.view superview].frame;
     
-    if (state == false ) {
-        [UIView animateWithDuration:0.0f animations:^{
-            CGRect stopFrame = CGRectMake(translationX, frame.origin.y, frame
-                                         .size.height, frame.size.height);
+    if (!state)
+    {
+        [UIView animateWithDuration:0.0f
+                         animations:^
+        {
+            CGRect stopFrame = CGRectMake(translationX, frame.origin.y, frame.size.height, frame.size.height);
             self.view.frame = stopFrame;
         }];
-    }else{
-        if (translationX<frame.size.width/5) {
-            [UIView animateWithDuration:0.5f animations:^{
+    }
+    else
+    {
+        if (translationX<frame.size.width/5.0)
+        {
+            [UIView animateWithDuration:0.5f
+                             animations:^
+            {
                 self.view.frame = frame;
             }];
-        }else{
-            [UIView animateWithDuration:0.5f animations:^{
+        }
+        else
+        {
+            [UIView animateWithDuration:0.5f
+                             animations:^
+            {
                 self.view.frame = CGRectMake(frame.size.width, frame.origin.x, frame.size.width, frame.size.height);
-            } completion:^(BOOL finished){
+            }
+                             completion:^(BOOL finished)
+            {
                 [self.view removeFromSuperview];
             }];
         }
