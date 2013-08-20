@@ -11,5 +11,6 @@
 @interface ICBeanDetailView : ICView
 
 @property (nonatomic, strong) UILabel *testLabel;
+@property (nonatomic, assign) NSInteger row;
 
 @end
