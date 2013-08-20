@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) NSArray *beans;
 @property (nonatomic, strong) ICBeanDetailView *beanDetailView;
+@property (nonatomic, strong) ICBeanDetailViewController *beanDetailViewController;
 
 @end
 
@@ -92,30 +93,29 @@
     CGRect endFrame = self.view.frame;
     CGRect startFrame = CGRectMake(endFrame.origin.x+endFrame.size.width, endFrame.origin.y, endFrame.size.width, endFrame.size.height);
     
-    if (self.beanDetailView == nil) {
-        self.beanDetailView = [[ICBeanDetailView alloc] initWithFrame:startFrame delegate:self];
-    }else{
-        self.beanDetailView.frame = startFrame;
+    if (self.beanDetailViewController == nil) {
+        self.beanDetailViewController = [[ICBeanDetailViewController alloc] init];
     }
     
-    [self.view addSubview:self.beanDetailView];
+    self.beanDetailViewController.view.frame = startFrame;
+    
+    [self.view addSubview:self.beanDetailViewController.view];
     
     [UIView animateWithDuration:0.5f animations:^{
-        self.beanDetailView.frame = endFrame;
+        self.beanDetailViewController.view.frame = endFrame;
     }completion:^(BOOL finished){
         
     }];
 }
-
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75.0;
 }
 
--(void)resetBeanView
+-(void)resetView
 {
-    [self.beanDetailView removeFromSuperview];
+    [self.beanDetailViewController.view removeFromSuperview];
 }
 
 @end

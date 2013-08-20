@@ -10,6 +10,7 @@
 
 @interface ICBeanViewController : ICViewController  < UITableViewDelegate, UITableViewDataSource >
 
--(void)resetBeanView;
+
+-(void)resetView;
 
 @end
