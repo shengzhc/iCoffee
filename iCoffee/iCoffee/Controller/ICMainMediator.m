@@ -9,17 +9,18 @@
 #import "ICMainMediator.h"
 
 #import "ICWelcomeViewController.h"
-#import "ICBeanViewController.h"
+#import "ICBeanTableViewController.h"
 #import "ICBrewViewController.h"
 #import "ICCultureViewController.h"
 #import "ICFavoriteViewController.h"
 #import "ICFindViewController.h"
 #import "ICSettingViewController.h"
+#import "ICBeanDetailViewController.h"
 
 #import "ICMainMediatorView.h"
 #import "ICHeaderBarView.h"
 
-@interface ICMainMediator ()
+@interface ICMainMediator () <selectRowProtocol>
 
 @property (nonatomic, strong) ICMainMediatorView *view;
 @property (nonatomic, strong) ADBannerView *banner;
@@ -27,12 +28,13 @@
 @property (nonatomic, strong) ICViewController *currentViewController;
 
 @property (nonatomic, strong) ICWelcomeViewController *welcomeViewController;
-@property (nonatomic, strong) ICBeanViewController *beanViewController;
+@property (nonatomic, strong) ICBeanTableViewController *beanTableViewController;
 @property (nonatomic, strong) ICBrewViewController *brewViewController;
 @property (nonatomic, strong) ICCultureViewController *cultureViewController;
 @property (nonatomic, strong) ICFavoriteViewController *favoriteViewController;
 @property (nonatomic, strong) ICFindViewController *findViewController;
 @property (nonatomic, strong) ICSettingViewController *settingViewController;
+@property (nonatomic, strong) ICBeanDetailViewController *beanDetailViewController;
 
 @end
 
@@ -87,14 +89,14 @@
 }
 
 
-- (ICBeanViewController *)beanViewController
+- (ICBeanTableViewController *)beanTableViewController
 {
-    if (!_beanViewController)
+    if (!_beanTableViewController)
     {
-        _beanViewController = [[ICBeanViewController alloc] initWithDelegate:self];
+        _beanTableViewController = [[ICBeanTableViewController alloc] initWithDelegate:self];
     }
     
-    return _beanViewController;
+    return _beanTableViewController;
 }
 
 
@@ -150,6 +152,15 @@
     }
     
     return _settingViewController;
+}
+
+-(ICBeanDetailViewController *)beanDetailViewController
+{
+    if (!_beanDetailViewController) {
+        _beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self];
+    }
+    
+    return _beanDetailViewController;
 }
 
 
@@ -280,7 +291,7 @@
 - (void)beanButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
-    [self showViewController:self.beanViewController];
+    [self showViewController:self.beanTableViewController];
 }
 
 
@@ -304,7 +315,6 @@
     [self showViewController:self.favoriteViewController];
 }
 
-
 - (void)findButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
@@ -316,6 +326,15 @@
 {
     [self bottomBarButtonClicked:nil];
     [self showViewController:self.settingViewController];
+}
+
+#pragma tableSelected
+-(void)tableSelectedAtRow:(NSInteger)row
+{
+    ICBeanDetailViewController* beanDetailViewController = self.beanDetailViewController;
+    beanDetailViewController.rowNumber = row;
+    
+    [self showViewController:beanDetailViewController];
 }
 
 @end
