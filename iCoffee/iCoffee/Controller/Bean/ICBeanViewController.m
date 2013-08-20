@@ -11,12 +11,10 @@
 
 #import "ICBeanView.h"
 #import "ICBeanCell.h"
-#import "ICBeanDetailView.h"
 
 @interface ICBeanViewController ()
 
 @property (nonatomic, strong) NSArray *beans;
-@property (nonatomic, strong) ICBeanDetailView *beanDetailView;
 @property (nonatomic, strong) ICBeanDetailViewController *beanDetailViewController;
 
 @end
