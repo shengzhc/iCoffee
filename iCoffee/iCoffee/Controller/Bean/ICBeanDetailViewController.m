@@ -40,9 +40,9 @@
 	// Do any additional setup after loading the view.
 }
 
--(void)viewdidAppear:(BOOL)animated
+-(void)viewWillAppear:(BOOL)animated
 {
-
+    NSLog(@"This is Controller for view %d", self.rowNumber);
 }
 
 - (void)didReceiveMemoryWarning

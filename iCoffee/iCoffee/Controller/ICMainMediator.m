@@ -315,7 +315,6 @@
     [self showViewController:self.favoriteViewController];
 }
 
-
 - (void)findButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
@@ -332,9 +331,10 @@
 #pragma tableSelected
 -(void)tableSelectedAtRow:(NSInteger)row
 {
-    [self showViewController:self.beanDetailViewController];
+    ICBeanDetailViewController* beanDetailViewController = self.beanDetailViewController;
+    beanDetailViewController.rowNumber = row;
     
-    self.beanDetailViewController.rowNumber = row;
+    [self showViewController:beanDetailViewController];
 }
 
 @end
