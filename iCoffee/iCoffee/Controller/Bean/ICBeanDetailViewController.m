@@ -15,35 +15,55 @@
 
 @implementation ICBeanDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithDelegate:(id)delegate
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self = [super initWithDelegate:delegate];
+    
+    if (self)
+    {
+        
     }
+    
     return self;
 }
+
 
 -(Class)viewClass
 {
     return [ICBeanDetailView class];
 }
 
+
 -(NSString*)headerBarTitle
 {
     return @"Bean Detail";
 }
 
--(void)viewWillAppear:(BOOL)animated
+
+- (void)viewWillAppear:(BOOL)animated
 {
-    ICBeanDetailView *beanDetailView = (ICBeanDetailView *)self.view;
-    beanDetailView.testLabel.text = [[NSString alloc] initWithFormat:@"Label %d",self.rowNumber];
+    [super viewWillAppear:animated];
 }
 
-- (void)didReceiveMemoryWarning
+
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidAppear:animated];
+//    self.view.alpha = 0.0;
+//
+//    CGRect destFrame = self.presentingViewController.view.frame;
+//    
+//    CGRect originFrame = CGRectMake(destFrame.origin.x + destFrame.size.width, destFrame.origin.y, destFrame.size.width, destFrame.size.height);
+//    
+//    self.view.frame = originFrame;
+//    
+//    [UIView animateWithDuration:.5
+//                     animations:^
+//    {
+//        self.view.frame = self.presentingViewController.view.frame;
+//        self.view.alpha = 1.0;
+//    }];
 }
+
 
 @end

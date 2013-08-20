@@ -7,6 +7,8 @@
 //
 
 #import "ICAppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
+
 #import "ICMainMediator.h"
 
 @implementation ICAppDelegate
@@ -22,6 +24,9 @@
     [navigationController setNavigationBarHidden:YES];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+    
+    [GMSServices provideAPIKey:@"AIzaSyC8y9z_s9mlh8Z3uO7LlqwLXhcpHY22EQY"];
+    
     return YES;
 }
 

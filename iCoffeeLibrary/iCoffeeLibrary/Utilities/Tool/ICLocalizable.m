@@ -13,10 +13,11 @@
 + (NSArray *)jsonArrayWithFileName:(NSString *)fileName
                               type:(NSString *)type
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:type];
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:filePath]];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName
+                                                         ofType:type];
+    NSString *content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data
+    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding]
                                                          options:NSJSONReadingMutableContainers
                                                            error:nil];
     
@@ -27,12 +28,14 @@
 + (NSDictionary *)jsonObjectWithFileName:(NSString *)fileName
                                     type:(NSString *)type
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:type];
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:filePath]];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName
+                                                         ofType:type];
+    NSString *content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     
-    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
+    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding]
                                                          options:NSJSONReadingMutableContainers
                                                            error:nil];
+    
     return jsonObject;
 }
 

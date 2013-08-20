@@ -10,12 +10,13 @@
 
 @implementation ICBeanCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithStyle:(UITableViewCellStyle)style
+    reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-        
+    self = [super initWithStyle:style
+                reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
         _primaryLabel = [[UILabel alloc] init];
         _primaryLabel.textAlignment = NSTextAlignmentLeft;
         
@@ -31,29 +32,24 @@
     return self;
 }
 
+
 -(void)layoutSubviews
 {
     [super layoutSubviews];
     
-    CGRect contenctRect = self.contentView.bounds;
-    CGFloat x = contenctRect.origin.x;
-    CGRect frame;
+    self.primaryImageView.frame = [self.primaryImageView alignedRectInSuperviewForSize:self.primaryImageView.image.size
+                                                                                offset:CGSizeMake(10, 0)
+                                                                               options:(ICAlignmentOptionsLeft | ICAlignmentOptionsVerticalCenter)];
+    [self.primaryLabel sizeToFit];
     
-    frame = CGRectMake(x+10, 0, 50, 50);
-    self.primaryImageView.frame = frame;
-    
-    frame = CGRectMake(x+70, 5, 200, 25);
-    self.primaryLabel.frame = frame;
-    
-    frame = CGRectMake(x+70, 30, 100, 15);
-    self.secondaryLabel.frame = frame;
-}
+    self.primaryLabel.frame = [self.primaryLabel alignedRectInSuperviewForSize:self.primaryLabel.bounds.size
+                                                                        offset:CGSizeMake(self.primaryImageView.horizontalEnding + 10, 0)
+                                                                       options:(ICAlignmentOptionsLeft | ICAlignmentOptionsVerticalCenter)];
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [self.secondaryLabel sizeToFit];
+    self.secondaryLabel.frame = [self.secondaryLabel alignedRectInSuperviewForSize:self.secondaryLabel.bounds.size
+                                                                            offset:CGSizeMake(10, 0)
+                                                                           options:(ICAlignmentOptionsRight | ICAlignmentOptionsVerticalCenter)];
 }
 
 @end

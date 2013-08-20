@@ -7,6 +7,8 @@
 //
 
 #import "ICBeanViewController.h"
+#import "ICBeanDetailViewController.h"
+
 #import "ICBeanView.h"
 #import "ICBeanCell.h"
 
@@ -23,8 +25,8 @@
     self = [super initWithDelegate:delegate];
     
     if (self)
-    {        
-        self.beans = [ICLocalizable jsonArrayWithFile:@"bean"
+    {
+        self.beans = [ICLocalizable jsonArrayWithFileName:@"bean"
                                                  type:@"json"];
     }
     
@@ -55,24 +57,27 @@
 }
 
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return [self.beans count];
 }
 
 
--(ICBeanCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString* cellIdentifier = @"cell";
+    static NSString* cellIdentifier = @"beanCellIdentifier";
     
     ICBeanCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    if(cell==nil){
-        cell = [[ICBeanCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    if (!cell)
+    {
+        cell = [[ICBeanCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                 reuseIdentifier:cellIdentifier];
     }
-    
-    cell.primaryLabel.text = [[NSString alloc] initWithFormat:@"Cell %d", indexPath.row];
-    cell.secondaryLabel.text = @"subtitle";
+
+    NSDictionary *cellData = [self.beans objectAtIndex:indexPath.row];
+    cell.primaryLabel.text = [cellData objectForKey:@"title"];
+    cell.secondaryLabel.text = [cellData objectForKey:@"detail"];
     
     return cell;
 }
@@ -80,17 +85,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger number = indexPath.row;
-    NSLog(@"%d number in row.",number);
-    
-    [self.delegate tableSelectedAtRow:number];
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ICBeanDetailViewController *detailViewController = [[ICBeanDetailViewController alloc]
+                                                        initWithDelegate:self];
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 75.0f;
+    return 75.0;
 }
 
 @end

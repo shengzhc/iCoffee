@@ -20,7 +20,7 @@
 #import "ICMainMediatorView.h"
 #import "ICHeaderBarView.h"
 
-@interface ICMainMediator () <selectRowProtocol>
+@interface ICMainMediator ()
 
 @property (nonatomic, strong) ICMainMediatorView *view;
 @property (nonatomic, strong) ADBannerView *banner;
@@ -34,7 +34,6 @@
 @property (nonatomic, strong) ICFavoriteViewController *favoriteViewController;
 @property (nonatomic, strong) ICFindViewController *findViewController;
 @property (nonatomic, strong) ICSettingViewController *settingViewController;
-@property (nonatomic, strong) ICBeanDetailViewController *beanDetailViewController;
 
 @end
 
@@ -71,6 +70,13 @@
 {
     [super viewDidAppear:animated];
     [self showViewController:self.welcomeViewController];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 ///////////////////////////////////////////
@@ -154,16 +160,6 @@
     return _settingViewController;
 }
 
--(ICBeanDetailViewController *)beanDetailViewController
-{
-    if (!_beanDetailViewController) {
-        _beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self];
-    }
-    
-    return _beanDetailViewController;
-}
-
-
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark Convenient
@@ -179,6 +175,7 @@
     if ([self.currentViewController isKindOfClass:[ICWelcomeViewController class]])
     {
         self.banner.delegate = nil;
+        [self.banner cancelBannerViewAction];
         [self.banner removeFromSuperview];
     }
     
@@ -188,6 +185,8 @@
         headerBarTitle = [viewController performSelector:@selector(headerBarTitle)];
     }
     
+    [self.currentViewController dismissViewControllerAnimated:YES
+                                                   completion:nil];
     CGRect destFrame = self.view.contentView.bounds;
     CGRect originFrame = CGRectMake(destFrame.size.width, 0, destFrame.size.width, destFrame.size.height);
 
@@ -208,6 +207,7 @@
     {
         self.currentViewController.view.frame = destFrame;
         self.currentViewController.view.alpha = 1.0;
+
         [self.currentViewController.view removeFromSuperview];
         self.currentViewController = viewController;
         
@@ -248,27 +248,18 @@
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
     [self layoutBannerView:banner];
-    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
     [self layoutBannerView:banner];
-    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
     return YES;
-}
-
-
-- (void)bannerViewActionDidFinish:(ADBannerView *)banner
-{
-    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 ///////////////////////////////////////////
@@ -328,13 +319,5 @@
     [self showViewController:self.settingViewController];
 }
 
-#pragma tableSelected
--(void)tableSelectedAtRow:(NSInteger)row
-{
-    ICBeanDetailViewController* beanDetailViewController = self.beanDetailViewController;
-    beanDetailViewController.rowNumber = row;
-    
-    [self showViewController:beanDetailViewController];
-}
 
 @end
