@@ -27,26 +27,33 @@
         panGesturerRecognizer.delegate = self;
         [self addGestureRecognizer:panGesturerRecognizer];
         
-        [self addShadowWithColor:[UIColor blackColor] opacity:0.2 radius:0.0f offset:CGSizeMake(-3, 0)];
+        [self addShadowWithColor:[UIColor blackColor]
+                         opacity:0.2
+                          radius:0.0f
+                          offset:CGSizeMake(-3, 0)];
 
     }
     
     return self;
 }
 
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
 }
 
-#pragma Gesture
+
 -(void)panGestureHandler:(UIPanGestureRecognizer *)recognizer
 {
     CGPoint translation = [recognizer translationInView:self];
     
-    if ([recognizer state] == UIGestureRecognizerStateEnded) {
+    if ([recognizer state] == UIGestureRecognizerStateEnded)
+    {
         [self.delegate moveDetailViewWithTranslation:translation.x withGestureState:true];
-    }else{
+    }
+    else
+    {
         [self.delegate moveDetailViewWithTranslation:translation.x withGestureState:false];
     }
 }

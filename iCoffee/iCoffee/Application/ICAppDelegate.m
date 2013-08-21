@@ -9,6 +9,8 @@
 #import "ICAppDelegate.h"
 #import "ICMainMediator.h"
 
+#define GoogleMapAPIKey @"AIzaSyDwjEdYx9Dv9xbEKnypTFseCMIFkKQvf6g"
+
 @implementation ICAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -23,7 +25,7 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
-    [GMSServices provideAPIKey:@"AIzaSyC8y9z_s9mlh8Z3uO7LlqwLXhcpHY22EQY"];
+    [GMSServices provideAPIKey:GoogleMapAPIKey];
     
     return YES;
 }

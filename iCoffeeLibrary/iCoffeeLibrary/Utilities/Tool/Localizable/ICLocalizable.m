@@ -39,5 +39,13 @@
     return jsonObject;
 }
 
+
++ (NSString *)stringValueInPlist:(NSString *)fileName keyPath:(NSString *)keyPath
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+    return [dict valueForKeyPath:keyPath];
+}
+
 @end
 
