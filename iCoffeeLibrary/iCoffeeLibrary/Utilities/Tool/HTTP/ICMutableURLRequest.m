@@ -17,6 +17,8 @@
                contentType:(NSString *)contentType
 {
     URLString = [self formatURLString:URLString];
+    URLString = [self uriString:URLString
+                           body:body];
     NSURL *URL = [NSURL URLWithString:URLString];
     
     if (!URL)
@@ -33,27 +35,11 @@
     [URLRequest setCachePolicy:NSURLRequestReloadIgnoringCacheData];
     [URLRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
     
-    NSMutableString *parameters = [[NSMutableString alloc] init];
-    
-    for (id key in body.allKeys)
-    {
-        [parameters appendString:[NSString stringWithFormat:@"%@=%@&", key, body[key]]];
-    }
-    
-    if (parameters.length > 0)
-    {
-        parameters = [[parameters substringToIndex:parameters.length - 1] mutableCopy];
-    }
-    
-    NSData *data = [parameters dataUsingEncoding:NSUTF8StringEncoding];
-    
+
     if ([HTTPMethod isEqualToString:@"PUT"] ||
         [HTTPMethod isEqualToString:@"POST"])
     {
-        [URLRequest setHTTPBody:data];
         [URLRequest setValue:contentType forHTTPHeaderField:@"Accept"];
-        [URLRequest setValue:[NSString stringWithFormat:@"%d", [data length]]
-          forHTTPHeaderField:@"Content-Length"];
     }
     
     return URLRequest;
@@ -75,7 +61,8 @@
 + (ICMutableURLRequest *)GETRequestWithURIString:(NSString *)uriString
                                                 token:(NSString *)token
 {
-    return [self requestWithURLString:uriString HTTPMethod:@"GET"
+    return [self requestWithURLString:uriString
+                           HTTPMethod:@"GET"
                                  body:nil
                                 token:token
                           contentType:@"application/x-www-form-urlencoded"];
@@ -86,7 +73,8 @@
                                             body:(NSDictionary *)body
                                            token:(NSString *)token
 {
-    return [self requestWithURLString:uriString HTTPMethod:@"GET"
+    return [self requestWithURLString:uriString
+                           HTTPMethod:@"GET"
                                  body:body
                                 token:token
                           contentType:@"application/x-www-form-urlencoded"];
@@ -97,7 +85,8 @@
                                              body:(NSDictionary *)body
                                             token:(NSString *)token
 {
-    return [self requestWithURLString:uriString HTTPMethod:@"GET"
+    return [self requestWithURLString:uriString
+                           HTTPMethod:@"GET"
                                  body:body
                                 token:token
                           contentType:@"application/x-www-form-urlencoded"];
@@ -108,6 +97,27 @@
 {
     return [string stringByReplacingOccurrencesOfString:@"\n"
                                              withString:@""];
+}
+
+
++ (NSString *)uriString:(NSString *)uriString
+                   body:(NSDictionary *)body
+{
+    NSMutableString *parameters = [[NSMutableString alloc] initWithString:uriString];
+    
+    if (!body)
+    {
+        return parameters;
+    }
+    
+    [parameters appendString:@"?"];
+    
+    for (id key in body.allKeys)
+    {
+        [parameters appendString:[NSString stringWithFormat:@"%@=%@&", key, body[key]]];
+    }
+    
+    return [parameters substringToIndex:parameters.length - 1];
 }
 
 @end

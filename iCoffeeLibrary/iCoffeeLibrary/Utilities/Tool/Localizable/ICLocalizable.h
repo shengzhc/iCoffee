@@ -17,4 +17,7 @@
                                     type:(NSString *)type;
 
 
++ (NSString *)stringValueInPlist:(NSString *)fileName
+                         keyPath:(NSString *)keyPath;
+
 @end

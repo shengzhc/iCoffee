@@ -20,6 +20,8 @@
 #import "ICMainMediatorView.h"
 #import "ICHeaderBarView.h"
 
+#define GooglePlacesAPIKey @"AIzaSyAuT1uZmu4lmGxS-DxCioCedbfcIBBqm5M"
+
 @interface ICMainMediator ()
 
 @property (nonatomic, strong) ICMainMediatorView *view;
@@ -54,13 +56,18 @@
             self.banner = [[ADBannerView alloc] init];
         }
         
-        self.banner.delegate = self;
         [self.banner cancelBannerViewAction];
-        
-        //Test
-        ICHTTPManager *manager = [ICHTTPManager POSTHTTPManagerWithURLString:@"http://weather.yahooapis.com/forecastrss"
-                                                                        body:@{@"w":@615702, @"u":@"c"}
-                                                                    token:nil
+        self.banner.delegate = self;
+
+        ICHTTPManager *manager = [ICHTTPManager POSTHTTPManagerWithURLString:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+                                                                        body:@
+                                  {
+                                      @"key":GooglePlacesAPIKey,
+                                      @"location":@"-33.8670522,151.1957362",
+                                      @"radius":@10,
+                                      @"sensor":@"false"
+                                  }
+                                                                       token:nil
                                                            completionHandler:^(ICHTTPURLResponse *response)
         {
             NSString *string = [[NSString alloc] initWithData:response.data encoding:NSUTF8StringEncoding];
