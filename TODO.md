@@ -39,7 +39,7 @@ Design:
 
 MileStone:
 1. Aug. 16 21:00 (Feature 1 & 2) (CHECKED)
-2. Aug. 23 17:00 (Structure)
+2. Aug. 24 17:00 (Structure)
 
 BrainStorm:
 1. Launching: Coffee Color -> Mixed Color -> Milky Color
@@ -116,9 +116,11 @@ Aug. 18th
 
 Aug. 19th
 1. Do research on iAd (RESOLVED) --- SC
-2. Research on Google Places API ( 2 days ) --- SC
+2. Research on Google Places API ( 2 days ) (RESOLVED) --- SC
 3. Beans table view and Detail View. --- ARK
 
+Aug. 21st
+1. Do research on searching place for a specific shop and display on the map --- SC
 
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
