@@ -121,7 +121,8 @@ Aug. 19th
 
 Aug. 21st
 1. Do research on searching place for a specific shop and display on the map --- SC
-2. Widget Button. ---ARK
+2. Research on Core Animation. --- ARK
+3. Widget Button. ---ARK
 
 
 
