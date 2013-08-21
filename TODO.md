@@ -99,7 +99,7 @@ Aug. 15th
 
 
 Aug. 16th
-1. Make gestures perfect. (In progess)--- ARK
+1. Make gestures perfect. (Done)--- ARK
 2. Code review.(In progress) --- ARK 
 
 
@@ -117,10 +117,13 @@ Aug. 18th
 Aug. 19th
 1. Do research on iAd (RESOLVED) --- SC
 2. Research on Google Places API ( 2 days ) (RESOLVED) --- SC
-3. Beans table view and Detail View. --- ARK
+3. Beans table view and Detail View.(Done) --- ARK
 
 Aug. 21st
 1. Do research on searching place for a specific shop and display on the map --- SC
+2. Widget Button. ---ARK
+
+
 
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
