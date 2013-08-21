@@ -53,8 +53,21 @@
         {
             self.banner = [[ADBannerView alloc] init];
         }
-
+        
+        self.banner.delegate = self;
         [self.banner cancelBannerViewAction];
+        
+        //Test
+        ICHTTPManager *manager = [ICHTTPManager POSTHTTPManagerWithURLString:@"http://weather.yahooapis.com/forecastrss"
+                                                                        body:@{@"w":@615702, @"u":@"c"}
+                                                                    token:nil
+                                                           completionHandler:^(ICHTTPURLResponse *response)
+        {
+            NSString *string = [[NSString alloc] initWithData:response.data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@", string);
+        }];
+        
+        [manager start];
     }
     
     return self;

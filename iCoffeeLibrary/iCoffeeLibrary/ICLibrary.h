@@ -28,5 +28,6 @@
 
 #import "ICGeometry.h"
 #import "ICLocalizable.h"
+#import "ICHTTPManager.h"
 
 #endif

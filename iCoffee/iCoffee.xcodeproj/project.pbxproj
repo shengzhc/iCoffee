@@ -207,6 +207,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E73807C717C426CD00FB2A00 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		E76C68D817C0A8BF002BBF3C /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +476,7 @@
 		E7DAB33C17AF203A00D575B7 = {
 			isa = PBXGroup;
 			children = (
+				E73807C717C426CD00FB2A00 /* Test */,
 				E794F6FD17BFDC3B00F729A1 /* Bundle */,
 				E7DAB3B217AF25FF00D575B7 /* Supporting Files */,
 				E7DAB35117AF203B00D575B7 /* iCoffee */,
