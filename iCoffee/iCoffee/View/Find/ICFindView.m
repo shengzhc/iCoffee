@@ -10,8 +10,6 @@
 
 @interface ICFindView ()
 
-@property (nonatomic, strong) GMSMapView *gmsMapView;
-
 @end
 
 @implementation ICFindView
@@ -37,7 +35,6 @@
         marker.title = @"Hello World";
         marker.map = self.gmsMapView;
         [self addSubview:self.gmsMapView];
-        
     }
     
     return self;

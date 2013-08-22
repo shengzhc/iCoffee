@@ -12,6 +12,8 @@
 
 @interface ICFindViewController ()
 
+@property (nonatomic, strong) ICFindView *view;
+
 @end
 
 @implementation ICFindViewController
@@ -38,4 +40,13 @@
 {
     return @"Find";
 }
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSLog(@"%f, %f", self.view.gmsMapView.myLocation.coordinate.latitude, self.view.gmsMapView.myLocation.coordinate.longitude);
+}
+
 @end
