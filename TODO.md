@@ -100,7 +100,7 @@ Aug. 15th
 
 Aug. 16th
 1. Make gestures perfect. (Done)--- ARK
-2. Code review.(In progress) --- ARK 
+2. Code review.(Done) --- ARK 
 
 
 Aug. 17th
@@ -124,6 +124,8 @@ Aug. 21st
 2. Research on Core Animation. --- ARK
 3. Widget Button. ---ARK
 
+Aug. 22nd
+1. Start work on 23rd because of personal stuff. /sad
 
 
 Aug. 17th - Aug. 23 (Backend)
