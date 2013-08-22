@@ -24,9 +24,6 @@
     [navigationController setNavigationBarHidden:YES];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
-    
-    [GMSServices provideAPIKey:GoogleMapAPIKey];
-    
     return YES;
 }
 

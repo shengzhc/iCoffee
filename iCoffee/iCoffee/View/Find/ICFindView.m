@@ -23,18 +23,10 @@
     if (self)
     {
         self.backgroundColor = [UIColor greenColor];
-        GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:1.285
-                                                                longitude:103.848
-                                                                     zoom:12];
-        self.gmsMapView = [GMSMapView mapWithFrame:CGRectZero
-                                            camera:camera];
-        self.gmsMapView.settings.compassButton = YES;
-        self.gmsMapView.settings.myLocationButton = YES;
-        CLLocationCoordinate2D position = CLLocationCoordinate2DMake(1.285, 103.848);
-        GMSMarker *marker = [GMSMarker markerWithPosition:position];
-        marker.title = @"Hello World";
-        marker.map = self.gmsMapView;
-        [self addSubview:self.gmsMapView];
+        self.mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
+        
+        [self addSubview:self.mapView];
+        self.mapView.showsUserLocation = YES;
     }
     
     return self;
@@ -44,7 +36,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.gmsMapView.frame = self.bounds;
+    self.mapView.frame = self.bounds;
 }
 
 @end

@@ -7,9 +7,10 @@
 //
 
 #import "ICView.h"
+#import <MapKit/MapKit.h>
 
 @interface ICFindView : ICView
 
-@property (nonatomic, strong) GMSMapView *gmsMapView;
+@property (nonatomic, strong) MKMapView *mapView;
 
 @end

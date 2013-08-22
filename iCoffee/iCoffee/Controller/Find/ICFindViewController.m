@@ -45,8 +45,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    NSLog(@"%f, %f", self.view.gmsMapView.myLocation.coordinate.latitude, self.view.gmsMapView.myLocation.coordinate.longitude);
+    self.view.mapView.region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(37.785834, -122.406417), 500, 500);
+
 }
 
 @end
