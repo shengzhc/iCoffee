@@ -10,4 +10,6 @@
 
 @interface ICFindView : ICView
 
+@property (nonatomic, strong) GMSMapView *gmsMapView;
+
 @end
