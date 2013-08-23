@@ -20,7 +20,6 @@
 #import "ICMainMediatorView.h"
 #import "ICHeaderBarView.h"
 
-#define GooglePlacesAPIKey @"AIzaSyAuT1uZmu4lmGxS-DxCioCedbfcIBBqm5M"
 
 @interface ICMainMediator ()
 

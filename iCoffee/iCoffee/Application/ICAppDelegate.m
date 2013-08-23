@@ -9,7 +9,6 @@
 #import "ICAppDelegate.h"
 #import "ICMainMediator.h"
 
-#define GoogleMapAPIKey @"AIzaSyDwjEdYx9Dv9xbEKnypTFseCMIFkKQvf6g"
 
 @implementation ICAppDelegate
 

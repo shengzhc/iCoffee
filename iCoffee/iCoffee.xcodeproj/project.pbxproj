@@ -64,6 +64,8 @@
 		E7A2613417C1AAA800983DC4 /* icon_home.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A2613217C1AAA800983DC4 /* icon_home.png */; };
 		E7A2613517C1AAA800983DC4 /* icon_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A2613317C1AAA800983DC4 /* icon_home@2x.png */; };
 		E7A2613717C1EAC100983DC4 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A2613617C1EAC100983DC4 /* iAd.framework */; };
+		E7C268DC17C72468001347C1 /* ICMapPlaceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C268DB17C72468001347C1 /* ICMapPlaceEntity.m */; };
+		E7C268DF17C724FC001347C1 /* ICMapPlaceEntityMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C268DE17C724FC001347C1 /* ICMapPlaceEntityMapper.m */; };
 		E7DAB34C17AF203B00D575B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34B17AF203B00D575B7 /* UIKit.framework */; };
 		E7DAB34E17AF203B00D575B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34D17AF203B00D575B7 /* Foundation.framework */; };
 		E7DAB35017AF203B00D575B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34F17AF203B00D575B7 /* CoreGraphics.framework */; };
@@ -161,6 +163,10 @@
 		E7A2613217C1AAA800983DC4 /* icon_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home.png; sourceTree = "<group>"; };
 		E7A2613317C1AAA800983DC4 /* icon_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_home@2x.png"; sourceTree = "<group>"; };
 		E7A2613617C1EAC100983DC4 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		E7C268DA17C72468001347C1 /* ICMapPlaceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMapPlaceEntity.h; sourceTree = "<group>"; };
+		E7C268DB17C72468001347C1 /* ICMapPlaceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMapPlaceEntity.m; sourceTree = "<group>"; };
+		E7C268DD17C724FC001347C1 /* ICMapPlaceEntityMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMapPlaceEntityMapper.h; sourceTree = "<group>"; };
+		E7C268DE17C724FC001347C1 /* ICMapPlaceEntityMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMapPlaceEntityMapper.m; sourceTree = "<group>"; };
 		E7DAB34717AF203B00D575B7 /* iCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB34B17AF203B00D575B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7DAB34D17AF203B00D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -473,6 +479,17 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		E7C268D917C72453001347C1 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				E7C268DA17C72468001347C1 /* ICMapPlaceEntity.h */,
+				E7C268DB17C72468001347C1 /* ICMapPlaceEntity.m */,
+				E7C268DD17C724FC001347C1 /* ICMapPlaceEntityMapper.h */,
+				E7C268DE17C724FC001347C1 /* ICMapPlaceEntityMapper.m */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		E7DAB33C17AF203A00D575B7 = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +538,7 @@
 		E7DAB35117AF203B00D575B7 /* iCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				E7C268D917C72453001347C1 /* Modal */,
 				E794F6EB17BFD3A000F729A1 /* Controller */,
 				E794F6EC17BFD3A000F729A1 /* View */,
 				E7DAB39817AF248400D575B7 /* Application */,
@@ -663,6 +681,8 @@
 				07E855EC17C2B347000CD833 /* ICBeanDetailView.m in Sources */,
 				07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */,
 				07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */,
+				E7C268DC17C72468001347C1 /* ICMapPlaceEntity.m in Sources */,
+				E7C268DF17C724FC001347C1 /* ICMapPlaceEntityMapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

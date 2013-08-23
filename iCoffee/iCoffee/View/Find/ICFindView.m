@@ -24,6 +24,8 @@
     
     if (self)
     {
+        self.backgroundColor = [UIColor whiteColor];
+        
         self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
         self.searchBar.barStyle = UIBarStyleBlackOpaque;
         self.searchBar.placeholder = @"Search";
