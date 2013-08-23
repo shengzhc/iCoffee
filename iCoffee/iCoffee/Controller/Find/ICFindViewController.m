@@ -49,4 +49,34 @@
 
 }
 
+
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark UISearchBarDelegate
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:NO animated:YES];
+}
+
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+
+}
+
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
+
 @end

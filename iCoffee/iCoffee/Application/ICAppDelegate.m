@@ -19,6 +19,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
+    [UIApplication sharedApplication].statusBarHidden = YES;
+    
     ICMainMediator *mediator = [[ICMainMediator alloc] initWithDelegate:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mediator];
     [navigationController setNavigationBarHidden:YES];
