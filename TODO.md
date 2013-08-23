@@ -120,12 +120,13 @@ Aug. 19th
 3. Beans table view and Detail View.(Done) --- ARK
 
 Aug. 21st
-1. Do research on searching place for a specific shop and display on the map --- SC
+1. Do research on searching place for a specific shop and display on the map (RESOLVED) --- SC
 2. Research on Core Animation. --- ARK
 3. Widget Button. ---ARK
 
 Aug. 22nd
 1. Start work on 23rd because of personal stuff. /sad
+2. Document Request for UI designer. --- SC
 
 
 Aug. 17th - Aug. 23 (Backend)

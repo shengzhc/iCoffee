@@ -10,6 +10,8 @@
 
 @interface ICFindView ()
 
+@property (nonatomic, strong) UISearchBar *searchBar;
+
 @end
 
 @implementation ICFindView
@@ -22,19 +24,21 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor greenColor];
-        GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:1.285
-                                                                longitude:103.848
-                                                                     zoom:12];
-        self.gmsMapView = [GMSMapView mapWithFrame:CGRectZero
-                                            camera:camera];
-        self.gmsMapView.settings.compassButton = YES;
-        self.gmsMapView.settings.myLocationButton = YES;
-        CLLocationCoordinate2D position = CLLocationCoordinate2DMake(1.285, 103.848);
-        GMSMarker *marker = [GMSMarker markerWithPosition:position];
-        marker.title = @"Hello World";
-        marker.map = self.gmsMapView;
-        [self addSubview:self.gmsMapView];
+        self.backgroundColor = [UIColor whiteColor];
+        
+        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
+        self.searchBar.barStyle = UIBarStyleBlackOpaque;
+        self.searchBar.placeholder = @"Search";
+        self.searchBar.delegate = delegate;
+        self.searchBar.showsSearchResultsButton = YES;
+        
+        
+        self.mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
+        self.mapView.showsUserLocation = YES;
+        self.mapView.delegate = delegate;
+        
+        [self addSubview:self.searchBar];
+        [self addSubview:self.mapView];
     }
     
     return self;
@@ -44,7 +48,14 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.gmsMapView.frame = self.bounds;
+    
+    self.searchBar.frame = [self.searchBar alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 50)
+                                                                  offset:CGSizeMake(0, 0)
+                                                                 options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
+    
+    self.mapView.frame = [self.mapView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height - self.searchBar.bounds.size.height)
+                                                              offset:CGSizeMake(0, self.searchBar.verticalEnding)
+                                                             options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];;
 }
 
 @end

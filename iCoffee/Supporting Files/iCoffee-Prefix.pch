@@ -11,6 +11,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import <GoogleMaps/GoogleMaps.h>
     #import "ICLibrary.h"
+
+#define GoogleMapAPIKey @"AIzaSyDwjEdYx9Dv9xbEKnypTFseCMIFkKQvf6g"
+#define GooglePlacesAPIKey @"AIzaSyAuT1uZmu4lmGxS-DxCioCedbfcIBBqm5M"
+
 #endif

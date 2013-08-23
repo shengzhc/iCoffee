@@ -9,7 +9,6 @@
 #import "ICAppDelegate.h"
 #import "ICMainMediator.h"
 
-#define GoogleMapAPIKey @"AIzaSyDwjEdYx9Dv9xbEKnypTFseCMIFkKQvf6g"
 
 @implementation ICAppDelegate
 
@@ -19,14 +18,13 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
+    [UIApplication sharedApplication].statusBarHidden = YES;
+    
     ICMainMediator *mediator = [[ICMainMediator alloc] initWithDelegate:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mediator];
     [navigationController setNavigationBarHidden:YES];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
-    
-    [GMSServices provideAPIKey:GoogleMapAPIKey];
-    
     return YES;
 }
 
