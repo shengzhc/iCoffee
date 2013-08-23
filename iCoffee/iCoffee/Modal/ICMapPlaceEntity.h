@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 #define ICMapPlaceEntityID @"id"
 #define ICMapPlaceEntityReference @"reference"
 
-@interface ICMapPlaceEntity : NSObject
+@interface ICMapPlaceEntity : NSObject < MKAnnotation >
 
 @property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSString *reference;

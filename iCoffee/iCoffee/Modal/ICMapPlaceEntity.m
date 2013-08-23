@@ -10,4 +10,17 @@
 
 @implementation ICMapPlaceEntity
 
+
+- (NSString *)title
+{
+    return [NSString stringWithFormat:@"%f", self.coordinate.latitude];
+}
+
+
+- (NSString *)subtitle
+{
+    return [NSString stringWithFormat:@"%f", self.coordinate.longitude];
+}
+
+
 @end

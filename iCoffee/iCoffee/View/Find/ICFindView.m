@@ -31,9 +31,12 @@
         self.searchBar.placeholder = @"Search";
         self.searchBar.delegate = delegate;
         self.searchBar.showsSearchResultsButton = YES;
+        
+        
         self.mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
         self.mapView.showsUserLocation = YES;
-    
+        self.mapView.delegate = delegate;
+        
         [self addSubview:self.searchBar];
         [self addSubview:self.mapView];
     }

@@ -53,7 +53,7 @@
     [super viewDidAppear:animated];
     self.mapView = self.view.mapView;
     
-    [self mapView:self.mapView showCoordinate:self.mapView.userLocation.coordinate width:100 height:100];
+    [self mapView:self.mapView showCoordinate:self.mapView.userLocation.coordinate width:10000 height:10000];
 }
 
 
@@ -70,6 +70,79 @@
 }
 
 
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark MKMapViewDelegate
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+    {
+        return nil;
+    }
+    
+    NSString *pinAnnotationViewIdentifier = @"PinAnnotationViewIdentifier";
+    
+    MKPinAnnotationView *pinAnnotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pinAnnotationViewIdentifier];
+    
+    if (!pinAnnotationView)
+    {
+        pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                            reuseIdentifier:pinAnnotationViewIdentifier];
+    
+        pinAnnotationView.pinColor = MKPinAnnotationColorPurple;
+    }
+    
+    return pinAnnotationView;
+}
+
+
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
+{
+    for (MKAnnotationView *annotationView in views)
+    {
+        CGRect endFrame = annotationView.frame;
+        annotationView.frame = CGRectOffset(endFrame, 0, -30);
+        
+        [UIView animateWithDuration:0.2
+                         animations:^
+        {
+            annotationView.frame = endFrame;
+        }];
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
+
+
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
+
+
+- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
+
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
+
+
+- (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
 
 ///////////////////////////////////////////
 ///////////////////////////////////////////
@@ -115,6 +188,8 @@
             
             if (jsonObject)
             {
+                [self.places removeAllObjects];
+                
                 NSArray *results = [jsonObject valueForKey:@"results"];
                 
                 for (id result in results)
@@ -126,6 +201,10 @@
                         [self.places setObject:placeEntity forKey:placeEntity.id];
                     }
                 }
+                
+                [self.mapView removeAnnotations:self.mapView.annotations];
+                
+                [self.mapView addAnnotations:[self.places allValues]];
             }
 
             [searchBar resignFirstResponder];
