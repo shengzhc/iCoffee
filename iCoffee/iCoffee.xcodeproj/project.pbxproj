@@ -68,7 +68,6 @@
 		E772C78817C3BC2B004F5EA1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78717C3BC2B004F5EA1 /* OpenGLES.framework */; };
 		E772C78A17C3BC35004F5EA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78917C3BC35004F5EA1 /* QuartzCore.framework */; };
 		E772C78F17C3E962004F5EA1 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E772C78E17C3E962004F5EA1 /* GoogleMaps.bundle */; };
-		E773385417C32DF9004EEEFF /* bean.json in Resources */ = {isa = PBXBuildFile; fileRef = E773385317C32DF9004EEEFF /* bean.json */; };
 		E78C516817C5CFAB00EA05EB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78C516717C5CFAB00EA05EB /* MapKit.framework */; };
 		E794F70717BFE58900F729A1 /* welcomescroll_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70417BFE58900F729A1 /* welcomescroll_1.png */; };
 		E794F70817BFE58900F729A1 /* welcomescroll_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E794F70517BFE58900F729A1 /* welcomescroll_2.png */; };
@@ -90,6 +89,15 @@
 		E7DAB3C017AF25FF00D575B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB3BA17AF25FF00D575B7 /* main.m */; };
 		E7DAB3C917AF28AA00D575B7 /* libiCoffeeLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB3C817AF28AA00D575B7 /* libiCoffeeLibrary.a */; };
 		E7E4779217C132BE000C1FA1 /* FunRaiser.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E4779017C132BE000C1FA1 /* FunRaiser.ttf */; };
+		E7E6135717C88DE2009B0462 /* button_my_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E6135517C88DE2009B0462 /* button_my_location@2x.png */; };
+		E7E6135817C88DE2009B0462 /* button_my_location.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E6135617C88DE2009B0462 /* button_my_location.png */; };
+		E7E6135B17C88DE8009B0462 /* button_my_location_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E6135917C88DE8009B0462 /* button_my_location_pressed@2x.png */; };
+		E7E6135C17C88DE8009B0462 /* button_my_location_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E6135A17C88DE8009B0462 /* button_my_location_pressed.png */; };
+		E7E6135F17C8931F009B0462 /* button_menu_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E6135D17C8931F009B0462 /* button_menu_setting@2x.png */; };
+		E7E6136017C8931F009B0462 /* button_menu_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E6135E17C8931F009B0462 /* button_menu_setting.png */; };
+		E7E6136217C964C0009B0462 /* coffee_category.json in Resources */ = {isa = PBXBuildFile; fileRef = E7E6136117C964C0009B0462 /* coffee_category.json */; };
+		E7E6136517C964D8009B0462 /* ICBeanEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E6136417C964D8009B0462 /* ICBeanEntity.m */; };
+		E7E6136817C964E8009B0462 /* ICBeanEntityMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E6136717C964E8009B0462 /* ICBeanEntityMapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,7 +190,6 @@
 		E772C78717C3BC2B004F5EA1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E772C78917C3BC35004F5EA1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E772C78E17C3E962004F5EA1 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
-		E773385317C32DF9004EEEFF /* bean.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bean.json; sourceTree = "<group>"; };
 		E78C516717C5CFAB00EA05EB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E794F70417BFE58900F729A1 /* welcomescroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_1.png; sourceTree = "<group>"; };
 		E794F70517BFE58900F729A1 /* welcomescroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_2.png; sourceTree = "<group>"; };
@@ -211,6 +218,17 @@
 		E7DAB3BA17AF25FF00D575B7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E7DAB3C817AF28AA00D575B7 /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiCoffeeLibrary.a; path = "/Users/shengzhc/Desktop/iCoffee/iCoffeeLibrary/build/Release-iphoneos/libiCoffeeLibrary.a"; sourceTree = "<absolute>"; };
 		E7E4779017C132BE000C1FA1 /* FunRaiser.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FunRaiser.ttf; sourceTree = "<group>"; };
+		E7E6135517C88DE2009B0462 /* button_my_location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_my_location@2x.png"; sourceTree = "<group>"; };
+		E7E6135617C88DE2009B0462 /* button_my_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_my_location.png; sourceTree = "<group>"; };
+		E7E6135917C88DE8009B0462 /* button_my_location_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_my_location_pressed@2x.png"; sourceTree = "<group>"; };
+		E7E6135A17C88DE8009B0462 /* button_my_location_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_my_location_pressed.png; sourceTree = "<group>"; };
+		E7E6135D17C8931F009B0462 /* button_menu_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_menu_setting@2x.png"; sourceTree = "<group>"; };
+		E7E6135E17C8931F009B0462 /* button_menu_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_menu_setting.png; sourceTree = "<group>"; };
+		E7E6136117C964C0009B0462 /* coffee_category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee_category.json; sourceTree = "<group>"; };
+		E7E6136317C964D8009B0462 /* ICBeanEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanEntity.h; sourceTree = "<group>"; };
+		E7E6136417C964D8009B0462 /* ICBeanEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanEntity.m; sourceTree = "<group>"; };
+		E7E6136617C964E8009B0462 /* ICBeanEntityMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanEntityMapper.h; sourceTree = "<group>"; };
+		E7E6136717C964E8009B0462 /* ICBeanEntityMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanEntityMapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,7 +455,7 @@
 		E773385217C32DE1004EEEFF /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				E773385317C32DF9004EEEFF /* bean.json */,
+				E7E6136117C964C0009B0462 /* coffee_category.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -502,6 +520,7 @@
 		E794F6FF17BFDC3B00F729A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				07BEC1BA17C7C1740076E03C /* bg-addbutton-highlighted.png */,
 				07BEC1BB17C7C1740076E03C /* bg-addbutton-highlighted@2x.png */,
 				07BEC1BC17C7C1740076E03C /* bg-addbutton.png */,
@@ -512,6 +531,14 @@
 				07BEC1C117C7C1740076E03C /* bg-menuitem@2x.png */,
 				07BEC1C217C7C1740076E03C /* icon-plus-highlighted.png */,
 				07BEC1C317C7C1740076E03C /* icon-plus-highlighted@2x.png */,
+=======
+				E7E6135D17C8931F009B0462 /* button_menu_setting@2x.png */,
+				E7E6135E17C8931F009B0462 /* button_menu_setting.png */,
+				E7E6135917C88DE8009B0462 /* button_my_location_pressed@2x.png */,
+				E7E6135A17C88DE8009B0462 /* button_my_location_pressed.png */,
+				E7E6135517C88DE2009B0462 /* button_my_location@2x.png */,
+				E7E6135617C88DE2009B0462 /* button_my_location.png */,
+>>>>>>> dev
 				E7A2613217C1AAA800983DC4 /* icon_home.png */,
 				E7A2613317C1AAA800983DC4 /* icon_home@2x.png */,
 				E76C68C117C04D3B002BBF3C /* menu_favorite.png */,
@@ -547,6 +574,10 @@
 				E7C268DB17C72468001347C1 /* ICMapPlaceEntity.m */,
 				E7C268DD17C724FC001347C1 /* ICMapPlaceEntityMapper.h */,
 				E7C268DE17C724FC001347C1 /* ICMapPlaceEntityMapper.m */,
+				E7E6136317C964D8009B0462 /* ICBeanEntity.h */,
+				E7E6136417C964D8009B0462 /* ICBeanEntity.m */,
+				E7E6136617C964E8009B0462 /* ICBeanEntityMapper.h */,
+				E7E6136717C964E8009B0462 /* ICBeanEntityMapper.m */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -703,8 +734,8 @@
 				E7E4779217C132BE000C1FA1 /* FunRaiser.ttf in Resources */,
 				E7A2613417C1AAA800983DC4 /* icon_home.png in Resources */,
 				E7A2613517C1AAA800983DC4 /* icon_home@2x.png in Resources */,
-				E773385417C32DF9004EEEFF /* bean.json in Resources */,
 				E772C78F17C3E962004F5EA1 /* GoogleMaps.bundle in Resources */,
+<<<<<<< HEAD
 				07BEC1C417C7C1740076E03C /* bg-addbutton-highlighted.png in Resources */,
 				07BEC1C517C7C1740076E03C /* bg-addbutton-highlighted@2x.png in Resources */,
 				07BEC1C617C7C1740076E03C /* bg-addbutton.png in Resources */,
@@ -715,6 +746,15 @@
 				07BEC1CB17C7C1740076E03C /* bg-menuitem@2x.png in Resources */,
 				07BEC1CC17C7C1740076E03C /* icon-plus-highlighted.png in Resources */,
 				07BEC1CD17C7C1740076E03C /* icon-plus-highlighted@2x.png in Resources */,
+=======
+				E7E6135717C88DE2009B0462 /* button_my_location@2x.png in Resources */,
+				E7E6135817C88DE2009B0462 /* button_my_location.png in Resources */,
+				E7E6135B17C88DE8009B0462 /* button_my_location_pressed@2x.png in Resources */,
+				E7E6135C17C88DE8009B0462 /* button_my_location_pressed.png in Resources */,
+				E7E6135F17C8931F009B0462 /* button_menu_setting@2x.png in Resources */,
+				E7E6136017C8931F009B0462 /* button_menu_setting.png in Resources */,
+				E7E6136217C964C0009B0462 /* coffee_category.json in Resources */,
+>>>>>>> dev
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,9 +794,14 @@
 				07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */,
 				E7C268DC17C72468001347C1 /* ICMapPlaceEntity.m in Sources */,
 				E7C268DF17C724FC001347C1 /* ICMapPlaceEntityMapper.m in Sources */,
+<<<<<<< HEAD
 				07BEC1B517C7BDDF0076E03C /* ICPopButtonViewController.m in Sources */,
 				07BEC1D017C7C80B0076E03C /* ICPopButtonItem.m in Sources */,
 				07BEC1D317C7C86F0076E03C /* ICPopButtonView.m in Sources */,
+=======
+				E7E6136517C964D8009B0462 /* ICBeanEntity.m in Sources */,
+				E7E6136817C964E8009B0462 /* ICBeanEntityMapper.m in Sources */,
+>>>>>>> dev
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
