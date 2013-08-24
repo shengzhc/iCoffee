@@ -10,6 +10,9 @@
 
 @interface ICPopButton : ICView
 
+@property (nonatomic, strong) UIImageView *imageView;
+
+
 -(id)initWithFrame:(CGRect)frame withIdentifer:(NSInteger)identifer;
 
 

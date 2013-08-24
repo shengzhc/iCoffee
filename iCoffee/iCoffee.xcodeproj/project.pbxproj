@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ADBECA17C315A30083B3AF /* ICBeanCell.m */; };
 		07BEC1B517C7BDDF0076E03C /* ICPopButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BEC1B417C7BDDF0076E03C /* ICPopButtonViewController.m */; };
-		07BEC1B917C7BE9B0076E03C /* ICPopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BEC1B817C7BE9B0076E03C /* ICPopButton.m */; };
 		07BEC1C417C7C1740076E03C /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BA17C7C1740076E03C /* bg-addbutton-highlighted.png */; };
 		07BEC1C517C7C1740076E03C /* bg-addbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BB17C7C1740076E03C /* bg-addbutton-highlighted@2x.png */; };
 		07BEC1C617C7C1740076E03C /* bg-addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BC17C7C1740076E03C /* bg-addbutton.png */; };
@@ -20,6 +19,8 @@
 		07BEC1CB17C7C1740076E03C /* bg-menuitem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1C117C7C1740076E03C /* bg-menuitem@2x.png */; };
 		07BEC1CC17C7C1740076E03C /* icon-plus-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1C217C7C1740076E03C /* icon-plus-highlighted.png */; };
 		07BEC1CD17C7C1740076E03C /* icon-plus-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1C317C7C1740076E03C /* icon-plus-highlighted@2x.png */; };
+		07BEC1D017C7C80B0076E03C /* ICPopButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BEC1CF17C7C80B0076E03C /* ICPopButtonItem.m */; };
+		07BEC1D317C7C86F0076E03C /* ICPopButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BEC1D217C7C86E0076E03C /* ICPopButtonView.m */; };
 		07E855EC17C2B347000CD833 /* ICBeanDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EB17C2B347000CD833 /* ICBeanDetailView.m */; };
 		07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */; };
 		E74D6B0117C0B15F00B13B60 /* BalloonOpen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E76C68CD17C04F5F002BBF3C /* BalloonOpen.ttf */; };
@@ -96,8 +97,6 @@
 		07ADBECA17C315A30083B3AF /* ICBeanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanCell.m; sourceTree = "<group>"; };
 		07BEC1B317C7BDDF0076E03C /* ICPopButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPopButtonViewController.h; sourceTree = "<group>"; };
 		07BEC1B417C7BDDF0076E03C /* ICPopButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPopButtonViewController.m; sourceTree = "<group>"; };
-		07BEC1B717C7BE9B0076E03C /* ICPopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPopButton.h; sourceTree = "<group>"; };
-		07BEC1B817C7BE9B0076E03C /* ICPopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPopButton.m; sourceTree = "<group>"; };
 		07BEC1BA17C7C1740076E03C /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
 		07BEC1BB17C7C1740076E03C /* bg-addbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted@2x.png"; sourceTree = "<group>"; };
 		07BEC1BC17C7C1740076E03C /* bg-addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton.png"; sourceTree = "<group>"; };
@@ -108,6 +107,10 @@
 		07BEC1C117C7C1740076E03C /* bg-menuitem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem@2x.png"; sourceTree = "<group>"; };
 		07BEC1C217C7C1740076E03C /* icon-plus-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus-highlighted.png"; sourceTree = "<group>"; };
 		07BEC1C317C7C1740076E03C /* icon-plus-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus-highlighted@2x.png"; sourceTree = "<group>"; };
+		07BEC1CE17C7C80B0076E03C /* ICPopButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPopButtonItem.h; sourceTree = "<group>"; };
+		07BEC1CF17C7C80B0076E03C /* ICPopButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPopButtonItem.m; sourceTree = "<group>"; };
+		07BEC1D117C7C86E0076E03C /* ICPopButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPopButtonView.h; sourceTree = "<group>"; };
+		07BEC1D217C7C86E0076E03C /* ICPopButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPopButtonView.m; sourceTree = "<group>"; };
 		07E855EA17C2B347000CD833 /* ICBeanDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanDetailView.h; sourceTree = "<group>"; };
 		07E855EB17C2B347000CD833 /* ICBeanDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanDetailView.m; sourceTree = "<group>"; };
 		07E855ED17C2B365000CD833 /* ICBeanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanDetailViewController.h; sourceTree = "<group>"; };
@@ -251,8 +254,10 @@
 		07BEC1B617C7BE0B0076E03C /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				07BEC1B717C7BE9B0076E03C /* ICPopButton.h */,
-				07BEC1B817C7BE9B0076E03C /* ICPopButton.m */,
+				07BEC1D117C7C86E0076E03C /* ICPopButtonView.h */,
+				07BEC1D217C7C86E0076E03C /* ICPopButtonView.m */,
+				07BEC1CE17C7C80B0076E03C /* ICPopButtonItem.h */,
+				07BEC1CF17C7C80B0076E03C /* ICPopButtonItem.m */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -750,7 +755,8 @@
 				E7C268DC17C72468001347C1 /* ICMapPlaceEntity.m in Sources */,
 				E7C268DF17C724FC001347C1 /* ICMapPlaceEntityMapper.m in Sources */,
 				07BEC1B517C7BDDF0076E03C /* ICPopButtonViewController.m in Sources */,
-				07BEC1B917C7BE9B0076E03C /* ICPopButton.m in Sources */,
+				07BEC1D017C7C80B0076E03C /* ICPopButtonItem.m in Sources */,
+				07BEC1D317C7C86F0076E03C /* ICPopButtonView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

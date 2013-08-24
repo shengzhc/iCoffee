@@ -18,7 +18,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        UIImage *image = [UIImage imageNamed:@"bg-addbutton.png"];
+        _imageView = [[UIImageView alloc] initWithImage:image];
+        [self addSubview:_imageView];
+        
+        
     }
+    
     return self;
 }
 

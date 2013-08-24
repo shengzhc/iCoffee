@@ -7,6 +7,7 @@
 //
 
 #import "ICPopButtonViewController.h"
+#import "ICPopButtonView.h"
 
 @interface ICPopButtonViewController ()
 
@@ -14,25 +15,41 @@
 
 @implementation ICPopButtonViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithDelegate:(id)delegate
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithDelegate:delegate];
     if (self) {
-        // Custom initialization
+        //Custom
     }
+    
     return self;
 }
 
-- (void)viewDidLoad
+- (void)loadView
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    CGRect frame = CGRectMake(40, 40, 50, 50);
+    
+    self.view = [[[self viewClass] alloc] initWithFrame:frame
+                                               delegate:self];
+    [self.view sizeToFit];
 }
+
+-(Class)viewClass
+{
+    return [ICPopButtonView class];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
 
 @end

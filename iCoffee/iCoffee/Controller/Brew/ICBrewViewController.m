@@ -7,10 +7,13 @@
 //
 
 #import "ICBrewViewController.h"
-
 #import "ICBrewView.h"
+#import "ICPopButtonViewController.h"
+
 
 @interface ICBrewViewController ()
+
+@property (nonatomic, strong) ICPopButtonViewController *popButtonViewController;
 
 @end
 
@@ -22,7 +25,11 @@
     
     if (self)
     {
+        if (!_popButtonViewController) {
+            _popButtonViewController = [[ICPopButtonViewController alloc] initWithDelegate:self];
+        }
         
+    [self.view addSubview:_popButtonViewController.view];
     }
     
     return self;
@@ -38,4 +45,6 @@
 {
     return @"Brew";
 }
+
+
 @end
