@@ -48,6 +48,11 @@ BrainStorm:
 4. Coffee Culture using timeline
 5. Under Welcome Screen, show new, we can add a dynamic posting to show the recently message that is posted by the people ( NEED API Support)
 
+6. Coffee Culture
+7. Coffee Museum, 
+8. Filter: Coffee, Open/Off
+
+
 Questions:
 Half of the first cell of a tableview is blocked by the navigation bar (resolved). --- ARK
 
@@ -126,8 +131,19 @@ Aug. 21st
 
 Aug. 22nd
 1. Start work on 23rd because of personal stuff. /sad
-2. Document Request for UI designer. --- SC
+2. Document Request for UI designer. (RESOLVED) --- SC
 
+
+Aug. 23rd
+1. Group Discussion. (RESOLVED)
+2. Design Bean display and bean detail display. (RESOLVED)
+3. Figure the functionality of "Finding". (RESOLVED)
+
+
+Aug. 24th - Aug. 25th
+1. Map features : navigations, current position pin, filter ( Open , Rating , Search Categories ) --- SC
+2. Widget and Core Animation --- ARK
+3. Bean View and Detail View --- ARK
 
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture

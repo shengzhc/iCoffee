@@ -135,6 +135,7 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
+    [self mapView:mapView showCoordinate:userLocation.coordinate width:5000 height:5000];
     NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
