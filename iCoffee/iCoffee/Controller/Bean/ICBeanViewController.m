@@ -13,9 +13,11 @@
 #import "ICBeanCell.h"
 #import "ICBeanDetailView.h"
 
+#import "ICBeanEntityMapper.h"
+
 @interface ICBeanViewController ()
 
-@property (nonatomic, strong) NSArray *beans;
+@property (nonatomic, strong) NSMutableArray *beans;
 @property (nonatomic, strong) ICBeanDetailViewController *beanDetailViewController;
 
 @end
@@ -28,8 +30,15 @@
     
     if (self)
     {
-        self.beans = [ICLocalizable jsonArrayWithFileName:@"bean"
-                                                 type:@"json"];
+        NSDictionary *jsonObject = [ICLocalizable jsonObjectWithFileName:@"coffee_category"
+                                                                    type:@"json"];
+        
+        self.beans = [NSMutableArray new];
+        
+        for (id bean in jsonObject.allValues)
+        {
+            [self.beans addObject:[ICBeanEntityMapper map:bean error:nil]];
+        }
     }
     
     return self;
@@ -87,10 +96,6 @@
         cell = [[ICBeanCell alloc] initWithStyle:UITableViewCellStyleDefault
                                  reuseIdentifier:cellIdentifier];
     }
-
-    NSDictionary *cellData = [self.beans objectAtIndex:indexPath.row];
-    cell.primaryLabel.text = [cellData objectForKey:@"title"];
-    cell.secondaryLabel.text = [cellData objectForKey:@"detail"];
     
     return cell;
 }

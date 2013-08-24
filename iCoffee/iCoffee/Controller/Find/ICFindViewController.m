@@ -187,16 +187,10 @@
     static NSDate *timestamp;
     
     CGPoint currentLocation = [panGestureRecognizer translationInView:self.view];
-
-    if (fabs([timestamp timeIntervalSinceNow]) < 0.015)
+    
+    if (!timestamp)
     {
-        if (!timestamp)
-        {
-            previousLocation = currentLocation;
-        }
-        
-        timestamp = [NSDate date];
-        return;
+        previousLocation = currentLocation;
     }
 
     timestamp = [NSDate date];
