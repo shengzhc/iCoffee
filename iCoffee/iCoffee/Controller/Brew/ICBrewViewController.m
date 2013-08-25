@@ -42,18 +42,26 @@
     return @"Brew";
 }
 
--(void)loadView
+
+- (void)viewDidLoad
 {
-    [super loadView];
+    [super viewDidLoad];
     
-    if (!_popButtonViewController) {
+    [self.view addSubview:self.popButtonViewController.view];
+}
+
+
+- (ICPopButtonViewController *)popButtonViewController
+{
+    if (!_popButtonViewController)
+    {
         CGRect frame = self.viewFrame;
-        CGPoint widgetCenter = CGPointMake(frame.size.width-50, frame.size.height-100);
-        _popButtonViewController = [[ICPopButtonViewController alloc] initWithDelegate:self andWidgetCenter:widgetCenter];
+        CGPoint widgetCenter = CGPointMake(frame.size.width - 50, frame.size.height - 100);
+        _popButtonViewController = [[ICPopButtonViewController alloc] initWithDelegate:self
+                                                                       widgetCenter:widgetCenter];
     }
     
-    [self.view addSubview:_popButtonViewController.view];
-    
+    return _popButtonViewController;
 }
 
 

@@ -8,18 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol popButtonDelegate <NSObject>
+@protocol ICPopButtonDelegate <NSObject>
 
--(void)getTouchedAtItem:(NSInteger)tag;
+- (void)getTouchedAtItem:(NSInteger)tag;
 
 @end
 
 @interface ICPopButtonItem : UIImageView
 
-@property (nonatomic,weak) id<popButtonDelegate> delegate;
-@property BOOL isLarge;
+@property (nonatomic, weak) id < ICPopButtonDelegate > delegate;
+@property (nonatomic, assign) BOOL isLarge;
+
+- (id)initWithDelegate:(id < ICPopButtonDelegate >) delegate
+                 image:(UIImage *)image
+                center:(CGPoint)center;
+
+
 
 -(void)resetItem;
-- (id)initWithImage:(UIImage *)image withPosition:(CGPoint)center;
 
 @end

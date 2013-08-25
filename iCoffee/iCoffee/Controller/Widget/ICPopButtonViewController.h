@@ -10,12 +10,14 @@
 #import "ICPopButtonItem.h"
 
 
-@interface ICPopButtonViewController : ICViewController<popButtonDelegate>
+@interface ICPopButtonViewController : ICViewController < ICPopButtonDelegate >
 
-@property(nonatomic, strong) ICPopButtonItem *mainButton;
-@property(nonatomic, strong) ICPopButtonItem *musicButton;
-@property CGPoint initialCenter;
+@property (nonatomic, strong) ICPopButtonItem *mainButton;
+@property (nonatomic, strong) ICPopButtonItem *musicButton;
 
--(id)initWithDelegate:(id)delegate andWidgetCenter:(CGPoint)center;
+@property (nonatomic, assign) CGPoint initialCenter;
+
+-(id)initWithDelegate:(id)delegate
+      widgetCenter:(CGPoint)center;
 
 @end

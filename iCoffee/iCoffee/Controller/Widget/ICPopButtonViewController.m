@@ -10,91 +10,108 @@
 
 @interface ICPopButtonViewController ()
 
-@property bool isExpand;
+@property BOOL isExpand;
 
 @end
 
 @implementation ICPopButtonViewController
 
--(id)initWithDelegate:(id)delegate andWidgetCenter:(CGPoint)center
+- (id)initWithDelegate:(id)delegate
+       widgetCenter:(CGPoint)center
 {
     self = [super initWithDelegate:delegate];
-    if (self) {
-        //Custom
-        _isExpand = false;
-        _initialCenter = center;
+    
+    if (self)
+    {
+        self.isExpand = NO;
+        self.initialCenter = center;
     }
     
     return self;
 }
 
-- (void)loadView
+
+- (void)viewDidLoad
 {
-    UIImage *image = [UIImage imageNamed:@"bg-addbutton.png"];
-    self.mainButton = [[ICPopButtonItem alloc] initWithImage:image withPosition:self.initialCenter];
+    [super viewDidLoad];
+ 
+    self.mainButton = [[ICPopButtonItem alloc] initWithDelegate:self
+                                                          image:[UIImage imageNamed:@"bg-addbutton.png"]
+                                                         center:self.initialCenter];
     self.mainButton.tag = 0;
     self.mainButton.delegate = self;
-    [self.mainButton sizeToFit];
-    
-    self.view = self.mainButton;
+    [self.view addSubview:self.mainButton];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
--(void)viewWillAppear:(BOOL)animated
+- (ICPopButtonItem *)musicButton
 {
-    [super viewWillAppear:animated];
-}
-
-#pragma Override getter
--(ICPopButtonItem *)musicButton
-{
-    if (nil==_musicButton) {
-        UIImage *image = [UIImage imageNamed:@"bg-addbutton-highlighted.png"];
-        _musicButton = [[ICPopButtonItem alloc] initWithImage:image withPosition:_initialCenter];
+    if (!_musicButton)
+    {
+        _musicButton = [[ICPopButtonItem alloc] initWithDelegate:self
+                                                           image:[UIImage imageNamed:@"bg-addbutton-highlighted.png"]
+                                                          center:self.initialCenter];
         _musicButton.tag = 1;
-        _musicButton.delegate = self;
     }
     
     return _musicButton;
 }
 
--(void)getTouchedAtItem:(NSInteger)tag
+
+- (void)getTouchedAtItem:(NSInteger)tag
 {
-    if (false==self.isExpand&&0==tag) {
-        
-        [self.view.superview addSubview:self.musicButton];
-        [self.view.superview sendSubviewToBack:self.musicButton];
+    if (!self.isExpand && 0 == tag)
+    {
+        [self.view.superview insertSubview:self.musicButton
+                              belowSubview:self.mainButton];
         
         CGPoint point = self.mainButton.center;
         point.y = point.y - 70;
         
-        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveEaseOut
-            animations:^{
+        [UIView animateWithDuration:0.5f
+                              delay:0.0f
+                            options:UIViewAnimationCurveEaseOut
+                         animations:^
+        {
                 self.musicButton.center = point;
-            }completion:^(BOOL finished){
-                self.isExpand = true;
-            }];
-        
-    }else if(true == self.isExpand&&0==tag){
-        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveEaseOut animations:^{
-            self.musicButton.center = self.mainButton.center;
-        }completion:^(BOOL finished){
-            self.isExpand = false;
+        }
+                        completion:^(BOOL finished)
+        {
+                self.isExpand = YES;
         }];
-    }else if(true == self.isExpand&&1==tag){
+        
+    }
+    else if(self.isExpand && 0 == tag)
+    {
+        [UIView animateWithDuration:0.5f
+                              delay:0.0f
+                            options:UIViewAnimationCurveEaseOut
+                         animations:^
+        {
+            self.musicButton.center = self.mainButton.center;
+            self.musicButton.alpha = 0.2;
+        }
+                         completion:^(BOOL finished)
+        {
+            [self.musicButton removeFromSuperview];
+            self.musicButton.alpha = 1.0;
+            self.isExpand = NO;
+        }];
+    }
+    else if(self.isExpand && 1 == tag)
+    {
         CGAffineTransform transform = CGAffineTransformScale(self.musicButton.transform, 2, 2);
         
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:0.5f
+                         animations:^
+        {
             self.musicButton.transform = transform;
             self.musicButton.alpha = 0;
-        }completion:^(BOOL finished){
-            self.musicButton.isLarge = true;
-            self.isExpand = false;
+        }
+                         completion:^(BOOL finished)
+        {
+            self.musicButton.isLarge = YES;
+            self.isExpand = NO;
             [self.musicButton resetItem];
         }];
     }
