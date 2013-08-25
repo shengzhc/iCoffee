@@ -65,12 +65,32 @@
           animated:NO];
 }
 
-
-- (void)viewWillDisappear:(BOOL)animated
+- (void)cleanupMapView
 {
-    [super viewWillDisappear:animated];
+    
+    switch (self.mapView.mapType)
+    {
+        case MKMapTypeHybrid:
+            self.mapView.mapType = MKMapTypeStandard;
+            break;
+        case MKMapTypeStandard:
+            self.mapView.mapType = MKMapTypeHybrid;
+            break;
+        default:
+            break;
+    }
+
+    self.mapView.showsUserLocation = NO;
+    self.mapView.delegate = nil;
     [self.mapView removeFromSuperview];
     self.mapView = nil;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [self cleanupMapView];
 }
 
 ///////////////////////////////////////////
@@ -230,13 +250,24 @@
         }
         
         [self.mapView removeOverlays:self.mapView.overlays];
-
+        
+        NSMutableArray *overlays = [NSMutableArray new];
+        
+        MKPolyline *polyline = nil;
+        
         for (id route in routes)
         {
             NSString *encodedPolyline = [route valueForKeyPath:@"overview_polyline.points"];
-            MKPolyline *polyline = [MKPolyline polylineWithEncodedString:encodedPolyline];
-            [self.mapView addOverlay:polyline];
+            polyline = [MKPolyline polylineWithEncodedString:encodedPolyline];
+            [overlays addObject:polyline];
         }
+        
+        CGFloat width = fabs(polyline.points[polyline.pointCount - 1].x - polyline.points[0].x);
+        CGFloat height = fabs(polyline.points[polyline.pointCount - 1].y - polyline.points[0].y);
+        
+        [self.mapView setRegion:MKCoordinateRegionForMapRect(MKMapRectMake(polyline.points[0].x, polyline.points[0].y, width, height))
+                       animated:NO];
+        [self.mapView addOverlays:overlays];
 
     }];
     [httpManager start];

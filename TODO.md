@@ -141,7 +141,7 @@ Aug. 23rd
 
 
 Aug. 24th - Aug. 25th
-1. Map features : navigations, current position pin, filter ( Open , Rating , Search Categories ) --- SC
+1. Map features : navigations, current position pin, filter ( Open , Rating , Search Categories ) (RESOLVED) --- SC
 2. Widget and Core Animation --- ARK
 3. Bean View and Detail View --- ARK
 
