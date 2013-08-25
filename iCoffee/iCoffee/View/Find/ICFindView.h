@@ -7,12 +7,15 @@
 //
 
 #import "ICView.h"
+#import "ICFindBackView.h"
+
 #import <MapKit/MapKit.h>
 
 @interface ICFindView : ICView
 
+
 @property (nonatomic, strong) MKMapView *mapView;
 @property (nonatomic, strong) UIView *foreView;
-@property (nonatomic, strong) UIView *backView;
+@property (nonatomic, strong) ICFindBackView *backView;
 
 @end

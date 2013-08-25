@@ -1,0 +1,22 @@
+[
+    {
+        "title":"Open/Close",
+        "image":"find_icon_miss"
+    },
+    {
+        "title":"Cafe",
+        "image":"find_icon_cafe"
+    },
+    {
+        "title":"Museum",
+        "image":"find_icon_miss"
+    },
+    {
+        "title":"Restaurant",
+        "image":"find_icon_restaurant"
+    },
+    {
+        "title":"Storage",
+        "image":"find_icon_miss"
+    }
+]

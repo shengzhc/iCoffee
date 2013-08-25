@@ -11,7 +11,7 @@
 
 @interface ICPopButtonItem()
 
-@property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
+@property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @property CGPoint initialCenter;
 
 @end
@@ -19,42 +19,49 @@
 
 @implementation ICPopButtonItem
 
-- (id)initWithImage:(UIImage *)image withPosition:(CGPoint)center
+- (id)initWithDelegate:(id < ICPopButtonDelegate >) delegate
+                 image:(UIImage *)image
+                center:(CGPoint)center
 {
     self = [super initWithImage:image];
-    if (self) {
-        // Initialization code
+    
+    if (self)
+    {
         [self sizeToFit];
-        _initialCenter = center;
-        _isLarge = false;
+        self.delegate = delegate;
+        self.initialCenter = center;
+        self.isLarge = NO;
         self.center = center;
         self.userInteractionEnabled = YES;
-        
-        _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler:)];
-        _tapRecognizer.numberOfTouchesRequired = 1;
-        _tapRecognizer.numberOfTapsRequired = 1;
-        [self addGestureRecognizer:_tapRecognizer];
+
+        self.tapGestureRecognizer= [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                           action:@selector(tapHandler:)];
+        self.tapGestureRecognizer.numberOfTouchesRequired = 1;
+        self.tapGestureRecognizer.numberOfTapsRequired = 1;
+        [self addGestureRecognizer:self.tapGestureRecognizer];
     }
+    
     return self;
 }
+
 
 -(void)tapHandler:(UITapGestureRecognizer *)recognizer
 {
     [self.delegate getTouchedAtItem:self.tag];
 }
 
+
 -(void)resetItem
 {
-    if (self.isLarge==TRUE) {
+    if (self.isLarge)
+    {
         CGAffineTransform transform = CGAffineTransformScale(self.transform, 0.5, 0.5);
         self.transform = transform;
-        self.isLarge = FALSE;
+        self.isLarge = NO;
     }
     
     self.center = self.initialCenter;
     self.alpha = 1.0f;
     [self removeFromSuperview];
-    
 }
-
 @end
