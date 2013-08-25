@@ -8,8 +8,10 @@
 
 #import "ICFindViewController.h"
 #import "ICHTTPManager.h"
+#import "MKPolyline+ICServices.h"
 
 #import "ICFindView.h"
+#import "ICFindBackView.h"
 #import "ICDataButton.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -211,11 +213,31 @@
     ICMapPlaceEntity *placeEntity = (ICMapPlaceEntity *)button.object;
     
     ICHTTPManager *httpManager = [ICHTTPManager POSTHTTPManagerWithURLString:@"http://maps.googleapis.com/maps/api/directions/json"
-                                                                        body:nil
+                                                                        body:@{
+                                  @"origin":[NSString stringWithFormat:@"%f,%f", self.mapView.userLocation.coordinate.latitude, self.mapView.userLocation.coordinate.longitude],
+                                  @"destination":[NSString stringWithFormat:@"%f,%f", placeEntity.coordinate.latitude, placeEntity.coordinate.longitude],
+                                  @"sensor":@"false",
+                                  @"mode":@"driving",
+                                  @"avoid":[self.view.backView avoid]
+                                  }
                                                                        token:nil
                                                            completionHandler:^(ICHTTPURLResponse *response)
     {
+        NSArray *routes = [[NSJSONSerialization JSONObjectWithData:response.data options:NSJSONReadingMutableContainers error:nil] objectForKey:@"routes"];
+        if ([routes count] == 0)
+        {
+            return;
+        }
         
+        [self.mapView removeOverlays:self.mapView.overlays];
+
+        for (id route in routes)
+        {
+            NSString *encodedPolyline = [route valueForKeyPath:@"overview_polyline.points"];
+            MKPolyline *polyline = [MKPolyline polylineWithEncodedString:encodedPolyline];
+            [self.mapView addOverlay:polyline];
+        }
+
     }];
     [httpManager start];
 }
@@ -384,23 +406,27 @@
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
 {
+    
 }
 
 
-- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
+    if ([overlay isKindOfClass:[MKPolyline class]])
+    {
+        MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
+        [polylineView setStrokeColor:[UIColor blueColor]];
+        return polylineView;
+    }
+    
+    return nil;
 }
 
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+- (void)mapView:(MKMapView *)mapView didAddOverlayViews:(NSArray *)overlayViews
 {
+    
 }
-
-
-- (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
-{
-}
-
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark UISearchBarDelegate
@@ -424,13 +450,16 @@
     
     if (!lastSearchTime || fabs([lastSearchTime timeIntervalSinceNow]) > 5.0)
     {
+        
         NSDictionary *parameters = @{
                                      @"key":GooglePlacesAPIKey,
                                      @"location":[NSString stringWithFormat:@"%f,%f", self.mapView.userLocation.coordinate.latitude, self.mapView.userLocation.coordinate.longitude],
                                      @"radius":[NSNumber numberWithFloat:[self radius]],
                                      @"sensor":@"false",
                                      @"keyword":searchBar.text,
-                                     @"name":searchBar.text
+                                     @"name":searchBar.text,
+                                     @"types":[self.view.backView types],
+                                     @"opennow":[self.view.backView opennow]
                                      };
         
         ICHTTPManager *httpManager = [ICHTTPManager POSTHTTPManagerWithURLString:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json"

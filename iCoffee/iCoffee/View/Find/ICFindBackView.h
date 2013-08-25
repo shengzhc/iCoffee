@@ -10,4 +10,8 @@
 
 @interface ICFindBackView : ICView
 
+- (NSString *)types;
+- (NSString *)opennow;
+- (NSString *)avoid;
+
 @end
