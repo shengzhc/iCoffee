@@ -13,13 +13,13 @@
 
 - (NSString *)title
 {
-    return [NSString stringWithFormat:@"%f", self.coordinate.latitude];
+    return [NSString stringWithFormat:@"%@ %@", self.name, self.rating];
 }
 
 
 - (NSString *)subtitle
 {
-    return [NSString stringWithFormat:@"%f", self.coordinate.longitude];
+    return self.address;
 }
 
 

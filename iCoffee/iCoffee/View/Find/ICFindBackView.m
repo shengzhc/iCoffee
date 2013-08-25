@@ -37,8 +37,9 @@
         for (NSDictionary *dictionary in self.datasource)
         {
             ICSwitchBarView *barView = [[ICSwitchBarView alloc]initWithFrame:CGRectZero
-                                                                       title:[dictionary objectForKey:@"title"]
-                                                                       image:[dictionary valueForKey:@"image"]
+                                                                         key:[dictionary valueForKeyPath:@"key"]
+                                                                       title:[dictionary valueForKeyPath:@"title"]
+                                                                       image:[dictionary valueForKeyPath:@"image"]
                                                                     delegate:self];
             
             [barView addCorners];
@@ -75,6 +76,69 @@
                                                        options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
         topping = barView.verticalEnding + 10;
     }
+}
+
+
+- (NSString *)types
+{
+    NSMutableString *ret = [[NSMutableString alloc] init];
+    
+    for (ICSwitchBarView *barView in self.switchBarArray)
+    {
+        if (![barView.key isEqualToString:@"types"])
+        {
+            continue;
+        }
+        
+        if (barView.switchButton.on)
+        {
+            [ret appendString:[NSString stringWithFormat:@"%@|", [barView.titleLabel.text lowercaseString]]];
+        }
+    }
+    if (ret.length > 0)
+    {
+        return [[ret substringToIndex:ret.length-1] mutableCopy];
+    }
+    
+    return @"";
+}
+
+
+- (NSString *)opennow
+{
+    for (ICSwitchBarView *barView in self.switchBarArray)
+    {
+        if (![barView.key isEqualToString:@"opennow"])
+        {
+            continue;
+        }
+        
+        if (barView.switchButton.on)
+        {
+            return @"true";
+        }
+    }
+    
+    return @"false";
+}
+
+
+- (NSString *)avoid
+{
+    for (ICSwitchBarView *barView in self.switchBarArray)
+    {
+        if (![barView.key isEqualToString:@"avoid"])
+        {
+            continue;
+        }
+        
+        if (!barView.switchButton.on)
+        {
+            return @"highways";
+        }
+    }
+    
+    return @"";
 }
 
 @end

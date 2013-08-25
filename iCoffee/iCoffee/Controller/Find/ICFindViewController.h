@@ -7,7 +7,8 @@
 //
 
 #import "ICViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface ICFindViewController : ICViewController
+@interface ICFindViewController : ICViewController < MKMapViewDelegate >
 
 @end
