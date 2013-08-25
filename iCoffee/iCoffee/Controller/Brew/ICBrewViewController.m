@@ -7,10 +7,13 @@
 //
 
 #import "ICBrewViewController.h"
-
 #import "ICBrewView.h"
+#import "ICPopButtonViewController.h"
+
 
 @interface ICBrewViewController ()
+
+@property (nonatomic, strong) ICPopButtonViewController *popButtonViewController;
 
 @end
 
@@ -38,4 +41,20 @@
 {
     return @"Brew";
 }
+
+-(void)loadView
+{
+    [super loadView];
+    
+    if (!_popButtonViewController) {
+        CGRect frame = self.viewFrame;
+        CGPoint widgetCenter = CGPointMake(frame.size.width-50, frame.size.height-100);
+        _popButtonViewController = [[ICPopButtonViewController alloc] initWithDelegate:self andWidgetCenter:widgetCenter];
+    }
+    
+    [self.view addSubview:_popButtonViewController.view];
+    
+}
+
+
 @end

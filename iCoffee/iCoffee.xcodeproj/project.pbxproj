@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ADBECA17C315A30083B3AF /* ICBeanCell.m */; };
+		07BEC1B517C7BDDF0076E03C /* ICPopButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BEC1B417C7BDDF0076E03C /* ICPopButtonViewController.m */; };
+		07BEC1C417C7C1740076E03C /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BA17C7C1740076E03C /* bg-addbutton-highlighted.png */; };
+		07BEC1C517C7C1740076E03C /* bg-addbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BB17C7C1740076E03C /* bg-addbutton-highlighted@2x.png */; };
+		07BEC1C617C7C1740076E03C /* bg-addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BC17C7C1740076E03C /* bg-addbutton.png */; };
+		07BEC1C717C7C1740076E03C /* bg-addbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BD17C7C1740076E03C /* bg-addbutton@2x.png */; };
+		07BEC1C817C7C1740076E03C /* bg-menuitem-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BE17C7C1740076E03C /* bg-menuitem-highlighted.png */; };
+		07BEC1C917C7C1740076E03C /* bg-menuitem-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BF17C7C1740076E03C /* bg-menuitem-highlighted@2x.png */; };
+		07BEC1CA17C7C1740076E03C /* bg-menuitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1C017C7C1740076E03C /* bg-menuitem.png */; };
+		07BEC1CB17C7C1740076E03C /* bg-menuitem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1C117C7C1740076E03C /* bg-menuitem@2x.png */; };
+		07BEC1CC17C7C1740076E03C /* icon-plus-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1C217C7C1740076E03C /* icon-plus-highlighted.png */; };
+		07BEC1CD17C7C1740076E03C /* icon-plus-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1C317C7C1740076E03C /* icon-plus-highlighted@2x.png */; };
+		07BEC1D017C7C80B0076E03C /* ICPopButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BEC1CF17C7C80B0076E03C /* ICPopButtonItem.m */; };
 		07E855EC17C2B347000CD833 /* ICBeanDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EB17C2B347000CD833 /* ICBeanDetailView.m */; };
 		07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */; };
 		E74D6B0117C0B15F00B13B60 /* BalloonOpen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E76C68CD17C04F5F002BBF3C /* BalloonOpen.ttf */; };
@@ -95,6 +107,20 @@
 /* Begin PBXFileReference section */
 		07ADBEC917C315A30083B3AF /* ICBeanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanCell.h; sourceTree = "<group>"; };
 		07ADBECA17C315A30083B3AF /* ICBeanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanCell.m; sourceTree = "<group>"; };
+		07BEC1B317C7BDDF0076E03C /* ICPopButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPopButtonViewController.h; sourceTree = "<group>"; };
+		07BEC1B417C7BDDF0076E03C /* ICPopButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPopButtonViewController.m; sourceTree = "<group>"; };
+		07BEC1BA17C7C1740076E03C /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
+		07BEC1BB17C7C1740076E03C /* bg-addbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted@2x.png"; sourceTree = "<group>"; };
+		07BEC1BC17C7C1740076E03C /* bg-addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton.png"; sourceTree = "<group>"; };
+		07BEC1BD17C7C1740076E03C /* bg-addbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton@2x.png"; sourceTree = "<group>"; };
+		07BEC1BE17C7C1740076E03C /* bg-menuitem-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem-highlighted.png"; sourceTree = "<group>"; };
+		07BEC1BF17C7C1740076E03C /* bg-menuitem-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem-highlighted@2x.png"; sourceTree = "<group>"; };
+		07BEC1C017C7C1740076E03C /* bg-menuitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem.png"; sourceTree = "<group>"; };
+		07BEC1C117C7C1740076E03C /* bg-menuitem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem@2x.png"; sourceTree = "<group>"; };
+		07BEC1C217C7C1740076E03C /* icon-plus-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus-highlighted.png"; sourceTree = "<group>"; };
+		07BEC1C317C7C1740076E03C /* icon-plus-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus-highlighted@2x.png"; sourceTree = "<group>"; };
+		07BEC1CE17C7C80B0076E03C /* ICPopButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPopButtonItem.h; sourceTree = "<group>"; };
+		07BEC1CF17C7C80B0076E03C /* ICPopButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPopButtonItem.m; sourceTree = "<group>"; };
 		07E855EA17C2B347000CD833 /* ICBeanDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanDetailView.h; sourceTree = "<group>"; };
 		07E855EB17C2B347000CD833 /* ICBeanDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanDetailView.m; sourceTree = "<group>"; };
 		07E855ED17C2B365000CD833 /* ICBeanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanDetailViewController.h; sourceTree = "<group>"; };
@@ -244,6 +270,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07BEC1B217C7BDDF0076E03C /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				07BEC1B317C7BDDF0076E03C /* ICPopButtonViewController.h */,
+				07BEC1B417C7BDDF0076E03C /* ICPopButtonViewController.m */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		07BEC1B617C7BE0B0076E03C /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				07BEC1CE17C7C80B0076E03C /* ICPopButtonItem.h */,
+				07BEC1CF17C7C80B0076E03C /* ICPopButtonItem.m */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		E73807C717C426CD00FB2A00 /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +485,7 @@
 				E76C68FB17C0A8DF002BBF3C /* Find */,
 				E76C68FE17C0A8DF002BBF3C /* Setting */,
 				E76C68FF17C0A8DF002BBF3C /* Welcome */,
+				07BEC1B217C7BDDF0076E03C /* Widget */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -461,6 +506,7 @@
 				E76C68E717C0A8BF002BBF3C /* Menu */,
 				E76C68EC17C0A8BF002BBF3C /* Setting */,
 				E76C68ED17C0A8BF002BBF3C /* Welcome */,
+				07BEC1B617C7BE0B0076E03C /* Widget */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -489,6 +535,16 @@
 			isa = PBXGroup;
 			children = (
 				E7E6137B17C9A7CD009B0462 /* find_background.png */,
+				07BEC1BA17C7C1740076E03C /* bg-addbutton-highlighted.png */,
+				07BEC1BB17C7C1740076E03C /* bg-addbutton-highlighted@2x.png */,
+				07BEC1BC17C7C1740076E03C /* bg-addbutton.png */,
+				07BEC1BD17C7C1740076E03C /* bg-addbutton@2x.png */,
+				07BEC1BE17C7C1740076E03C /* bg-menuitem-highlighted.png */,
+				07BEC1BF17C7C1740076E03C /* bg-menuitem-highlighted@2x.png */,
+				07BEC1C017C7C1740076E03C /* bg-menuitem.png */,
+				07BEC1C117C7C1740076E03C /* bg-menuitem@2x.png */,
+				07BEC1C217C7C1740076E03C /* icon-plus-highlighted.png */,
+				07BEC1C317C7C1740076E03C /* icon-plus-highlighted@2x.png */,
 				E7E6135D17C8931F009B0462 /* button_menu_setting@2x.png */,
 				E7E6135E17C8931F009B0462 /* button_menu_setting.png */,
 				E7E6135917C88DE8009B0462 /* button_my_location_pressed@2x.png */,
@@ -708,6 +764,16 @@
 				E7A2613417C1AAA800983DC4 /* icon_home.png in Resources */,
 				E7A2613517C1AAA800983DC4 /* icon_home@2x.png in Resources */,
 				E772C78F17C3E962004F5EA1 /* GoogleMaps.bundle in Resources */,
+				07BEC1C417C7C1740076E03C /* bg-addbutton-highlighted.png in Resources */,
+				07BEC1C517C7C1740076E03C /* bg-addbutton-highlighted@2x.png in Resources */,
+				07BEC1C617C7C1740076E03C /* bg-addbutton.png in Resources */,
+				07BEC1C717C7C1740076E03C /* bg-addbutton@2x.png in Resources */,
+				07BEC1C817C7C1740076E03C /* bg-menuitem-highlighted.png in Resources */,
+				07BEC1C917C7C1740076E03C /* bg-menuitem-highlighted@2x.png in Resources */,
+				07BEC1CA17C7C1740076E03C /* bg-menuitem.png in Resources */,
+				07BEC1CB17C7C1740076E03C /* bg-menuitem@2x.png in Resources */,
+				07BEC1CC17C7C1740076E03C /* icon-plus-highlighted.png in Resources */,
+				07BEC1CD17C7C1740076E03C /* icon-plus-highlighted@2x.png in Resources */,
 				E7E6135717C88DE2009B0462 /* button_my_location@2x.png in Resources */,
 				E7E6135817C88DE2009B0462 /* button_my_location.png in Resources */,
 				E7E6135B17C88DE8009B0462 /* button_my_location_pressed@2x.png in Resources */,
@@ -756,6 +822,8 @@
 				07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */,
 				E7C268DC17C72468001347C1 /* ICMapPlaceEntity.m in Sources */,
 				E7C268DF17C724FC001347C1 /* ICMapPlaceEntityMapper.m in Sources */,
+				07BEC1B517C7BDDF0076E03C /* ICPopButtonViewController.m in Sources */,
+				07BEC1D017C7C80B0076E03C /* ICPopButtonItem.m in Sources */,
 				E7E6136517C964D8009B0462 /* ICBeanEntity.m in Sources */,
 				E7E6136817C964E8009B0462 /* ICBeanEntityMapper.m in Sources */,
 				E7E6136B17C98C03009B0462 /* ICFindBackView.m in Sources */,
