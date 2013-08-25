@@ -7,7 +7,16 @@
 //
 
 #import "ICViewController.h"
+#import "ICPopButtonItem.h"
 
-@interface ICPopButtonViewController : ICViewController
+
+@interface ICPopButtonViewController : ICViewController<popButtonDelegate>
+
+@property(nonatomic, strong) ICPopButtonItem *mainButton;
+@property(nonatomic, strong) ICPopButtonItem *musicButton;
+@property CGPoint initialCenter;
+
+-(id)initWithDelegate:(id)delegate andWidgetCenter:(CGPoint)center;
+
 
 @end

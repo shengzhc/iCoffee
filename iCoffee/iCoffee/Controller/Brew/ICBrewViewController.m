@@ -25,11 +25,7 @@
     
     if (self)
     {
-        if (!_popButtonViewController) {
-            _popButtonViewController = [[ICPopButtonViewController alloc] initWithDelegate:self];
-        }
         
-    [self.view addSubview:_popButtonViewController.view];
     }
     
     return self;
@@ -44,6 +40,20 @@
 - (NSString *)headerBarTitle
 {
     return @"Brew";
+}
+
+-(void)loadView
+{
+    [super loadView];
+    
+    if (!_popButtonViewController) {
+        CGRect frame = self.viewFrame;
+        CGPoint widgetCenter = CGPointMake(frame.size.width-50, frame.size.height-100);
+        _popButtonViewController = [[ICPopButtonViewController alloc] initWithDelegate:self andWidgetCenter:widgetCenter];
+    }
+    
+    [self.view addSubview:_popButtonViewController.view];
+    
 }
 
 
