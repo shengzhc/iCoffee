@@ -15,5 +15,6 @@
 
 - (id)initWithFrame:(CGRect)frame
               title:(NSString *)title
+              image:(NSString *)imageURL
            delegate:(id)delegate;
 @end

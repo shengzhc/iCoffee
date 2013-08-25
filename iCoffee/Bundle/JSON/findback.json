@@ -1,17 +1,22 @@
 [
     {
-        "title":"Open/Close"
+        "title":"Open/Close",
+        "image":"find_icon_miss"
     },
     {
-        "title":"Cafe"
+        "title":"Cafe",
+        "image":"find_icon_cafe"
     },
     {
-        "title":"Museum"
+        "title":"Museum",
+        "image":"find_icon_miss"
     },
     {
-        "title":"Restaurant"
+        "title":"Restaurant",
+        "image":"find_icon_restaurant"
     },
     {
-        "title":"Storage"
+        "title":"Storage",
+        "image":"find_icon_miss"
     }
 ]

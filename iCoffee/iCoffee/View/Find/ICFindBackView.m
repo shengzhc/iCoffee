@@ -36,9 +36,10 @@
 
         for (NSDictionary *dictionary in self.datasource)
         {
-            ICSwitchBarView *barView = [[ICSwitchBarView alloc] initWithFrame:CGRectZero
-                                                                        title:[dictionary objectForKey:@"title"]
-                                                                     delegate:self];
+            ICSwitchBarView *barView = [[ICSwitchBarView alloc]initWithFrame:CGRectZero
+                                                                       title:[dictionary objectForKey:@"title"]
+                                                                       image:[dictionary valueForKey:@"image"]
+                                                                    delegate:self];
             
             [barView addCorners];
             [self addSubview:barView];

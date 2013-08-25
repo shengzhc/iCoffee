@@ -11,6 +11,7 @@
 @interface ICSwitchBarView ()
 
 @property (nonatomic, strong) UISwitch *switchButton;
+@property (nonatomic, strong) UIImageView *logoImageView;
 
 @end
 
@@ -18,6 +19,7 @@
 
 - (id)initWithFrame:(CGRect)frame
               title:(NSString *)title
+              image:(NSString *)imageURL
            delegate:(id)delegate
 {
     self = [super initWithFrame:frame
@@ -33,11 +35,17 @@
                                              font:[UIFont boldFontWithSize:14]
                                         textColor:[UIColor darkTextColor]];
         
+        self.logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageURL]];
+        [self.logoImageView addCorners];
+        self.logoImageView.clipsToBounds = YES;
+        [self.logoImageView addShadowWithColor:[UIColor blackColor]];
+        
         self.switchButton = [[UISwitch alloc] init];
         self.switchButton.onTintColor = [UIColor whiteColor];
-        self.switchButton.tintColor = [UIColor darkGrayColor];
+        self.switchButton.tintColor = [UIColor blackColor];
         self.switchButton.thumbTintColor = [UIColor lightGrayColor];
         
+        [self addSubview:self.logoImageView];
         [self addSubview:self.titleLabel];
         [self addSubview:self.switchButton];
     }
@@ -50,14 +58,24 @@
 {
     [super layoutSubviews];
     
+    self.logoImageView.frame = [self.logoImageView alignedRectInSuperviewForSize:[self logoImageViewSize]
+                                                                          offset:CGSizeMake(5, 0)
+                                                                         options:(ICAlignmentOptionsLeft | ICAlignmentOptionsVerticalCenter)];
+    
     [self.titleLabel sizeToFit];
     self.titleLabel.frame = [self.titleLabel alignedRectInSuperviewForSize:self.titleLabel.bounds.size
-                                                                    offset:CGSizeMake(10, 0)
+                                                                    offset:CGSizeMake(self.logoImageView.horizontalEnding + 5, 0)
                                                                    options:(ICAlignmentOptionsLeft | ICAlignmentOptionsVerticalCenter)];
     [self.switchButton sizeToFit];
     self.switchButton.frame = [self.switchButton alignedRectInSuperviewForSize:self.switchButton.bounds.size
                                                                         offset:CGSizeMake(10, 0)
                                                                        options:(ICAlignmentOptionsRight | ICAlignmentOptionsVerticalCenter)];
+}
+
+
+- (CGSize)logoImageViewSize
+{
+    return CGSizeMake(30, 30);
 }
 
 @end
