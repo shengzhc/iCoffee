@@ -10,6 +10,8 @@
 #import "ICHTTPManager.h"
 
 #import "ICFindView.h"
+#import "ICDataButton.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #import "ICMapPlaceEntityMapper.h"
 
@@ -85,6 +87,12 @@
     return CGRectMake(260, 0, self.view.bounds.size.width,
                       self.view.bounds.size.height);
     
+}
+
+
+- (CGFloat)radius
+{
+    return 5000;
 }
 
 ///////////////////////////////////////////
@@ -194,6 +202,22 @@
 - (void)settingButtonClicked:(id)sender
 {
     [self toggleBackView];
+}
+
+
+- (void)directionButtonClicked:(id)sender
+{
+    ICDataButton *button = (ICDataButton *)sender;
+    ICMapPlaceEntity *placeEntity = (ICMapPlaceEntity *)button.object;
+    
+    ICHTTPManager *httpManager = [ICHTTPManager POSTHTTPManagerWithURLString:@"http://maps.googleapis.com/maps/api/directions/json"
+                                                                        body:nil
+                                                                       token:nil
+                                                           completionHandler:^(ICHTTPURLResponse *response)
+    {
+        
+    }];
+    [httpManager start];
 }
 
 
@@ -312,7 +336,25 @@
         pinAnnotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                                             reuseIdentifier:pinAnnotationViewIdentifier];
     
-        pinAnnotationView.pinColor = MKPinAnnotationColorPurple;
+        pinAnnotationView.canShowCallout = YES;
+        ICDataButton *direction = [ICDataButton buttonWithType:UIButtonTypeCustom];
+        direction.object = annotation;
+        [direction setImage:[UIImage imageNamed:@"find_direction_inactive"] forState:UIControlStateNormal];
+        [direction setImage:[UIImage imageNamed:@"find_direction_active"] forState:UIControlStateHighlighted];
+        [direction sizeToFit];
+        [direction addTarget:self
+                      action:@selector(directionButtonClicked:)
+            forControlEvents:UIControlEventTouchUpInside];
+        
+        pinAnnotationView.rightCalloutAccessoryView = direction;
+        UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        [logoImageView setImageWithURL:[NSURL URLWithString:((ICMapPlaceEntity *)annotation).iconURL]
+                  placeholderImage:[UIImage imageNamed:@"find_direction_active"]];
+        logoImageView.contentMode = UIViewContentModeScaleToFill;
+        logoImageView.backgroundColor = [UIColor whiteColor];
+        [logoImageView addCorners];
+        [logoImageView addBorderWithColor:[UIColor blackColor]];
+        pinAnnotationView.leftCalloutAccessoryView = logoImageView;
     }
     
     return pinAnnotationView;
@@ -336,31 +378,27 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 }
 
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 ///////////////////////////////////////////
@@ -389,7 +427,7 @@
         NSDictionary *parameters = @{
                                      @"key":GooglePlacesAPIKey,
                                      @"location":[NSString stringWithFormat:@"%f,%f", self.mapView.userLocation.coordinate.latitude, self.mapView.userLocation.coordinate.longitude],
-                                     @"radius":@10000,
+                                     @"radius":[NSNumber numberWithFloat:[self radius]],
                                      @"sensor":@"false",
                                      @"keyword":searchBar.text,
                                      @"name":searchBar.text
@@ -424,7 +462,10 @@
                 
                 [self.mapView addAnnotations:[self.places allValues]];
             }
-
+            [self mapView:self.mapView showCoordinate:self.mapView.userLocation.coordinate
+                    width:2 * [self radius]
+                   height:2 * [self radius]
+                 animated:YES];
             [searchBar resignFirstResponder];
         }];
         

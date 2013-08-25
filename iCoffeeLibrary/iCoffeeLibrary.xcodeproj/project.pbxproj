@@ -33,6 +33,7 @@
 		E76197B517B0D165000A94BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197B417B0D165000A94BA /* UIKit.framework */; };
 		E76197B717B0D177000A94BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197B617B0D177000A94BA /* CoreGraphics.framework */; };
 		E76197BB17B0D316000A94BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197BA17B0D315000A94BA /* QuartzCore.framework */; };
+		E7BF70D917CA6FCC00D3D5C5 /* MKPolyline+ICServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BF70D817CA6FCC00D3D5C5 /* MKPolyline+ICServices.m */; };
 		E7DAB37717AF217600D575B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB37617AF217600D575B7 /* Foundation.framework */; };
 		E7DAB38C17AF22A700D575B7 /* ICViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB38B17AF22A700D575B7 /* ICViewController.m */; };
 		E7DAB39017AF232000D575B7 /* ICView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB38F17AF232000D575B7 /* ICView.m */; };
@@ -104,6 +105,8 @@
 		E76197B417B0D165000A94BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E76197B617B0D177000A94BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E76197BA17B0D315000A94BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E7BF70D717CA6FCC00D3D5C5 /* MKPolyline+ICServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKPolyline+ICServices.h"; sourceTree = "<group>"; };
+		E7BF70D817CA6FCC00D3D5C5 /* MKPolyline+ICServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKPolyline+ICServices.m"; sourceTree = "<group>"; };
 		E7DAB37317AF217600D575B7 /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiCoffeeLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB37617AF217600D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7DAB38A17AF22A700D575B7 /* ICViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICViewController.h; sourceTree = "<group>"; };
@@ -175,6 +178,7 @@
 		E761973817B0C32B000A94BA /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E7BF70D617CA6FB800D3D5C5 /* MKPolyline */,
 				E761973917B0C32B000A94BA /* NSArray */,
 				E761973D17B0C32B000A94BA /* NSDate */,
 				E761974017B0C32B000A94BA /* NSNumber */,
@@ -318,6 +322,15 @@
 				E761977B17B0C3A5000A94BA /* ICNotifications.h */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		E7BF70D617CA6FB800D3D5C5 /* MKPolyline */ = {
+			isa = PBXGroup;
+			children = (
+				E7BF70D717CA6FCC00D3D5C5 /* MKPolyline+ICServices.h */,
+				E7BF70D817CA6FCC00D3D5C5 /* MKPolyline+ICServices.m */,
+			);
+			path = MKPolyline;
 			sourceTree = "<group>";
 		};
 		E7DAB36817AF217600D575B7 = {
@@ -478,6 +491,7 @@
 				E73807D917C42BD100FB2A00 /* ICMutableURLRequest.m in Sources */,
 				E73807DF17C43AA700FB2A00 /* ICHTTPManager.m in Sources */,
 				E73807E217C440DF00FB2A00 /* ICHTTPURLResponse.m in Sources */,
+				E7BF70D917CA6FCC00D3D5C5 /* MKPolyline+ICServices.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
