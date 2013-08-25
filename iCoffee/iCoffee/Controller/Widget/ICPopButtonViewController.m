@@ -65,14 +65,13 @@
 
 -(void)getTouchedAtItem:(NSInteger)tag
 {
-    NSLog(@"TAG: %d",tag);
     if (false==self.isExpand&&0==tag) {
         
         [self.view.superview addSubview:self.musicButton];
         [self.view.superview sendSubviewToBack:self.musicButton];
         
         CGPoint point = self.mainButton.center;
-        point.y = point.y - 100;
+        point.y = point.y - 70;
         
         [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveEaseOut
             animations:^{

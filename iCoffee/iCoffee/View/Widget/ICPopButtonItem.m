@@ -40,7 +40,6 @@
 
 -(void)tapHandler:(UITapGestureRecognizer *)recognizer
 {
-    
     [self.delegate getTouchedAtItem:self.tag];
 }
 
@@ -49,11 +48,11 @@
     if (self.isLarge==TRUE) {
         CGAffineTransform transform = CGAffineTransformScale(self.transform, 0.5, 0.5);
         self.transform = transform;
+        self.isLarge = FALSE;
     }
     
     self.center = self.initialCenter;
     self.alpha = 1.0f;
-    [self sizeToFit];
     [self removeFromSuperview];
     
 }

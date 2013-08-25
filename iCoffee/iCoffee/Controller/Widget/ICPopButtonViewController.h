@@ -18,5 +18,4 @@
 
 -(id)initWithDelegate:(id)delegate andWidgetCenter:(CGPoint)center;
 
-
 @end
