@@ -13,6 +13,11 @@
 #define ICMapPlaceEntityReferenceMapper @"reference"
 #define ICMapPlaceEntityLatMapper @"geometry.location.lat"
 #define ICMapPlaceEntityLngMapper @"geometry.location.lng"
+#define ICMapPlaceEntityAddressMapper @"formatted_address"
+#define ICMapPlaceEntityIconMapper @"icon"
+#define ICMapPlaceEntityNameMapper @"name"
+#define ICMapPlaceEntityRatingMapper @"rating"
+#define ICMapPlaceEntityTypesMapper @"types"
 
 @interface ICMapPlaceEntityMapper : NSObject
 

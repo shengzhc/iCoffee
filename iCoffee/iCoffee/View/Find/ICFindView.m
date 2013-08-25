@@ -26,15 +26,14 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor whiteColor];
-        
         self.foreView = [[UIView alloc] initWithFrame:CGRectZero];
-        [self.foreView addShadowWithColor:[UIColor blackColor]
+        [self.foreView addShadowWithColor:[UIColor whiteColor]
                                   opacity:.3
                                    radius:.8
-                                   offset:CGSizeMake(-1.5, 0)];
-        self.backView = [[UIView alloc] initWithFrame:CGRectZero];
-        self.backView.backgroundColor = [UIColor whiteColor];
+                                   offset:CGSizeMake(-3, 0)];
+        self.backView = [[ICFindBackView alloc] initWithFrame:CGRectZero
+                                                     delegate:delegate];
+        self.backView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.5];
         
         UIView *headerToolBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 50)];
         self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
@@ -84,8 +83,8 @@
         [self insertSubview:self.backView belowSubview:self.foreView];
         
         self.foreView.frame = self.bounds;
-        self.backView.frame = self.bounds;
-
+        self.backView.frame = CGRectMake(0, 0, 280, self.bounds.size.height);
+        self.backView.hidden = YES;
     }
     
     return self;

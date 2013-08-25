@@ -53,12 +53,20 @@
     [super viewDidAppear:animated];
     self.mapView = self.view.mapView;
     self.view.foreView.frame = self.view.bounds;
-    self.view.backView.frame = self.view.bounds;
+    self.view.backView.frame = CGRectMake(0, 0, 280, self.view.bounds.size.height);
     
     [self mapView:self.mapView showCoordinate:self.mapView.userLocation.coordinate
             width:[self visibleRegionSize].width
            height:[self visibleRegionSize].height
           animated:NO];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.mapView removeFromSuperview];
+    self.mapView = nil;
 }
 
 ///////////////////////////////////////////
@@ -125,22 +133,25 @@
     CGFloat destDuration, interDuration;
     CGFloat xOffset = 20;
     BOOL enablePanView;
+    BOOL hideBackView = NO;
     
     if (self.view.foreView.frame.origin.x > 1)
     {
         destRect = self.view.bounds;
         interRect = CGRectOffset(self.view.foreView.frame, xOffset, 0);
         interDuration = 0.05;
-        destDuration = 0.3;
+        destDuration = 0.2;
         enablePanView = NO;
+        hideBackView = YES;
     }
     else
     {
         destRect = [self foldForeViewFrame];
         interRect = CGRectOffset(destRect, xOffset, 0);
-        interDuration = 0.3;
+        interDuration = 0.2;
         destDuration = 0.05;
         enablePanView = YES;
+        self.view.backView.hidden = hideBackView;
     }
     
     [UIView animateWithDuration:interDuration
@@ -158,6 +169,10 @@
                           completion:^(BOOL finished)
           {
               [self togglePanView:enablePanView];
+              if (hideBackView)
+              {
+                  self.view.backView.hidden = hideBackView;
+              }
           }];
      }];
 }
@@ -175,6 +190,7 @@
      ];
 }
 
+
 - (void)settingButtonClicked:(id)sender
 {
     [self toggleBackView];
@@ -185,6 +201,9 @@
 {
     static CGPoint previousLocation;
     static NSDate *timestamp;
+    
+    float speed = 2500.0;
+    
     
     CGPoint currentLocation = [panGestureRecognizer translationInView:self.view];
     
@@ -205,7 +224,7 @@
         {
             panGestureRecognizer.enabled = NO;
             
-            CGFloat duration = fabs(self.view.foreView.frame.origin.x - 0)/500;
+            CGFloat duration = fabs(self.view.foreView.frame.origin.x - 0)/speed;
             CGRect frame = self.view.foreView.frame;
             frame.origin.x = 0;
             
@@ -217,11 +236,12 @@
                              completion:^(BOOL finished)
             {
                 [self togglePanView:NO];
+                self.view.backView.hidden = YES;
             }];
         }
         else
         {
-            CGFloat duration = fabs(self.view.foreView.frame.origin.x - [self foldForeViewFrame].origin.x)/500;
+            CGFloat duration = fabs(self.view.foreView.frame.origin.x - [self foldForeViewFrame].origin.x)/speed;
             
             [UIView animateWithDuration:duration
                              animations:^
@@ -239,7 +259,7 @@
         {
             panGestureRecognizer.enabled = NO;
             
-            CGFloat duration = fabs(self.view.foreView.frame.origin.x - 0)/500;
+            CGFloat duration = fabs(self.view.foreView.frame.origin.x - 0)/speed;
             CGRect frame = self.view.foreView.frame;
             frame.origin.x = 0;
             
@@ -252,6 +272,7 @@
              {
                  timestamp = nil;
                  [self togglePanView:NO];
+                 self.view.backView.hidden = YES;
              }];
         }
         else if (frame.origin.x < [self foldForeViewFrame].origin.x)
@@ -268,8 +289,6 @@
 {
     [self toggleBackView];
 }
-
-
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark MKMapViewDelegate
@@ -373,11 +392,10 @@
                                      @"radius":@10000,
                                      @"sensor":@"false",
                                      @"keyword":searchBar.text,
-                                     @"name":searchBar.text,
-                                     @"types":@"cafe"
+                                     @"name":searchBar.text
                                      };
         
-        ICHTTPManager *httpManager = [ICHTTPManager POSTHTTPManagerWithURLString:@"https://maps.googleapis.com/maps/api/place/radarsearch/json"
+        ICHTTPManager *httpManager = [ICHTTPManager POSTHTTPManagerWithURLString:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json"
                                                                             body:parameters
                                                                            token:nil
                                                                completionHandler:^(ICHTTPURLResponse *response)
