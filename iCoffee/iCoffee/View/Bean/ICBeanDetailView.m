@@ -24,11 +24,18 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor whiteColor];
-        
         CGRect bounds = self.bounds;
+        CGRect trueBounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height-64);
+
         
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, bounds.size.width, 100)];
+        self.backgroundColor = [UIColor whiteColor];
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, trueBounds.size.width, trueBounds.size.height)];
+        
+        [self addSubview:_scrollView];
+        
+        
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, bounds.size.width, 300)];
+        
         _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _imageView.verticalEnding+10, bounds.size.width, 30)];
         _nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _nameLabel.numberOfLines = 0;
@@ -46,13 +53,14 @@
         _description.lineBreakMode = NSLineBreakByWordWrapping;
         _description.numberOfLines = 0;
         
+        _scrollView.contentSize = CGSizeMake(bounds.size.width, _description.verticalEnding);
         
-        [self addSubview:_imageView];
-        [self addSubview:_nameLabel];
-        [self addSubview:_categoryLabel];
-        [self addSubview:_regionLabel];
-        [self addSubview:_rateLabel];
-        [self addSubview:_description];
+        [_scrollView addSubview:_imageView];
+        [_scrollView addSubview:_nameLabel];
+        [_scrollView addSubview:_categoryLabel];
+        [_scrollView addSubview:_regionLabel];
+        [_scrollView addSubview:_rateLabel];
+        [_scrollView addSubview:_description];
         
         
         UIPanGestureRecognizer *panGesturerRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
