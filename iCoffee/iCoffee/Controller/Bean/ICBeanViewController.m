@@ -106,7 +106,6 @@
     UIImage *image = [UIImage imageNamed:@"bean_fake.png" ];
     cell.primaryImageView.image = image;
     
-    
     return cell;
 }
 

@@ -1,22 +1,32 @@
 [
     {
         "title":"Open/Close",
-        "image":"find_icon_miss"
+        "image":"find_icon_miss",
+        "key":"opennow"
     },
     {
         "title":"Cafe",
-        "image":"find_icon_cafe"
+        "image":"find_icon_cafe",
+        "key":"types"
     },
     {
         "title":"Museum",
-        "image":"find_icon_miss"
+        "image":"find_icon_miss",
+        "key":"types"
     },
     {
         "title":"Restaurant",
-        "image":"find_icon_restaurant"
+        "image":"find_icon_restaurant",
+        "key":"types"
     },
     {
         "title":"Storage",
-        "image":"find_icon_miss"
+        "image":"find_icon_miss",
+        "key":"types"
+    },
+    {
+        "title":"Highway",
+        "image":"find_icon_miss",
+        "key":"avoid"
     }
 ]

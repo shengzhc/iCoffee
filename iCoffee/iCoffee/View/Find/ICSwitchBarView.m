@@ -10,7 +10,6 @@
 
 @interface ICSwitchBarView ()
 
-@property (nonatomic, strong) UISwitch *switchButton;
 @property (nonatomic, strong) UIImageView *logoImageView;
 
 @end
@@ -18,6 +17,7 @@
 @implementation ICSwitchBarView
 
 - (id)initWithFrame:(CGRect)frame
+                key:(NSString *)key
               title:(NSString *)title
               image:(NSString *)imageURL
            delegate:(id)delegate
@@ -28,6 +28,8 @@
     if (self)
     {
         self.backgroundColor = [UIColor whiteColor];
+        
+        self.key = key;
         
         self.titleLabel = [UILabel labelWithFrame:CGRectZero
                                              text:title

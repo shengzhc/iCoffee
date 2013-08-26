@@ -54,26 +54,7 @@
         {
             self.banner = [[ADBannerView alloc] init];
         }
-        
-        [self.banner cancelBannerViewAction];
         self.banner.delegate = self;
-
-//        ICHTTPManager *manager = [ICHTTPManager POSTHTTPManagerWithURLString:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json"
-//                                                                        body:@
-//                                  {
-//                                      @"key":GooglePlacesAPIKey,
-//                                      @"location":@"-33.8670522,151.1957362",
-//                                      @"radius":@10,
-//                                      @"sensor":@"false"
-//                                  }
-//                                                                       token:nil
-//                                                           completionHandler:^(ICHTTPURLResponse *response)
-//        {
-//            NSString *string = [[NSString alloc] initWithData:response.data encoding:NSUTF8StringEncoding];
-//            NSLog(@"%@", string);
-//        }];
-//        
-//        [manager start];
     }
     
     return self;
@@ -96,6 +77,9 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [self.banner cancelBannerViewAction];
+    [self.banner removeFromSuperview];
+    self.banner.delegate = nil;
 }
 
 ///////////////////////////////////////////
@@ -193,8 +177,8 @@
     
     if ([self.currentViewController isKindOfClass:[ICWelcomeViewController class]])
     {
-        self.banner.delegate = nil;
         [self.banner cancelBannerViewAction];
+        self.banner.delegate = nil;
         [self.banner removeFromSuperview];
     }
     
@@ -315,12 +299,14 @@
 ///////////////////////////////////////////
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
     [self layoutBannerView:banner];
 }
 
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
+    NSLog(@"%@, %@", NSStringFromSelector(_cmd), error);
     [self layoutBannerView:banner];
 }
 
