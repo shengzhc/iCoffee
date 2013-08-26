@@ -67,7 +67,6 @@
 
 - (void)cleanupMapView
 {
-    
     switch (self.mapView.mapType)
     {
         case MKMapTypeHybrid:
@@ -80,6 +79,8 @@
             break;
     }
 
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView removeOverlays:self.mapView.overlays];
     self.mapView.showsUserLocation = NO;
     self.mapView.delegate = nil;
     [self.mapView removeFromSuperview];
