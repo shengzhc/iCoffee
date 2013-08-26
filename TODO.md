@@ -145,6 +145,9 @@ Aug. 24th - Aug. 25th
 2. Widget and Core Animation --- ARK
 3. Bean View and Detail View --- ARK
 
+Aug.26th
+1. Continue working on details of Bean View and Detail View.
+
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
 2. Coffee bean object

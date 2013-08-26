@@ -46,13 +46,13 @@
     [self.primaryLabel sizeToFit];
     
     self.primaryLabel.frame = [self.primaryLabel alignedRectInSuperviewForSize:self.primaryLabel.bounds.size
-                                                                        offset:CGSizeMake(self.primaryImageView.horizontalEnding + 10, 0)
-                                                                       options:(ICAlignmentOptionsLeft | ICAlignmentOptionsVerticalCenter)];
+                                                                        offset:CGSizeMake(self.primaryImageView.horizontalEnding + 10, 10)
+                                                                       options:(ICAlignmentOptionsLeft)];
 
     [self.secondaryLabel sizeToFit];
     self.secondaryLabel.frame = [self.secondaryLabel alignedRectInSuperviewForSize:self.secondaryLabel.bounds.size
-                                                                            offset:CGSizeMake(10, 0)
-                                                                           options:(ICAlignmentOptionsRight | ICAlignmentOptionsVerticalCenter)];
+                                                                            offset:CGSizeMake(self.primaryImageView.horizontalEnding+10, self.primaryLabel.verticalEnding+5)
+                                                                           options:(ICAlignmentOptionsLeft)];
 }
 
 @end

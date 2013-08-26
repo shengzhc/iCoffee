@@ -33,11 +33,11 @@
         NSDictionary *jsonObject = [ICLocalizable jsonObjectWithFileName:@"coffee_category"
                                                                     type:@"json"];
         
-        self.beans = [NSMutableArray new];
+        _beans = [NSMutableArray new];
         
         for (id bean in jsonObject.allValues)
         {
-            [self.beans addObject:[ICBeanEntityMapper map:bean error:nil]];
+            [_beans addObject:[ICBeanEntityMapper map:bean error:nil]];
         }
     }
     
@@ -97,18 +97,31 @@
                                  reuseIdentifier:cellIdentifier];
     }
     
+    ICBeanEntity *beanEntity = [self.beans objectAtIndex:indexPath.row];
+    NSString *row = [[NSString alloc] initWithFormat:@"Row num: %d",indexPath.row];
+    
+    cell.primaryLabel.text = beanEntity.name;
+    cell.secondaryLabel.text = row;
+    
+    UIImage *image = [UIImage imageNamed:@"bean_fake.png" ];
+    cell.primaryImageView.image = image;
+    
+    
     return cell;
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     CGRect endFrame = self.view.frame;
     CGRect startFrame = CGRectMake(endFrame.origin.x+endFrame.size.width, endFrame.origin.y, endFrame.size.width, endFrame.size.height);
     
     self.beanDetailViewController.view.frame = startFrame;
+    ICBeanEntity *beanEntity = [self.beans objectAtIndex:indexPath.row];
+    self.beanDetailViewController.beanEntity = beanEntity;
     
     [self.view addSubview:self.beanDetailViewController.view];
     
@@ -131,8 +144,8 @@
 
 - (void)resetView
 {
-    [_beanDetailViewController.view removeFromSuperview];
-    _beanDetailViewController = nil;
+    [self.beanDetailViewController.view removeFromSuperview];
+    self.beanDetailViewController = nil;
 }
 
 @end

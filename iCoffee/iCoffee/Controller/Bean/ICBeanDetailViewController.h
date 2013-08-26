@@ -7,7 +7,10 @@
 //
 
 #import "ICViewController.h"
+#import "ICBeanEntity.h"
 
 @interface ICBeanDetailViewController : ICViewController
+
+@property (nonatomic, strong) ICBeanEntity *beanEntity;
 
 @end
