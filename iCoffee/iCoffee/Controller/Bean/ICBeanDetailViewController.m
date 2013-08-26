@@ -28,13 +28,13 @@
 }
 
 
--(Class)viewClass
+- (Class)viewClass
 {
     return [ICBeanDetailView class];
 }
 
 
--(NSString*)headerBarTitle
+- (NSString*)headerBarTitle
 {
     return @"Bean Detail";
 }
@@ -43,6 +43,22 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.beanEntity.imageURL]]];
+    
+    
+    ICBeanDetailView *beanDetailView = (ICBeanDetailView *)self.view;
+
+    beanDetailView.imageView.image = image;
+    beanDetailView.nameLabel.text = self.beanEntity.name;
+    beanDetailView.categoryLabel.text = self.beanEntity.category;
+    beanDetailView.regionLabel.text = self.beanEntity.region;
+
+    NSString *rateString = [[NSString alloc] initWithFormat:@"Rate: %@",self.beanEntity.rate];
+    beanDetailView.rateLabel.text = rateString;
+    
+    beanDetailView.description.text = self.beanEntity.description;
+    
     
 }
 

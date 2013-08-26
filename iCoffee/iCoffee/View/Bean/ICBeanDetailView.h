@@ -17,9 +17,13 @@
 
 @interface ICBeanDetailView : ICView<UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) UILabel *testLabel;
-@property (nonatomic, assign) NSInteger row;
 @property (nonatomic, weak) id<gestureProtocol> delegate;
 
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UILabel *categoryLabel;
+@property (nonatomic, strong) UILabel *regionLabel;
+@property (nonatomic, strong) UILabel *description;
+@property (nonatomic, strong) UILabel *rateLabel;
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074366AF17CAA2A7006225B1 /* bean_fake.png in Resources */ = {isa = PBXBuildFile; fileRef = 074366AE17CAA2A7006225B1 /* bean_fake.png */; };
 		07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ADBECA17C315A30083B3AF /* ICBeanCell.m */; };
 		07BEC1B517C7BDDF0076E03C /* ICPopButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BEC1B417C7BDDF0076E03C /* ICPopButtonViewController.m */; };
 		07BEC1C417C7C1740076E03C /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BA17C7C1740076E03C /* bg-addbutton-highlighted.png */; };
@@ -111,6 +112,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		074366AE17CAA2A7006225B1 /* bean_fake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bean_fake.png; sourceTree = "<group>"; };
 		07ADBEC917C315A30083B3AF /* ICBeanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanCell.h; sourceTree = "<group>"; };
 		07ADBECA17C315A30083B3AF /* ICBeanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanCell.m; sourceTree = "<group>"; };
 		07BEC1B317C7BDDF0076E03C /* ICPopButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPopButtonViewController.h; sourceTree = "<group>"; };
@@ -546,6 +548,7 @@
 		E794F6FF17BFDC3B00F729A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				074366AE17CAA2A7006225B1 /* bean_fake.png */,
 				E7E6138017C9D51A009B0462 /* find_icon_restaurant@2x.png */,
 				E7E6138117C9D51A009B0462 /* find_icon_miss.png */,
 				E7E6138217C9D51A009B0462 /* find_icon_miss@2x.png */,
@@ -807,6 +810,7 @@
 				E7E6138917C9D51A009B0462 /* find_icon_cafe.png in Resources */,
 				E7E6138A17C9D51A009B0462 /* find_icon_cafe@2x.png in Resources */,
 				E7E6138B17C9D51A009B0462 /* find_icon_restaurant.png in Resources */,
+				074366AF17CAA2A7006225B1 /* bean_fake.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
