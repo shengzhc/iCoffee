@@ -146,7 +146,9 @@ Aug. 24th - Aug. 25th
 3. Bean View and Detail View --- ARK
 
 Aug.26th
-1. Continue working on details of Bean View and Detail View.
+1. Continue working on details of Bean View and Detail View.  --- ARK
+2. Change the structure of header title so that it show correctly under different page and also the button functionality. --- SC
+3. Think about how to do favorite staff. --- SC
 
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
