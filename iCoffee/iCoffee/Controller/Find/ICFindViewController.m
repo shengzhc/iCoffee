@@ -254,20 +254,12 @@
         
         NSMutableArray *overlays = [NSMutableArray new];
         
-        MKPolyline *polyline = nil;
-        
         for (id route in routes)
         {
             NSString *encodedPolyline = [route valueForKeyPath:@"overview_polyline.points"];
-            polyline = [MKPolyline polylineWithEncodedString:encodedPolyline];
+            MKPolyline *polyline = [MKPolyline polylineWithEncodedString:encodedPolyline];
             [overlays addObject:polyline];
         }
-        
-        CGFloat width = fabs(polyline.points[polyline.pointCount - 1].x - polyline.points[0].x);
-        CGFloat height = fabs(polyline.points[polyline.pointCount - 1].y - polyline.points[0].y);
-        
-        [self.mapView setRegion:MKCoordinateRegionForMapRect(MKMapRectMake(polyline.points[0].x, polyline.points[0].y, width, height))
-                       animated:NO];
         [self.mapView addOverlays:overlays];
 
     }];
@@ -392,23 +384,32 @@
     
         pinAnnotationView.canShowCallout = YES;
         ICDataButton *direction = [ICDataButton buttonWithType:UIButtonTypeCustom];
-        direction.object = annotation;
         [direction setImage:[UIImage imageNamed:@"find_direction_inactive"] forState:UIControlStateNormal];
         [direction setImage:[UIImage imageNamed:@"find_direction_active"] forState:UIControlStateHighlighted];
         [direction sizeToFit];
         [direction addTarget:self
                       action:@selector(directionButtonClicked:)
             forControlEvents:UIControlEventTouchUpInside];
+        direction.object = annotation;
         
         pinAnnotationView.rightCalloutAccessoryView = direction;
         UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
         [logoImageView setImageWithURL:[NSURL URLWithString:((ICMapPlaceEntity *)annotation).iconURL]
-                  placeholderImage:[UIImage imageNamed:@"find_direction_active"]];
+                      placeholderImage:[UIImage imageNamed:@"find_direction_active"]];
         logoImageView.contentMode = UIViewContentModeScaleToFill;
         logoImageView.backgroundColor = [UIColor whiteColor];
         [logoImageView addCorners];
         [logoImageView addBorderWithColor:[UIColor blackColor]];
         pinAnnotationView.leftCalloutAccessoryView = logoImageView;
+    }
+    else
+    {
+        UIImageView *logoImageView = (UIImageView *)pinAnnotationView.leftCalloutAccessoryView;
+        [logoImageView setImageWithURL:[NSURL URLWithString:((ICMapPlaceEntity *)annotation).iconURL]
+                      placeholderImage:[UIImage imageNamed:@"find_direction_active"]];
+    
+        ICDataButton *direction = (ICDataButton *)pinAnnotationView.rightCalloutAccessoryView;
+        direction.object = annotation;
     }
     
     return pinAnnotationView;
@@ -482,6 +483,8 @@
     
     if (!lastSearchTime || fabs([lastSearchTime timeIntervalSinceNow]) > 5.0)
     {
+        [self.mapView removeAnnotations:self.mapView.annotations];
+        [self.mapView removeOverlays:self.mapView.overlays];
         
         NSDictionary *parameters = @{
                                      @"key":GooglePlacesAPIKey,
