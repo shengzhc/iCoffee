@@ -19,11 +19,7 @@
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     ICMainMediator *mediator = [[ICMainMediator alloc] initWithDelegate:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[ICHeaderBarView class] toolbarClass:nil];
-    
-    navigationController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:nil action:nil];
     [navigationController pushViewController:mediator animated:NO];
-    
-    
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
