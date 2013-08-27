@@ -35,8 +35,14 @@
 
 
 
-- (NSString *)headerBarTitle
+- (UILabel *)titleLabel
 {
-    return @"Setting";
+    UILabel *titleLabel = [UILabel labelWithFrame:CGRectZero
+                                             text:@"Setting"
+                                        alignment:NSTextAlignmentCenter
+                                             font:[UIFont icBoldFontWithSize:20]
+                                        textColor:[UIColor blackColor]];
+    [titleLabel sizeToFit];
+    return titleLabel;
 }
 @end

@@ -29,12 +29,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.titleView = [self titleLabel];
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.view removeFromSuperview];
 }
 
 - (void)loadView
 {
     self.view = [[[self viewClass] alloc] initWithFrame:[self viewFrame]
                                                delegate:self];
+}
+
+- (UILabel *)titleLabel
+{
+    return nil;
+}
+
+- (UIImage *)backBarButtonImage
+{
+    return [UIImage imageNamed:@"nav_back"];
 }
 
 - (Class)viewClass

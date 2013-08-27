@@ -13,6 +13,7 @@
     #import <Foundation/Foundation.h>
     #import "ICLibrary.h"
     #import "ICCellFactory.h"
+    #import "UIFont+ICFont.h"
 
 #define GoogleMapAPIKey @"AIzaSyDwjEdYx9Dv9xbEKnypTFseCMIFkKQvf6g"
 #define GooglePlacesAPIKey @"AIzaSyAuT1uZmu4lmGxS-DxCioCedbfcIBBqm5M"

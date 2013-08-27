@@ -12,6 +12,9 @@
 
 @property (nonatomic, strong) NSMutableArray *scrollPageDatasource;
 
+@property (nonatomic, strong) ADBannerView *banner;
+
+
 @end
 
 @implementation ICWelcomeViewController
@@ -34,11 +37,42 @@
     return [ICWelcomeView class];
 }
 
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.navigationItem.hidesBackButton = YES;
+    
+    if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)])
+    {
+        self.banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+    }
+    else
+    {
+        self.banner = [[ADBannerView alloc] init];
+    }
+    self.banner.delegate = self;
+    [self.view addSubview:self.banner];
+    [self layoutBannerView:self.banner];
+}
+
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark Configuration
 ///////////////////////////////////////////
 ///////////////////////////////////////////
+- (UILabel *)titleLabel
+{
+    UILabel *titleLabel = [UILabel labelWithFrame:CGRectZero text:@"iCoffee"
+                                        alignment:NSTextAlignmentCenter
+                                             font:[UIFont icBoldFontWithSize:20]
+                                        textColor:[UIColor blackColor]];
+    [titleLabel sizeToFit];
+    return titleLabel;
+}
+
+
 - (void)setupScrollPageDataSource
 {
     NSArray *datasource = @[
@@ -50,13 +84,42 @@
     self.scrollPageDatasource = [datasource mutableCopy];
 }
 
-
-- (NSString *)headerBarTitle
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark Convenient
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (void)layoutBannerView:(ADBannerView *)banner
 {
-    return @"iCoffee";
+    CGSize size = banner.bounds.size;
+    
+    banner.frame = [banner alignedRectInSuperviewForSize:size
+                                                      offset:CGSizeMake(0, 32)
+                                                     options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
+}
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark ADBannerViewDelegate
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    [self layoutBannerView:banner];
 }
 
 
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    NSLog(@"%@, %@", NSStringFromSelector(_cmd), error);
+    [self layoutBannerView:banner];
+}
+
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    return YES;
+}
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark ICScrollViewDatasourceDelegate
