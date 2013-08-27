@@ -46,16 +46,20 @@
     
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.beanEntity.imageURL]]];
     
-    
     ICBeanDetailView *beanDetailView = (ICBeanDetailView *)self.view;
 
     beanDetailView.imageView.image = image;
+    
     beanDetailView.nameLabel.text = self.beanEntity.name;
-    beanDetailView.categoryLabel.text = self.beanEntity.category;
-    beanDetailView.regionLabel.text = self.beanEntity.region;
-
-    NSString *rateString = [[NSString alloc] initWithFormat:@"Rate: %@",self.beanEntity.rate];
-    beanDetailView.rateLabel.text = rateString;
+    
+//    NSString *str = @"Category:";
+    beanDetailView.categoryLabel.text = self.beanEntity.category;//[str stringByAppendingString:self.beanEntity.category];
+    
+//    NSString *regionStr = @"Region:";
+    beanDetailView.regionLabel.text = self.beanEntity.region;//[regionStr stringByAppendingString:self.beanEntity.region];
+    
+//    NSString *rateString = [[NSString alloc] initWithFormat:@"Rate: %@",self.beanEntity.rate];
+//    beanDetailView.rateLabel.text = rateString;
     
     beanDetailView.description.text = self.beanEntity.description;
     [beanDetailView resetDescriptionSize];
@@ -84,9 +88,9 @@
     }
     else
     {
-        if (translationX<frame.size.width/5.0)
+        if (translationX<frame.size.width/6.0)
         {
-            [UIView animateWithDuration:0.5f
+            [UIView animateWithDuration:0.3f
                              animations:^
             {
                 self.view.frame = frame;
@@ -94,7 +98,7 @@
         }
         else
         {
-            [UIView animateWithDuration:0.5f
+            [UIView animateWithDuration:0.3f
                              animations:^
             {
                 self.view.frame = CGRectMake(frame.size.width, frame.origin.x, frame.size.width, frame.size.height);
