@@ -27,4 +27,6 @@
 @property (nonatomic, strong) UILabel *description;
 @property (nonatomic, strong) UILabel *rateLabel;
 
+- (void)resetDescriptionSize;
+
 @end

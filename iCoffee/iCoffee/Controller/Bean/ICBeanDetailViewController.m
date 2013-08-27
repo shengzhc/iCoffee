@@ -58,6 +58,7 @@
     beanDetailView.rateLabel.text = rateString;
     
     beanDetailView.description.text = self.beanEntity.description;
+    [beanDetailView resetDescriptionSize];
 }
 
 
