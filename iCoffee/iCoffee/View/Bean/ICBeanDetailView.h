@@ -18,6 +18,7 @@
 @interface ICBeanDetailView : ICView<UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) id<gestureProtocol> delegate;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *nameLabel;
@@ -25,5 +26,7 @@
 @property (nonatomic, strong) UILabel *regionLabel;
 @property (nonatomic, strong) UILabel *description;
 @property (nonatomic, strong) UILabel *rateLabel;
+
+- (void)resetDescriptionSize;
 
 @end
