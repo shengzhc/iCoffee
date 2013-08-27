@@ -8,7 +8,7 @@
 
 #import "ICAppDelegate.h"
 #import "ICMainMediator.h"
-
+#import "ICHeaderBarView.h"
 
 @implementation ICAppDelegate
 
@@ -16,13 +16,14 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    
-    [UIApplication sharedApplication].statusBarHidden = YES;
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     ICMainMediator *mediator = [[ICMainMediator alloc] initWithDelegate:nil];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mediator];
-    [navigationController setNavigationBarHidden:YES];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[ICHeaderBarView class] toolbarClass:nil];
+    
+    navigationController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    [navigationController pushViewController:mediator animated:NO];
+    
+    
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;

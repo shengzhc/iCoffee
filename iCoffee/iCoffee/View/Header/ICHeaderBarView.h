@@ -5,17 +5,8 @@
 //  Copyright (c) 2013 Fangzhou Lu. All rights reserved.
 //
 
-#import "ICView.h"
 
-@interface ICHeaderBarView : ICView
+@interface ICHeaderBarView : UINavigationBar
 
-@property (nonatomic, strong) UILabel *titleLabel;
-
-- (id)initWithFrame:(CGRect)frame
-           delegate:(id)delegate
-          imageName:(NSString *)imageName
-               text:(NSString *)text;
-
-- (void)setTitleLabelText:(NSString *)text;
 
 @end

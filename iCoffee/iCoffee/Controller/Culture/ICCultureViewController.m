@@ -34,8 +34,15 @@
 }
 
 
-- (NSString *)headerBarTitle
+- (UILabel *)titleLabel
 {
-    return @"Culture";
+    UILabel *titleLabel = [UILabel labelWithFrame:CGRectZero
+                                             text:@"Culture"
+                                        alignment:NSTextAlignmentCenter
+                                             font:[UIFont icBoldFontWithSize:20]
+                                        textColor:[UIColor blackColor]];
+    [titleLabel sizeToFit];
+    return titleLabel;
 }
+
 @end

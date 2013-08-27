@@ -17,16 +17,12 @@
 #import "ICSettingViewController.h"
 #import "ICBeanDetailViewController.h"
 
-#import "ICMainMediatorView.h"
 #import "ICHeaderBarView.h"
-
+#import "ICBottomBarView.h"
 
 @interface ICMainMediator ()
 
-@property (nonatomic, strong) ICMainMediatorView *view;
-@property (nonatomic, strong) ADBannerView *banner;
-
-@property (nonatomic, strong) ICViewController *currentViewController;
+@property (nonatomic, strong) ICBottomBarView *bottomBarView;
 
 @property (nonatomic, strong) ICWelcomeViewController *welcomeViewController;
 @property (nonatomic, strong) ICBeanViewController *beanViewController;
@@ -46,42 +42,62 @@
     
     if (self)
     {
-        if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)])
-        {
-            self.banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
-        }
-        else
-        {
-            self.banner = [[ADBannerView alloc] init];
-        }
-        self.banner.delegate = self;
+
     }
     
     return self;
 }
 
 
-- (Class)viewClass
+- (void)viewDidLoad
 {
-    return [ICMainMediatorView class];
+    [super viewDidLoad];
+    
+    self.bottomBarView = [[ICBottomBarView alloc] initWithFrame:CGRectZero
+                                                       delegate:self];
+    
+    self.bottomBarView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - [self bottomBarSize].height, [self bottomBarSize].width, [self bottomBarSize].height);
+    
+    UISwipeGestureRecognizer *swipeDownGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                                     action:@selector(swipeDownDidEnd:)];
+    swipeDownGestureRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.bottomBarView addGestureRecognizer:swipeDownGestureRecognizer];
+    
+    UISwipeGestureRecognizer *swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                                   action:@selector(swipeUpDidEnd:)];
+    swipeUpGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+    [self.bottomBarView addGestureRecognizer:swipeUpGestureRecognizer];
 }
 
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self showViewController:self.welcomeViewController];
+    
+    self.navigationController.title = @"iCoffee";
+    
+    if (!self.bottomBarView.superview)
+    {
+        [[UIApplication sharedApplication].keyWindow addSubview:self.bottomBarView];
+    }
+    
+    [self.navigationController pushViewController:self.welcomeViewController animated:NO];
 }
-
-
-- (void)viewWillDisappear:(BOOL)animated
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark Configuration
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (CGSize)bottomBarSize
 {
-    [super viewWillDisappear:animated];
-    [self.banner cancelBannerViewAction];
-    [self.banner removeFromSuperview];
-    self.banner.delegate = nil;
+    return CGSizeMake([UIScreen mainScreen].bounds.size.width, 32);
 }
 
+
+- (CGSize)bottomBarExpandSize
+{
+    return CGSizeMake([UIScreen mainScreen].bounds.size.width, 230);
+}
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark ViewControllers
@@ -163,157 +179,49 @@
     return _settingViewController;
 }
 
+
+
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark Convenient
 ///////////////////////////////////////////
 ///////////////////////////////////////////
-- (void)showViewController:(ICViewController *)viewController
+- (void)toggleBottomBarView
 {
-    if (viewController == self.currentViewController)
-    {
-        return;
-    }
+    BOOL isOpen = self.bottomBarView.frame.size.height > [self bottomBarSize].height+1;
     
-    if ([self.currentViewController isKindOfClass:[ICWelcomeViewController class]])
-    {
-        [self.banner cancelBannerViewAction];
-        self.banner.delegate = nil;
-        [self.banner removeFromSuperview];
-    }
-    
-    NSString *headerBarTitle = @"";
-    if ([viewController respondsToSelector:@selector(headerBarTitle)])
-    {
-        headerBarTitle = [viewController performSelector:@selector(headerBarTitle)];
-    }
-    
-    CGRect destFrame = self.view.contentView.bounds;
-    CGRect originFrame = CGRectMake(destFrame.size.width, 0, destFrame.size.width, destFrame.size.height);
-
-    CGRect fadeFrame = UIEdgeInsetsInsetRect(destFrame, UIEdgeInsetsMake(25, 50, -25, -50));
-    
-    viewController.view.frame = originFrame;
-    [self.view.contentView addSubview:viewController.view];
-    [self.view.headerBarView setTitleLabelText:headerBarTitle];
-    
-    [UIView animateWithDuration:.5
-                     animations:^
-    {
-        self.currentViewController.view.alpha = .3;
-        self.currentViewController.view.frame = fadeFrame;
-        viewController.view.frame = destFrame;
-    }
-                    completion:^(BOOL finished)
+    if (isOpen)
     {
         
-        
-        
-        self.currentViewController.view.frame = destFrame;
-        self.currentViewController.view.alpha = 1.0;
-
-        if([self.currentViewController respondsToSelector:@selector(resetView)])
-        {
-            [self.currentViewController performSelector:@selector(resetView)];
-        }
-        
-        
-        [self.currentViewController.view removeFromSuperview];
-        self.currentViewController = viewController;
-        
-        if ([viewController isKindOfClass:[ICWelcomeViewController class]])
-        {
-            self.banner.delegate = self;
-            [self.view insertSubview:self.banner
-                        aboveSubview:self.view.contentView];
-            [self layoutBannerView:self.banner];
-        }
-        
-        [self cleanupViewController];
-     
-    }];
-}
-
-
-- (void)layoutBannerView:(ADBannerView *)banner
-{
-    CGSize size = banner.bounds.size;
-    
-    if (banner.bannerLoaded)
-    {
-        banner.frame = [banner alignedRectInSuperviewForSize:size
-                                                      offset:CGSizeMake(0, 32)
-                                                     options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
+        [UIView animateWithDuration:.2
+                         animations:^
+         {
+             self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarSize]
+                                                                                   offset:CGSizeMake(0, 0)
+                                                                                  options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
+         }
+                         completion:^(BOOL finished)
+         {
+             [self.bottomBarView.arrowButton setBackgroundImage:[UIImage imageNamed:@"bottom_bar_arrow_up"]
+                                                       forState:UIControlStateNormal];
+         }];
     }
     else
     {
-        banner.frame = [banner alignedRectInSuperviewForSize:size
-                                                      offset:CGSizeMake(0, 32)
-                                                     options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
+        
+        [UIView animateWithDuration:.2
+                         animations:^
+         {
+             self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarExpandSize]
+                                                                                   offset:CGSizeMake(0, 0)
+                                                                                  options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
+         }
+                         completion:^(BOOL finished)
+         {
+             [self.bottomBarView.arrowButton setBackgroundImage:[UIImage imageNamed:@"bottom_bar_arrow_down"]
+                                                       forState:UIControlStateNormal];
+         }];
     }
-
-}
-
-
-- (void)cleanupViewController
-{
-    if (_welcomeViewController != self.currentViewController)
-    {
-        _welcomeViewController = nil;
-    }
-    
-    if (_beanViewController != self.currentViewController)
-    {
-        _beanViewController = nil;
-    }
-    
-    if (_brewViewController != self.currentViewController)
-    {
-        _brewViewController = nil;
-    }
-    
-    if (_cultureViewController != self.currentViewController)
-    {
-        _cultureViewController = nil;
-    }
-    
-    if (_favoriteViewController != self.currentViewController)
-    {
-        _favoriteViewController = nil;
-    }
-    
-    if (_findViewController != self.currentViewController)
-    {
-        _findViewController = nil;
-    }
-    
-    if (_settingViewController != self.currentViewController)
-    {
-        _settingViewController = nil;
-    }
-}
-///////////////////////////////////////////
-///////////////////////////////////////////
-#pragma mark ADBannerViewDelegate
-///////////////////////////////////////////
-///////////////////////////////////////////
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    [self layoutBannerView:banner];
-}
-
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-    NSLog(@"%@, %@", NSStringFromSelector(_cmd), error);
-    [self layoutBannerView:banner];
-}
-
-
-- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
-{
-    return YES;
 }
 
 ///////////////////////////////////////////
@@ -323,55 +231,75 @@
 ///////////////////////////////////////////
 - (void)bottomBarButtonClicked:(id)sender
 {
-    [self.view toggleBottomBarView];
+    [self toggleBottomBarView];
 }
-
-
-- (void)homeButtonClicked:(id)sender
-{
-    [self showViewController:self.welcomeViewController];
-}
-
 
 - (void)beanButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
-    [self showViewController:self.beanViewController];
+    [self.navigationController popToViewController:self.welcomeViewController animated:NO];
+    [self.navigationController pushViewController:self.beanViewController animated:YES];
 }
 
 
 - (void)brewButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
-    [self showViewController:self.brewViewController];
+    [self.navigationController popToViewController:self.welcomeViewController animated:NO];
+    [self.navigationController pushViewController:self.brewViewController animated:YES];
 }
 
 
 - (void)cultureButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
-    [self showViewController:self.cultureViewController];
+    [self.navigationController popToViewController:self.welcomeViewController animated:NO];
+    [self.navigationController pushViewController:self.cultureViewController animated:YES];
 }
 
 
 - (void)favoriteButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
-    [self showViewController:self.favoriteViewController];
+    [self.navigationController popToViewController:self.welcomeViewController animated:NO];
+    [self.navigationController pushViewController:self.favoriteViewController animated:YES];
 }
 
 - (void)findButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
-    [self showViewController:self.findViewController];
+    [self.navigationController popToViewController:self.welcomeViewController animated:NO];
+    [self.navigationController pushViewController:self.findViewController animated:YES];
 }
 
 
 - (void)settingButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
-    [self showViewController:self.settingViewController];
+    [self.navigationController popToViewController:self.welcomeViewController animated:NO];
+    [self.navigationController pushViewController:self.settingViewController animated:YES];
 }
 
+
+- (void)swipeUpDidEnd:(UISwipeGestureRecognizer *)swipeGesetureRecognizer
+{
+    BOOL isOpen = self.bottomBarView.frame.size.height > [self bottomBarSize].height+1;
+    
+    if (!isOpen)
+    {
+        [self bottomBarButtonClicked:nil];
+    }
+}
+
+
+- (void)swipeDownDidEnd:(UISwipeGestureRecognizer *)swipeGestureRecognizer
+{
+    BOOL isOpen = self.bottomBarView.frame.size.height > [self bottomBarSize].height+1;
+    
+    if (isOpen)
+    {
+        [self bottomBarButtonClicked:nil];
+    }
+}
 
 @end
