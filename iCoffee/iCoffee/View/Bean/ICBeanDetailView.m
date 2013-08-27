@@ -7,6 +7,7 @@
 //
 
 #import "ICBeanDetailView.h"
+#define PADDING 15
 
 @interface ICBeanDetailView()
 
@@ -33,28 +34,27 @@
         
         [self addSubview:_scrollView];
         
-        
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _trueBounds.size.width, 300)];
         
-        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _imageView.verticalEnding+10, _trueBounds.size.width, 30)];
+        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(PADDING, _imageView.verticalEnding+10, _trueBounds.size.width-PADDING*2, 30)];
         _nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _nameLabel.numberOfLines = 0;
         
-        _categoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _nameLabel.verticalEnding+10, _trueBounds.size.width, 30)];
+        _nameLabel.font = [UIFont fontWithSize:30];
+        
+        _categoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(PADDING, _nameLabel.verticalEnding+10, _trueBounds.size.width-PADDING*2, 30)];
 
-        _regionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _categoryLabel.verticalEnding+10, _trueBounds.size.width, 30)];
+        _regionLabel = [[UILabel alloc] initWithFrame:CGRectMake(PADDING, _categoryLabel.verticalEnding+10, _trueBounds.size.width-PADDING*2, 30)];
         _regionLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _regionLabel.numberOfLines = 0;
 
-        _rateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _regionLabel.verticalEnding+10, _trueBounds.size.width, 30)];
-
+        _rateLabel = [[UILabel alloc] initWithFrame:CGRectMake(PADDING, _regionLabel.verticalEnding+10, _trueBounds.size.width-PADDING*2, 30)];
         
-        _description = [[UILabel alloc] initWithFrame:CGRectMake(0, _rateLabel.verticalEnding+10, _trueBounds.size.width, 200)];
+        _description = [[UILabel alloc] initWithFrame:CGRectMake(PADDING, _rateLabel.verticalEnding+10, _trueBounds.size.width-PADDING*2, 200)];
         _description.lineBreakMode = NSLineBreakByWordWrapping;
         _description.numberOfLines = 0;
         _description.baselineAdjustment = UIBaselineAdjustmentNone;
-        _description.textAlignment = NSTextAlignmentJustified;
-        _description.backgroundColor = [UIColor redColor];
+        _description.backgroundColor = [UIColor lightGrayColor];
         
         _scrollView.contentSize = CGSizeMake(_trueBounds.size.width, _description.verticalEnding);
         
@@ -64,7 +64,6 @@
         [_scrollView addSubview:_regionLabel];
         [_scrollView addSubview:_rateLabel];
         [_scrollView addSubview:_description];
-        
         
         UIPanGestureRecognizer *panGesturerRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
         panGesturerRecognizer.delegate = self;
@@ -78,7 +77,6 @@
     
     return self;
 }
-
 
 - (void)layoutSubviews
 {
@@ -104,10 +102,11 @@
 //Size of label will fit to the text.
 - (void)resetDescriptionSize
 {
-    CGSize size = [self.description.text sizeWithFont:self.description.font constrainedToSize:CGSizeMake(self.trueBounds.size.width, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize size = [self.description.text sizeWithFont:self.description.font
+                                        constrainedToSize:CGSizeMake(self.trueBounds.size.width - PADDING*2, MAXFLOAT)
+                                        lineBreakMode:NSLineBreakByWordWrapping];
   
     self.description.frame = CGRectMake(self.description.frame.origin.x, self.description.frame.origin.y, size.width, size.height);
-   // [self.description sizeToFit];
     self.scrollView.contentSize = CGSizeMake(self.trueBounds.size.width, self.description.verticalEnding);
 }
 
