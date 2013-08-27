@@ -37,17 +37,23 @@
 }
 
 
-- (NSString *)headerBarTitle
-{
-    return @"Brew";
-}
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self.view addSubview:self.popButtonViewController.view];
+}
+
+
+- (UILabel *)titleLabel
+{
+    UILabel *titleLabel = [UILabel labelWithFrame:CGRectZero
+                                             text:@"Brew"
+                                        alignment:NSTextAlignmentCenter
+                                             font:[UIFont icBoldFontWithSize:20]
+                                        textColor:[UIColor blackColor]];
+    [titleLabel sizeToFit];
+    return titleLabel;
 }
 
 

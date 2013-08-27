@@ -34,6 +34,7 @@
 		E76197B717B0D177000A94BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197B617B0D177000A94BA /* CoreGraphics.framework */; };
 		E76197BB17B0D316000A94BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76197BA17B0D315000A94BA /* QuartzCore.framework */; };
 		E7BF70D917CA6FCC00D3D5C5 /* MKPolyline+ICServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BF70D817CA6FCC00D3D5C5 /* MKPolyline+ICServices.m */; };
+		E7BF70ED17CC768700D3D5C5 /* UIFont+ICFont.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BF70EC17CC768700D3D5C5 /* UIFont+ICFont.m */; };
 		E7DAB37717AF217600D575B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB37617AF217600D575B7 /* Foundation.framework */; };
 		E7DAB38C17AF22A700D575B7 /* ICViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB38B17AF22A700D575B7 /* ICViewController.m */; };
 		E7DAB39017AF232000D575B7 /* ICView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DAB38F17AF232000D575B7 /* ICView.m */; };
@@ -107,6 +108,8 @@
 		E76197BA17B0D315000A94BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E7BF70D717CA6FCC00D3D5C5 /* MKPolyline+ICServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKPolyline+ICServices.h"; sourceTree = "<group>"; };
 		E7BF70D817CA6FCC00D3D5C5 /* MKPolyline+ICServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKPolyline+ICServices.m"; sourceTree = "<group>"; };
+		E7BF70EB17CC768700D3D5C5 /* UIFont+ICFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ICFont.h"; sourceTree = "<group>"; };
+		E7BF70EC17CC768700D3D5C5 /* UIFont+ICFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ICFont.m"; sourceTree = "<group>"; };
 		E7DAB37317AF217600D575B7 /* libiCoffeeLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiCoffeeLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB37617AF217600D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7DAB38A17AF22A700D575B7 /* ICViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICViewController.h; sourceTree = "<group>"; };
@@ -257,6 +260,8 @@
 			children = (
 				E761974F17B0C32B000A94BA /* UIFont+ICServices.h */,
 				E761975017B0C32B000A94BA /* UIFont+ICServices.m */,
+				E7BF70EB17CC768700D3D5C5 /* UIFont+ICFont.h */,
+				E7BF70EC17CC768700D3D5C5 /* UIFont+ICFont.m */,
 			);
 			path = UIFont;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				E73807DF17C43AA700FB2A00 /* ICHTTPManager.m in Sources */,
 				E73807E217C440DF00FB2A00 /* ICHTTPURLResponse.m in Sources */,
 				E7BF70D917CA6FCC00D3D5C5 /* MKPolyline+ICServices.m in Sources */,
+				E7BF70ED17CC768700D3D5C5 /* UIFont+ICFont.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

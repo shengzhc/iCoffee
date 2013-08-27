@@ -45,13 +45,6 @@
     return [ICFindView class];
 }
 
-
-- (NSString *)headerBarTitle
-{
-    return @"Find";
-}
-
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -118,6 +111,17 @@
     return 5000;
 }
 
+
+- (UILabel *)titleLabel
+{
+    UILabel *titleLabel = [UILabel labelWithFrame:CGRectZero
+                                             text:@"Find"
+                                        alignment:NSTextAlignmentCenter
+                                             font:[UIFont icBoldFontWithSize:20]
+                                        textColor:[UIColor blackColor]];
+    [titleLabel sizeToFit];
+    return titleLabel;
+}
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark Convenient

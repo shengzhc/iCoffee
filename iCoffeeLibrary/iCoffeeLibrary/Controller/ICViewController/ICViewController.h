@@ -15,5 +15,7 @@
 - (id)initWithDelegate:(id)delegate;
 - (Class)viewClass;
 - (CGRect)viewFrame;
+- (UILabel *)titleLabel;
+- (UIImage *)backBarButtonImage;
 
 @end

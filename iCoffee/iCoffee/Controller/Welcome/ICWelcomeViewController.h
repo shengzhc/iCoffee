@@ -12,7 +12,7 @@
 #import "ICWelcomeView.h"
 #import "ICScrollViewDatasource.h"
 
-@interface ICWelcomeViewController : ICViewController < ICScrollViewDatasource >
+@interface ICWelcomeViewController : ICViewController < ICScrollViewDatasource, ADBannerViewDelegate >
 
 @property (nonatomic, strong) ICWelcomeView *view;
 
