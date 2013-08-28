@@ -11,6 +11,9 @@
 
 @interface ICBeanDetailViewController : ICViewController
 
+- (id)initWithDelegate:(id)delegate beanEntity:(ICBeanEntity *)beanEntity;
+
+
 @property (nonatomic, strong) ICBeanEntity *beanEntity;
 
 @end

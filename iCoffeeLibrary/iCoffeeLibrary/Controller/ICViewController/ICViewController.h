@@ -16,5 +16,6 @@
 - (Class)viewClass;
 - (CGRect)viewFrame;
 - (UILabel *)titleLabel;
+- (NSString *)leftBarButtonTitle;
 
 @end
