@@ -66,20 +66,14 @@
     
     beanDetailView.nameLabel.text = self.beanEntity.name;
     
-//    NSString *str = @"Category:";
     beanDetailView.categoryLabel.text = self.beanEntity.category;//[str stringByAppendingString:self.beanEntity.category];
     
-//    NSString *regionStr = @"Region:";
     beanDetailView.regionLabel.text = self.beanEntity.region;//[regionStr stringByAppendingString:self.beanEntity.region];
-    
-//    NSString *rateString = [[NSString alloc] initWithFormat:@"Rate: %@",self.beanEntity.rate];
-//    beanDetailView.rateLabel.text = rateString;
-    
+        
     beanDetailView.description.text = self.beanEntity.description;
+    
     [beanDetailView resetDescriptionSize];
 }
-
-
 
 - (void)moveDetailViewWithTranslation:(CGFloat)translationX
                      withGestureState:(BOOL)state
@@ -88,6 +82,8 @@
     {
         return;
     }
+    
+    
     
     CGRect frame = [self.view superview].frame;
     
@@ -115,7 +111,7 @@
             [UIView animateWithDuration:0.3f
                              animations:^
             {
-                self.view.frame = CGRectMake(frame.size.width, frame.origin.x, frame.size.width, frame.size.height);
+                self.view.frame = CGRectMake(frame.size.width, frame.origin.y, frame.size.width, frame.size.height);
             }
                              completion:^(BOOL finished)
             {

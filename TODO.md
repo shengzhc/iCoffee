@@ -150,6 +150,10 @@ Aug.26th
 2. Change the structure of header title so that it show correctly under different page and also the button functionality. (RESOLVED) --- SC
 3. Think about how to do favorite staff. --- SC
 
+Aug. 28th
+1. Modify the detail page so that it adapt to the new structure.
+
+
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
 2. Coffee bean object
