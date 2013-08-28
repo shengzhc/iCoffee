@@ -16,12 +16,13 @@
 @implementation ICBeanDetailViewController
 
 - (id)initWithDelegate:(id)delegate
+            beanEntity:(ICBeanEntity *)beanEntity;
 {
     self = [super initWithDelegate:delegate];
     
     if (self)
     {
-        
+        _beanEntity = beanEntity;
     }
     
     return self;
@@ -34,10 +35,23 @@
 }
 
 
-- (NSString*)headerBarTitle
+- (NSString *)leftBarButtonTitle
 {
-    return @"Bean Detail";
+    return @"Beans";
 }
+
+
+- (UILabel *)titleLabel
+{
+    UILabel *titleLabel = [UILabel labelWithFrame:CGRectZero
+                                             text:self.beanEntity.name
+                                        alignment:NSTextAlignmentCenter
+                                             font:[UIFont icBoldFontWithSize:20]
+                                        textColor:[UIColor blackColor]];
+    [titleLabel sizeToFit];
+    return titleLabel;
+}
+
 
 
 - (void)viewWillAppear:(BOOL)animated

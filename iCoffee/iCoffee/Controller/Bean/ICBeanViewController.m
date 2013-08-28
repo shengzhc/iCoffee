@@ -18,7 +18,6 @@
 @interface ICBeanViewController ()
 
 @property (nonatomic, strong) NSMutableArray *beans;
-@property (nonatomic, strong) ICBeanDetailViewController *beanDetailViewController;
 
 @end
 
@@ -74,22 +73,6 @@
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
-#pragma mark ViewController
-//////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
-
-- (ICBeanDetailViewController *)beanDetailViewController
-{
-    if (!_beanDetailViewController)
-    {
-        _beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self];
-    }
-    
-    return _beanDetailViewController;
-}
-
-//////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
 #pragma mark TableViewDatasource & Delegate
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
@@ -135,37 +118,17 @@
 {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    CGRect endFrame = self.view.frame;
-    CGRect startFrame = CGRectMake(endFrame.origin.x+endFrame.size.width, endFrame.origin.y, endFrame.size.width, endFrame.size.height);
-    
-    self.beanDetailViewController.view.frame = startFrame;
     ICBeanEntity *beanEntity = [self.beans objectAtIndex:indexPath.row];
-    self.beanDetailViewController.beanEntity = beanEntity;
+    ICBeanDetailViewController *beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self
+                                                                                                     beanEntity:beanEntity];
     
-    [self.view addSubview:self.beanDetailViewController.view];
-    
-    [UIView animateWithDuration:.3f
-                     animations:^
-    {
-        self.beanDetailViewController.view.frame = endFrame;
-    }
-                     completion:^(BOOL finished)
-    {
-    }];
+    [self.navigationController pushViewController:beanDetailViewController animated:YES];
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75.0;
-}
-
-
-- (void)resetView
-{
-    [self.beanDetailViewController.view removeFromSuperview];
-    self.beanDetailViewController = nil;
 }
 
 @end

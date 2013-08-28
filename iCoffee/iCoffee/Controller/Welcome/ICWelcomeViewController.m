@@ -43,6 +43,7 @@
     [super viewDidLoad];
     
     self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.leftBarButtonItem = nil;
     
     if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)])
     {
