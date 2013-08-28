@@ -8,6 +8,8 @@
 
 #import "ICViewController.h"
 #import "ICView.h"
+#import "UIFont+ICFont.h"
+#import "UIImageView+ICServices.h"
 
 @interface ICViewController ()
 @property (nonatomic, strong) ICView *view;
@@ -30,6 +32,8 @@
 {
     [super viewDidLoad];
     self.navigationItem.titleView = [self titleLabel];
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.leftBarButtonItem = [self leftBarButtonItem];
 }
 
 
@@ -50,9 +54,24 @@
     return nil;
 }
 
-- (UIImage *)backBarButtonImage
+
+- (UIBarButtonItem *)leftBarButtonItem
 {
-    return [UIImage imageNamed:@"nav_back"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setBackgroundImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont icRegularFontWithSize:13];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setTitle:[self leftBarButtonTitle] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(leftBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [button sizeToFit];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    return barButtonItem;
+}
+
+
+- (NSString *)leftBarButtonTitle
+{
+    return @"Back";
 }
 
 - (Class)viewClass
@@ -64,5 +83,12 @@
 {
     return [UIScreen mainScreen].applicationFrame;
 }
+
+
+- (void)leftBarButtonClicked:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 @end

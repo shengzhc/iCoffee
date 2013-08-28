@@ -16,6 +16,5 @@
 - (Class)viewClass;
 - (CGRect)viewFrame;
 - (UILabel *)titleLabel;
-- (UIImage *)backBarButtonImage;
 
 @end

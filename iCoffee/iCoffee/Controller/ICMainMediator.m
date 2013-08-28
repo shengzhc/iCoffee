@@ -234,12 +234,12 @@
     [self toggleBottomBarView];
 }
 
+
 - (void)beanButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
     [self.navigationController pushViewController:self.beanViewController animated:YES];
-
 }
 
 
