@@ -31,6 +31,8 @@
         [self.contentView addSubview:_primaryLabel];
         [self.contentView addSubview:_secondaryLabel];
         [self.contentView addSubview:_primaryImageView];
+        
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     return self;
 }
