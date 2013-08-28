@@ -20,13 +20,16 @@
         _primaryLabel = [[UILabel alloc] init];
         _primaryLabel.textAlignment = NSTextAlignmentLeft;
         _primaryLabel.backgroundColor = [UIColor clearColor];
+        _primaryLabel.font = [UIFont icMediumFontWithSize:16];
         
         _secondaryLabel = [[UILabel alloc] init];
         _secondaryLabel.textAlignment = NSTextAlignmentLeft;
         _secondaryLabel.backgroundColor = [UIColor clearColor];
+        _secondaryLabel.font = [UIFont icLightFontWithSize:13];
         
         _primaryImageView = [[UIImageView alloc] init];
         _primaryImageView.backgroundColor = [UIColor clearColor];
+        [_primaryImageView addCorners];
         
         [self.contentView addSubview:_primaryLabel];
         [self.contentView addSubview:_secondaryLabel];
