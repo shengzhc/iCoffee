@@ -14,6 +14,7 @@
 #import "ICBeanDetailView.h"
 
 #import "ICBeanEntityMapper.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ICBeanViewController ()
 
@@ -120,7 +121,7 @@
     ICBeanEntity *beanEntity = [self.beans objectAtIndex:indexPath.row];
     ICBeanDetailViewController *beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self
                                                                                                      beanEntity:beanEntity];
-    
+    beanDetailViewController.screenShot = [self capture];  //Use a screenshot as a fake view.
     [self.navigationController pushViewController:beanDetailViewController animated:YES];
 }
 
@@ -128,6 +129,16 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75.0;
+}
+
+- (UIImage *)capture
+{
+    UIGraphicsBeginImageContextWithOptions([UIScreen mainScreen].applicationFrame.size, self.view.opaque, 0.0);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 @end

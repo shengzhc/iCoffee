@@ -66,12 +66,13 @@
     
     beanDetailView.nameLabel.text = self.beanEntity.name;
     
-    beanDetailView.categoryLabel.text = self.beanEntity.category;//[str stringByAppendingString:self.beanEntity.category];
+    beanDetailView.categoryLabel.text = self.beanEntity.category;
     
-    beanDetailView.regionLabel.text = self.beanEntity.region;//[regionStr stringByAppendingString:self.beanEntity.region];
+    beanDetailView.regionLabel.text = self.beanEntity.region;
         
     beanDetailView.description.text = self.beanEntity.description;
     
+    beanDetailView.screenShot.image = self.screenShot;
     [beanDetailView resetDescriptionSize];
 }
 
@@ -83,9 +84,11 @@
         return;
     }
     
+    ICBeanDetailView *beanDetailView = (ICBeanDetailView *)self.view;
+    CGPoint navigationCenter = self.navigationController.navigationBar.center;
+
     
-    
-    CGRect frame = [self.view superview].frame;
+    CGRect frame = CGRectMake(0, beanDetailView.scrollViewPadView.frame.origin.y, beanDetailView.frame.size.width, beanDetailView.frame.size.height);
     
     if (!state)
     {
@@ -93,7 +96,11 @@
                          animations:^
         {
             CGRect stopFrame = CGRectMake(translationX, frame.origin.y, frame.size.height, frame.size.height);
-            self.view.frame = stopFrame;
+            beanDetailView.scrollViewPadView.frame = stopFrame;
+            
+            CGPoint stopPoint = CGPointMake(navigationCenter.x+translationX, navigationCenter.y);
+            self.navigationController.navigationController.navigationBar.center = stopPoint;
+            
         }];
     }
     else
@@ -103,7 +110,7 @@
             [UIView animateWithDuration:0.3f
                              animations:^
             {
-                self.view.frame = frame;
+                beanDetailView.scrollViewPadView.frame = frame;
             }];
         }
         else
@@ -111,11 +118,12 @@
             [UIView animateWithDuration:0.3f
                              animations:^
             {
-                self.view.frame = CGRectMake(frame.size.width, frame.origin.y, frame.size.width, frame.size.height);
+                beanDetailView.scrollViewPadView.frame = CGRectMake(frame.size.width, frame.origin.y, frame.size.width, frame.size.height);
             }
                              completion:^(BOOL finished)
             {
-                [self.view removeFromSuperview];
+                //[self.view removeFromSuperview];
+                [self.navigationController popViewControllerAnimated:NO];
             }];
         }
     }

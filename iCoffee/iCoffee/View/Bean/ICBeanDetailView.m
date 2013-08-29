@@ -32,9 +32,15 @@
         _trueBounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height-64);
         
         self.backgroundColor = [UIColor whiteColor];
+        
+        
+        _scrollViewPadView = [[ICView alloc] initWithFrame:_trueBounds];
+        _scrollViewPadView.backgroundColor = [UIColor whiteColor];
+        _scrollViewPadView.opaque = YES;
+        [self addSubview:_scrollViewPadView];
         _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _trueBounds.size.width, _trueBounds.size.height)];
         
-        [self addSubview:_scrollView];
+        [_scrollViewPadView addSubview:_scrollView];
         
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _trueBounds.size.width, 200)];
         
@@ -65,9 +71,6 @@
         _regionLabel.backgroundColor = [UIColor clearColor];
         _regionLabel.textColor = [UIColor lightGrayColor];
         _regionLabel.tag = TAGTYPE_2;
-
-//        _rateLabel = [[UILabel alloc] initWithFrame:CGRectMake(PADDING, _regionLabel.verticalEnding, _trueBounds.size.width-PADDING*2, 20)];
-//        _rateLabel.backgroundColor = [UIColor yellowColor];
         
         _description = [[UILabel alloc] initWithFrame:CGRectMake(PADDING, _regionLabel.verticalEnding+20, _trueBounds.size.width-PADDING*2, 200)];
         _description.lineBreakMode = NSLineBreakByWordWrapping;
@@ -84,8 +87,11 @@
         [_scrollView addSubview:_categoryLabel];
         [_scrollView addSubview:_regionIcon];
         [_scrollView addSubview:_regionLabel];
-//        [_scrollView addSubview:_rateLabel];
         [_scrollView addSubview:_description];
+        
+        _screenShot = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
+        [self addSubview:_screenShot];
+        [self sendSubviewToBack:_screenShot];
         
         UIPanGestureRecognizer *panGesturerRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureHandler:)];
         panGesturerRecognizer.delegate = self;
