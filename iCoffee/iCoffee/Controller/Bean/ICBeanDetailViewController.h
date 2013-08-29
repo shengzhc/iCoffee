@@ -15,5 +15,6 @@
 
 
 @property (nonatomic, strong) ICBeanEntity *beanEntity;
+@property (nonatomic, strong) UIImage *screenShot;
 
 @end

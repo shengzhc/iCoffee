@@ -36,6 +36,7 @@
 
 
 - (NSString *)leftBarButtonTitle
+<<<<<<< HEAD
 {
     return @"Beans";
 }
@@ -53,6 +54,25 @@
 }
 
 
+=======
+{
+    return @"Beans";
+}
+
+
+- (UILabel *)titleLabel
+{
+    UILabel *titleLabel = [UILabel labelWithFrame:CGRectZero
+                                             text:self.beanEntity.name
+                                        alignment:NSTextAlignmentCenter
+                                             font:[UIFont icBoldFontWithSize:20]
+                                        textColor:[UIColor blackColor]];
+    [titleLabel sizeToFit];
+    return titleLabel;
+}
+
+
+>>>>>>> Ark
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -66,20 +86,15 @@
     
     beanDetailView.nameLabel.text = self.beanEntity.name;
     
-//    NSString *str = @"Category:";
-    beanDetailView.categoryLabel.text = self.beanEntity.category;//[str stringByAppendingString:self.beanEntity.category];
+    beanDetailView.categoryLabel.text = self.beanEntity.category;
     
-//    NSString *regionStr = @"Region:";
-    beanDetailView.regionLabel.text = self.beanEntity.region;//[regionStr stringByAppendingString:self.beanEntity.region];
-    
-//    NSString *rateString = [[NSString alloc] initWithFormat:@"Rate: %@",self.beanEntity.rate];
-//    beanDetailView.rateLabel.text = rateString;
-    
+    beanDetailView.regionLabel.text = self.beanEntity.region;
+        
     beanDetailView.description.text = self.beanEntity.description;
+    
+    beanDetailView.screenShot.image = self.screenShot;
     [beanDetailView resetDescriptionSize];
 }
-
-
 
 - (void)moveDetailViewWithTranslation:(CGFloat)translationX
                      withGestureState:(BOOL)state
@@ -89,7 +104,11 @@
         return;
     }
     
-    CGRect frame = [self.view superview].frame;
+    ICBeanDetailView *beanDetailView = (ICBeanDetailView *)self.view;
+    CGPoint navigationCenter = self.navigationController.navigationBar.center;
+
+    
+    CGRect frame = CGRectMake(0, beanDetailView.scrollViewPadView.frame.origin.y, beanDetailView.frame.size.width, beanDetailView.frame.size.height);
     
     if (!state)
     {
@@ -97,7 +116,11 @@
                          animations:^
         {
             CGRect stopFrame = CGRectMake(translationX, frame.origin.y, frame.size.height, frame.size.height);
-            self.view.frame = stopFrame;
+            beanDetailView.scrollViewPadView.frame = stopFrame;
+            
+            CGPoint stopPoint = CGPointMake(navigationCenter.x+translationX, navigationCenter.y);
+            self.navigationController.navigationController.navigationBar.center = stopPoint;
+            
         }];
     }
     else
@@ -107,7 +130,7 @@
             [UIView animateWithDuration:0.3f
                              animations:^
             {
-                self.view.frame = frame;
+                beanDetailView.scrollViewPadView.frame = frame;
             }];
         }
         else
@@ -115,11 +138,12 @@
             [UIView animateWithDuration:0.3f
                              animations:^
             {
-                self.view.frame = CGRectMake(frame.size.width, frame.origin.x, frame.size.width, frame.size.height);
+                beanDetailView.scrollViewPadView.frame = CGRectMake(frame.size.width, frame.origin.y, frame.size.width, frame.size.height);
             }
                              completion:^(BOOL finished)
             {
-                [self.view removeFromSuperview];
+                //[self.view removeFromSuperview];
+                [self.navigationController popViewControllerAnimated:NO];
             }];
         }
     }

@@ -14,6 +14,7 @@
 #import "ICBeanDetailView.h"
 
 #import "ICBeanEntityMapper.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ICBeanViewController ()
 
@@ -113,7 +114,6 @@
     return cell;
 }
 
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -121,7 +121,11 @@
     ICBeanEntity *beanEntity = [self.beans objectAtIndex:indexPath.row];
     ICBeanDetailViewController *beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self
                                                                                                      beanEntity:beanEntity];
+<<<<<<< HEAD
     
+=======
+    beanDetailViewController.screenShot = [self capture];  //Use a screenshot as a fake view.
+>>>>>>> Ark
     [self.navigationController pushViewController:beanDetailViewController animated:YES];
 }
 
@@ -131,4 +135,17 @@
     return 75.0;
 }
 
+<<<<<<< HEAD
+=======
+- (UIImage *)capture
+{
+    UIGraphicsBeginImageContextWithOptions([UIScreen mainScreen].applicationFrame.size, self.view.opaque, 0.0);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+>>>>>>> Ark
 @end
