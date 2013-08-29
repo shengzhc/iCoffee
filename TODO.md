@@ -148,11 +148,15 @@ Aug. 24th - Aug. 25th
 Aug.26th
 1. Continue working on details of Bean View and Detail View.  --- ARK
 2. Change the structure of header title so that it show correctly under different page and also the button functionality. (RESOLVED) --- SC
-3. Think about how to do favorite staff. --- SC
 
 Aug. 28th
-1. Modify the detail page so that it adapt to the new structure.
+1. Modify the detail page so that it adapt to the new structure. (RESOLVED) --- ARK 
 
+Aug. 29th - Sep.1st
+1. Complete the first version of bean & bean details. --- Ark
+2. Welcome screen modify ( bottom menu change, reduce function buttons, clockwise brewing procedure) --- SC
+3. Find feature bug and lag --- SC
+4. Setting contains FB & Twitter, and Contact (Send general feedback & content feedback) --- ARK/SC
 
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
