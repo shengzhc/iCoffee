@@ -36,7 +36,6 @@
 
 
 - (NSString *)leftBarButtonTitle
-<<<<<<< HEAD
 {
     return @"Beans";
 }
@@ -53,26 +52,6 @@
     return titleLabel;
 }
 
-
-=======
-{
-    return @"Beans";
-}
-
-
-- (UILabel *)titleLabel
-{
-    UILabel *titleLabel = [UILabel labelWithFrame:CGRectZero
-                                             text:self.beanEntity.name
-                                        alignment:NSTextAlignmentCenter
-                                             font:[UIFont icBoldFontWithSize:20]
-                                        textColor:[UIColor blackColor]];
-    [titleLabel sizeToFit];
-    return titleLabel;
-}
-
-
->>>>>>> Ark
 
 - (void)viewWillAppear:(BOOL)animated
 {

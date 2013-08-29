@@ -121,11 +121,7 @@
     ICBeanEntity *beanEntity = [self.beans objectAtIndex:indexPath.row];
     ICBeanDetailViewController *beanDetailViewController = [[ICBeanDetailViewController alloc] initWithDelegate:self
                                                                                                      beanEntity:beanEntity];
-<<<<<<< HEAD
-    
-=======
     beanDetailViewController.screenShot = [self capture];  //Use a screenshot as a fake view.
->>>>>>> Ark
     [self.navigationController pushViewController:beanDetailViewController animated:YES];
 }
 
@@ -135,8 +131,6 @@
     return 75.0;
 }
 
-<<<<<<< HEAD
-=======
 - (UIImage *)capture
 {
     UIGraphicsBeginImageContextWithOptions([UIScreen mainScreen].applicationFrame.size, self.view.opaque, 0.0);
@@ -147,5 +141,4 @@
     return image;
 }
 
->>>>>>> Ark
 @end
