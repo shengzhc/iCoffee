@@ -49,11 +49,7 @@
                                        offset:CGSizeMake(0, 3)];
         
         self.locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.locationButton setImage:[UIImage imageNamed:@"button_my_location"]
-                             forState:UIControlStateNormal];
-        [self.locationButton setImage:[UIImage imageNamed:@"button_my_location_pressed"]
-                             forState:UIControlStateHighlighted];
-        
+        [self.locationButton setBackgroundImage:[UIImage imageNamed:@"setting_new_me"] forState:UIControlStateNormal];
         [self.locationButton addTarget:delegate
                                 action:@selector(locationButtonClicked:)
                       forControlEvents:UIControlEventTouchUpInside];

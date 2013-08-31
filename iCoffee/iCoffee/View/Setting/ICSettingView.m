@@ -8,6 +8,12 @@
 
 #import "ICSettingView.h"
 
+@interface ICSettingView ()
+
+@property (nonatomic, strong) UITableView *tableView;
+
+@end
+
 @implementation ICSettingView
 
 - (id)initWithFrame:(CGRect)frame
@@ -18,7 +24,13 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor whiteColor];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        self.tableView.delegate = delegate;
+        self.tableView.dataSource = delegate;
+        self.tableView.backgroundView = nil;
+        self.tableView.backgroundColor = [UIColor clearColor];
+        [self addSubview:self.tableView];
     }
     
     return self;
@@ -27,6 +39,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    self.tableView.frame = [self.tableView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height)
+                                                                  offset:CGSizeMake(0, 30)
+                                                                 options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
 }
 
 @end
