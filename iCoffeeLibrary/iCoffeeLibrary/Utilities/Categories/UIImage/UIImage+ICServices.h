@@ -18,6 +18,7 @@
                        size:(CGSize)size;
 
 - (UIImage *)imageWithOverlayColor:(UIColor *)color;
+- (UIImage *)imageWithBorderColor:(UIColor *)color;
 
 
 @end

@@ -110,4 +110,29 @@
 }
 
 
+- (UIImage *)imageWithBorderColor:(UIColor *)color
+{
+    if (!color)
+    {
+        return self;
+    }
+    
+    CGRect rect = ICRectMake(5, 5, self.size.width, self.size.height);
+    CGRect outRect = CGRectMake(0, 0, rect.size.width + 10 , rect.size.height + 10);
+    
+    UIGraphicsBeginImageContextWithOptions(outRect.size, NO, 2.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:outRect
+                                                    cornerRadius:10.0];
+    CGContextSetStrokeColorWithColor(context, color.CGColor);
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextSetLineWidth(context, 1.0);
+    CGContextAddPath(context, path.CGPath);
+    CGContextStrokePath(context);
+    [self drawInRect:rect];
+    UIImage *ret = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return ret;
+}
+
 @end

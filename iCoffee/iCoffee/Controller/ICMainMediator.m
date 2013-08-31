@@ -25,12 +25,7 @@
 @property (nonatomic, strong) ICBottomBarView *bottomBarView;
 
 @property (nonatomic, strong) ICWelcomeViewController *welcomeViewController;
-@property (nonatomic, strong) ICBeanViewController *beanViewController;
-@property (nonatomic, strong) ICBrewViewController *brewViewController;
-@property (nonatomic, strong) ICCultureViewController *cultureViewController;
-@property (nonatomic, strong) ICFavoriteViewController *favoriteViewController;
-@property (nonatomic, strong) ICFindViewController *findViewController;
-@property (nonatomic, strong) ICSettingViewController *settingViewController;
+
 
 @end
 
@@ -96,7 +91,7 @@
 
 - (CGSize)bottomBarExpandSize
 {
-    return CGSizeMake([UIScreen mainScreen].bounds.size.width, 230);
+    return CGSizeMake([UIScreen mainScreen].bounds.size.width, 222);
 }
 ///////////////////////////////////////////
 ///////////////////////////////////////////
@@ -112,75 +107,6 @@
     
     return _welcomeViewController;
 }
-
-
-- (ICBeanViewController *)beanViewController
-{
-    if (!_beanViewController)
-    {
-        _beanViewController = [[ICBeanViewController alloc] initWithDelegate:self];
-    }
-    
-    return _beanViewController;
-}
-
-
-- (ICBrewViewController *)brewViewController
-{
-    if (!_brewViewController)
-    {
-        _brewViewController = [[ICBrewViewController alloc] initWithDelegate:self];
-    }
-    
-    return _brewViewController;
-}
-
-
-- (ICCultureViewController *)cultureViewController
-{
-    if (!_cultureViewController)
-    {
-        _cultureViewController = [[ICCultureViewController alloc] initWithDelegate:self];
-    }
-    
-    return _cultureViewController;
-}
-
-
-- (ICFavoriteViewController *)favoriteViewController
-{
-    if (!_favoriteViewController)
-    {
-        _favoriteViewController = [[ICFavoriteViewController alloc] initWithDelegate:self];
-    }
-    
-    return _favoriteViewController;
-}
-
-
-- (ICFindViewController *)findViewController
-{
-    if (!_findViewController)
-    {
-        _findViewController = [[ICFindViewController alloc] initWithDelegate:self];
-    }
-    
-    return _findViewController;
-}
-
-
-- (ICSettingViewController *)settingViewController
-{
-    if (!_settingViewController)
-    {
-        _settingViewController = [[ICSettingViewController alloc] initWithDelegate:self];
-    }
-    
-    return _settingViewController;
-}
-
-
-
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 #pragma mark Convenient
@@ -199,6 +125,8 @@
              self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarSize]
                                                                                    offset:CGSizeMake(0, 0)
                                                                                   options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
+             self.bottomBarView.backgroundColor = [UIColor whiteColor];
+             
          }
                          completion:^(BOOL finished)
          {
@@ -212,14 +140,20 @@
         [UIView animateWithDuration:.2
                          animations:^
          {
+             
+             self.bottomBarView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:.2];
+             
              self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarExpandSize]
                                                                                    offset:CGSizeMake(0, 0)
                                                                                   options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
          }
                          completion:^(BOOL finished)
          {
+             
+             
              [self.bottomBarView.arrowButton setBackgroundImage:[UIImage imageNamed:@"bottom_bar_arrow_down"]
                                                        forState:UIControlStateNormal];
+
          }];
     }
 }
@@ -239,7 +173,7 @@
 {
     [self bottomBarButtonClicked:nil];
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
-    [self.navigationController pushViewController:self.beanViewController animated:YES];
+    [self.navigationController pushViewController:[[ICBeanViewController alloc] initWithDelegate:self] animated:YES];
 }
 
 
@@ -247,7 +181,7 @@
 {
     [self bottomBarButtonClicked:nil];
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
-    [self.navigationController pushViewController:self.brewViewController animated:YES];
+    [self.navigationController pushViewController:[[ICBrewViewController alloc] initWithDelegate:self] animated:YES];
 }
 
 
@@ -255,30 +189,29 @@
 {
     [self bottomBarButtonClicked:nil];
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
-    [self.navigationController pushViewController:self.cultureViewController animated:YES];
+    [self.navigationController pushViewController:[[ICCultureViewController alloc] initWithDelegate:self] animated:YES];
 }
 
-
-- (void)favoriteButtonClicked:(id)sender
-{
-    [self bottomBarButtonClicked:nil];
-    [self.navigationController popToViewController:self.welcomeViewController animated:NO];
-    [self.navigationController pushViewController:self.favoriteViewController animated:YES];
-}
 
 - (void)findButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
-    [self.navigationController pushViewController:self.findViewController animated:YES];
+    [self.navigationController pushViewController:[[ICFindViewController alloc] initWithDelegate:self] animated:YES];
 }
 
+
+- (void)homeButtonClicked:(id)sender
+{
+    [self bottomBarButtonClicked:nil];
+    [self.navigationController popToViewController:self.welcomeViewController animated:YES];
+}
 
 - (void)settingButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
-    [self.navigationController pushViewController:self.settingViewController animated:YES];
+    [self.navigationController pushViewController:[[ICSettingViewController alloc] initWithDelegate:self] animated:YES];
 }
 
 

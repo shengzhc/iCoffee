@@ -29,12 +29,11 @@
 
     if (self)
     {
-        UIImage *normalImage = [UIImage imageNamed:imageName];
+        UIImage *normalImage = [[UIImage imageNamed:imageName] imageWithBorderColor:[UIColor blackColor]];
         UIImage *hightlightedImage = [normalImage imageWithOverlayColor:[self hightlightColor]];
         self.buttonImageView = [[UIImageView alloc] initWithImage:normalImage
                                                  highlightedImage:hightlightedImage];
-        self.buttonImageView.layer.masksToBounds = YES;
-        [self.buttonImageView addCornersWithRadius:10.0];
+        self.buttonImageView.backgroundColor = [UIColor clearColor];
         [self.buttonImageView sizeToFit];
         self.buttonImageView.userInteractionEnabled = YES;
         

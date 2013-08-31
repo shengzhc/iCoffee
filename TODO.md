@@ -155,7 +155,7 @@ Aug. 28th
 Aug. 29th - Sep.1st
 1. Complete the first version of bean & bean details. --- Ark
 2. Welcome screen modify ( bottom menu change, reduce function buttons, clockwise brewing procedure) --- SC
-3. Find feature bug and lag --- SC
+3. Find feature bug (RESOLVED) --- SC
 4. Setting contains FB & Twitter, and Contact (Send general feedback & content feedback) --- ARK/SC
 
 Aug. 17th - Aug. 23 (Backend)

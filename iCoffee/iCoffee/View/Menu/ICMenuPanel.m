@@ -14,8 +14,8 @@
 @property (nonatomic, strong) ICMenuButton *beanButton;
 @property (nonatomic, strong) ICMenuButton *brewButton;
 @property (nonatomic, strong) ICMenuButton *cultureButton;
-@property (nonatomic, strong) ICMenuButton *favoriteButton;
 @property (nonatomic, strong) ICMenuButton *findButton;
+@property (nonatomic, strong) ICMenuButton *homeButton;
 @property (nonatomic, strong) ICMenuButton *settingButton;
 
 @end
@@ -46,14 +46,7 @@
                                                      delegate:self
                                                     imageName:@"menu_culture"
                                                          text:@"Culture"];
-        [self.cultureButton sizeToFit];
-
-        
-        self.favoriteButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
-                                                        delegate:self
-                                                       imageName:@"menu_favorite"
-                                                            text:@"Favorite"];
-        [self.favoriteButton sizeToFit];
+        [self.cultureButton sizeToFit];;
         
         self.findButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
                                                         delegate:self
@@ -61,21 +54,25 @@
                                                             text:@"Find"];
         [self.findButton sizeToFit];
         
+        self.homeButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
+                                                     delegate:self
+                                                    imageName:@"menu_home"
+                                                         text:@"Home"];
+        [self.homeButton sizeToFit];
+        
         self.settingButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
                                                         delegate:self
                                                        imageName:@"menu_setting"
                                                             text:@"Setting"];
         [self.settingButton sizeToFit];
         
-        
         [self addSubview:self.beanButton];
         [self addSubview:self.brewButton];
         [self addSubview:self.cultureButton];
-        [self addSubview:self.favoriteButton];
         [self addSubview:self.findButton];
-        [self addSubview:self.settingButton];
         
-        [self addShadowWithColor:[UIColor blackColor]];
+        [self addSubview:self.homeButton];
+        [self addSubview:self.settingButton];
     }
     
     return self;
@@ -87,28 +84,28 @@
     [super layoutSubviews];
     
     CGFloat topping = 1;
-    CGFloat verticalPadding = 10;
     
     self.beanButton.frame = [self.beanButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                    offset:CGSizeMake(10, topping)
+                                                                    offset:CGSizeMake(16, topping)
                                                                    options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
     self.brewButton.frame = [self.brewButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                    offset:CGSizeMake(self.beanButton.horizontalEnding, topping)
+                                                                    offset:CGSizeMake(self.beanButton.horizontalEnding + 16, topping)
                                                                    options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
     self.cultureButton.frame = [self.cultureButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                    offset:CGSizeMake(self.brewButton.horizontalEnding, topping)
+                                                                    offset:CGSizeMake(self.brewButton.horizontalEnding + 16, topping)
                                                                    options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
-    self.favoriteButton.frame = [self.cultureButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                          offset:CGSizeMake(10, self.beanButton.verticalEnding + verticalPadding)
-                                                                         options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
-    self.findButton.frame = [self.cultureButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                          offset:CGSizeMake(self.favoriteButton.horizontalEnding, self.brewButton.verticalEnding + verticalPadding)
-                                                                         options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
-    self.settingButton.frame = [self.cultureButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                          offset:CGSizeMake(self.findButton.horizontalEnding, self.cultureButton.verticalEnding + verticalPadding)
-                                                                         options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
 
+    self.findButton.frame = [self.cultureButton alignedRectInSuperviewForSize:[self buttonSize]
+                                                                          offset:CGSizeMake(self.cultureButton.horizontalEnding + 16, topping)
+                                                                         options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
     
+    self.homeButton.frame = [self.homeButton alignedRectInSuperviewForSize:[self buttonSize]
+                                                                    offset:CGSizeMake(self.beanButton.frame.origin.x, self.beanButton.verticalEnding + 10)
+                                                                   options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
+    
+    self.settingButton.frame = [self.settingButton alignedRectInSuperviewForSize:[self buttonSize]
+                                                                          offset:CGSizeMake(self.findButton.frame.origin.x, self.findButton.verticalEnding + 10)
+                                                                         options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
 }
 
 
@@ -119,7 +116,7 @@
 ///////////////////////////////////////////
 - (CGSize)buttonSize
 {
-    return CGSizeMake(100, 80);
+    return CGSizeMake(60, 80);
 }
 ///////////////////////////////////////////
 ///////////////////////////////////////////
@@ -143,14 +140,14 @@
         [self.delegate attemptPerformSelector:@selector(cultureButtonClicked:)
                                    withObject:sender];
     }
-    else if (sender == self.favoriteButton)
-    {
-        [self.delegate attemptPerformSelector:@selector(favoriteButtonClicked:)
-                                   withObject:sender];
-    }
     else if (sender == self.findButton)
     {
         [self.delegate attemptPerformSelector:@selector(findButtonClicked:)
+                                   withObject:sender];
+    }
+    else if (sender == self.homeButton)
+    {
+        [self.delegate attemptPerformSelector:@selector(homeButtonClicked:)
                                    withObject:sender];
     }
     else if (sender == self.settingButton)
