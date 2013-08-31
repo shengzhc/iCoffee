@@ -500,6 +500,7 @@
                                      @"types":[self.view.backView types],
                                      @"opennow":[self.view.backView opennow]
                                      };
+
         
         ICHTTPManager *httpManager = [ICHTTPManager POSTHTTPManagerWithURLString:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json"
                                                                             body:parameters

@@ -49,18 +49,15 @@
                                        offset:CGSizeMake(0, 3)];
         
         self.locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.locationButton setBackgroundImage:[UIImage imageNamed:@"setting_new_me"] forState:UIControlStateNormal];
+        [self.locationButton setBackgroundImage:[UIImage imageNamed:@"find_near_me"] forState:UIControlStateNormal];
         [self.locationButton addTarget:delegate
                                 action:@selector(locationButtonClicked:)
                       forControlEvents:UIControlEventTouchUpInside];
         [self.locationButton sizeToFit];
 
         self.settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.settingButton setImage:[UIImage imageNamed:@"button_menu_setting"]
+        [self.settingButton setBackgroundImage:[UIImage imageNamed:@"button_menu_setting"]
                             forState:UIControlStateNormal];
-        [self.settingButton setImage:[[UIImage imageNamed:@"button_menu_setting"]
-                                      imageWithOverlayColor:[UIColor lightGrayColor]]
-                            forState:UIControlStateHighlighted];
         [self.settingButton addTarget:delegate action:@selector(settingButtonClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
         [self.settingButton sizeToFit];
@@ -100,7 +97,7 @@
                                                                  options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
     
     self.locationButton.frame = [self.locationButton alignedRectInSuperviewForSize:self.locationButton.bounds.size
-                                                                            offset:CGSizeMake(20, 30)
+                                                                            offset:CGSizeMake(20, 35)
                                                                            options:(ICAlignmentOptionsLeft | ICAlignmentOptionsBottom)];
     
     self.mapView.frame = [self.mapView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height - self.searchBar.bounds.size.height)

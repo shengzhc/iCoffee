@@ -159,7 +159,7 @@ Aug. 29th - Sep.1st
 4. Setting contains FB & Twitter, and Contact (Send general feedback & content feedback) --- ARK/SC
 
 Aug.31st
-1. Add send email feature to setting. --- SC
+1. Add send email feature to setting. (RESOLVED) --- SC
 2. Set up the survey for send feed back. --- SC
 
 Aug. 17th - Aug. 23 (Backend)
