@@ -7,7 +7,8 @@
 //
 
 #import "ICViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface ICSettingViewController : ICViewController < UITableViewDataSource, UITableViewDelegate >
+@interface ICSettingViewController : ICViewController < UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate >
 
 @end

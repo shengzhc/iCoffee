@@ -7,8 +7,8 @@
 //
 
 #import "ICSettingViewController.h"
-
 #import "ICSettingView.h"
+#import "ICHeaderBarView.h"
 
 @interface ICSettingViewController ()
 
@@ -92,5 +92,32 @@
     
     return headerView;
 }
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 && indexPath.row == 0)
+    {
+        MFMailComposeViewController *composeViewController = [[MFMailComposeViewController alloc] initWithNavigationBarClass:[ICHeaderBarView class] toolbarClass:nil];
+        composeViewController.mailComposeDelegate = self;
+        [composeViewController setSubject:@"Customer Feedback"];
+        [composeViewController setMessageBody:@"Hi iCoffee,<br>" isHTML:YES];
+        [composeViewController setToRecipients:[NSArray arrayWithObject:@"shengzhe.chen@kuapay.com"]];
+        [composeViewController setCcRecipients:[NSArray arrayWithObject:@"lfz.ark@gmail.com"]];
+        if ([MFMailComposeViewController canSendMail])
+        {
+            [self presentViewController:composeViewController
+                               animated:YES
+                             completion:nil];
+        }
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end
