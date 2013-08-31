@@ -58,7 +58,7 @@
 - (UIBarButtonItem *)leftBarButtonItem
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setBackgroundImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[self leftButtonBackgroundImage] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont icRegularFontWithSize:13];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTitle:[self leftBarButtonTitle] forState:UIControlStateNormal];
@@ -72,6 +72,18 @@
 - (NSString *)leftBarButtonTitle
 {
     return @"Back";
+}
+
+
+- (UIImage *)leftButtonBackgroundImage
+{
+    CGSize size = CGSizeMake(80, 44);
+    UIGraphicsBeginImageContext(size);
+    UIImage *image = [UIImage imageNamed:@"nav_back"];
+    [image drawInRect:CGRectMake(0, (size.height - image.size.height)/2.0, image.size.width, image.size.height)];
+    UIImage *ret = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return ret;
 }
 
 - (Class)viewClass
