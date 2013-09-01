@@ -150,12 +150,27 @@
 ///////////////////////////////////////////
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 6;
+    return 3;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ICCollectionViewCellIdentifier" forIndexPath:indexPath];
+    switch (indexPath.row)
+    {
+        case 0:
+            cell.backgroundColor = [UIColor yellowColor];
+            break;
+        case 1:
+            cell.backgroundColor = [UIColor greenColor];
+            break;
+        case 2:
+            cell.backgroundColor = [UIColor redColor];
+            break;
+        default:
+            cell.backgroundColor = [UIColor blueColor];
+            break;
+    }
     return cell;
 }
 

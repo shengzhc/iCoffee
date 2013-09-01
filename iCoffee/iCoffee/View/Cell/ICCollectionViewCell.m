@@ -26,9 +26,9 @@
 {
     CGRect circleRect = CGRectInset(rect, 1, 1);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetLineWidth(context, 2.0);
+    CGContextSetLineWidth(context, .5);
     CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
-    CGContextStrokeEllipseInRect(context, circleRect);
+    CGContextStrokeRect(context, circleRect);
     CGContextStrokePath(context);
     UIGraphicsEndImageContext();
 }

@@ -8,7 +8,7 @@
 
 #import "ICWelcomeView.h"
 #import "ICScrollImageView.h"
-#import "ICCollectionViewCircleLayout.h"
+#import "ICCollectionViewOverlayLayout.h"
 #import "ICCollectionViewCell.h"
 
 @interface ICWelcomeView ()
@@ -41,7 +41,7 @@
     
         [self scrollToPageIndex:1 animated:NO];
         
-        UICollectionViewLayout *collectionViewlayout = [[ICCollectionViewCircleLayout alloc] init];
+        UICollectionViewLayout *collectionViewlayout = [[ICCollectionViewOverlayLayout alloc] init];
         self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:collectionViewlayout];
         self.collectionView.dataSource = delegate;
         [self.collectionView registerClass:[ICCollectionViewCell class] forCellWithReuseIdentifier:@"ICCollectionViewCellIdentifier"];

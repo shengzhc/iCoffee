@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ICCollectionViewCircleLayout : UICollectionViewLayout
+@interface ICCollectionViewOverlayLayout : UICollectionViewLayout
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 iCoffee. All rights reserved.
 //
 
-#import "ICCollectionViewCircleLayout.h"
+#import "ICCollectionViewOverlayLayout.h"
 
-@interface ICCollectionViewCircleLayout ()
+@interface ICCollectionViewOverlayLayout ()
 
 @property (nonatomic, assign) CGPoint center;
 @property (nonatomic, assign) CGFloat radius;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation ICCollectionViewCircleLayout
+@implementation ICCollectionViewOverlayLayout
 
 - (void)prepareLayout
 {
@@ -36,8 +36,9 @@
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    attributes.center = CGPointMake(_center.x + _radius * cosf(2 * indexPath.item * M_PI / _cellCount), self.center.y + self.radius * sinf(2 * indexPath.item * M_PI / _cellCount));
-    attributes.size = CGSizeMake(60, 60);
+    CGSize size = CGSizeMake(self.collectionView.bounds.size.width - 100, self.collectionView.bounds.size.height - 100);
+    attributes.center = CGPointMake(CGRectGetMidX(self.collectionView.bounds), CGRectGetMidY(self.collectionView.bounds));
+    attributes.size = size;
     return attributes;
 }
 
@@ -48,7 +49,9 @@
     for (NSInteger i = 0; i < _cellCount; i++)
     {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
-        [attributes addObject:[self layoutAttributesForItemAtIndexPath:indexPath]];
+        UICollectionViewLayoutAttributes *attribute = [self layoutAttributesForItemAtIndexPath:indexPath];
+        attribute.transform3D = CATransform3DMakeRotation(M_PI/8.0*i, 0, 0, 1.0);
+        [attributes addObject:attribute];
     }
     return attributes;
 }
