@@ -8,6 +8,8 @@
 
 #import "ICWelcomeView.h"
 #import "ICScrollImageView.h"
+#import "ICCollectionViewCircleLayout.h"
+#import "ICCollectionViewCell.h"
 
 @interface ICWelcomeView ()
 
@@ -38,6 +40,14 @@
         [self addSubview:self.scrollView];
     
         [self scrollToPageIndex:1 animated:NO];
+        
+        UICollectionViewLayout *collectionViewlayout = [[ICCollectionViewCircleLayout alloc] init];
+        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:collectionViewlayout];
+        self.collectionView.dataSource = delegate;
+        [self.collectionView registerClass:[ICCollectionViewCell class] forCellWithReuseIdentifier:@"ICCollectionViewCellIdentifier"];
+        self.collectionView.backgroundColor = [UIColor clearColor];
+        self.collectionView.showsHorizontalScrollIndicator = NO;
+        [self addSubview:self.collectionView];
     }
     
     return self;
@@ -51,6 +61,10 @@
     self.scrollView.frame = [self.scrollView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 200)
                                                                     offset:CGSizeMake(0, 10)
                                                                    options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
+    
+    self.collectionView.frame = [self.collectionView alignedRectInSuperviewForSize:CGSizeMake(200, 200)
+                                                                            offset:CGSizeMake(0, self.scrollView.verticalEnding + 20)
+                                                                           options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
 }
 ///////////////////////////////////////////
 ///////////////////////////////////////////
@@ -146,5 +160,6 @@
         [self scrollToPageIndex:1 animated:NO];
     }
 }
+
 
 @end

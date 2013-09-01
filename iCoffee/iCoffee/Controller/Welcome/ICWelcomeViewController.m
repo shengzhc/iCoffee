@@ -7,13 +7,14 @@
 //
 
 #import "ICWelcomeViewController.h"
+#import "ICCollectionViewCell.h"
 
 @interface ICWelcomeViewController ()
 
 @property (nonatomic, strong) NSMutableArray *scrollPageDatasource;
 
 @property (nonatomic, strong) ADBannerView *banner;
-
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
@@ -42,6 +43,7 @@
 {
     [super viewDidLoad];
     
+    self.collectionView = self.view.collectionView;
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.leftBarButtonItem = nil;
     
@@ -140,6 +142,26 @@
     }
     
     return self.scrollPageDatasource[pageIndex];
+}
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark UICollectionViewDataSource
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 6;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ICCollectionViewCellIdentifier" forIndexPath:indexPath];
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
 }
 
 @end

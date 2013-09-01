@@ -41,6 +41,8 @@
 		E764BECC17D1C4B700FDD7CC /* setting_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEC717D1C4B500FDD7CC /* setting_twitter.png */; };
 		E764BED317D1C66F00FDD7CC /* ICSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E764BED217D1C66F00FDD7CC /* ICSettingCell.m */; };
 		E764BED517D2455400FDD7CC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E764BED417D2455400FDD7CC /* MessageUI.framework */; };
+		E764BEDB17D3940100FDD7CC /* ICCollectionViewCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E764BEDA17D3940100FDD7CC /* ICCollectionViewCircleLayout.m */; };
+		E764BEDE17D39FC000FDD7CC /* ICCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E764BEDD17D39FC000FDD7CC /* ICCollectionViewCell.m */; };
 		E76C68F017C0A8BF002BBF3C /* ICMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C68DA17C0A8BF002BBF3C /* ICMenuButton.m */; };
 		E76C68F117C0A8BF002BBF3C /* ICScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C68DC17C0A8BF002BBF3C /* ICScrollImageView.m */; };
 		E76C68F217C0A8BF002BBF3C /* ICScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C68DE17C0A8BF002BBF3C /* ICScrollPageView.m */; };
@@ -165,6 +167,10 @@
 		E764BED117D1C66F00FDD7CC /* ICSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSettingCell.h; sourceTree = "<group>"; };
 		E764BED217D1C66F00FDD7CC /* ICSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSettingCell.m; sourceTree = "<group>"; };
 		E764BED417D2455400FDD7CC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E764BED917D3940100FDD7CC /* ICCollectionViewCircleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCollectionViewCircleLayout.h; sourceTree = "<group>"; };
+		E764BEDA17D3940100FDD7CC /* ICCollectionViewCircleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCollectionViewCircleLayout.m; sourceTree = "<group>"; };
+		E764BEDC17D39FC000FDD7CC /* ICCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCollectionViewCell.h; sourceTree = "<group>"; };
+		E764BEDD17D39FC000FDD7CC /* ICCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCollectionViewCell.m; sourceTree = "<group>"; };
 		E76C68D917C0A8BF002BBF3C /* ICMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMenuButton.h; sourceTree = "<group>"; };
 		E76C68DA17C0A8BF002BBF3C /* ICMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMenuButton.m; sourceTree = "<group>"; };
 		E76C68DB17C0A8BF002BBF3C /* ICScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollImageView.h; sourceTree = "<group>"; };
@@ -343,6 +349,8 @@
 			children = (
 				E764BED117D1C66F00FDD7CC /* ICSettingCell.h */,
 				E764BED217D1C66F00FDD7CC /* ICSettingCell.m */,
+				E764BEDC17D39FC000FDD7CC /* ICCollectionViewCell.h */,
+				E764BEDD17D39FC000FDD7CC /* ICCollectionViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -750,6 +758,8 @@
 			children = (
 				E7E6137317C996D9009B0462 /* ICCellFactory.h */,
 				E7E6137417C996D9009B0462 /* ICCellFactory.m */,
+				E764BED917D3940100FDD7CC /* ICCollectionViewCircleLayout.h */,
+				E764BEDA17D3940100FDD7CC /* ICCollectionViewCircleLayout.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -911,6 +921,8 @@
 				E7E6137F17C9B7C9009B0462 /* ICSwitchBarView.m in Sources */,
 				E7BF70D517CA6AA900D3D5C5 /* ICDataButton.m in Sources */,
 				E764BED317D1C66F00FDD7CC /* ICSettingCell.m in Sources */,
+				E764BEDB17D3940100FDD7CC /* ICCollectionViewCircleLayout.m in Sources */,
+				E764BEDE17D39FC000FDD7CC /* ICCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
