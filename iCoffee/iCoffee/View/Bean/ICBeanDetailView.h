@@ -26,6 +26,7 @@
 @property (nonatomic, strong) UILabel *categoryLabel;
 @property (nonatomic, strong) UILabel *regionLabel;
 @property (nonatomic, strong) UILabel *description;
+@property (nonatomic, strong) UIView *descriptionBackground;
 //@property (nonatomic, strong) UILabel *rateLabel;
 
 @property (nonatomic,strong) UIImageView *categoryIcon;

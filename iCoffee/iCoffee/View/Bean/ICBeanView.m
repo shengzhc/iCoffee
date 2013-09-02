@@ -18,7 +18,7 @@
 
     if (self)
     {
-        self.backgroundColor = [UIColor blueColor];
+        self.backgroundColor = [UIColor whiteColor];
         
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero
                                                       style:UITableViewStylePlain];
@@ -34,7 +34,12 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.tableView.frame = self.bounds;
+    
+    
+    CGRect frame = self.bounds;
+    frame.size = CGSizeMake(frame.size.width, frame.size.height - 32);  //Deduct the height of the bottom bar.    
+    self.tableView.frame = frame;
+    
 }
 
 @end
