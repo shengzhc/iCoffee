@@ -33,7 +33,7 @@
 {
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     CGSize size = CGSizeMake(80, 80);
-    attributes.center = CGPointMake(50 + (indexPath.row * self.collectionView.bounds.size.width / (_cellCount + 1)), CGRectGetMidY(self.collectionView.bounds) - 50);
+    attributes.center = CGPointMake(50 + (indexPath.row * self.collectionView.bounds.size.width / (_cellCount + 1)), CGRectGetMidY(self.collectionView.bounds) - 25);
     attributes.size = size;
     return attributes;
 }

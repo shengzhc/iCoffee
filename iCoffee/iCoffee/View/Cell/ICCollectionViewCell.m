@@ -23,11 +23,12 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.backgroundImageView = [[UIImageView alloc] init];
         self.backgroundImageView.contentMode = UIViewContentModeScaleToFill;
         
         [self addSubview:self.backgroundImageView];
+        [self addShadowWithColor:[UIColor blackColor]];
     }
     
     return self;
@@ -37,19 +38,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.backgroundImageView.frame = [self.backgroundImageView alignedRectInSuperviewForSize:self.bounds.size offset:CGSizeMake(0, 0) options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsVerticalCenter)];
-}
-
-
-- (void)drawRect:(CGRect)rect
-{
-    CGRect circleRect = CGRectInset(rect, 1, 1);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetLineWidth(context, .5);
-    CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
-    CGContextStrokeRect(context, circleRect);
-    CGContextStrokePath(context);
-    UIGraphicsEndImageContext();
+    CGRect frame = CGRectInset(self.bounds, 4, 4);
+    self.backgroundImageView.frame = frame;
 }
 
 
