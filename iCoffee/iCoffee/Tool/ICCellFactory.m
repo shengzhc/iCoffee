@@ -17,6 +17,16 @@
     
     switch (cellType)
     {
+        case CellTypeSettingCell:
+        
+            cell = [tableView dequeueReusableCellWithIdentifier:@"CellTypeSettingCell"];
+            if (!cell)
+            {
+                cell = [[ICSettingCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                            reuseIdentifier:@"CellTypeSettingCell"];
+            }
+            return cell;
+            break;
         case CellTypeDefault:
             cell = [tableView dequeueReusableCellWithIdentifier:@"CellTypeDefault"];
             if (!cell)

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ICSettingCell.h"
+
 typedef enum
 {
+    CellTypeSettingCell,
     CellTypeDefault
 }CellType;
 

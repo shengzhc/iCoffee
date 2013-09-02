@@ -154,11 +154,16 @@
 {
     CGFloat width;
     
-    if (label.tag==TAGTYPE_1) {
+    if (label.tag==TAGTYPE_1)
+    {
         width = self.trueBounds.size.width - PADDING*2;
-    }else if (label.tag == TAGTYPE_2){
+    }
+    else if (label.tag == TAGTYPE_2)
+    {
         width = self.trueBounds.size.width - PADDING*2 - ICONSIZE - 10;
-    }else{
+    }
+    else
+    {
         width = self.trueBounds.size.width;
     }
     

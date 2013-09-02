@@ -7,13 +7,14 @@
 //
 
 #import "ICWelcomeViewController.h"
+#import "ICCollectionViewCell.h"
 
 @interface ICWelcomeViewController ()
 
 @property (nonatomic, strong) NSMutableArray *scrollPageDatasource;
 
 @property (nonatomic, strong) ADBannerView *banner;
-
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
@@ -42,6 +43,7 @@
 {
     [super viewDidLoad];
     
+    self.collectionView = self.view.collectionView;
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.leftBarButtonItem = nil;
     
@@ -140,6 +142,41 @@
     }
     
     return self.scrollPageDatasource[pageIndex];
+}
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark UICollectionViewDataSource
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ICCollectionViewCellIdentifier" forIndexPath:indexPath];
+    switch (indexPath.row)
+    {
+        case 0:
+            cell.backgroundColor = [UIColor yellowColor];
+            break;
+        case 1:
+            cell.backgroundColor = [UIColor greenColor];
+            break;
+        case 2:
+            cell.backgroundColor = [UIColor redColor];
+            break;
+        default:
+            cell.backgroundColor = [UIColor blueColor];
+            break;
+    }
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
 }
 
 @end

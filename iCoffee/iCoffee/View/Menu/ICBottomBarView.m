@@ -27,11 +27,6 @@
 
     if (self)
     {
-        self.backgroundColor = [UIColor colorWithRed:236/255.0
-                                               green:236/255.0
-                                                blue:236/255.0
-                                               alpha:1.0];
-        [self addShadowWithColor:[UIColor blackColor] opacity:0.2 radius:0.8 offset:CGSizeMake(0, -2)];
         self.backgroundImageView = [[UIImageView alloc] init];
         self.backgroundImageView.userInteractionEnabled = YES;
         
