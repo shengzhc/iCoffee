@@ -149,7 +149,7 @@
 ///////////////////////////////////////////
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 5;
+    return 6;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -164,12 +164,15 @@
             [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_roaster"]];
             break;
         case 2:
-            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_decaffeination"]];
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_grading"]];
             break;
         case 3:
-            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_brew"]];
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_decaffeination"]];
             break;
         case 4:
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_brew"]];
+            break;
+        case 5:
             [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_serving"]];
             break;
         default:

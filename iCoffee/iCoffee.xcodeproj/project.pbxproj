@@ -26,6 +26,7 @@
 		07E855EC17C2B347000CD833 /* ICBeanDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EB17C2B347000CD833 /* ICBeanDetailView.m */; };
 		07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */; };
 		07F6C3E717CD66A80042FEA3 /* bean_detail_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F6C3E617CD66A80042FEA3 /* bean_detail_icon.png */; };
+		E70365CD17D51D1B00242C1F /* coffee_grading.png in Resources */ = {isa = PBXBuildFile; fileRef = E70365CC17D51D1B00242C1F /* coffee_grading.png */; };
 		E764BEAD17D076F100FDD7CC /* menu_culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEA217D076F000FDD7CC /* menu_culture.png */; };
 		E764BEAE17D076F100FDD7CC /* menu_bean.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEA317D076F000FDD7CC /* menu_bean.png */; };
 		E764BEAF17D076F100FDD7CC /* menu_brew.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEA417D076F100FDD7CC /* menu_brew.png */; };
@@ -158,6 +159,7 @@
 		07E855ED17C2B365000CD833 /* ICBeanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanDetailViewController.h; sourceTree = "<group>"; };
 		07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanDetailViewController.m; sourceTree = "<group>"; };
 		07F6C3E617CD66A80042FEA3 /* bean_detail_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bean_detail_icon.png; sourceTree = "<group>"; };
+		E70365CC17D51D1B00242C1F /* coffee_grading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_grading.png; sourceTree = "<group>"; };
 		E764BEA217D076F000FDD7CC /* menu_culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_culture.png; sourceTree = "<group>"; };
 		E764BEA317D076F000FDD7CC /* menu_bean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_bean.png; sourceTree = "<group>"; };
 		E764BEA417D076F100FDD7CC /* menu_brew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_brew.png; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 		E794F6FF17BFDC3B00F729A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E70365CC17D51D1B00242C1F /* coffee_grading.png */,
 				E764BEDF17D4E4B100FDD7CC /* coffee_brew.png */,
 				E764BEE017D4E4B100FDD7CC /* coffee_decaffeination.png */,
 				E764BEE117D4E4B100FDD7CC /* coffee_processing.png */,
@@ -902,6 +905,7 @@
 				E764BEE617D4E4B100FDD7CC /* coffee_processing.png in Resources */,
 				E764BEE717D4E4B100FDD7CC /* coffee_roaster.png in Resources */,
 				E764BEE817D4E4B100FDD7CC /* coffee_serving.png in Resources */,
+				E70365CD17D51D1B00242C1F /* coffee_grading.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
