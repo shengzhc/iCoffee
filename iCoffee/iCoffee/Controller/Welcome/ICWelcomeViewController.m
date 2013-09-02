@@ -12,7 +12,6 @@
 @interface ICWelcomeViewController ()
 
 @property (nonatomic, strong) NSMutableArray *scrollPageDatasource;
-
 @property (nonatomic, strong) ADBannerView *banner;
 @property (nonatomic, strong) UICollectionView *collectionView;
 

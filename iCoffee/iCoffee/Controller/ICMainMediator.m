@@ -125,7 +125,6 @@
              self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarSize]
                                                                                    offset:CGSizeMake(0, 0)
                                                                                   options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsBottom)];
-             self.bottomBarView.backgroundColor = [UIColor whiteColor];
              
          }
                          completion:^(BOOL finished)
@@ -140,8 +139,6 @@
         [UIView animateWithDuration:.2
                          animations:^
          {
-             
-             self.bottomBarView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:.2];
              
              self.bottomBarView.frame = [self.bottomBarView alignedRectInSuperviewForSize:[self bottomBarExpandSize]
                                                                                    offset:CGSizeMake(0, 0)
@@ -172,6 +169,12 @@
 - (void)beanButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
+    
+    if ([self.navigationController.visibleViewController isKindOfClass:[ICBeanViewController class]])
+    {
+        return;
+    }
+    
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
     [self.navigationController pushViewController:[[ICBeanViewController alloc] initWithDelegate:self] animated:YES];
 }
@@ -180,6 +183,13 @@
 - (void)brewButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
+    
+    
+    if ([self.navigationController.visibleViewController isKindOfClass:[ICBrewViewController class]])
+    {
+        return;
+    }
+
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
     [self.navigationController pushViewController:[[ICBrewViewController alloc] initWithDelegate:self] animated:YES];
 }
@@ -188,6 +198,13 @@
 - (void)cultureButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
+    
+    
+    if ([self.navigationController.visibleViewController isKindOfClass:[ICCultureViewController class]])
+    {
+        return;
+    }
+
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
     [self.navigationController pushViewController:[[ICCultureViewController alloc] initWithDelegate:self] animated:YES];
 }
@@ -196,6 +213,13 @@
 - (void)findButtonClicked:(id)sender
 {
     [self bottomBarButtonClicked:nil];
+    
+    if ([self.navigationController.visibleViewController isKindOfClass:[ICFindViewController class]])
+    {
+        return;
+    }
+
+    
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
     [self.navigationController pushViewController:[[ICFindViewController alloc] initWithDelegate:self] animated:YES];
 }
@@ -203,13 +227,17 @@
 
 - (void)homeButtonClicked:(id)sender
 {
-    [self bottomBarButtonClicked:nil];
     [self.navigationController popToViewController:self.welcomeViewController animated:YES];
 }
 
 - (void)settingButtonClicked:(id)sender
 {
-    [self bottomBarButtonClicked:nil];
+    
+    if ([self.navigationController.visibleViewController isKindOfClass:[ICSettingViewController class]])
+    {
+        return;
+    }
+
     [self.navigationController popToViewController:self.welcomeViewController animated:NO];
     [self.navigationController pushViewController:[[ICSettingViewController alloc] initWithDelegate:self] animated:YES];
 }
