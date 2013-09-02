@@ -91,7 +91,7 @@
 
 - (CGSize)bottomBarExpandSize
 {
-    return CGSizeMake([UIScreen mainScreen].bounds.size.width, 222);
+    return CGSizeMake([UIScreen mainScreen].bounds.size.width, 122);
 }
 ///////////////////////////////////////////
 ///////////////////////////////////////////

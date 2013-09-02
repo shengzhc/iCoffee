@@ -44,7 +44,7 @@
     
     self.collectionView = self.view.collectionView;
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItems = nil;
     
 //    if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)])
 //    {
@@ -170,6 +170,7 @@
             cell.backgroundColor = [UIColor blueColor];
             break;
     }
+
     return cell;
 }
 

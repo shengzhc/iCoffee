@@ -13,6 +13,8 @@
 
 @interface ICWelcomeView ()
 
+@property (nonatomic, strong) UIScrollView *scrollBackgroundView;
+
 @end
 
 @implementation ICWelcomeView
@@ -26,6 +28,8 @@
     if (self)
     {
         self.backgroundColor = [UIColor whiteColor];
+        self.scrollBackgroundView = [[UIScrollView alloc] initWithFrame:CGRectZero];
+        self.scrollBackgroundView.bounces = YES;
         
         self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
         self.scrollView.pagingEnabled = YES;
@@ -36,8 +40,7 @@
         self.scrollView.delegate = self;
         
         [self scrollViewLoadContent:self.scrollView];
-        
-        [self addSubview:self.scrollView];
+        [self.scrollBackgroundView addSubview:self.scrollView];
     
         [self scrollToPageIndex:1 animated:NO];
         
@@ -53,10 +56,8 @@
         tapGestureRecognizer.numberOfTapsRequired = 1;
         tapGestureRecognizer.numberOfTouchesRequired = 1;
         [self.collectionView addGestureRecognizer:tapGestureRecognizer];
-        
-        [self addSubview:self.collectionView];
-        
-        
+        [self.scrollBackgroundView addSubview:self.collectionView];
+        [self addSubview:self.scrollBackgroundView];        
     }
     
     return self;
@@ -67,6 +68,8 @@
 {
     [super layoutSubviews];
     
+    self.scrollBackgroundView.frame = self.bounds;
+    
     self.scrollView.frame = [self.scrollView alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, 200)
                                                                     offset:CGSizeMake(0, 10)
                                                                    options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
@@ -74,6 +77,8 @@
     self.collectionView.frame = [self.collectionView alignedRectInSuperviewForSize:CGSizeMake(250, 250)
                                                                             offset:CGSizeMake(0, self.scrollView.verticalEnding + 5)
                                                                            options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
+    
+    self.scrollBackgroundView.contentSize = CGSizeMake(self.bounds.size.width, self.scrollView.bounds.size.height + self.collectionView.bounds.size.height + 50);
 }
 ///////////////////////////////////////////
 ///////////////////////////////////////////
