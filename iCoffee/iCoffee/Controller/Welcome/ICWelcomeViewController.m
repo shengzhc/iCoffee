@@ -179,5 +179,26 @@
 {
     return 1;
 }
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark Click
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (void)handleTapGesture:(UITapGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded)
+    {
+        for (NSUInteger i = 0; i < self.collectionView.visibleCells.count; i++)
+        {
+            UIView *v = self.collectionView.visibleCells[i];
+            CGPoint pointInView = [gestureRecognizer locationInView:v];
+            if (CGRectContainsPoint(v.bounds, pointInView))
+            {
+                [self.collectionView bringSubviewToFront:v];
+                break;
+            }
+        }
+    }
+}
 
 @end
