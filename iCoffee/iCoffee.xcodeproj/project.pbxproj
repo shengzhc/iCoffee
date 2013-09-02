@@ -680,8 +680,6 @@
 		E7DAB33C17AF203A00D575B7 = {
 			isa = PBXGroup;
 			children = (
-				07686A6E17D423EF003666BE /* Social.framework */,
-				07686A6C17D423E5003666BE /* Accounts.framework */,
 				E73807C717C426CD00FB2A00 /* Test */,
 				E794F6FD17BFDC3B00F729A1 /* Bundle */,
 				E7DAB3B217AF25FF00D575B7 /* Supporting Files */,
@@ -702,6 +700,8 @@
 		E7DAB34A17AF203B00D575B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07686A6E17D423EF003666BE /* Social.framework */,
+				07686A6C17D423E5003666BE /* Accounts.framework */,
 				E764BED417D2455400FDD7CC /* MessageUI.framework */,
 				E7E6139F17CA6444009B0462 /* SDWebImage.framework */,
 				E78C516717C5CFAB00EA05EB /* MapKit.framework */,

@@ -47,17 +47,17 @@
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.leftBarButtonItem = nil;
     
-    if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)])
-    {
-        self.banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
-    }
-    else
-    {
-        self.banner = [[ADBannerView alloc] init];
-    }
-    self.banner.delegate = self;
-    [self.view addSubview:self.banner];
-    [self layoutBannerView:self.banner];
+//    if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)])
+//    {
+//        self.banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+//    }
+//    else
+//    {
+//        self.banner = [[ADBannerView alloc] init];
+//    }
+//    self.banner.delegate = self;
+//    [self.view addSubview:self.banner];
+//    [self layoutBannerView:self.banner];
 }
 
 ///////////////////////////////////////////
@@ -173,6 +173,7 @@
     }
     return cell;
 }
+
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
