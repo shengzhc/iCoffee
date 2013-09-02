@@ -74,7 +74,7 @@
                                                                     offset:CGSizeMake(0, 10)
                                                                    options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
     
-    self.collectionView.frame = [self.collectionView alignedRectInSuperviewForSize:CGSizeMake(250, 250)
+    self.collectionView.frame = [self.collectionView alignedRectInSuperviewForSize:CGSizeMake(300, 250)
                                                                             offset:CGSizeMake(0, self.scrollView.verticalEnding + 5)
                                                                            options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
     

@@ -10,4 +10,7 @@
 
 @interface ICCollectionViewCell : UICollectionReusableView
 
+- (void)setBackgroundImage:(UIImage *)image;
+
+
 @end

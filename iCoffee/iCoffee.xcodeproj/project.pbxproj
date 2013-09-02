@@ -45,6 +45,11 @@
 		E764BED517D2455400FDD7CC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E764BED417D2455400FDD7CC /* MessageUI.framework */; };
 		E764BEDB17D3940100FDD7CC /* ICCollectionViewOverlayLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E764BEDA17D3940100FDD7CC /* ICCollectionViewOverlayLayout.m */; };
 		E764BEDE17D39FC000FDD7CC /* ICCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E764BEDD17D39FC000FDD7CC /* ICCollectionViewCell.m */; };
+		E764BEE417D4E4B100FDD7CC /* coffee_brew.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEDF17D4E4B100FDD7CC /* coffee_brew.png */; };
+		E764BEE517D4E4B100FDD7CC /* coffee_decaffeination.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEE017D4E4B100FDD7CC /* coffee_decaffeination.png */; };
+		E764BEE617D4E4B100FDD7CC /* coffee_processing.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEE117D4E4B100FDD7CC /* coffee_processing.png */; };
+		E764BEE717D4E4B100FDD7CC /* coffee_roaster.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEE217D4E4B100FDD7CC /* coffee_roaster.png */; };
+		E764BEE817D4E4B100FDD7CC /* coffee_serving.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEE317D4E4B100FDD7CC /* coffee_serving.png */; };
 		E76C68F017C0A8BF002BBF3C /* ICMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C68DA17C0A8BF002BBF3C /* ICMenuButton.m */; };
 		E76C68F117C0A8BF002BBF3C /* ICScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C68DC17C0A8BF002BBF3C /* ICScrollImageView.m */; };
 		E76C68F217C0A8BF002BBF3C /* ICScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C68DE17C0A8BF002BBF3C /* ICScrollPageView.m */; };
@@ -175,6 +180,11 @@
 		E764BEDA17D3940100FDD7CC /* ICCollectionViewOverlayLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCollectionViewOverlayLayout.m; sourceTree = "<group>"; };
 		E764BEDC17D39FC000FDD7CC /* ICCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCollectionViewCell.h; sourceTree = "<group>"; };
 		E764BEDD17D39FC000FDD7CC /* ICCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCollectionViewCell.m; sourceTree = "<group>"; };
+		E764BEDF17D4E4B100FDD7CC /* coffee_brew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_brew.png; sourceTree = "<group>"; };
+		E764BEE017D4E4B100FDD7CC /* coffee_decaffeination.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_decaffeination.png; sourceTree = "<group>"; };
+		E764BEE117D4E4B100FDD7CC /* coffee_processing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_processing.png; sourceTree = "<group>"; };
+		E764BEE217D4E4B100FDD7CC /* coffee_roaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_roaster.png; sourceTree = "<group>"; };
+		E764BEE317D4E4B100FDD7CC /* coffee_serving.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_serving.png; sourceTree = "<group>"; };
 		E76C68D917C0A8BF002BBF3C /* ICMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMenuButton.h; sourceTree = "<group>"; };
 		E76C68DA17C0A8BF002BBF3C /* ICMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMenuButton.m; sourceTree = "<group>"; };
 		E76C68DB17C0A8BF002BBF3C /* ICScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICScrollImageView.h; sourceTree = "<group>"; };
@@ -603,6 +613,11 @@
 		E794F6FF17BFDC3B00F729A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E764BEDF17D4E4B100FDD7CC /* coffee_brew.png */,
+				E764BEE017D4E4B100FDD7CC /* coffee_decaffeination.png */,
+				E764BEE117D4E4B100FDD7CC /* coffee_processing.png */,
+				E764BEE217D4E4B100FDD7CC /* coffee_roaster.png */,
+				E764BEE317D4E4B100FDD7CC /* coffee_serving.png */,
 				E764BEC317D1C4B000FDD7CC /* setting_facebook.png */,
 				E764BEC417D1C4B100FDD7CC /* setting_message.png */,
 				E764BEC517D1C4B200FDD7CC /* find_near_me.png */,
@@ -882,6 +897,11 @@
 				E764BECA17D1C4B700FDD7CC /* find_near_me.png in Resources */,
 				E764BECB17D1C4B700FDD7CC /* setting_survey.png in Resources */,
 				E764BECC17D1C4B700FDD7CC /* setting_twitter.png in Resources */,
+				E764BEE417D4E4B100FDD7CC /* coffee_brew.png in Resources */,
+				E764BEE517D4E4B100FDD7CC /* coffee_decaffeination.png in Resources */,
+				E764BEE617D4E4B100FDD7CC /* coffee_processing.png in Resources */,
+				E764BEE717D4E4B100FDD7CC /* coffee_roaster.png in Resources */,
+				E764BEE817D4E4B100FDD7CC /* coffee_serving.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

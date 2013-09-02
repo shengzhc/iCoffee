@@ -149,7 +149,7 @@
 ///////////////////////////////////////////
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 3;
+    return 5;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -158,16 +158,21 @@
     switch (indexPath.row)
     {
         case 0:
-            cell.backgroundColor = [UIColor yellowColor];
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_processing"]];
             break;
         case 1:
-            cell.backgroundColor = [UIColor greenColor];
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_roaster"]];
             break;
         case 2:
-            cell.backgroundColor = [UIColor redColor];
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_decaffeination"]];
+            break;
+        case 3:
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_brew"]];
+            break;
+        case 4:
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_serving"]];
             break;
         default:
-            cell.backgroundColor = [UIColor blueColor];
             break;
     }
 
