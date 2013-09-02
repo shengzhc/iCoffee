@@ -9,6 +9,8 @@
 #import "ICSettingViewController.h"
 #import "ICSettingView.h"
 #import "ICHeaderBarView.h"
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 
 @interface ICSettingViewController ()
 
@@ -110,6 +112,15 @@
                                animated:YES
                              completion:nil];
         }
+    }else if (indexPath.section == 1 && indexPath.row == 0)
+    {
+        SLComposeViewController *composeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [self presentViewController:composeViewController animated:YES completion:^(void){}];
+    }
+    else if (indexPath.section == 1 && indexPath.row == 1)
+    {
+        SLComposeViewController *composeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [self presentViewController:composeViewController animated:YES completion:^(void){}];
     }
 }
 
