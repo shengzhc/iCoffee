@@ -10,8 +10,6 @@
 
 @interface ICCollectionViewOverlayLayout ()
 
-@property (nonatomic, assign) CGPoint center;
-@property (nonatomic, assign) CGFloat radius;
 @property (nonatomic, assign) NSUInteger cellCount;
 
 @end
@@ -21,8 +19,6 @@
 - (void)prepareLayout
 {
     [super prepareLayout];
-    _center = CGPointMake(CGRectGetMidX(self.collectionView.bounds), CGRectGetMidY(self.collectionView.bounds));
-    _radius = self.collectionView.bounds.size.width / 2.5;
     _cellCount = [self.collectionView numberOfItemsInSection:0];
 }
 
@@ -36,7 +32,7 @@
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    CGSize size = CGSizeMake(self.collectionView.bounds.size.width - 100, self.collectionView.bounds.size.height - 100);
+    CGSize size = CGSizeMake(150, 150);
     attributes.center = CGPointMake(CGRectGetMidX(self.collectionView.bounds), CGRectGetMidY(self.collectionView.bounds));
     attributes.size = size;
     return attributes;

@@ -47,17 +47,17 @@
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.leftBarButtonItem = nil;
     
-    if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)])
-    {
-        self.banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
-    }
-    else
-    {
-        self.banner = [[ADBannerView alloc] init];
-    }
-    self.banner.delegate = self;
-    [self.view addSubview:self.banner];
-    [self layoutBannerView:self.banner];
+//    if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)])
+//    {
+//        self.banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+//    }
+//    else
+//    {
+//        self.banner = [[ADBannerView alloc] init];
+//    }
+//    self.banner.delegate = self;
+//    [self.view addSubview:self.banner];
+//    [self layoutBannerView:self.banner];
 }
 
 ///////////////////////////////////////////
@@ -174,9 +174,31 @@
     return cell;
 }
 
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
+}
+///////////////////////////////////////////
+///////////////////////////////////////////
+#pragma mark Click
+///////////////////////////////////////////
+///////////////////////////////////////////
+- (void)handleTapGesture:(UITapGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded)
+    {
+        for (NSUInteger i = 0; i < self.collectionView.visibleCells.count; i++)
+        {
+            UIView *v = self.collectionView.visibleCells[i];
+            CGPoint pointInView = [gestureRecognizer locationInView:v];
+            if (CGRectContainsPoint(v.bounds, pointInView))
+            {
+                [self.collectionView bringSubviewToFront:v];
+                break;
+            }
+        }
+    }
 }
 
 @end

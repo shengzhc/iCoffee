@@ -46,8 +46,17 @@
         self.collectionView.dataSource = delegate;
         [self.collectionView registerClass:[ICCollectionViewCell class] forCellWithReuseIdentifier:@"ICCollectionViewCellIdentifier"];
         self.collectionView.backgroundColor = [UIColor clearColor];
-        self.collectionView.showsHorizontalScrollIndicator = NO;
+        self.collectionView.clipsToBounds = NO;
+        
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:delegate
+                                                                                               action:@selector(handleTapGesture:)];
+        tapGestureRecognizer.numberOfTapsRequired = 1;
+        tapGestureRecognizer.numberOfTouchesRequired = 1;
+        [self.collectionView addGestureRecognizer:tapGestureRecognizer];
+        
         [self addSubview:self.collectionView];
+        
+        
     }
     
     return self;
@@ -62,8 +71,8 @@
                                                                     offset:CGSizeMake(0, 10)
                                                                    options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
     
-    self.collectionView.frame = [self.collectionView alignedRectInSuperviewForSize:CGSizeMake(200, 200)
-                                                                            offset:CGSizeMake(0, self.scrollView.verticalEnding + 20)
+    self.collectionView.frame = [self.collectionView alignedRectInSuperviewForSize:CGSizeMake(250, 250)
+                                                                            offset:CGSizeMake(0, self.scrollView.verticalEnding + 5)
                                                                            options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
 }
 ///////////////////////////////////////////
