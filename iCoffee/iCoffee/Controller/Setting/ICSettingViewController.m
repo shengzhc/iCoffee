@@ -116,11 +116,13 @@
     {
         SLComposeViewController *composeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         [self presentViewController:composeViewController animated:YES completion:^(void){}];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/lfz_ark"]];
     }
     else if (indexPath.section == 1 && indexPath.row == 1)
     {
         SLComposeViewController *composeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         [self presentViewController:composeViewController animated:YES completion:^(void){}];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/lfz_ark"]];
     }
 }
 
@@ -129,6 +131,5 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 @end
