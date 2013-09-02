@@ -155,12 +155,17 @@ Aug. 28th
 Aug. 29th - Sep.1st
 1. Complete the first version of bean & bean details. --- Ark
 2. Welcome screen modify ( bottom menu change, reduce function buttons, clockwise brewing procedure) --- SC
+<<<<<<< HEAD
+3. Find feature bug and lag --- SC
+4. Setting contains FB & Twitter, and Contact (Send general feedback & content feedback) --- ARK/SC
+=======
 3. Find feature bug (RESOLVED) --- SC
 4. Setting contains FB & Twitter, and Contact (Send general feedback & content feedback) --- ARK/SC
 
 Aug.31st
 1. Add send email feature to setting. (RESOLVED) --- SC
 2. Set up the survey for send feed back. --- SC
+>>>>>>> dev
 
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture

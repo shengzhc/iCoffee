@@ -12,6 +12,7 @@
 #define TAGTYPE_1 1
 #define TAGTYPE_2 2
 
+
 @interface ICBeanDetailView()
 
 @property CGRect trueBounds;
@@ -29,7 +30,7 @@
     
     if (self)
     {
-        _trueBounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height-64);
+        _trueBounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height-76);
         
         self.backgroundColor = [UIColor whiteColor];
         
