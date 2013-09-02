@@ -188,16 +188,39 @@
 {
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded)
     {
+        NSInteger zIndex = -1;
+        UIView *frontMostView = nil;
         for (NSUInteger i = 0; i < self.collectionView.visibleCells.count; i++)
         {
             UIView *v = self.collectionView.visibleCells[i];
+            NSInteger subviewIndex = [self.collectionView.subviews indexOfObject:v];
             CGPoint pointInView = [gestureRecognizer locationInView:v];
-            if (CGRectContainsPoint(v.bounds, pointInView))
+            if (CGRectContainsPoint(v.bounds, pointInView) && zIndex < subviewIndex)
             {
-                [self.collectionView bringSubviewToFront:v];
-                break;
+                zIndex = subviewIndex;
+                frontMostView = v;
             }
         }
+        
+        if (!frontMostView)
+        {
+            return;
+        }
+        
+        for (NSUInteger i = 0; i < self.collectionView.visibleCells.count; i++)
+        {
+            UIView *v = self.collectionView.visibleCells[i];
+            if (v == frontMostView)
+            {
+                [self.collectionView bringSubviewToFront:v];
+                v.alpha = 1.0;
+            }
+            else
+            {
+                v.alpha = .5;
+            }
+        }
+
     }
 }
 
