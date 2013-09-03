@@ -12,5 +12,4 @@
 
 - (void)setBackgroundImage:(UIImage *)image;
 
-
 @end

@@ -27,6 +27,8 @@
 		07E855EF17C2B365000CD833 /* ICBeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */; };
 		07F6C3E717CD66A80042FEA3 /* bean_detail_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F6C3E617CD66A80042FEA3 /* bean_detail_icon.png */; };
 		E70365CD17D51D1B00242C1F /* coffee_grading.png in Resources */ = {isa = PBXBuildFile; fileRef = E70365CC17D51D1B00242C1F /* coffee_grading.png */; };
+		E70365D117D557A900242C1F /* coffee_noise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E70365D017D557A900242C1F /* coffee_noise.mp3 */; };
+		E70365D317D558AB00242C1F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70365D217D558AB00242C1F /* AudioToolbox.framework */; };
 		E764BEAD17D076F100FDD7CC /* menu_culture.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEA217D076F000FDD7CC /* menu_culture.png */; };
 		E764BEAE17D076F100FDD7CC /* menu_bean.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEA317D076F000FDD7CC /* menu_bean.png */; };
 		E764BEAF17D076F100FDD7CC /* menu_brew.png in Resources */ = {isa = PBXBuildFile; fileRef = E764BEA417D076F100FDD7CC /* menu_brew.png */; };
@@ -160,6 +162,8 @@
 		07E855EE17C2B365000CD833 /* ICBeanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanDetailViewController.m; sourceTree = "<group>"; };
 		07F6C3E617CD66A80042FEA3 /* bean_detail_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bean_detail_icon.png; sourceTree = "<group>"; };
 		E70365CC17D51D1B00242C1F /* coffee_grading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_grading.png; sourceTree = "<group>"; };
+		E70365D017D557A900242C1F /* coffee_noise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coffee_noise.mp3; sourceTree = "<group>"; };
+		E70365D217D558AB00242C1F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E764BEA217D076F000FDD7CC /* menu_culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_culture.png; sourceTree = "<group>"; };
 		E764BEA317D076F000FDD7CC /* menu_bean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_bean.png; sourceTree = "<group>"; };
 		E764BEA417D076F100FDD7CC /* menu_brew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_brew.png; sourceTree = "<group>"; };
@@ -309,6 +313,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E70365D317D558AB00242C1F /* AudioToolbox.framework in Frameworks */,
 				07686A6F17D423EF003666BE /* Social.framework in Frameworks */,
 				07686A6D17D423E5003666BE /* Accounts.framework in Frameworks */,
 				E764BED517D2455400FDD7CC /* MessageUI.framework in Frameworks */,
@@ -355,11 +360,12 @@
 			path = Widget;
 			sourceTree = "<group>";
 		};
-		E73807C717C426CD00FB2A00 /* Test */ = {
+		E70365CF17D557A900242C1F /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				E70365D017D557A900242C1F /* coffee_noise.mp3 */,
 			);
-			path = Test;
+			path = Music;
 			sourceTree = "<group>";
 		};
 		E764BED017D1C66300FDD7CC /* Cell */ = {
@@ -536,13 +542,6 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
-		E772C78D17C3E95B004F5EA1 /* Bundles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Bundles;
-			sourceTree = "<group>";
-		};
 		E773385217C32DE1004EEEFF /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,7 +591,7 @@
 		E794F6FD17BFDC3B00F729A1 /* Bundle */ = {
 			isa = PBXGroup;
 			children = (
-				E772C78D17C3E95B004F5EA1 /* Bundles */,
+				E70365CF17D557A900242C1F /* Music */,
 				E773385217C32DE1004EEEFF /* JSON */,
 				E794F6FE17BFDC3B00F729A1 /* Font */,
 				E794F6FF17BFDC3B00F729A1 /* image */,
@@ -698,7 +697,6 @@
 		E7DAB33C17AF203A00D575B7 = {
 			isa = PBXGroup;
 			children = (
-				E73807C717C426CD00FB2A00 /* Test */,
 				E794F6FD17BFDC3B00F729A1 /* Bundle */,
 				E7DAB3B217AF25FF00D575B7 /* Supporting Files */,
 				E7DAB35117AF203B00D575B7 /* iCoffee */,
@@ -718,6 +716,7 @@
 		E7DAB34A17AF203B00D575B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E70365D217D558AB00242C1F /* AudioToolbox.framework */,
 				07686A6E17D423EF003666BE /* Social.framework */,
 				07686A6C17D423E5003666BE /* Accounts.framework */,
 				E764BED417D2455400FDD7CC /* MessageUI.framework */,
@@ -906,6 +905,7 @@
 				E764BEE717D4E4B100FDD7CC /* coffee_roaster.png in Resources */,
 				E764BEE817D4E4B100FDD7CC /* coffee_serving.png in Resources */,
 				E70365CD17D51D1B00242C1F /* coffee_grading.png in Resources */,
+				E70365D117D557A900242C1F /* coffee_noise.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

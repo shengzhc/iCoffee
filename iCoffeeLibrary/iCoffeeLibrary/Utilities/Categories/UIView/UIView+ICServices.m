@@ -138,4 +138,23 @@
 }
 
 
+- (UIImage *)screenShot
+{
+    UIGraphicsBeginImageContext(self.bounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.layer renderInContext:context];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
+
+
+- (void)saveScreenShotToFile:(NSString *)fileName
+{
+    UIImage *screenshot = [self screenShot];
+    NSString  *pngPath = [NSString stringWithFormat:@"/Users/shengzhc/Desktop/%@.png", fileName];
+    [UIImagePNGRepresentation(screenshot) writeToFile:pngPath atomically:YES];
+}
+
+
 @end

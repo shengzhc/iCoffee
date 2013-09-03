@@ -20,12 +20,15 @@
 #import "ICHeaderBarView.h"
 #import "ICBottomBarView.h"
 
+#import <AVFoundation/AVFoundation.h>
+
 @interface ICMainMediator ()
 
 @property (nonatomic, strong) ICBottomBarView *bottomBarView;
 
 @property (nonatomic, strong) ICWelcomeViewController *welcomeViewController;
 
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 @end
 
@@ -37,7 +40,12 @@
     
     if (self)
     {
-
+        NSURL *url = [[NSBundle mainBundle] URLForResource:@"coffee_noise" withExtension:@"mp3"];
+        
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        _audioPlayer.numberOfLoops = -1;
+        [_audioPlayer prepareToPlay];
+        [_audioPlayer play];
     }
     
     return self;

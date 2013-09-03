@@ -7,6 +7,7 @@
 //
 
 #import "ICCollectionViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ICCollectionViewCell ()
 
@@ -23,12 +24,10 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         self.backgroundImageView = [[UIImageView alloc] init];
         self.backgroundImageView.contentMode = UIViewContentModeScaleToFill;
-        
         [self addSubview:self.backgroundImageView];
-        [self addShadowWithColor:[UIColor blackColor]];
     }
     
     return self;
@@ -38,8 +37,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    CGRect frame = CGRectInset(self.bounds, 4, 4);
-    self.backgroundImageView.frame = frame;
+    self.backgroundImageView.frame = self.bounds;
 }
 
 

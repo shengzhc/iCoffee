@@ -178,7 +178,7 @@
         default:
             break;
     }
-
+    
     return cell;
 }
 
