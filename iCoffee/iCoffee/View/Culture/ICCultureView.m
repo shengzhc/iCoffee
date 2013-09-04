@@ -19,6 +19,10 @@
     if (self)
     {
         self.backgroundColor = [UIColor yellowColor];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.delegate = delegate;
+        _tableView.dataSource = delegate;
+        [self addSubview:_tableView];
     }
     
     return self;
@@ -27,6 +31,10 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    CGRect frame = self.bounds;
+    frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height - 32);
+    self.tableView.frame = frame;
 }
 
 @end

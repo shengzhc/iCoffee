@@ -10,4 +10,6 @@
 
 @interface ICCultureView : ICView
 
+@property UITableView *tableView;
+
 @end
