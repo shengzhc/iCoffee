@@ -643,18 +643,15 @@
 		E794F6FF17BFDC3B00F729A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				076FB36617D8099A00A09EFC /* Flags */,
 				075CBFFE17D512B20092F6DE /* bean_category.png */,
 				075CBFFF17D512B20092F6DE /* bean_map.png */,
-=======
 				E70365CC17D51D1B00242C1F /* coffee_grading.png */,
 				E764BEDF17D4E4B100FDD7CC /* coffee_brew.png */,
 				E764BEE017D4E4B100FDD7CC /* coffee_decaffeination.png */,
 				E764BEE117D4E4B100FDD7CC /* coffee_processing.png */,
 				E764BEE217D4E4B100FDD7CC /* coffee_roaster.png */,
 				E764BEE317D4E4B100FDD7CC /* coffee_serving.png */,
->>>>>>> 5b56cca97a2fa2280bffc10fa903edb07c9d579c
 				E764BEC317D1C4B000FDD7CC /* setting_facebook.png */,
 				E764BEC417D1C4B100FDD7CC /* setting_message.png */,
 				E764BEC517D1C4B200FDD7CC /* find_near_me.png */,
