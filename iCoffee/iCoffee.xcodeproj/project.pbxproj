@@ -931,11 +931,9 @@
 				E764BECA17D1C4B700FDD7CC /* find_near_me.png in Resources */,
 				E764BECB17D1C4B700FDD7CC /* setting_survey.png in Resources */,
 				E764BECC17D1C4B700FDD7CC /* setting_twitter.png in Resources */,
-<<<<<<< HEAD
 				075CC00017D512B20092F6DE /* bean_category.png in Resources */,
 				075CC00117D512B20092F6DE /* bean_map.png in Resources */,
 				076FB36817D809B200A09EFC /* Italy.png in Resources */,
-=======
 				E764BEE417D4E4B100FDD7CC /* coffee_brew.png in Resources */,
 				E764BEE517D4E4B100FDD7CC /* coffee_decaffeination.png in Resources */,
 				E764BEE617D4E4B100FDD7CC /* coffee_processing.png in Resources */,
@@ -943,7 +941,6 @@
 				E764BEE817D4E4B100FDD7CC /* coffee_serving.png in Resources */,
 				E70365CD17D51D1B00242C1F /* coffee_grading.png in Resources */,
 				E70365D117D557A900242C1F /* coffee_noise.mp3 in Resources */,
->>>>>>> 5b56cca97a2fa2280bffc10fa903edb07c9d579c
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
