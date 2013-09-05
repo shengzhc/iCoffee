@@ -161,6 +161,10 @@
 		E7F3135717D83B86001FB987 /* welcomescroll_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130B17D83B86001FB987 /* welcomescroll_1.png */; };
 		E7F3135817D83B86001FB987 /* welcomescroll_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130C17D83B86001FB987 /* welcomescroll_2.png */; };
 		E7F3135917D83B86001FB987 /* welcomescroll_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130D17D83B86001FB987 /* welcomescroll_3.png */; };
+		E7F3135C17D83C09001FB987 /* ICBrewEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F3135B17D83C09001FB987 /* ICBrewEntity.m */; };
+		E7F3135F17D83C16001FB987 /* ICBrewEntityMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F3135E17D83C16001FB987 /* ICBrewEntityMapper.m */; };
+		E7F3136317D83DE5001FB987 /* coffee_brew.json in Resources */ = {isa = PBXBuildFile; fileRef = E7F3136217D83DE5001FB987 /* coffee_brew.json */; };
+		E7F3136617D84321001FB987 /* ICBrewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F3136517D84321001FB987 /* ICBrewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -363,6 +367,13 @@
 		E7F3130B17D83B86001FB987 /* welcomescroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_1.png; sourceTree = "<group>"; };
 		E7F3130C17D83B86001FB987 /* welcomescroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_2.png; sourceTree = "<group>"; };
 		E7F3130D17D83B86001FB987 /* welcomescroll_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_3.png; sourceTree = "<group>"; };
+		E7F3135A17D83C09001FB987 /* ICBrewEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBrewEntity.h; sourceTree = "<group>"; };
+		E7F3135B17D83C09001FB987 /* ICBrewEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBrewEntity.m; sourceTree = "<group>"; };
+		E7F3135D17D83C16001FB987 /* ICBrewEntityMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBrewEntityMapper.h; sourceTree = "<group>"; };
+		E7F3135E17D83C16001FB987 /* ICBrewEntityMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBrewEntityMapper.m; sourceTree = "<group>"; };
+		E7F3136217D83DE5001FB987 /* coffee_brew.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee_brew.json; sourceTree = "<group>"; };
+		E7F3136417D84321001FB987 /* ICBrewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBrewCell.h; sourceTree = "<group>"; };
+		E7F3136517D84321001FB987 /* ICBrewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBrewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -432,6 +443,8 @@
 				E764BED217D1C66F00FDD7CC /* ICSettingCell.m */,
 				E764BEDC17D39FC000FDD7CC /* ICCollectionViewCell.h */,
 				E764BEDD17D39FC000FDD7CC /* ICCollectionViewCell.m */,
+				E7F3136417D84321001FB987 /* ICBrewCell.h */,
+				E7F3136517D84321001FB987 /* ICBrewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -611,6 +624,7 @@
 				E7E6136117C964C0009B0462 /* coffee_category.json */,
 				E7E6136C17C98CE2009B0462 /* findback.json */,
 				E764BEC117D1B8A600FDD7CC /* settings.json */,
+				E7F3136217D83DE5001FB987 /* coffee_brew.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -694,6 +708,10 @@
 				E7E6136417C964D8009B0462 /* ICBeanEntity.m */,
 				E7E6136617C964E8009B0462 /* ICBeanEntityMapper.h */,
 				E7E6136717C964E8009B0462 /* ICBeanEntityMapper.m */,
+				E7F3135A17D83C09001FB987 /* ICBrewEntity.h */,
+				E7F3135B17D83C09001FB987 /* ICBrewEntity.m */,
+				E7F3135D17D83C16001FB987 /* ICBrewEntityMapper.h */,
+				E7F3135E17D83C16001FB987 /* ICBrewEntityMapper.m */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -1033,6 +1051,7 @@
 				E7F3135717D83B86001FB987 /* welcomescroll_1.png in Resources */,
 				E7F3135817D83B86001FB987 /* welcomescroll_2.png in Resources */,
 				E7F3135917D83B86001FB987 /* welcomescroll_3.png in Resources */,
+				E7F3136317D83DE5001FB987 /* coffee_brew.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1085,6 +1104,9 @@
 				076FB35F17D7E0BD00A09EFC /* ICCultureCell.m in Sources */,
 				076FB36217D7E2E100A09EFC /* ICCultureDetailViewController.m in Sources */,
 				076FB36517D7E2FD00A09EFC /* ICCultureDetailView.m in Sources */,
+				E7F3135C17D83C09001FB987 /* ICBrewEntity.m in Sources */,
+				E7F3135F17D83C16001FB987 /* ICBrewEntityMapper.m in Sources */,
+				E7F3136617D84321001FB987 /* ICBrewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

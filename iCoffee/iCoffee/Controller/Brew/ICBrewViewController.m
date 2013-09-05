@@ -9,11 +9,12 @@
 #import "ICBrewViewController.h"
 #import "ICBrewView.h"
 #import "ICPopButtonViewController.h"
-
+#import "ICBrewEntityMapper.h"
 
 @interface ICBrewViewController ()
 
-@property (nonatomic, strong) ICPopButtonViewController *popButtonViewController;
+@property (nonatomic, strong) NSMutableArray *brews;
+@property (nonatomic, strong) ICBrewView *view;
 
 @end
 
@@ -25,7 +26,14 @@
     
     if (self)
     {
-        
+        self.brews = [NSMutableArray new];
+        NSArray *datasource = [ICLocalizable jsonArrayWithFileName:@"coffee_brew"
+                                                              type:@"json"];
+        for (NSDictionary *object in datasource)
+        {
+            [self.brews addObject:[ICBrewEntityMapper map:object
+                                                   error:nil]];
+        }
     }
     
     return self;
@@ -40,8 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self.view addSubview:self.popButtonViewController.view];
+    [self.view.tableView reloadData];
 }
 
 
@@ -56,19 +63,35 @@
     return titleLabel;
 }
 
-
-- (ICPopButtonViewController *)popButtonViewController
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+#pragma mark TableViewDatasource & Delegate
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (!_popButtonViewController)
-    {
-        CGRect frame = self.viewFrame;
-        CGPoint widgetCenter = CGPointMake(frame.size.width - 50, frame.size.height - 100);
-        _popButtonViewController = [[ICPopButtonViewController alloc] initWithDelegate:self
-                                                                       widgetCenter:widgetCenter];
-    }
-    
-    return _popButtonViewController;
+    return [self.brews count];
 }
 
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ICBrewCell *cell = (ICBrewCell *)[ICCellFactory cellWithCellType:CellTypeBrewCell
+                                                        forTableView:tableView];
+    [cell setData:(ICBrewEntity *)[self.brews objectAtIndex:indexPath.row]];
+    return cell;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75.0;
+}
 
 @end

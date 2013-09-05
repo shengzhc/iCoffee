@@ -8,6 +8,10 @@
 
 #import "ICBrewView.h"
 
+@interface ICBrewView ()
+
+@end
+
 @implementation ICBrewView
 
 - (id)initWithFrame:(CGRect)frame
@@ -18,11 +22,17 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor whiteColor];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 32)
+                                                      style:UITableViewStylePlain];
+        self.tableView.delegate = delegate;
+        self.tableView.dataSource = delegate;
+        [self addSubview:self.tableView];
     }
     
     return self;
 }
+
 
 - (void)layoutSubviews
 {

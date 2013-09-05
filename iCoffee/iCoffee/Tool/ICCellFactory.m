@@ -36,6 +36,14 @@
             }
             return cell;
             break;
+        case CellTypeBrewCell:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"CellTypeBrewCell"];
+            if (!cell)
+            {
+                cell = [[ICBrewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                         reuseIdentifier:@"CellTypeBrewCell"];
+            }
+            return cell;
         default:
             break;
     }
