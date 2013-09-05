@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #import "ICSettingCell.h"
+#import "ICBrewCell.h"
+
 
 typedef enum
 {
     CellTypeSettingCell,
+    CellTypeBrewCell,
     CellTypeDefault
 }CellType;
 

@@ -10,4 +10,6 @@
 
 @interface ICBrewView : ICView
 
+@property (nonatomic, strong) UITableView *tableView;
+
 @end

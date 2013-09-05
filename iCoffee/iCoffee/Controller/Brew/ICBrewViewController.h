@@ -8,6 +8,6 @@
 
 #import "ICViewController.h"
 
-@interface ICBrewViewController : ICViewController
+@interface ICBrewViewController : ICViewController < UITableViewDataSource, UITableViewDelegate >
 
 @end
