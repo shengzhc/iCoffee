@@ -8,6 +8,6 @@
 
 #import "ICViewController.h"
 
-@interface ICCultureViewController : ICViewController
+@interface ICCultureViewController : ICViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end
