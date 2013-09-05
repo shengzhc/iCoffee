@@ -11,13 +11,17 @@
 @implementation ICCultureDetailView
 
 - (id)initWithFrame:(CGRect)frame
+           delegate:(id)delegate
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:frame delegate:delegate];
+    
     if (self) {
         // Initialization code
+        self.backgroundColor = [UIColor purpleColor];
     }
     return self;
 }
+
 
 
 @end

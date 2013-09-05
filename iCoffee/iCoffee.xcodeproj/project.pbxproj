@@ -15,6 +15,7 @@
 		076FB35F17D7E0BD00A09EFC /* ICCultureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076FB35E17D7E0BD00A09EFC /* ICCultureCell.m */; };
 		076FB36217D7E2E100A09EFC /* ICCultureDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076FB36117D7E2E100A09EFC /* ICCultureDetailViewController.m */; };
 		076FB36517D7E2FD00A09EFC /* ICCultureDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 076FB36417D7E2FD00A09EFC /* ICCultureDetailView.m */; };
+		076FB36817D809B200A09EFC /* Italy.png in Resources */ = {isa = PBXBuildFile; fileRef = 076FB36717D809B200A09EFC /* Italy.png */; };
 		07ADBECB17C315A30083B3AF /* ICBeanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ADBECA17C315A30083B3AF /* ICBeanCell.m */; };
 		07BEC1B517C7BDDF0076E03C /* ICPopButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BEC1B417C7BDDF0076E03C /* ICPopButtonViewController.m */; };
 		07BEC1C417C7C1740076E03C /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 07BEC1BA17C7C1740076E03C /* bg-addbutton-highlighted.png */; };
@@ -145,6 +146,7 @@
 		076FB36117D7E2E100A09EFC /* ICCultureDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCultureDetailViewController.m; sourceTree = "<group>"; };
 		076FB36317D7E2FD00A09EFC /* ICCultureDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCultureDetailView.h; sourceTree = "<group>"; };
 		076FB36417D7E2FD00A09EFC /* ICCultureDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCultureDetailView.m; sourceTree = "<group>"; };
+		076FB36717D809B200A09EFC /* Italy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Italy.png; sourceTree = "<group>"; };
 		07ADBEC917C315A30083B3AF /* ICBeanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBeanCell.h; sourceTree = "<group>"; };
 		07ADBECA17C315A30083B3AF /* ICBeanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBeanCell.m; sourceTree = "<group>"; };
 		07BEC1B317C7BDDF0076E03C /* ICPopButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPopButtonViewController.h; sourceTree = "<group>"; };
@@ -338,6 +340,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076FB36617D8099A00A09EFC /* Flags */ = {
+			isa = PBXGroup;
+			children = (
+				076FB36717D809B200A09EFC /* Italy.png */,
+			);
+			name = Flags;
+			sourceTree = "<group>";
+		};
 		07BEC1B217C7BDDF0076E03C /* Widget */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +632,7 @@
 		E794F6FF17BFDC3B00F729A1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				076FB36617D8099A00A09EFC /* Flags */,
 				075CBFFE17D512B20092F6DE /* bean_category.png */,
 				075CBFFF17D512B20092F6DE /* bean_map.png */,
 				E764BEC317D1C4B000FDD7CC /* setting_facebook.png */,
@@ -905,6 +916,7 @@
 				E764BECC17D1C4B700FDD7CC /* setting_twitter.png in Resources */,
 				075CC00017D512B20092F6DE /* bean_category.png in Resources */,
 				075CC00117D512B20092F6DE /* bean_map.png in Resources */,
+				076FB36817D809B200A09EFC /* Italy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

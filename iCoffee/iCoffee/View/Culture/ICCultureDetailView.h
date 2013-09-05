@@ -10,4 +10,8 @@
 
 @interface ICCultureDetailView : ICView
 
+@property UIScrollView *scrollView;
+@property UILabel *titleLabel;
+@property UILabel *contentLabel;
+
 @end

@@ -83,13 +83,7 @@
         _description.baselineAdjustment = UIBaselineAdjustmentNone;
         _description.backgroundColor = [UIColor clearColor];
         _description.tag = TAGTYPE_1;
-        
-//        CGRect frame = _description.frame;
-//        frame = CGRectMake(0, frame.origin.y, self.frame.size.width, frame.size.height);
-//        _descriptionBackground = [[UIView alloc] initWithFrame:frame];
-//        _descriptionBackground.backgroundColor = [UIColor colorWithRed:233.0f/255.0f green:233.0f/255.0f blue:233.0f/255.0f alpha:1.0f];
-        
-        
+                
         _scrollView.contentSize = CGSizeMake(_trueBounds.size.width, _description.verticalEnding);
         
         [_scrollView addSubview:_imageView];        
@@ -98,7 +92,6 @@
         [_scrollView addSubview:_categoryLabel];
         [_scrollView addSubview:_regionIcon];
         [_scrollView addSubview:_regionLabel];
-//        [_scrollView addSubview:_descriptionBackground];
         [_scrollView addSubview:_description];
         
         _screenShot = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
@@ -157,9 +150,6 @@
     
     size = [self getSizeOfLabel:self.description];
     self.description.frame = CGRectMake(PADDING, self.regionLabel.verticalEnding+40, size.width, size.height);
-    
-//    CGRect backgroundFrame = self.descriptionBackground.frame;
-//    self.descriptionBackground.frame = CGRectMake(backgroundFrame.origin.x, self.description.frame.origin.y, backgroundFrame.size.width, size.height);
     
     self.scrollView.contentSize = CGSizeMake(self.trueBounds.size.width, self.description.verticalEnding);
 }

@@ -10,4 +10,7 @@
 
 @interface ICCultureCell : UITableViewCell
 
+@property UIImageView *flagImageView;
+@property UILabel *countryLabel;
+
 @end
