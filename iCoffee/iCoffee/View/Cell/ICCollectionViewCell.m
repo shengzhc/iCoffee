@@ -7,30 +7,43 @@
 //
 
 #import "ICCollectionViewCell.h"
+#import <QuartzCore/QuartzCore.h>
+
+@interface ICCollectionViewCell ()
+
+@property (nonatomic, strong) UIImageView *backgroundImageView;
+@property (nonatomic, strong) UILabel *descriptionLabel;
+
+@end
 
 @implementation ICCollectionViewCell
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    
     if (self)
     {
-        // Initialization code
         self.backgroundColor = [UIColor clearColor];
+        self.backgroundImageView = [[UIImageView alloc] init];
+        self.backgroundImageView.contentMode = UIViewContentModeScaleToFill;
+        [self addSubview:self.backgroundImageView];
     }
+    
     return self;
 }
 
 
-- (void)drawRect:(CGRect)rect
+- (void)layoutSubviews
 {
-    CGRect circleRect = CGRectInset(rect, 1, 1);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetLineWidth(context, .5);
-    CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
-    CGContextStrokeRect(context, circleRect);
-    CGContextStrokePath(context);
-    UIGraphicsEndImageContext();
+    [super layoutSubviews];
+    self.backgroundImageView.frame = self.bounds;
+}
+
+
+- (void)setBackgroundImage:(UIImage *)image
+{
+    self.backgroundImageView.image = image;
 }
 
 @end

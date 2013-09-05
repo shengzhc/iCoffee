@@ -34,4 +34,7 @@
 - (CGRect)rectInScreenCoordinate;
 
 
+- (UIImage *)screenShot;
+- (void)saveScreenShotToFile:(NSString *)fileName;
+
 @end
