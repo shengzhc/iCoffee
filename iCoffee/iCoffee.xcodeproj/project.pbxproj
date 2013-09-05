@@ -165,6 +165,8 @@
 		E7F3135F17D83C16001FB987 /* ICBrewEntityMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F3135E17D83C16001FB987 /* ICBrewEntityMapper.m */; };
 		E7F3136317D83DE5001FB987 /* coffee_brew.json in Resources */ = {isa = PBXBuildFile; fileRef = E7F3136217D83DE5001FB987 /* coffee_brew.json */; };
 		E7F3136617D84321001FB987 /* ICBrewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F3136517D84321001FB987 /* ICBrewCell.m */; };
+		E7F3136917D85090001FB987 /* ICBrewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F3136817D85090001FB987 /* ICBrewDetailViewController.m */; };
+		E7F3136C17D850F6001FB987 /* ICBrewDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F3136B17D850F6001FB987 /* ICBrewDetailView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -374,6 +376,10 @@
 		E7F3136217D83DE5001FB987 /* coffee_brew.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee_brew.json; sourceTree = "<group>"; };
 		E7F3136417D84321001FB987 /* ICBrewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBrewCell.h; sourceTree = "<group>"; };
 		E7F3136517D84321001FB987 /* ICBrewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBrewCell.m; sourceTree = "<group>"; };
+		E7F3136717D85090001FB987 /* ICBrewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBrewDetailViewController.h; sourceTree = "<group>"; };
+		E7F3136817D85090001FB987 /* ICBrewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBrewDetailViewController.m; sourceTree = "<group>"; };
+		E7F3136A17D850F6001FB987 /* ICBrewDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBrewDetailView.h; sourceTree = "<group>"; };
+		E7F3136B17D850F6001FB987 /* ICBrewDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBrewDetailView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +489,8 @@
 			children = (
 				E76C690717C0A94F002BBF3C /* ICBrewView.h */,
 				E76C690817C0A94F002BBF3C /* ICBrewView.m */,
+				E7F3136A17D850F6001FB987 /* ICBrewDetailView.h */,
+				E7F3136B17D850F6001FB987 /* ICBrewDetailView.m */,
 			);
 			path = Brew;
 			sourceTree = "<group>";
@@ -567,6 +575,8 @@
 			children = (
 				E76C691917C0AB57002BBF3C /* ICBrewViewController.h */,
 				E76C691A17C0AB57002BBF3C /* ICBrewViewController.m */,
+				E7F3136717D85090001FB987 /* ICBrewDetailViewController.h */,
+				E7F3136817D85090001FB987 /* ICBrewDetailViewController.m */,
 			);
 			path = Brew;
 			sourceTree = "<group>";
@@ -1107,6 +1117,8 @@
 				E7F3135C17D83C09001FB987 /* ICBrewEntity.m in Sources */,
 				E7F3135F17D83C16001FB987 /* ICBrewEntityMapper.m in Sources */,
 				E7F3136617D84321001FB987 /* ICBrewCell.m in Sources */,
+				E7F3136917D85090001FB987 /* ICBrewDetailViewController.m in Sources */,
+				E7F3136C17D850F6001FB987 /* ICBrewDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

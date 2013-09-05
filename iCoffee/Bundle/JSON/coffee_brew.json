@@ -1,71 +1,94 @@
 [
     {
+        "name":"Aeropress Brew",
         "logo":"brew_logo_aeropress"
     },
     {
+        "name":"Brazilian Cafezinho",
         "logo":"brew_logo_brazilian"
     },
     {
+        "name":"Campfire Brew",
         "logo":"brew_logo_campfire"
     },
     {
+        "name":"Chemex Brew",
         "logo":"brew_logo_chemex"
     },
     {
+        "name":"Clever Brew",
         "logo":"brew_logo_clever"
     },
     {
+        "name":"Clover Brew",
         "logo":"brew_logo_clover"
     },
     {
+        "name":"Cold Brew",
         "logo":"brew_logo_cold"
     },
     {
+        "name":"Cupping Brew",
         "logo":"brew_logo_cupping"
     },
     {
+        "name":"Drip Brew",
         "logo":"brew_logo_drip"
     },
     {
+        "name":"Espresso Brew",
         "logo":"brew_logo_espresso"
     },
     {
+        "name":"Eva Solo Brew",
         "logo":"brew_logo_eva"
     },
     {
+        "name":"French Press Brew",
         "logo":"brew_logo_french"
     },
     {
+        "name":"Instant Brew",
         "logo":"brew_logo_instant"
     },
     {
+        "name":"Neapolitan Flip Brew",
         "logo":"brew_logo_neapolitan"
     },
     {
+        "name":"Percolator Brew",
         "logo":"brew_logo_percolator"
     },
     {
+        "name":"Pour Over Brew",
         "logo":"brew_logo_pour"
     },
     {
+        "name":"Puerto Rican Brew",
         "logo":"brew_logo_puerto"
     },
     {
+        "name":"Single Serve Machine Brew",
         "logo":"brew_logo_single"
     },
     {
+        "name":"Siphon Vacuum Brew",
         "logo":"brew_logo_siphon"
     },
     {
+        "name":"Sock Brew",
         "logo":"brew_logo_sock"
     },
     {
+        "name":"Stove Top Espresso",
         "logo":"brew_logo_stove"
     },
     {
+        "name":"Turkish Brew",
         "logo":"brew_logo_turkish"
     },
     {
+        "name":"Vietnamese Filter Brew",
         "logo":"brew_logo_vietnamese"
     }
 ]

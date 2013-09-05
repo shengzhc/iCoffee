@@ -10,6 +10,7 @@
 #import "ICBrewView.h"
 #import "ICPopButtonViewController.h"
 #import "ICBrewEntityMapper.h"
+#import "ICBrewDetailViewController.h"
 
 @interface ICBrewViewController ()
 
@@ -86,6 +87,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [self.navigationController pushViewController:[[ICBrewDetailViewController alloc] initWithDelegate:self brewEntity:[self.brews objectAtIndex:indexPath.row]]
+                                         animated:YES];
 }
 
 

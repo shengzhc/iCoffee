@@ -13,6 +13,7 @@
 + (ICBrewEntity *)map:(NSDictionary *)dictionary error:(NSError *)error
 {
     ICBrewEntity *brewEntity = [[ICBrewEntity alloc] init];
+    [brewEntity setValue:[dictionary valueForKeyPath:ICBrewEntityNameMapper] forKey:ICBrewEntityName];
     [brewEntity setValue:[dictionary valueForKeyPath:ICBrewEntityLogoImageURLMapper] forKey:ICBrewEntityLogoURL];
     return brewEntity;
 }
