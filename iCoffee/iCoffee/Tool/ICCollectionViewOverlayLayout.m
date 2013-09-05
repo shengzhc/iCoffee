@@ -11,7 +11,7 @@
 @interface ICCollectionViewOverlayLayout ()
 
 @property (nonatomic, assign) NSUInteger cellCount;
-
+@property (nonatomic, strong) NSMutableArray *attributesArray;
 @end
 
 @implementation ICCollectionViewOverlayLayout
@@ -32,8 +32,8 @@
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    CGSize size = CGSizeMake(150, 150);
-    attributes.center = CGPointMake(CGRectGetMidX(self.collectionView.bounds), CGRectGetMidY(self.collectionView.bounds));
+    CGSize size = CGSizeMake(90, 90);
+    attributes.center = CGPointMake(60 + (indexPath.row * self.collectionView.bounds.size.width / (_cellCount + 2)), CGRectGetMidY(self.collectionView.bounds) - 25);
     attributes.size = size;
     return attributes;
 }
@@ -46,11 +46,24 @@
     {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         UICollectionViewLayoutAttributes *attribute = [self layoutAttributesForItemAtIndexPath:indexPath];
-        attribute.transform3D = CATransform3DMakeRotation(M_PI/8.0*i, 0, 0, 1.0);
+        float factor = rand()%10/10.0;
+        attribute.transform3D = CATransform3DMakeRotation(factor, 0, 0, -1.0);
+        attribute.alpha = 0.5;
+        if (i == 0)
+        {
+            attribute.alpha = 1.0;
+        }
         [attributes addObject:attribute];
     }
     return attributes;
 }
+
+
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
+{
+    return YES;
+}
+
 
 
 @end

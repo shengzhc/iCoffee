@@ -15,8 +15,6 @@
 @property (nonatomic, strong) ICMenuButton *brewButton;
 @property (nonatomic, strong) ICMenuButton *cultureButton;
 @property (nonatomic, strong) ICMenuButton *findButton;
-@property (nonatomic, strong) ICMenuButton *homeButton;
-@property (nonatomic, strong) ICMenuButton *settingButton;
 
 @end
 
@@ -53,26 +51,13 @@
                                                        imageName:@"menu_find"
                                                             text:@"Find"];
         [self.findButton sizeToFit];
-        
-        self.homeButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
-                                                     delegate:self
-                                                    imageName:@"menu_home"
-                                                         text:@"Home"];
-        [self.homeButton sizeToFit];
-        
-        self.settingButton = [[ICMenuButton alloc] initWithFrame:CGRectZero
-                                                        delegate:self
-                                                       imageName:@"menu_setting"
-                                                            text:@"Setting"];
-        [self.settingButton sizeToFit];
+
         
         [self addSubview:self.beanButton];
         [self addSubview:self.brewButton];
         [self addSubview:self.cultureButton];
         [self addSubview:self.findButton];
         
-        [self addSubview:self.homeButton];
-        [self addSubview:self.settingButton];
     }
     
     return self;
@@ -97,14 +82,6 @@
 
     self.findButton.frame = [self.cultureButton alignedRectInSuperviewForSize:[self buttonSize]
                                                                           offset:CGSizeMake(self.cultureButton.horizontalEnding + 16, topping)
-                                                                         options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
-    
-    self.homeButton.frame = [self.homeButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                    offset:CGSizeMake(self.beanButton.frame.origin.x, self.beanButton.verticalEnding + 10)
-                                                                   options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
-    
-    self.settingButton.frame = [self.settingButton alignedRectInSuperviewForSize:[self buttonSize]
-                                                                          offset:CGSizeMake(self.findButton.frame.origin.x, self.findButton.verticalEnding + 10)
                                                                          options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
 }
 
@@ -143,16 +120,6 @@
     else if (sender == self.findButton)
     {
         [self.delegate attemptPerformSelector:@selector(findButtonClicked:)
-                                   withObject:sender];
-    }
-    else if (sender == self.homeButton)
-    {
-        [self.delegate attemptPerformSelector:@selector(homeButtonClicked:)
-                                   withObject:sender];
-    }
-    else if (sender == self.settingButton)
-    {
-        [self.delegate attemptPerformSelector:@selector(settingButtonClicked:)
                                    withObject:sender];
     }
 }

@@ -33,7 +33,9 @@
     [super viewDidLoad];
     self.navigationItem.titleView = [self titleLabel];
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.leftBarButtonItem = [self leftBarButtonItem];
+    UIBarButtonItem *spacingButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    [spacingButtonItem setWidth:10];
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:spacingButtonItem, [self leftBarButtonItem], nil];
 }
 
 

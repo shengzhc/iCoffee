@@ -12,7 +12,6 @@
 @interface ICWelcomeViewController ()
 
 @property (nonatomic, strong) NSMutableArray *scrollPageDatasource;
-
 @property (nonatomic, strong) ADBannerView *banner;
 @property (nonatomic, strong) UICollectionView *collectionView;
 
@@ -45,7 +44,7 @@
     
     self.collectionView = self.view.collectionView;
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItems = nil;
     
 //    if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)])
 //    {
@@ -150,7 +149,7 @@
 ///////////////////////////////////////////
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 3;
+    return 6;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -159,18 +158,27 @@
     switch (indexPath.row)
     {
         case 0:
-            cell.backgroundColor = [UIColor yellowColor];
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_processing"]];
             break;
         case 1:
-            cell.backgroundColor = [UIColor greenColor];
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_roaster"]];
             break;
         case 2:
-            cell.backgroundColor = [UIColor redColor];
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_grading"]];
+            break;
+        case 3:
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_decaffeination"]];
+            break;
+        case 4:
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_brew"]];
+            break;
+        case 5:
+            [(ICCollectionViewCell *)cell setBackgroundImage:[UIImage imageNamed:@"coffee_serving"]];
             break;
         default:
-            cell.backgroundColor = [UIColor blueColor];
             break;
     }
+    
     return cell;
 }
 
@@ -188,16 +196,39 @@
 {
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded)
     {
+        NSInteger zIndex = -1;
+        UIView *frontMostView = nil;
         for (NSUInteger i = 0; i < self.collectionView.visibleCells.count; i++)
         {
             UIView *v = self.collectionView.visibleCells[i];
+            NSInteger subviewIndex = [self.collectionView.subviews indexOfObject:v];
             CGPoint pointInView = [gestureRecognizer locationInView:v];
-            if (CGRectContainsPoint(v.bounds, pointInView))
+            if (CGRectContainsPoint(v.bounds, pointInView) && zIndex < subviewIndex)
             {
-                [self.collectionView bringSubviewToFront:v];
-                break;
+                zIndex = subviewIndex;
+                frontMostView = v;
             }
         }
+        
+        if (!frontMostView)
+        {
+            return;
+        }
+        
+        for (NSUInteger i = 0; i < self.collectionView.visibleCells.count; i++)
+        {
+            UIView *v = self.collectionView.visibleCells[i];
+            if (v == frontMostView)
+            {
+                [self.collectionView bringSubviewToFront:v];
+                v.alpha = 1.0;
+            }
+            else
+            {
+                v.alpha = .5;
+            }
+        }
+
     }
 }
 
