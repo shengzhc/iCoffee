@@ -1,50 +1,62 @@
 [
 	{
 		"country":"Italy",
-		"image":"culture_italy"
+		"image":"culture_Italy",
+        "content":"You’ll surely get an eye roll or two if you order a to-go cup at an Italian café, for espresso is the Italians’ version of to-go coffee. This strong brew served in tiny cups is commonly sipped while standing at cafes. And don’t order a cappuccino late in the day in Italy, either -- the only appropriate time to enjoy this drink is in the morning."
 	},
 	{
 		"country":"Turkey",
-		"image":"culture_turkey"
+		"image":"culture_Turkey",
+        "content":"A famous Turkish proverb says that coffee should be “as black as hell, as strong as death and as sweet as love.” This thick brew is usually served after meals from a long-handled copper pot called a cezve, alongside chewy Turkish candy."
 	},
 	{
 		"country":"Denmark",
-		"image":"culture_denmark"
+		"image":"culture_Denmark",
+        "content":"Perhaps due to the cold and dark Scandinavian winters, coffee consumption in Denmark has always been some of the highest in the world. Coffee is such a vital part of the Danish culture that packed cafes can be found on nearly every corner, especially in cities like Copenhagen."
 	},
 	{
 		"country":"France",
-		"image":"culture_france"
+		"image":"culture_France",
+        "content":"The French begin the day with their café au lait -- coffee with hot milk served in a mug wide enough to allow the dunking of baguettes or croissants."
 	},
 	{
 		"country":"Cuba",
-		"image":"culture_cuba"
+		"image":"culture_Cuba",
+        "content":"Cubans like their coffee strong -- first thing in the morning, after meals and any chance they can get throughout the day. An important part of the social fabric, the Cuban’s strong brew is served in shots and best enjoyed while socializing."
 	},
 	{
 		"country":"Saudi Arabia",
-		"image":"culture_saudiArabia"
+		"image":"culture_SaudiArabia",
+        "content":"In Saudi Arabia and other Arabic cultures, coffee ceremonies follow many rules of etiquette, including always serving the elders first. It is also a common custom to serve this cardamom-spiced drink with dried dates to counter the coffee’s bitterness."
 	},
 	{
 		"country":"Netherlands",
-		"image":"culture_netherlands"
+		"image":"culture_Netherlands",
+        "content":"Not to be confused with Amsterdam’s infamous coffee shops, coffee-serving cafés are a celebrated part of the Dutch culture. Also known as bakkie troost, the Dutch kaffe is enjoyed any time of day, usually comes black, and is served alongside a cookie."
 	},
 	{
 		"country":"Ireland",
-		"image":"culture_ireland"
+		"image":"culture_Ireland",
+        "content":"Coffee meets cocktail with this after-dinner drink. Irish coffee includes hot coffee, Irish whiskey, sugar and the crowd-pleasing whipped-cream topper. Irish coffee was actually created in Ireland in the 1940s to warm up American tourists on a cold winter’s night, and remains as popular as ever."
 	},
 	{
 		"country":"Mexico",
-		"image":"culture_mexico"
+		"image":"culture_Mexico",
+        "content":"If you like cinnamon in your coffee, this is your drink. Café de olla, a spiced coffee drink is brewed with cinnamon sticks in earthenware pots, which Mexicans swear brings out the coffee taste."
 	},
 	{
 		"country":"Ethiopia",
-		"image":"culture_ethiopia"
+		"image":"culture_Ethiopia",
+        "content":"In Ethiopia, the birthplace of coffee, traditional coffee ceremonies are a distinguished part of the culture, with the brewing and serving process lasting up to 2 hours. Historically buna, as coffee is called here, was served with salt or butter instead of sugar."
 	},
 	{
 		"country":"Austria",
-		"image":"culture_austria"
+		"image":"culture_Austria",
+        "content":"Served in Viennese cafés, Austria’s traditional drink Mélange is very similar to a cappuccino. The drink contains espresso and steamed milk, topped with froth or sometimes whipped cream (what makes it different from a traditional cappuccino)."
 	},
 	{
 		"country":"Greece",
-		"image":"culture_greece"
+		"image":"culture_Greece",
+        "content":"The Greek frappé is a frothy iced drink made with Nescafé instant coffee, cold water, sugar and evaporated milk -- and best enjoyed in an outdoor café."
 	}
 ]

@@ -15,6 +15,8 @@
     ICCultureEntity *cultureEntity = [[ICCultureEntity alloc] init];
     [cultureEntity setValue:[dictionary valueForKeyPath:ICCultureEntityMapperCountry] forKey:ICCultureEntityCountry];
     [cultureEntity setValue:[dictionary valueForKeyPath:ICCultureEntityMapperImageURL] forKey:ICCultureEntityImageURL];
+    [cultureEntity setValue:[dictionary valueForKeyPath:ICCultureEntityMapperContent] forKey:ICCultureEntityContent];
+    
     return cultureEntity;
 }
 

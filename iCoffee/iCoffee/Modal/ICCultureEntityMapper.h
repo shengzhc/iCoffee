@@ -12,6 +12,7 @@
 
 #define ICCultureEntityMapperCountry @"country"
 #define ICCultureEntityMapperImageURL @"image"
+#define ICCultureEntityMapperContent @"content"
 
 @interface ICCultureEntityMapper : NSObject
 
