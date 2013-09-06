@@ -23,7 +23,7 @@
     if (self)
     {
         self.backgroundColor = [UIColor whiteColor];
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 32)
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectZero
                                                       style:UITableViewStylePlain];
         self.tableView.delegate = delegate;
         self.tableView.dataSource = delegate;
@@ -37,6 +37,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    self.tableView.frame = [self alignedRectInSuperviewForSize:CGSizeMake(self.bounds.size.width, self.bounds.size.height - 32)
+                                                        offset:CGSizeMake(0, 0)
+                                                       options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsTop)];
 }
 
 @end

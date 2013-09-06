@@ -8,6 +8,10 @@
 
 #import "ICView.h"
 
+@class ICBrewEntity;
+
 @interface ICBrewDetailView : ICView
+
+- (void)setData:(ICBrewEntity *)brewEntity;
 
 @end

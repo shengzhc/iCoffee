@@ -1,94 +1,162 @@
 [
     {
         "name":"Aeropress Brew",
-        "logo":"brew_logo_aeropress"
+        "logo":"brew_logo_aeropress",
+        "image":"brew_aeropress",
+        "desc":"Using an AeroPress is a fast, easy and convenient way to brew excellent coffee at home. The keys to getting good results are using high quality, fresh beans; grinding the coffee correctly; using clean equipment; using the right temperature of water; plunging correctly.\nThe AeroPress gives you a tremendous amount of control over how your coffee turns out. It can make from one to four servings per press (brewing). The manufacturer recommends using water that is between 165 and 175 degrees F., different than other methods use. Water temperature is vital. Doing it correctly, you can make what many say is the perfect cup of coffee. One way to do this is to boil the water and use an “instant read” thermometer from any kitchen store. Once you remove the water from the heat, see how long it takes to reach 175 degrees.  In some places, your water may boil at the proper temperature.\n\nStep #1\n\nPlace a filter disk in the cap and attach the cap to the chamber. Place the chamber, with cap, on top of your favorite coffee mug.\n\nStep #2\n\nPlace your ground coffee into the chamber. Use one included scoop per cup of espresso or per cup of coffee wanted, to a maximum of four scoops.\n\nStep #3\n\nNow heat the water. You can actually heat it in the plunger, since it is hollow, or heat it any other way desired. The manufacturer recommends 165 - 175 degrees F. (75 - 80 C).\n\nStep #4\n\nWet the rubber seal on the plunger, insert it into the chamber and press slowly, it should take about 20 seconds for all the water to pass through the grounds, depending on how much you are making.\n\nStep #5\n\nYou now have what the manufacturer refers to as espresso in your cup. This is arguable, but the fact is that you have a very smooth, concentrated form of coffee. If you are after a more classic cup of coffee, you can add hot water to the output of the Aeropress, diluting it with 2 to 3 times the amount of hot water to espresso. DO NOT try to push more water through the grounds than recommended, you will not get a better cup, just a more bitter and acidic cup."
+
     },
     {
         "name":"Brazilian Cafezinho",
-        "logo":"brew_logo_brazilian"
+        "logo":"brew_logo_brazilian",
+        "image":"brew_brazilian",
+        "desc":"Measure three quarters of a cup of cold water for each cafezinho into a saucepan. Add sugar to taste usually about one teaspoon per cafezinho. Heat the water to just below boiling, stirring to dissolve the sugar. This is very important. Boiling water will overcook the coffee and make it bitter. Add a heaping tablespoon of finely ground (espresso ground coffee will work perfectly) coffee to the water and remove from the heat. Stir well, mixing the coffee grounds and sugared water.Now comes the fun part. Hold the coffee flannel over the cafezinho and slowly pour the coffee mixture through it. It’s a slow process, but don’t give in to the temptation to squeeze the coffee through the filter. You’ll not only risk burning your hands, you’ll force the water through the grounds too quickly and make the coffee bitter.In Brazil, cafezinho is generally served black, but many people prefer it with a little milk or cream. Remember to rinse your coffee filter well under cold water and hang it to dry so that it doesn’t mildew. Never use soap to clean it, and replace it every couple of months."
     },
     {
         "name":"Campfire Brew",
-        "logo":"brew_logo_campfire"
+        "logo":"brew_logo_campfire",
+        "image":"brew_campfire",
+ "desc":""
+
+
     },
     {
         "name":"Chemex Brew",
-        "logo":"brew_logo_chemex"
+        "logo":"brew_logo_chemex",
+        "image":"brew_chemex",
+        "desc":"Using a Chemex is an easy and convenient way to brew excellent coffee at home. The keys to getting good results are: using high quality, fresh beans; grinding the coffee correctly; using clean equipment; pouring correctly; using the right amount and temperature of water.\n\nStep #1\nIt is important that the coffee be ground medium-course with a quality burr (rather than blade) grinder. By grinding the coffee this way, you are allowing for a more even extraction resulting in a fuller bodied and more nuanced cup. Blade grinders chop the coffee rather than grinding it, resulting in uneven and unpredictable particle size. This results in uneven extraction, leading to coffee with increased bitterness which is less true to the flavor profile of the coffee. In addition, the lack of uniformity in particle size results in inconsistent results from cup to cup.\n\nStep #2\nPlace the folded chemex filter inside the cone with the multiple folds toward the spout. Run hot water through the filter to rinse out any residual paper flavor and preheat the brewer. Allow the water to drain out completely before pouring it out of the brewer using the pouring channel. Do your best to keep the filter sealed against the walls of the brewer.\n\nStep #3\nIt is recommended 42 grams (1.5 oz or about six rounded tablespoons) of fresh ground coffee to make 20 oz of coffee.\n\nStep #4\nYou should bring the water just to a boil (electric kettles are great at this). For 20 oz. of brewed coffee you will want to use quite a bit more hot water total for the three pours. First, pour just enough into the cone so that it saturates the grounds and very little is dripping into the brewer. The key is to saturate all the grounds evenly by moving the stream around as you pour.\n\nStep #5\nAfter about 30 seconds it is time to pour more water. Pour at an even rate in a spiral and/or back-and-forth pattern in order to break down the bloom and saturate all grounds evenly. Raise the water level up to about a 1/4 inch below the rim of the brewer. The color of the surface should be even with as few dark or blond spots as possible.\n\nStep #6\nOnce you can see about an inch of dry coffee, it is time to pour more water. Pour first around the rim to re-submerge the dry grounds, then continue at an even rate in a spiral and/or back-and-forth pattern. Raise the water level up to the rim of the brewer. The color of the surface should still be even with as few dark or blond spots as possible.\n\nStep #7\nOnce you have 20 oz. of brewed coffee in the vessel, quickly move the filter to your sink where it will drain completely."
+
+
     },
     {
         "name":"Clever Brew",
-        "logo":"brew_logo_clever"
+        "logo":"brew_logo_clever",
+        "image":"brew_clever",
+ "desc":""
+
+
     },
     {
         "name":"Clover Brew",
-        "logo":"brew_logo_clover"
+        "logo":"brew_logo_clover",
+        "image":"brew_clover",
+ "desc":""
+
+
     },
     {
         "name":"Cold Brew",
-        "logo":"brew_logo_cold"
+        "logo":"brew_logo_cold",
+        "image":"brew_cold",
+ "desc":""
+
+
     },
     {
         "name":"Cupping Brew",
-        "logo":"brew_logo_cupping"
+        "logo":"brew_logo_cupping",
+        "image":"brew_cupping",
+        "desc":"Coffee Cupping is the brewing method the pros use in selecting coffee to roast to then sell to consumers. During this process the Master Taster is looking for defects in the coffee as well as positive attributes including: body, sweetness, acidity, flavor and aftertaste. Shockingly enough Coffee Cupping is one of the easiest brewing methods and can be done at home. I will be posting a step by step how to do this at home sometime this week."
     },
     {
         "name":"Drip Brew",
-        "logo":"brew_logo_drip"
+        "logo":"brew_logo_drip",
+        "image":"brew_drip",
+        "desc":"The drip brewing method has been around since 1905 and was invented in Germany by Melitta Bentz in 1908. This is the brewing method that most consumers use when brewing coffee at home. The major benefit to using this brewing method is being able to brew large amounts of coffee at one time. Another more recent benefit to brewing coffee this way is using less paper by using a mess reusable filter. Just about every kitchen counter in America has one of these machines. It’s one of the easiest, simplest to make coffee. All you have to do is add the grounds, then add water to a separate chamber. The machine does the rest of the work, heating up of the water and pouring it over the grounds.\n\nStep #1\n\nRinse all paper filters with hot water to wash away loose paper fibers that will give an off taste in the cup, especially when brewing small amounts.\n\nStep #2\n\nPreheat your filtercone by rinsing with hot water. With a ceramic filtercone it is often enough just to place it over a cup of hot water.. You can do both by simply heating extra hot water, and washing/preheating in one step.\n\nStep #3\n\nGrind immediately before you brew. What grind to use?  You want to use a medium to fine grind for drip cone brewing.  If the resulting brew is too weak, you may push the grind finer.  If water pools and fails to drain, make the grind coarser.\n\nStep #4\n\nMeasure the correct amount of ground coffee into the filter.\n\nStep #5\n\nUsing water just off the boil (about 200 degrees F) add a small amount of water to wet all the grounds and let the coffee “bloom” or rise. Wait maybe 15 to 30 seconds, then start to pour the rest of the water slowly from the center of the grounds outward, in  a circular motion. Even as the coffee begins to filter downward, a slow even pour helps draw out infusion time and maintain the thermal mass of the coffee/water mixture. Total brew time should be about 2:30 minutes."
+
     },
     {
         "name":"Espresso Brew",
-        "logo":"brew_logo_espresso"
+        "logo":"brew_logo_espresso",
+        "image":"brew_espresso",
+        "desc":"The Espresso brewing method has been around since the very early 20th century and was first patented by Luigi Bezzera of Milan, Italy, in 1901. Some of the most popular espresso drinks made using this brewing method are Latte, Mocha, Cappuccino, Macchiato and Espresso con Panna. Espresso is made by forcing very hot water under high pressure through finely ground, compacted coffee. Tamping down the coffee promotes the water's even penetration of the grounds. This process produces an almost syrupy beverage by extracting both solid and dissolved components. It also produces the definitive crema, by emulsifying the oils in the ground coffee into a colloid, which does not occur in other brewing methods. There is no universal standard defining the process of extracting espresso, but there are several published definitions which attempt to place constraints on the amount and type of ground coffee used, the temperature and pressure of the water, and the rate of extraction. Generally, one uses an espresso machine to make espresso. The act of producing a shot of espresso is often termed pulling a shot, originating from lever espresso machines, which require pulling down a handle attached to a spring-loaded piston, forcing hot water through the coffee at high pressure. Today, however, it is more common for the pressure to be generated by an electric pump."
+
     },
     {
         "name":"Eva Solo Brew",
-        "logo":"brew_logo_eva"
+        "logo":"brew_logo_eva",
+        "image":"brew_eva",
+ "desc":""
+
     },
     {
         "name":"French Press Brew",
-        "logo":"brew_logo_french"
+        "logo":"brew_logo_french",
+        "image":"brew_french",
+        "desc":""
+
+
     },
     {
         "name":"Instant Brew",
-        "logo":"brew_logo_instant"
+        "logo":"brew_logo_instant",
+        "image":"brew_instant",
+ "desc":""
+
+
     },
     {
         "name":"Neapolitan Flip Brew",
-        "logo":"brew_logo_neapolitan"
+        "logo":"brew_logo_neapolitan",
+        "image":"brew_neapolitan",
+ "desc":""
+
+
     },
     {
         "name":"Percolator Brew",
-        "logo":"brew_logo_percolator"
+        "logo":"brew_logo_percolator",
+        "image":"brew_percolator",
+ "desc":""
+
+
     },
     {
         "name":"Pour Over Brew",
-        "logo":"brew_logo_pour"
+        "logo":"brew_logo_pour",
+        "image":"brew_pour",
+ "desc":""
+
+
     },
     {
         "name":"Puerto Rican Brew",
-        "logo":"brew_logo_puerto"
-    },
-    {
-        "name":"Single Serve Machine Brew",
-        "logo":"brew_logo_single"
+        "logo":"brew_logo_puerto",
+        "image":"brew_puerto",
+ "desc":""
+
+
     },
     {
         "name":"Siphon Vacuum Brew",
-        "logo":"brew_logo_siphon"
+        "logo":"brew_logo_siphon",
+        "image":"brew_siphon",
+ "desc":""
+
+
     },
     {
         "name":"Sock Brew",
-        "logo":"brew_logo_sock"
-    },
-    {
-        "name":"Stove Top Espresso",
-        "logo":"brew_logo_stove"
+        "logo":"brew_logo_sock",
+        "image":"brew_sock",
+ "desc":""
+
+
     },
     {
         "name":"Turkish Brew",
-        "logo":"brew_logo_turkish"
+        "logo":"brew_logo_turkish",
+        "image":"brew_turkish",
+ "desc":""
+
+
     },
     {
         "name":"Vietnamese Filter Brew",
-        "logo":"brew_logo_vietnamese"
+        "logo":"brew_logo_vietnamese",
+        "image":"brew_vietnamese",
+ "desc":""
+
+
     }
 ]
