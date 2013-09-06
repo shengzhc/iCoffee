@@ -193,7 +193,6 @@
 		E7F3135317D83B86001FB987 /* coffee_roaster.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130717D83B86001FB987 /* coffee_roaster.png */; };
 		E7F3135417D83B86001FB987 /* coffee_serving.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130817D83B86001FB987 /* coffee_serving.png */; };
 		E7F3135517D83B86001FB987 /* find_background.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130917D83B86001FB987 /* find_background.png */; };
-		E7F3135617D83B86001FB987 /* Italy.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130A17D83B86001FB987 /* Italy.png */; };
 		E7F3135717D83B86001FB987 /* welcomescroll_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130B17D83B86001FB987 /* welcomescroll_1.png */; };
 		E7F3135817D83B86001FB987 /* welcomescroll_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130C17D83B86001FB987 /* welcomescroll_2.png */; };
 		E7F3135917D83B86001FB987 /* welcomescroll_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130D17D83B86001FB987 /* welcomescroll_3.png */; };
@@ -439,7 +438,6 @@
 		E7F3130717D83B86001FB987 /* coffee_roaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_roaster.png; sourceTree = "<group>"; };
 		E7F3130817D83B86001FB987 /* coffee_serving.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_serving.png; sourceTree = "<group>"; };
 		E7F3130917D83B86001FB987 /* find_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_background.png; sourceTree = "<group>"; };
-		E7F3130A17D83B86001FB987 /* Italy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Italy.png; sourceTree = "<group>"; };
 		E7F3130B17D83B86001FB987 /* welcomescroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_1.png; sourceTree = "<group>"; };
 		E7F3130C17D83B86001FB987 /* welcomescroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_2.png; sourceTree = "<group>"; };
 		E7F3130D17D83B86001FB987 /* welcomescroll_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_3.png; sourceTree = "<group>"; };
@@ -934,7 +932,6 @@
 				E7F3130717D83B86001FB987 /* coffee_roaster.png */,
 				E7F3130817D83B86001FB987 /* coffee_serving.png */,
 				E7F3130917D83B86001FB987 /* find_background.png */,
-				E7F3130A17D83B86001FB987 /* Italy.png */,
 				E7F3130B17D83B86001FB987 /* welcomescroll_1.png */,
 				E7F3130C17D83B86001FB987 /* welcomescroll_2.png */,
 				E7F3130D17D83B86001FB987 /* welcomescroll_3.png */,
@@ -1177,7 +1174,6 @@
 				E7F3135317D83B86001FB987 /* coffee_roaster.png in Resources */,
 				E7F3135417D83B86001FB987 /* coffee_serving.png in Resources */,
 				E7F3135517D83B86001FB987 /* find_background.png in Resources */,
-				E7F3135617D83B86001FB987 /* Italy.png in Resources */,
 				E7F3135717D83B86001FB987 /* welcomescroll_1.png in Resources */,
 				E7F3135817D83B86001FB987 /* welcomescroll_2.png in Resources */,
 				E7F3135917D83B86001FB987 /* welcomescroll_3.png in Resources */,
