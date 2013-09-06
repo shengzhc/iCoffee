@@ -15,6 +15,8 @@
     ICBrewEntity *brewEntity = [[ICBrewEntity alloc] init];
     [brewEntity setValue:[dictionary valueForKeyPath:ICBrewEntityNameMapper] forKey:ICBrewEntityName];
     [brewEntity setValue:[dictionary valueForKeyPath:ICBrewEntityLogoImageURLMapper] forKey:ICBrewEntityLogoURL];
+    [brewEntity setValue:[dictionary valueForKeyPath:ICBrewEntityImageURLMapper] forKey:ICBrewEntityImageURL];
+    [brewEntity setValue:[dictionary valueForKeyPath:ICBrewEntityDescriptionMapper] forKey:ICBrewEntityDescription];
     return brewEntity;
 }
 

@@ -71,6 +71,56 @@
 		E772C78617C3BC21004F5EA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78517C3BC21004F5EA1 /* SystemConfiguration.framework */; };
 		E772C78817C3BC2B004F5EA1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78717C3BC2B004F5EA1 /* OpenGLES.framework */; };
 		E772C78A17C3BC35004F5EA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78917C3BC35004F5EA1 /* QuartzCore.framework */; };
+		E78605F517D9B484004BBD19 /* brew_aeropress.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605C317D9B483004BBD19 /* brew_aeropress.png */; };
+		E78605F617D9B484004BBD19 /* brew_brazilian.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605C417D9B483004BBD19 /* brew_brazilian.png */; };
+		E78605F717D9B484004BBD19 /* brew_campfire.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605C517D9B483004BBD19 /* brew_campfire.png */; };
+		E78605F817D9B484004BBD19 /* brew_chemex.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605C617D9B483004BBD19 /* brew_chemex.png */; };
+		E78605F917D9B484004BBD19 /* brew_clever.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605C717D9B483004BBD19 /* brew_clever.png */; };
+		E78605FA17D9B484004BBD19 /* brew_clover.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605C817D9B483004BBD19 /* brew_clover.png */; };
+		E78605FB17D9B484004BBD19 /* brew_cold.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605C917D9B483004BBD19 /* brew_cold.png */; };
+		E78605FC17D9B484004BBD19 /* brew_cupping.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605CA17D9B483004BBD19 /* brew_cupping.png */; };
+		E78605FD17D9B484004BBD19 /* brew_drip.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605CB17D9B483004BBD19 /* brew_drip.png */; };
+		E78605FE17D9B484004BBD19 /* brew_espresso.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605CC17D9B483004BBD19 /* brew_espresso.png */; };
+		E78605FF17D9B484004BBD19 /* brew_eva.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605CD17D9B483004BBD19 /* brew_eva.png */; };
+		E786060017D9B484004BBD19 /* brew_french.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605CE17D9B483004BBD19 /* brew_french.png */; };
+		E786060117D9B484004BBD19 /* brew_instant.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605CF17D9B483004BBD19 /* brew_instant.png */; };
+		E786060217D9B484004BBD19 /* brew_logo_aeropress.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605D017D9B483004BBD19 /* brew_logo_aeropress.png */; };
+		E786060317D9B484004BBD19 /* brew_logo_brazilian.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605D117D9B483004BBD19 /* brew_logo_brazilian.png */; };
+		E786060417D9B484004BBD19 /* brew_logo_campfire.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605D217D9B483004BBD19 /* brew_logo_campfire.png */; };
+		E786060517D9B484004BBD19 /* brew_logo_chemex.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605D317D9B483004BBD19 /* brew_logo_chemex.png */; };
+		E786060617D9B484004BBD19 /* brew_logo_clever.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605D417D9B483004BBD19 /* brew_logo_clever.png */; };
+		E786060717D9B484004BBD19 /* brew_logo_clover.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605D517D9B483004BBD19 /* brew_logo_clover.png */; };
+		E786060817D9B484004BBD19 /* brew_logo_cold.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605D617D9B483004BBD19 /* brew_logo_cold.png */; };
+		E786060917D9B484004BBD19 /* brew_logo_cupping.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605D717D9B484004BBD19 /* brew_logo_cupping.png */; };
+		E786060A17D9B484004BBD19 /* brew_logo_drip.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605D817D9B484004BBD19 /* brew_logo_drip.png */; };
+		E786060B17D9B484004BBD19 /* brew_logo_espresso.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605D917D9B484004BBD19 /* brew_logo_espresso.png */; };
+		E786060C17D9B484004BBD19 /* brew_logo_eva.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605DA17D9B484004BBD19 /* brew_logo_eva.png */; };
+		E786060D17D9B484004BBD19 /* brew_logo_french.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605DB17D9B484004BBD19 /* brew_logo_french.png */; };
+		E786060E17D9B484004BBD19 /* brew_logo_instant.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605DC17D9B484004BBD19 /* brew_logo_instant.png */; };
+		E786060F17D9B484004BBD19 /* brew_logo_neapolitan.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605DD17D9B484004BBD19 /* brew_logo_neapolitan.png */; };
+		E786061017D9B484004BBD19 /* brew_logo_percolator.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605DE17D9B484004BBD19 /* brew_logo_percolator.png */; };
+		E786061117D9B484004BBD19 /* brew_logo_pour.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605DF17D9B484004BBD19 /* brew_logo_pour.png */; };
+		E786061217D9B484004BBD19 /* brew_logo_puerto.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605E017D9B484004BBD19 /* brew_logo_puerto.png */; };
+		E786061317D9B484004BBD19 /* brew_logo_single.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605E117D9B484004BBD19 /* brew_logo_single.png */; };
+		E786061417D9B484004BBD19 /* brew_logo_siphon.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605E217D9B484004BBD19 /* brew_logo_siphon.png */; };
+		E786061517D9B484004BBD19 /* brew_logo_sock.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605E317D9B484004BBD19 /* brew_logo_sock.png */; };
+		E786061617D9B484004BBD19 /* brew_logo_stove.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605E417D9B484004BBD19 /* brew_logo_stove.png */; };
+		E786061717D9B484004BBD19 /* brew_logo_turkish.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605E517D9B484004BBD19 /* brew_logo_turkish.png */; };
+		E786061817D9B484004BBD19 /* brew_logo_vietnamese.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605E617D9B484004BBD19 /* brew_logo_vietnamese.png */; };
+		E786061917D9B484004BBD19 /* brew_neapolitan.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605E717D9B484004BBD19 /* brew_neapolitan.png */; };
+		E786061A17D9B484004BBD19 /* brew_percolator.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605E817D9B484004BBD19 /* brew_percolator.png */; };
+		E786061B17D9B484004BBD19 /* brew_pour.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605E917D9B484004BBD19 /* brew_pour.png */; };
+		E786061C17D9B484004BBD19 /* brew_puerto.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605EA17D9B484004BBD19 /* brew_puerto.png */; };
+		E786061D17D9B484004BBD19 /* brew_siphon.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605EB17D9B484004BBD19 /* brew_siphon.png */; };
+		E786061E17D9B484004BBD19 /* brew_sock.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605EC17D9B484004BBD19 /* brew_sock.png */; };
+		E786061F17D9B484004BBD19 /* brew_turkish.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605ED17D9B484004BBD19 /* brew_turkish.png */; };
+		E786062017D9B484004BBD19 /* brew_vietnamese.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605EE17D9B484004BBD19 /* brew_vietnamese.png */; };
+		E786062117D9B484004BBD19 /* coffee_brew.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605EF17D9B484004BBD19 /* coffee_brew.png */; };
+		E786062217D9B484004BBD19 /* coffee_decaffeination.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605F017D9B484004BBD19 /* coffee_decaffeination.png */; };
+		E786062317D9B484004BBD19 /* coffee_grading.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605F117D9B484004BBD19 /* coffee_grading.png */; };
+		E786062417D9B484004BBD19 /* coffee_processing.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605F217D9B484004BBD19 /* coffee_processing.png */; };
+		E786062517D9B484004BBD19 /* coffee_roaster.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605F317D9B484004BBD19 /* coffee_roaster.png */; };
+		E786062617D9B484004BBD19 /* coffee_serving.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605F417D9B484004BBD19 /* coffee_serving.png */; };
 		E78C516817C5CFAB00EA05EB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78C516717C5CFAB00EA05EB /* MapKit.framework */; };
 		E7A2612D17C1A26300983DC4 /* ICHeaderBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A2612C17C1A26300983DC4 /* ICHeaderBarView.m */; };
 		E7A2613717C1EAC100983DC4 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A2613617C1EAC100983DC4 /* iAd.framework */; };
@@ -282,6 +332,56 @@
 		E772C78517C3BC21004F5EA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E772C78717C3BC2B004F5EA1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E772C78917C3BC35004F5EA1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E78605C317D9B483004BBD19 /* brew_aeropress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_aeropress.png; sourceTree = "<group>"; };
+		E78605C417D9B483004BBD19 /* brew_brazilian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_brazilian.png; sourceTree = "<group>"; };
+		E78605C517D9B483004BBD19 /* brew_campfire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_campfire.png; sourceTree = "<group>"; };
+		E78605C617D9B483004BBD19 /* brew_chemex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_chemex.png; sourceTree = "<group>"; };
+		E78605C717D9B483004BBD19 /* brew_clever.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_clever.png; sourceTree = "<group>"; };
+		E78605C817D9B483004BBD19 /* brew_clover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_clover.png; sourceTree = "<group>"; };
+		E78605C917D9B483004BBD19 /* brew_cold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_cold.png; sourceTree = "<group>"; };
+		E78605CA17D9B483004BBD19 /* brew_cupping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_cupping.png; sourceTree = "<group>"; };
+		E78605CB17D9B483004BBD19 /* brew_drip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_drip.png; sourceTree = "<group>"; };
+		E78605CC17D9B483004BBD19 /* brew_espresso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_espresso.png; sourceTree = "<group>"; };
+		E78605CD17D9B483004BBD19 /* brew_eva.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_eva.png; sourceTree = "<group>"; };
+		E78605CE17D9B483004BBD19 /* brew_french.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_french.png; sourceTree = "<group>"; };
+		E78605CF17D9B483004BBD19 /* brew_instant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_instant.png; sourceTree = "<group>"; };
+		E78605D017D9B483004BBD19 /* brew_logo_aeropress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_aeropress.png; sourceTree = "<group>"; };
+		E78605D117D9B483004BBD19 /* brew_logo_brazilian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_brazilian.png; sourceTree = "<group>"; };
+		E78605D217D9B483004BBD19 /* brew_logo_campfire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_campfire.png; sourceTree = "<group>"; };
+		E78605D317D9B483004BBD19 /* brew_logo_chemex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_chemex.png; sourceTree = "<group>"; };
+		E78605D417D9B483004BBD19 /* brew_logo_clever.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_clever.png; sourceTree = "<group>"; };
+		E78605D517D9B483004BBD19 /* brew_logo_clover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_clover.png; sourceTree = "<group>"; };
+		E78605D617D9B483004BBD19 /* brew_logo_cold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_cold.png; sourceTree = "<group>"; };
+		E78605D717D9B484004BBD19 /* brew_logo_cupping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_cupping.png; sourceTree = "<group>"; };
+		E78605D817D9B484004BBD19 /* brew_logo_drip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_drip.png; sourceTree = "<group>"; };
+		E78605D917D9B484004BBD19 /* brew_logo_espresso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_espresso.png; sourceTree = "<group>"; };
+		E78605DA17D9B484004BBD19 /* brew_logo_eva.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_eva.png; sourceTree = "<group>"; };
+		E78605DB17D9B484004BBD19 /* brew_logo_french.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_french.png; sourceTree = "<group>"; };
+		E78605DC17D9B484004BBD19 /* brew_logo_instant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_instant.png; sourceTree = "<group>"; };
+		E78605DD17D9B484004BBD19 /* brew_logo_neapolitan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_neapolitan.png; sourceTree = "<group>"; };
+		E78605DE17D9B484004BBD19 /* brew_logo_percolator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_percolator.png; sourceTree = "<group>"; };
+		E78605DF17D9B484004BBD19 /* brew_logo_pour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_pour.png; sourceTree = "<group>"; };
+		E78605E017D9B484004BBD19 /* brew_logo_puerto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_puerto.png; sourceTree = "<group>"; };
+		E78605E117D9B484004BBD19 /* brew_logo_single.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_single.png; sourceTree = "<group>"; };
+		E78605E217D9B484004BBD19 /* brew_logo_siphon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_siphon.png; sourceTree = "<group>"; };
+		E78605E317D9B484004BBD19 /* brew_logo_sock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_sock.png; sourceTree = "<group>"; };
+		E78605E417D9B484004BBD19 /* brew_logo_stove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_stove.png; sourceTree = "<group>"; };
+		E78605E517D9B484004BBD19 /* brew_logo_turkish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_turkish.png; sourceTree = "<group>"; };
+		E78605E617D9B484004BBD19 /* brew_logo_vietnamese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_logo_vietnamese.png; sourceTree = "<group>"; };
+		E78605E717D9B484004BBD19 /* brew_neapolitan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_neapolitan.png; sourceTree = "<group>"; };
+		E78605E817D9B484004BBD19 /* brew_percolator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_percolator.png; sourceTree = "<group>"; };
+		E78605E917D9B484004BBD19 /* brew_pour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_pour.png; sourceTree = "<group>"; };
+		E78605EA17D9B484004BBD19 /* brew_puerto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_puerto.png; sourceTree = "<group>"; };
+		E78605EB17D9B484004BBD19 /* brew_siphon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_siphon.png; sourceTree = "<group>"; };
+		E78605EC17D9B484004BBD19 /* brew_sock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_sock.png; sourceTree = "<group>"; };
+		E78605ED17D9B484004BBD19 /* brew_turkish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_turkish.png; sourceTree = "<group>"; };
+		E78605EE17D9B484004BBD19 /* brew_vietnamese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_vietnamese.png; sourceTree = "<group>"; };
+		E78605EF17D9B484004BBD19 /* coffee_brew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_brew.png; sourceTree = "<group>"; };
+		E78605F017D9B484004BBD19 /* coffee_decaffeination.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_decaffeination.png; sourceTree = "<group>"; };
+		E78605F117D9B484004BBD19 /* coffee_grading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_grading.png; sourceTree = "<group>"; };
+		E78605F217D9B484004BBD19 /* coffee_processing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_processing.png; sourceTree = "<group>"; };
+		E78605F317D9B484004BBD19 /* coffee_roaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_roaster.png; sourceTree = "<group>"; };
+		E78605F417D9B484004BBD19 /* coffee_serving.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_serving.png; sourceTree = "<group>"; };
 		E78C516717C5CFAB00EA05EB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E7A2612B17C1A26300983DC4 /* ICHeaderBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICHeaderBarView.h; sourceTree = "<group>"; };
 		E7A2612C17C1A26300983DC4 /* ICHeaderBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICHeaderBarView.m; sourceTree = "<group>"; };
@@ -689,6 +789,63 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		E78605C217D9B483004BBD19 /* brew */ = {
+			isa = PBXGroup;
+			children = (
+				E78605C317D9B483004BBD19 /* brew_aeropress.png */,
+				E78605C417D9B483004BBD19 /* brew_brazilian.png */,
+				E78605C517D9B483004BBD19 /* brew_campfire.png */,
+				E78605C617D9B483004BBD19 /* brew_chemex.png */,
+				E78605C717D9B483004BBD19 /* brew_clever.png */,
+				E78605C817D9B483004BBD19 /* brew_clover.png */,
+				E78605C917D9B483004BBD19 /* brew_cold.png */,
+				E78605CA17D9B483004BBD19 /* brew_cupping.png */,
+				E78605CB17D9B483004BBD19 /* brew_drip.png */,
+				E78605CC17D9B483004BBD19 /* brew_espresso.png */,
+				E78605CD17D9B483004BBD19 /* brew_eva.png */,
+				E78605CE17D9B483004BBD19 /* brew_french.png */,
+				E78605CF17D9B483004BBD19 /* brew_instant.png */,
+				E78605D017D9B483004BBD19 /* brew_logo_aeropress.png */,
+				E78605D117D9B483004BBD19 /* brew_logo_brazilian.png */,
+				E78605D217D9B483004BBD19 /* brew_logo_campfire.png */,
+				E78605D317D9B483004BBD19 /* brew_logo_chemex.png */,
+				E78605D417D9B483004BBD19 /* brew_logo_clever.png */,
+				E78605D517D9B483004BBD19 /* brew_logo_clover.png */,
+				E78605D617D9B483004BBD19 /* brew_logo_cold.png */,
+				E78605D717D9B484004BBD19 /* brew_logo_cupping.png */,
+				E78605D817D9B484004BBD19 /* brew_logo_drip.png */,
+				E78605D917D9B484004BBD19 /* brew_logo_espresso.png */,
+				E78605DA17D9B484004BBD19 /* brew_logo_eva.png */,
+				E78605DB17D9B484004BBD19 /* brew_logo_french.png */,
+				E78605DC17D9B484004BBD19 /* brew_logo_instant.png */,
+				E78605DD17D9B484004BBD19 /* brew_logo_neapolitan.png */,
+				E78605DE17D9B484004BBD19 /* brew_logo_percolator.png */,
+				E78605DF17D9B484004BBD19 /* brew_logo_pour.png */,
+				E78605E017D9B484004BBD19 /* brew_logo_puerto.png */,
+				E78605E117D9B484004BBD19 /* brew_logo_single.png */,
+				E78605E217D9B484004BBD19 /* brew_logo_siphon.png */,
+				E78605E317D9B484004BBD19 /* brew_logo_sock.png */,
+				E78605E417D9B484004BBD19 /* brew_logo_stove.png */,
+				E78605E517D9B484004BBD19 /* brew_logo_turkish.png */,
+				E78605E617D9B484004BBD19 /* brew_logo_vietnamese.png */,
+				E78605E717D9B484004BBD19 /* brew_neapolitan.png */,
+				E78605E817D9B484004BBD19 /* brew_percolator.png */,
+				E78605E917D9B484004BBD19 /* brew_pour.png */,
+				E78605EA17D9B484004BBD19 /* brew_puerto.png */,
+				E78605EB17D9B484004BBD19 /* brew_siphon.png */,
+				E78605EC17D9B484004BBD19 /* brew_sock.png */,
+				E78605ED17D9B484004BBD19 /* brew_turkish.png */,
+				E78605EE17D9B484004BBD19 /* brew_vietnamese.png */,
+				E78605EF17D9B484004BBD19 /* coffee_brew.png */,
+				E78605F017D9B484004BBD19 /* coffee_decaffeination.png */,
+				E78605F117D9B484004BBD19 /* coffee_grading.png */,
+				E78605F217D9B484004BBD19 /* coffee_processing.png */,
+				E78605F317D9B484004BBD19 /* coffee_roaster.png */,
+				E78605F417D9B484004BBD19 /* coffee_serving.png */,
+			);
+			path = brew;
+			sourceTree = "<group>";
+		};
 		E794F6EB17BFD3A000F729A1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,6 +1046,11 @@
 				E7F3130617D83B86001FB987 /* coffee_processing.png */,
 				E7F3130717D83B86001FB987 /* coffee_roaster.png */,
 				E7F3130817D83B86001FB987 /* coffee_serving.png */,
+				E78605C217D9B483004BBD19 /* brew */,
+				0726409517D94EA1001B5BF4 /* culture */,
+				E7F312C017D83B86001FB987 /* Bean_detail_icon.png */,
+				E7F312C117D83B86001FB987 /* bean_fake.png */,
+				E7F312DA17D83B86001FB987 /* buttons */,
 				E7F3130917D83B86001FB987 /* find_background.png */,
 				E7F3130B17D83B86001FB987 /* welcomescroll_1.png */,
 				E7F3130C17D83B86001FB987 /* welcomescroll_2.png */,
@@ -1128,6 +1290,56 @@
 				072640AB17D94EA1001B5BF4 /* culture_Netherlands.png in Resources */,
 				072640AC17D94EA1001B5BF4 /* culture_SaudiArabia.png in Resources */,
 				072640AD17D94EA1001B5BF4 /* culture_Turkey.png in Resources */,
+				E78605F517D9B484004BBD19 /* brew_aeropress.png in Resources */,
+				E78605F617D9B484004BBD19 /* brew_brazilian.png in Resources */,
+				E78605F717D9B484004BBD19 /* brew_campfire.png in Resources */,
+				E78605F817D9B484004BBD19 /* brew_chemex.png in Resources */,
+				E78605F917D9B484004BBD19 /* brew_clever.png in Resources */,
+				E78605FA17D9B484004BBD19 /* brew_clover.png in Resources */,
+				E78605FB17D9B484004BBD19 /* brew_cold.png in Resources */,
+				E78605FC17D9B484004BBD19 /* brew_cupping.png in Resources */,
+				E78605FD17D9B484004BBD19 /* brew_drip.png in Resources */,
+				E78605FE17D9B484004BBD19 /* brew_espresso.png in Resources */,
+				E78605FF17D9B484004BBD19 /* brew_eva.png in Resources */,
+				E786060017D9B484004BBD19 /* brew_french.png in Resources */,
+				E786060117D9B484004BBD19 /* brew_instant.png in Resources */,
+				E786060217D9B484004BBD19 /* brew_logo_aeropress.png in Resources */,
+				E786060317D9B484004BBD19 /* brew_logo_brazilian.png in Resources */,
+				E786060417D9B484004BBD19 /* brew_logo_campfire.png in Resources */,
+				E786060517D9B484004BBD19 /* brew_logo_chemex.png in Resources */,
+				E786060617D9B484004BBD19 /* brew_logo_clever.png in Resources */,
+				E786060717D9B484004BBD19 /* brew_logo_clover.png in Resources */,
+				E786060817D9B484004BBD19 /* brew_logo_cold.png in Resources */,
+				E786060917D9B484004BBD19 /* brew_logo_cupping.png in Resources */,
+				E786060A17D9B484004BBD19 /* brew_logo_drip.png in Resources */,
+				E786060B17D9B484004BBD19 /* brew_logo_espresso.png in Resources */,
+				E786060C17D9B484004BBD19 /* brew_logo_eva.png in Resources */,
+				E786060D17D9B484004BBD19 /* brew_logo_french.png in Resources */,
+				E786060E17D9B484004BBD19 /* brew_logo_instant.png in Resources */,
+				E786060F17D9B484004BBD19 /* brew_logo_neapolitan.png in Resources */,
+				E786061017D9B484004BBD19 /* brew_logo_percolator.png in Resources */,
+				E786061117D9B484004BBD19 /* brew_logo_pour.png in Resources */,
+				E786061217D9B484004BBD19 /* brew_logo_puerto.png in Resources */,
+				E786061317D9B484004BBD19 /* brew_logo_single.png in Resources */,
+				E786061417D9B484004BBD19 /* brew_logo_siphon.png in Resources */,
+				E786061517D9B484004BBD19 /* brew_logo_sock.png in Resources */,
+				E786061617D9B484004BBD19 /* brew_logo_stove.png in Resources */,
+				E786061717D9B484004BBD19 /* brew_logo_turkish.png in Resources */,
+				E786061817D9B484004BBD19 /* brew_logo_vietnamese.png in Resources */,
+				E786061917D9B484004BBD19 /* brew_neapolitan.png in Resources */,
+				E786061A17D9B484004BBD19 /* brew_percolator.png in Resources */,
+				E786061B17D9B484004BBD19 /* brew_pour.png in Resources */,
+				E786061C17D9B484004BBD19 /* brew_puerto.png in Resources */,
+				E786061D17D9B484004BBD19 /* brew_siphon.png in Resources */,
+				E786061E17D9B484004BBD19 /* brew_sock.png in Resources */,
+				E786061F17D9B484004BBD19 /* brew_turkish.png in Resources */,
+				E786062017D9B484004BBD19 /* brew_vietnamese.png in Resources */,
+				E786062117D9B484004BBD19 /* coffee_brew.png in Resources */,
+				E786062217D9B484004BBD19 /* coffee_decaffeination.png in Resources */,
+				E786062317D9B484004BBD19 /* coffee_grading.png in Resources */,
+				E786062417D9B484004BBD19 /* coffee_processing.png in Resources */,
+				E786062517D9B484004BBD19 /* coffee_roaster.png in Resources */,
+				E786062617D9B484004BBD19 /* coffee_serving.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1261,6 +1473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shengzhe Chen (S237EV664A)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1273,6 +1486,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
@@ -1283,6 +1497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shengzhe Chen (S237EV664A)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1295,6 +1510,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;

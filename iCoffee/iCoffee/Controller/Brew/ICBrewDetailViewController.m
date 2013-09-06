@@ -12,6 +12,7 @@
 
 @interface ICBrewDetailViewController ()
 
+@property (nonatomic, strong) ICBrewDetailView *view;
 @property (nonatomic, strong) ICBrewEntity *brewEntity;
 
 @end
@@ -42,6 +43,11 @@
     return @"Brews";
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.view setData:self.brewEntity];
+}
 
 - (UILabel *)titleLabel
 {
