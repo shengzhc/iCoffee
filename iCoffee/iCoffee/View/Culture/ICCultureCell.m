@@ -20,7 +20,7 @@
         
         _countryLabel = [[UILabel alloc] init];
         _countryLabel.backgroundColor = [UIColor clearColor];
-        _countryLabel.font = [UIFont icMediumFontWithSize:30];
+        _countryLabel.font = [UIFont icMediumFontWithSize:20];
         
         [self addSubview:_flagImageView];
         [self addSubview:_countryLabel];
@@ -44,7 +44,7 @@
 
     [self.countryLabel sizeToFit]; //Call sizeToFit first so that the frame will be set properly.
     self.countryLabel.frame = [self.countryLabel alignedRectInSuperviewForSize:self.countryLabel.bounds.size
-                                                                        offset:CGSizeMake(self.flagImageView.horizontalEnding+50,frame.size.height/2)
+                                                                        offset:CGSizeMake(self.flagImageView.horizontalEnding+20,frame.size.height/2)
                                                                        options:ICAlignmentOptionsVerticalCenter];
     
 }
