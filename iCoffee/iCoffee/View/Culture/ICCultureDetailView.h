@@ -7,6 +7,7 @@
 //
 
 #import "ICView.h"
+#import "ICCultureEntity.h"
 
 @interface ICCultureDetailView : ICView
 

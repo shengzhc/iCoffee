@@ -7,7 +7,10 @@
 //
 
 #import "ICViewController.h"
+#import "ICCultureEntity.h"
 
 @interface ICCultureDetailViewController : ICViewController
+
+@property (nonatomic, strong) ICCultureEntity *entity;
 
 @end

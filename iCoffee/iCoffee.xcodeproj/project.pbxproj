@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0726408917D93D93001B5BF4 /* coffee_culture.json in Resources */ = {isa = PBXBuildFile; fileRef = 0726408817D93D93001B5BF4 /* coffee_culture.json */; };
+		0726408C17D93E6B001B5BF4 /* ICCultureEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0726408B17D93E6B001B5BF4 /* ICCultureEntity.m */; };
+		0726408F17D93E81001B5BF4 /* ICCultureEntityMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0726408E17D93E81001B5BF4 /* ICCultureEntityMapper.m */; };
+		072640A217D94EA1001B5BF4 /* culture_Austria.png in Resources */ = {isa = PBXBuildFile; fileRef = 0726409617D94EA1001B5BF4 /* culture_Austria.png */; };
+		072640A317D94EA1001B5BF4 /* culture_Cuba.png in Resources */ = {isa = PBXBuildFile; fileRef = 0726409717D94EA1001B5BF4 /* culture_Cuba.png */; };
+		072640A417D94EA1001B5BF4 /* culture_Denmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0726409817D94EA1001B5BF4 /* culture_Denmark.png */; };
+		072640A517D94EA1001B5BF4 /* culture_Ethiopia.png in Resources */ = {isa = PBXBuildFile; fileRef = 0726409917D94EA1001B5BF4 /* culture_Ethiopia.png */; };
+		072640A617D94EA1001B5BF4 /* culture_France.png in Resources */ = {isa = PBXBuildFile; fileRef = 0726409A17D94EA1001B5BF4 /* culture_France.png */; };
+		072640A717D94EA1001B5BF4 /* culture_Greece.png in Resources */ = {isa = PBXBuildFile; fileRef = 0726409B17D94EA1001B5BF4 /* culture_Greece.png */; };
+		072640A817D94EA1001B5BF4 /* culture_Ireland.png in Resources */ = {isa = PBXBuildFile; fileRef = 0726409C17D94EA1001B5BF4 /* culture_Ireland.png */; };
+		072640A917D94EA1001B5BF4 /* culture_Italy.png in Resources */ = {isa = PBXBuildFile; fileRef = 0726409D17D94EA1001B5BF4 /* culture_Italy.png */; };
+		072640AA17D94EA1001B5BF4 /* culture_Mexico.png in Resources */ = {isa = PBXBuildFile; fileRef = 0726409E17D94EA1001B5BF4 /* culture_Mexico.png */; };
+		072640AB17D94EA1001B5BF4 /* culture_Netherlands.png in Resources */ = {isa = PBXBuildFile; fileRef = 0726409F17D94EA1001B5BF4 /* culture_Netherlands.png */; };
+		072640AC17D94EA1001B5BF4 /* culture_SaudiArabia.png in Resources */ = {isa = PBXBuildFile; fileRef = 072640A017D94EA1001B5BF4 /* culture_SaudiArabia.png */; };
+		072640AD17D94EA1001B5BF4 /* culture_Turkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 072640A117D94EA1001B5BF4 /* culture_Turkey.png */; };
 		07686A6D17D423E5003666BE /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07686A6C17D423E5003666BE /* Accounts.framework */; };
 		07686A6F17D423EF003666BE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07686A6E17D423EF003666BE /* Social.framework */; };
 		076FB35F17D7E0BD00A09EFC /* ICCultureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076FB35E17D7E0BD00A09EFC /* ICCultureCell.m */; };
@@ -170,6 +185,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0726408817D93D93001B5BF4 /* coffee_culture.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee_culture.json; sourceTree = "<group>"; };
+		0726408A17D93E6B001B5BF4 /* ICCultureEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCultureEntity.h; sourceTree = "<group>"; };
+		0726408B17D93E6B001B5BF4 /* ICCultureEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCultureEntity.m; sourceTree = "<group>"; };
+		0726408D17D93E81001B5BF4 /* ICCultureEntityMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCultureEntityMapper.h; sourceTree = "<group>"; };
+		0726408E17D93E81001B5BF4 /* ICCultureEntityMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCultureEntityMapper.m; sourceTree = "<group>"; };
+		0726409617D94EA1001B5BF4 /* culture_Austria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_Austria.png; sourceTree = "<group>"; };
+		0726409717D94EA1001B5BF4 /* culture_Cuba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_Cuba.png; sourceTree = "<group>"; };
+		0726409817D94EA1001B5BF4 /* culture_Denmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_Denmark.png; sourceTree = "<group>"; };
+		0726409917D94EA1001B5BF4 /* culture_Ethiopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_Ethiopia.png; sourceTree = "<group>"; };
+		0726409A17D94EA1001B5BF4 /* culture_France.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_France.png; sourceTree = "<group>"; };
+		0726409B17D94EA1001B5BF4 /* culture_Greece.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_Greece.png; sourceTree = "<group>"; };
+		0726409C17D94EA1001B5BF4 /* culture_Ireland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_Ireland.png; sourceTree = "<group>"; };
+		0726409D17D94EA1001B5BF4 /* culture_Italy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_Italy.png; sourceTree = "<group>"; };
+		0726409E17D94EA1001B5BF4 /* culture_Mexico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_Mexico.png; sourceTree = "<group>"; };
+		0726409F17D94EA1001B5BF4 /* culture_Netherlands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_Netherlands.png; sourceTree = "<group>"; };
+		072640A017D94EA1001B5BF4 /* culture_SaudiArabia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_SaudiArabia.png; sourceTree = "<group>"; };
+		072640A117D94EA1001B5BF4 /* culture_Turkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culture_Turkey.png; sourceTree = "<group>"; };
 		07686A6C17D423E5003666BE /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		07686A6E17D423EF003666BE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		076FB35D17D7E0BD00A09EFC /* ICCultureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCultureCell.h; sourceTree = "<group>"; };
@@ -365,7 +397,10 @@
 		E7F3130717D83B86001FB987 /* coffee_roaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_roaster.png; sourceTree = "<group>"; };
 		E7F3130817D83B86001FB987 /* coffee_serving.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_serving.png; sourceTree = "<group>"; };
 		E7F3130917D83B86001FB987 /* find_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_background.png; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		E7F3130A17D83B86001FB987 /* Italy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Italy.png; sourceTree = "<group>"; };
+=======
+>>>>>>> ARK
 		E7F3130B17D83B86001FB987 /* welcomescroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_1.png; sourceTree = "<group>"; };
 		E7F3130C17D83B86001FB987 /* welcomescroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_2.png; sourceTree = "<group>"; };
 		E7F3130D17D83B86001FB987 /* welcomescroll_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_3.png; sourceTree = "<group>"; };
@@ -416,6 +451,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0726409517D94EA1001B5BF4 /* culture */ = {
+			isa = PBXGroup;
+			children = (
+				0726409617D94EA1001B5BF4 /* culture_Austria.png */,
+				0726409717D94EA1001B5BF4 /* culture_Cuba.png */,
+				0726409817D94EA1001B5BF4 /* culture_Denmark.png */,
+				0726409917D94EA1001B5BF4 /* culture_Ethiopia.png */,
+				0726409A17D94EA1001B5BF4 /* culture_France.png */,
+				0726409B17D94EA1001B5BF4 /* culture_Greece.png */,
+				0726409C17D94EA1001B5BF4 /* culture_Ireland.png */,
+				0726409D17D94EA1001B5BF4 /* culture_Italy.png */,
+				0726409E17D94EA1001B5BF4 /* culture_Mexico.png */,
+				0726409F17D94EA1001B5BF4 /* culture_Netherlands.png */,
+				072640A017D94EA1001B5BF4 /* culture_SaudiArabia.png */,
+				072640A117D94EA1001B5BF4 /* culture_Turkey.png */,
+			);
+			path = culture;
+			sourceTree = "<group>";
+		};
 		07BEC1B217C7BDDF0076E03C /* Widget */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,6 +685,7 @@
 		E773385217C32DE1004EEEFF /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				0726408817D93D93001B5BF4 /* coffee_culture.json */,
 				E7E6136117C964C0009B0462 /* coffee_category.json */,
 				E7E6136C17C98CE2009B0462 /* findback.json */,
 				E764BEC117D1B8A600FDD7CC /* settings.json */,
@@ -722,6 +777,10 @@
 				E7F3135B17D83C09001FB987 /* ICBrewEntity.m */,
 				E7F3135D17D83C16001FB987 /* ICBrewEntityMapper.h */,
 				E7F3135E17D83C16001FB987 /* ICBrewEntityMapper.m */,
+				0726408A17D93E6B001B5BF4 /* ICCultureEntity.h */,
+				0726408B17D93E6B001B5BF4 /* ICCultureEntity.m */,
+				0726408D17D93E81001B5BF4 /* ICCultureEntityMapper.h */,
+				0726408E17D93E81001B5BF4 /* ICCultureEntityMapper.m */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -824,6 +883,7 @@
 		E7F312BF17D83B86001FB987 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				0726409517D94EA1001B5BF4 /* culture */,
 				E7F312C017D83B86001FB987 /* Bean_detail_icon.png */,
 				E7F312C117D83B86001FB987 /* bean_fake.png */,
 				E7F312C217D83B86001FB987 /* brew */,
@@ -1062,6 +1122,19 @@
 				E7F3135817D83B86001FB987 /* welcomescroll_2.png in Resources */,
 				E7F3135917D83B86001FB987 /* welcomescroll_3.png in Resources */,
 				E7F3136317D83DE5001FB987 /* coffee_brew.json in Resources */,
+				0726408917D93D93001B5BF4 /* coffee_culture.json in Resources */,
+				072640A217D94EA1001B5BF4 /* culture_Austria.png in Resources */,
+				072640A317D94EA1001B5BF4 /* culture_Cuba.png in Resources */,
+				072640A417D94EA1001B5BF4 /* culture_Denmark.png in Resources */,
+				072640A517D94EA1001B5BF4 /* culture_Ethiopia.png in Resources */,
+				072640A617D94EA1001B5BF4 /* culture_France.png in Resources */,
+				072640A717D94EA1001B5BF4 /* culture_Greece.png in Resources */,
+				072640A817D94EA1001B5BF4 /* culture_Ireland.png in Resources */,
+				072640A917D94EA1001B5BF4 /* culture_Italy.png in Resources */,
+				072640AA17D94EA1001B5BF4 /* culture_Mexico.png in Resources */,
+				072640AB17D94EA1001B5BF4 /* culture_Netherlands.png in Resources */,
+				072640AC17D94EA1001B5BF4 /* culture_SaudiArabia.png in Resources */,
+				072640AD17D94EA1001B5BF4 /* culture_Turkey.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1119,6 +1192,8 @@
 				E7F3136617D84321001FB987 /* ICBrewCell.m in Sources */,
 				E7F3136917D85090001FB987 /* ICBrewDetailViewController.m in Sources */,
 				E7F3136C17D850F6001FB987 /* ICBrewDetailView.m in Sources */,
+				0726408C17D93E6B001B5BF4 /* ICCultureEntity.m in Sources */,
+				0726408F17D93E81001B5BF4 /* ICCultureEntityMapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,8 +11,11 @@
 #import "ICCultureView.h"
 #import "ICCultureCell.h"
 #import "ICCultureDetailViewController.h"
+#import "ICCultureEntityMapper.h"
 
 @interface ICCultureViewController ()
+
+@property NSMutableArray *cultures;
 
 @end
 
@@ -24,7 +27,12 @@
     
     if (self)
     {
+        _cultures = [NSMutableArray new];
+        NSArray *dataSource = [ICLocalizable jsonArrayWithFileName:@"coffee_culture" type:@"json"];
         
+        for (NSDictionary *object in dataSource) {
+            [_cultures addObject:[ICCultureEntityMapper map:object error:nil]];
+        }
     }
     
     return self;
@@ -55,7 +63,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [self.cultures count];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,18 +75,20 @@
                                     reuseIdentifier:cellIdentifier];
     }
     
-    cell.countryLabel.text = @"Italy";
-    cell.flagImageView.image = [UIImage imageNamed:@"Italy.png"];
+    ICCultureEntity *cultureEntity = (ICCultureEntity *)[self.cultures objectAtIndex:indexPath.row];
+    cell.countryLabel.text = cultureEntity.country;
+    cell.flagImageView.image = [UIImage imageNamed:cultureEntity.imageURL];
     
     return cell;
 }
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     ICCultureDetailViewController *cultureDetailViewController = [[ICCultureDetailViewController alloc] init];
+    cultureDetailViewController.entity = [self.cultures objectAtIndex:indexPath.row];
+    
     [self.navigationController pushViewController:cultureDetailViewController animated:YES];
     
 }
