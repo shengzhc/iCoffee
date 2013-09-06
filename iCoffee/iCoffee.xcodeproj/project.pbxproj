@@ -439,10 +439,7 @@
 		E7F3130717D83B86001FB987 /* coffee_roaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_roaster.png; sourceTree = "<group>"; };
 		E7F3130817D83B86001FB987 /* coffee_serving.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_serving.png; sourceTree = "<group>"; };
 		E7F3130917D83B86001FB987 /* find_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_background.png; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		E7F3130A17D83B86001FB987 /* Italy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Italy.png; sourceTree = "<group>"; };
-=======
->>>>>>> ARK
 		E7F3130B17D83B86001FB987 /* welcomescroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_1.png; sourceTree = "<group>"; };
 		E7F3130C17D83B86001FB987 /* welcomescroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_2.png; sourceTree = "<group>"; };
 		E7F3130D17D83B86001FB987 /* welcomescroll_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_3.png; sourceTree = "<group>"; };
@@ -1185,7 +1182,6 @@
 				E7F3135817D83B86001FB987 /* welcomescroll_2.png in Resources */,
 				E7F3135917D83B86001FB987 /* welcomescroll_3.png in Resources */,
 				E7F3136317D83DE5001FB987 /* coffee_brew.json in Resources */,
-<<<<<<< HEAD
 				E78605AD17D98FD2004BBD19 /* brew_aeropress.png in Resources */,
 				E78605AE17D98FD2004BBD19 /* brew_brazilian.png in Resources */,
 				E78605AF17D98FD2004BBD19 /* brew_campfire.png in Resources */,
@@ -1207,7 +1203,6 @@
 				E78605BF17D98FD2004BBD19 /* brew_sock.png in Resources */,
 				E78605C017D98FD2004BBD19 /* brew_turkish.png in Resources */,
 				E78605C117D98FD2004BBD19 /* brew_vietnamese.png in Resources */,
-=======
 				0726408917D93D93001B5BF4 /* coffee_culture.json in Resources */,
 				072640A217D94EA1001B5BF4 /* culture_Austria.png in Resources */,
 				072640A317D94EA1001B5BF4 /* culture_Cuba.png in Resources */,
@@ -1221,7 +1216,6 @@
 				072640AB17D94EA1001B5BF4 /* culture_Netherlands.png in Resources */,
 				072640AC17D94EA1001B5BF4 /* culture_SaudiArabia.png in Resources */,
 				072640AD17D94EA1001B5BF4 /* culture_Turkey.png in Resources */,
->>>>>>> c1431487564d9ffd2d925e48bc99d30539d0bacf
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
