@@ -71,6 +71,7 @@
 		E772C78617C3BC21004F5EA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78517C3BC21004F5EA1 /* SystemConfiguration.framework */; };
 		E772C78817C3BC2B004F5EA1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78717C3BC2B004F5EA1 /* OpenGLES.framework */; };
 		E772C78A17C3BC35004F5EA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E772C78917C3BC35004F5EA1 /* QuartzCore.framework */; };
+		E780F24017DACA7D00DE059E /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = E780F23F17DACA7D00DE059E /* button_right.png */; };
 		E78605F517D9B484004BBD19 /* brew_aeropress.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605C317D9B483004BBD19 /* brew_aeropress.png */; };
 		E78605F617D9B484004BBD19 /* brew_brazilian.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605C417D9B483004BBD19 /* brew_brazilian.png */; };
 		E78605F717D9B484004BBD19 /* brew_campfire.png in Resources */ = {isa = PBXBuildFile; fileRef = E78605C517D9B483004BBD19 /* brew_campfire.png */; };
@@ -303,6 +304,7 @@
 		E772C78517C3BC21004F5EA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E772C78717C3BC2B004F5EA1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E772C78917C3BC35004F5EA1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E780F23F17DACA7D00DE059E /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
 		E78605C317D9B483004BBD19 /* brew_aeropress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_aeropress.png; sourceTree = "<group>"; };
 		E78605C417D9B483004BBD19 /* brew_brazilian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_brazilian.png; sourceTree = "<group>"; };
 		E78605C517D9B483004BBD19 /* brew_campfire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brew_campfire.png; sourceTree = "<group>"; };
@@ -993,6 +995,7 @@
 		E7F312DA17D83B86001FB987 /* buttons */ = {
 			isa = PBXGroup;
 			children = (
+				E780F23F17DACA7D00DE059E /* button_right.png */,
 				E7F312DB17D83B86001FB987 /* bean_category.png */,
 				E7F312DC17D83B86001FB987 /* bean_map.png */,
 				E7F312DD17D83B86001FB987 /* bg-addbutton-highlighted.png */,
@@ -1212,6 +1215,7 @@
 				E786062417D9B484004BBD19 /* coffee_processing.png in Resources */,
 				E786062517D9B484004BBD19 /* coffee_roaster.png in Resources */,
 				E786062617D9B484004BBD19 /* coffee_serving.png in Resources */,
+				E780F24017DACA7D00DE059E /* button_right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
