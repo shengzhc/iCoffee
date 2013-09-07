@@ -15,7 +15,8 @@
 #define ICBeanEntityRegionsMapper       @"regions"
 #define ICBeanEntityDescriptionMapper   @"desc"
 #define ICBeanEntityRateMapper          @"rate"
-#define ICBeanEntityImageURLMapper         @"image"
+#define ICBeanEntityImageURLMapper      @"image"
+#define ICBeanEntityLogoMapper          @"logo"
 
 @interface ICBeanEntityMapper : NSObject
 

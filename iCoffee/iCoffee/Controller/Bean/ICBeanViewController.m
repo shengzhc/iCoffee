@@ -30,12 +30,12 @@
     
     if (self)
     {
-        NSDictionary *jsonObject = [ICLocalizable jsonObjectWithFileName:@"coffee_category"
-                                                                    type:@"json"];
+        NSArray *data = [ICLocalizable jsonArrayWithFileName:@"coffee_category"
+                                                        type:@"json"];
         
         _beans = [NSMutableArray new];
         
-        for (id bean in jsonObject.allValues)
+        for (id bean in data)
         {
             [_beans addObject:[ICBeanEntityMapper map:bean error:nil]];
         }
@@ -92,25 +92,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString* cellIdentifier = @"beanCellIdentifier";
-    
-    ICBeanCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (!cell)
-    {
-        cell = [[ICBeanCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                 reuseIdentifier:cellIdentifier];
-    }
-    
+    ICBeanCell *cell = (ICBeanCell *)[ICCellFactory cellWithCellType:CellTypeBeanCell
+                                                        forTableView:tableView];
     ICBeanEntity *beanEntity = [self.beans objectAtIndex:indexPath.row];
-    NSString *row = [[NSString alloc] initWithFormat:@"Row num: %d",indexPath.row];
-    
-    cell.primaryLabel.text = beanEntity.name;
-    cell.secondaryLabel.text = row;
-    
-    UIImage *image = [UIImage imageNamed:@"bean_fake.png" ];
-    cell.primaryImageView.image = image;
-    
+    [cell setData:beanEntity];
     return cell;
 }
 

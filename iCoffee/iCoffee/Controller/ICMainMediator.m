@@ -45,7 +45,7 @@
         _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
         _audioPlayer.numberOfLoops = -1;
         [_audioPlayer prepareToPlay];
-        [_audioPlayer play];
+        //[_audioPlayer play];
     }
     
     return self;

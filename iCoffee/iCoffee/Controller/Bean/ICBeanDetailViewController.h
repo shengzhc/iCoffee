@@ -7,14 +7,14 @@
 //
 
 #import "ICViewController.h"
-#import "ICBeanEntity.h"
+
+@class ICBeanEntity;
 
 @interface ICBeanDetailViewController : ICViewController
 
-- (id)initWithDelegate:(id)delegate beanEntity:(ICBeanEntity *)beanEntity;
+- (id)initWithDelegate:(id)delegate
+            beanEntity:(ICBeanEntity *)beanEntity;
 
-
-@property (nonatomic, strong) ICBeanEntity *beanEntity;
 @property (nonatomic, strong) UIImage *screenShot;
 
 @end

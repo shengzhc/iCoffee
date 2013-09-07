@@ -44,6 +44,16 @@
                                          reuseIdentifier:@"CellTypeBrewCell"];
             }
             return cell;
+            break;
+        case CellTypeBeanCell:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"CellTypeBeanCell"];
+            if (!cell)
+            {
+                cell = [[ICBeanCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                         reuseIdentifier:@"CellTypeBeanCell"];
+            }
+            return cell;
+            break;
         default:
             break;
     }

@@ -49,39 +49,42 @@
         
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _trueBounds.size.width, 200)];
         
-        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(PADDING, _imageView.verticalEnding+5, _trueBounds.size.width-PADDING*2, 35)];
-        _nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        _nameLabel.numberOfLines = 0;
-        _nameLabel.baselineAdjustment = UIBaselineAdjustmentNone;
-        _nameLabel.font = [UIFont fontWithSize:35];
-        _nameLabel.backgroundColor = [UIColor clearColor];
+        _nameLabel = [UILabel labelWithFrame:CGRectMake(PADDING, _imageView.verticalEnding+5, _trueBounds.size.width-PADDING*2, 35)
+                                        text:@""
+                                   alignment:NSTextAlignmentLeft
+                                        font:[UIFont icRegularFontWithSize:35]
+                                   textColor:[UIColor blackColor]];
+        
         _nameLabel.tag = TAGTYPE_1;
         
         _categoryIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bean_category.png"]];
         _categoryIcon.frame = CGRectMake(PADDING, _nameLabel.verticalEnding+CATEGORYOFFNAME, ICONSIZE, ICONSIZE);
-        
-        _categoryLabel = [[UILabel alloc] initWithFrame:CGRectMake(_categoryIcon.horizontalEnding+10, _nameLabel.verticalEnding+CATEGORYOFFNAME, _trueBounds.size.width-PADDING*2-ICONSIZE-10, 20)];
-        _categoryLabel.font = [UIFont fontWithSize:15];
-        _categoryLabel.backgroundColor = [UIColor clearColor];
-        _categoryLabel.textColor = [UIColor blueColor];
+
+        _categoryLabel = [UILabel labelWithFrame:CGRectMake(_categoryIcon.horizontalEnding+10, _nameLabel.verticalEnding+CATEGORYOFFNAME, _trueBounds.size.width-PADDING*2-ICONSIZE-10, 20)
+                                            text:@""
+                                       alignment:NSTextAlignmentLeft
+                                            font:[UIFont icRegularFontWithSize:15]
+                                       textColor:[UIColor blueColor]];
         _categoryLabel.tag = TAGTYPE_2;
 
         _regionIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bean_map.png"]];
         _regionIcon.frame = CGRectMake(PADDING, _categoryLabel.verticalEnding+8, ICONSIZE, ICONSIZE);
         
-        _regionLabel = [[UILabel alloc] initWithFrame:CGRectMake(_regionIcon.horizontalEnding+10, _categoryLabel.verticalEnding+8, _trueBounds.size.width-PADDING*2 - ICONSIZE-10, 20)];
-        _regionLabel.font = [UIFont fontWithSize:15];
-        _regionLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        _regionLabel.numberOfLines = 0;
-        _regionLabel.backgroundColor = [UIColor clearColor];
-        _regionLabel.textColor = [UIColor lightGrayColor];
+        _regionLabel = [UILabel labelWithFrame:CGRectMake(_regionIcon.horizontalEnding+10, _categoryLabel.verticalEnding+8, _trueBounds.size.width-PADDING*2 - ICONSIZE-10, 20)
+                                          text:@""
+                                     alignment:NSTextAlignmentLeft
+                                          font:[UIFont icRegularFontWithSize:15]
+                                     textColor:[UIColor lightGrayColor]];
         _regionLabel.tag = TAGTYPE_2;
         
-        _description = [[UILabel alloc] initWithFrame:CGRectMake(PADDING, _regionLabel.verticalEnding+40, _trueBounds.size.width-PADDING*2, 200)];
+        _description = [UILabel labelWithFrame:CGRectMake(PADDING, _regionLabel.verticalEnding+40, _trueBounds.size.width-PADDING*2, 200)
+                                          text:@""
+                                     alignment:NSTextAlignmentLeft
+                                          font:[UIFont icRegularFontWithSize:14]
+                                     textColor:[UIColor blackColor]];
         _description.lineBreakMode = NSLineBreakByWordWrapping;
         _description.numberOfLines = 0;
         _description.baselineAdjustment = UIBaselineAdjustmentNone;
-        _description.backgroundColor = [UIColor clearColor];
         _description.tag = TAGTYPE_1;
                 
         _scrollView.contentSize = CGSizeMake(_trueBounds.size.width, _description.verticalEnding);
@@ -149,7 +152,7 @@
     self.regionLabel.frame = CGRectMake(self.regionLabel.frame.origin.x, self.categoryLabel.verticalEnding+8, size.width, size.height);
     
     size = [self getSizeOfLabel:self.description];
-    self.description.frame = CGRectMake(PADDING, self.regionLabel.verticalEnding+40, size.width, size.height);
+    self.description.frame = CGRectMake(PADDING, self.regionLabel.verticalEnding+10, size.width, size.height);
     
     self.scrollView.contentSize = CGSizeMake(self.trueBounds.size.width, self.description.verticalEnding);
 }

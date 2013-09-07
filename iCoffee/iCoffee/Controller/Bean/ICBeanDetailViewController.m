@@ -8,8 +8,11 @@
 
 #import "ICBeanDetailViewController.h"
 #import "ICBeanDetailView.h"
+#import "ICBeanEntity.h"
 
 @interface ICBeanDetailViewController ()<gestureProtocol>
+
+@property (nonatomic, strong) ICBeanEntity *beanEntity;
 
 @end
 
@@ -57,11 +60,9 @@
 {
     [super viewWillAppear:animated];
     
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.beanEntity.imageURL]]];
-    
     ICBeanDetailView *beanDetailView = (ICBeanDetailView *)self.view;
 
-    beanDetailView.imageView.image = image;
+    beanDetailView.imageView.image = [UIImage imageNamed:_beanEntity.imageURL];
     
     beanDetailView.nameLabel.text = self.beanEntity.name;
     

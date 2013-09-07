@@ -14,6 +14,7 @@
 #define ICBeanEntityDescription @"description"
 #define ICBeanEntityRate @"rate"
 #define ICBeanEntityImageURL @"imageURL"
+#define ICBeanEntityLogo @"logo"
 
 @interface ICBeanEntity : NSObject
 
@@ -23,5 +24,6 @@
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSNumber *rate;
 @property (nonatomic, strong) NSString *imageURL;
+@property (nonatomic, strong) NSString *logo;
 
 @end
