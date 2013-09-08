@@ -12,6 +12,7 @@
 #import "ICCultureCell.h"
 #import "ICCultureDetailViewController.h"
 #import "ICCultureEntityMapper.h"
+#import "ICCulturePageScrollViewController.h"
 
 @interface ICCultureViewController ()
 
@@ -86,10 +87,12 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    ICCultureDetailViewController *cultureDetailViewController = [[ICCultureDetailViewController alloc] init];
-    cultureDetailViewController.entity = [self.cultures objectAtIndex:indexPath.row];
+    ICCulturePageScrollViewController *pageScrollViewController = [[ICCulturePageScrollViewController alloc] init];
+    pageScrollViewController.cultures = self.cultures;
+    pageScrollViewController.pathRow = indexPath.row;
     
-    [self.navigationController pushViewController:cultureDetailViewController animated:YES];
+    
+    [self.navigationController pushViewController:pageScrollViewController animated:YES];
     
 }
 

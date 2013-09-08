@@ -32,7 +32,11 @@
                                                               alpha:1.0f];
         _cellBackgroundView.layer.cornerRadius = CELLCORNER;
         _cellBackgroundView.clipsToBounds = YES;
-        _cellBackgroundView.layer.borderColor = [UIColor blueColor].CGColor;
+        
+        _cellBackgroundView.layer.borderColor = [UIColor colorWithRed:105.0f/BASICCOLORVALUE
+                                                                green:75.0f/BASICCOLORVALUE
+                                                                 blue:35.0f/BASICCOLORVALUE
+                                                                alpha:1.0f].CGColor;
         _cellBackgroundView.layer.borderWidth = 1.0f;
 //        [_cellBackgroundView.layer setShadowColor:[UIColor blackColor].CGColor];
 //        [_cellBackgroundView.layer setShadowOpacity:0.8f];

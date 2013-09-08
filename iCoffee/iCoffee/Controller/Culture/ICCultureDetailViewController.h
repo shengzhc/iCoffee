@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) ICCultureEntity *entity;
 
+- (id)initWithDelegate:(id)delegate page:(NSInteger)page;
+
 @end
