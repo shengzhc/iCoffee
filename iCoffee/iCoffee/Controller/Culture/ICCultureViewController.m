@@ -74,7 +74,7 @@
         cell = [[ICCultureCell alloc] initWithStyle:UITableViewCellStyleDefault
                                     reuseIdentifier:cellIdentifier];
     }
-    
+        
     ICCultureEntity *cultureEntity = (ICCultureEntity *)[self.cultures objectAtIndex:indexPath.row];
     cell.countryLabel.text = cultureEntity.country;
     cell.flagImageView.image = [UIImage imageNamed:cultureEntity.imageURL];
@@ -95,7 +95,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 70.0f;
+    return 100.0f;
 }
 
 @end

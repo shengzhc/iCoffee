@@ -23,6 +23,7 @@
         _contentLabel.numberOfLines = 0;
         _contentLabel.backgroundColor = [UIColor lightGrayColor];
         [self addSubview:_contentLabel];
+        
     
     }
     return self;

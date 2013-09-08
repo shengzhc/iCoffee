@@ -20,9 +20,11 @@
     {
         self.backgroundColor = [UIColor yellowColor];
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.delegate = delegate;
         _tableView.dataSource = delegate;
         [self addSubview:_tableView];
+        
     }
     
     return self;
