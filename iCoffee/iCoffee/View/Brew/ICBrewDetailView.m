@@ -7,6 +7,7 @@
 //
 
 #import "ICBrewDetailView.h"
+
 #import "ICBrewEntity.h"
 
 @interface ICBrewDetailView ()
