@@ -10,12 +10,13 @@
 
 #import "ICSettingCell.h"
 #import "ICBrewCell.h"
-
+#import "ICBeanCell.h"
 
 typedef enum
 {
     CellTypeSettingCell,
     CellTypeBrewCell,
+    CellTypeBeanCell,
     CellTypeDefault
 }CellType;
 

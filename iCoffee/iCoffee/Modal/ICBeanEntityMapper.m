@@ -20,7 +20,7 @@
     [beanEntity setValue:[dictionary valueForKeyPath:ICBeanEntityDescriptionMapper] forKey:ICBeanEntityDescription];
     [beanEntity setValue:[dictionary valueForKeyPath:ICBeanEntityRateMapper] forKey:ICBeanEntityRate];
     [beanEntity setValue:[dictionary valueForKeyPath:ICBeanEntityImageURLMapper] forKey:ICBeanEntityImageURL];
-    
+    [beanEntity setValue:[dictionary valueForKeyPath:ICBeanEntityLogoMapper] forKey:ICBeanEntityLogo];
     return beanEntity;
 }
 

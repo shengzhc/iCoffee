@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ICBeanEntity;
 
 @interface ICBeanCell : UITableViewCell
 
-@property UILabel *primaryLabel;
-@property UILabel *secondaryLabel;
-@property UIImageView *primaryImageView;
+- (void)setData:(ICBeanEntity *)beanEntity;
+
 
 @end

@@ -32,11 +32,15 @@
         self.titleLabel = [UILabel labelWithFrame:CGRectZero
                                              text:@""
                                         alignment:NSTextAlignmentCenter
-                                             font:[UIFont icRegularFontWithSize:16]
+                                             font:[UIFont icRegularFontWithSize:18]
                                         textColor:[UIColor blackColor]];
         
         [self.contentView addSubview:self.logoImageView];
         [self.contentView addSubview:self.titleLabel];
+        
+        UIImageView *accessoryView = [UIImageView imageViewWithImageNamed:@"button_right"];
+        accessoryView.bounds = CGRectMake(0, 0, 20, 20);
+        self.accessoryView = accessoryView;
     }
     return self;
 }
@@ -51,8 +55,8 @@
                                                                          options:(ICAlignmentOptionsLeft | ICAlignmentOptionsVerticalCenter)];
     [self.titleLabel sizeToFit];
     self.titleLabel.frame = [self.titleLabel alignedRectInSuperviewForSize:self.titleLabel.bounds.size
-                                                                    offset:CGSizeMake(self.logoImageView.horizontalEnding + 10, 10)
-                                                                   options:(ICAlignmentOptionsLeft | ICAlignmentOptionsTop)];
+                                                                    offset:CGSizeMake(self.logoImageView.horizontalEnding + 10, 0)
+                                                                   options:(ICAlignmentOptionsLeft | ICAlignmentOptionsVerticalCenter)];
 }
 
 - (void)setData:(ICBrewEntity *)brewEntity
