@@ -1,0 +1,35 @@
+/* Get Bit */
+
+boolean getBit(int num, int i){
+	return ((num & (1 << i)) != 0 );
+}
+
+/* Set Bit */
+int setBit(int num, int i){
+	return num|(1<<i);
+}
+
+/* Clear bit */
+/* Cleare one bit */
+int clearBit(int num, int i){
+	int mask = ~(1 << i);
+	return num&mask;
+}
+
+/* to clear all bits from the most significant bit through i (inclusive), we do */
+int clearBitsMSBthroughI(int num, int i){
+	int mask = (1 << i) - 1;
+	return num & mask;
+}
+
+/* To clear all bits from i through 0(inclusive), we do:
+int clearBitsIthrough0(int num, int i){
+	int mask = ~((1 << (i + 1)) - 1);
+	return num&mask;
+}
+
+/* Update Bit */
+int updateBit(int num, int i, int v){
+	int mask = ~(1 << i);
+	return (num & mask) | (V << i);
+}
