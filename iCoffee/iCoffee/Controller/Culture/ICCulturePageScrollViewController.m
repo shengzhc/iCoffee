@@ -34,6 +34,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     NSInteger numberOfViews = [self.cultures count];
     
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
@@ -69,7 +71,7 @@
 - (UILabel *)titleLabel
 {
     UILabel *titleLabel = [UILabel labelWithFrame:CGRectZero
-                                             text:self.entity.country
+                                             text:@"culture"
                                         alignment:NSTextAlignmentCenter
                                              font:[UIFont icBoldFontWithSize:15]
                                         textColor:[UIColor blackColor]];

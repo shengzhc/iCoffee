@@ -17,11 +17,12 @@
     if (self) {
         // Initialization code
         
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
+        
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.pagingEnabled = YES;
         _scrollView.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
-        _scrollView.backgroundColor = [UIColor blueColor];
+        _scrollView.backgroundColor = [UIColor clearColor];
         _scrollView.alpha = 0.5f;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;

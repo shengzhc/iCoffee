@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#define VERTICALDIFF 10.0f
+#define HORIZONALDIFF 30.0f
+
 
 @interface ICCultureCell : UITableViewCell
 
 @property UIView *cellBackgroundView;
 @property UIImageView *flagImageView;
 @property UILabel *countryLabel;
+@property UIView *cellSelectedBackgroundView;
 
 @end
