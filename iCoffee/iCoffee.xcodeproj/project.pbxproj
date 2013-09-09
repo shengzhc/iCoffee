@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07054B8F17DD21E200D44114 /* ICCulturePageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07054B8E17DD21E200D44114 /* ICCulturePageScrollViewController.m */; };
+		07054B9217DD220400D44114 /* ICCulturePageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07054B9117DD220400D44114 /* ICCulturePageScrollView.m */; };
 		0726408917D93D93001B5BF4 /* coffee_culture.json in Resources */ = {isa = PBXBuildFile; fileRef = 0726408817D93D93001B5BF4 /* coffee_culture.json */; };
 		0726408C17D93E6B001B5BF4 /* ICCultureEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0726408B17D93E6B001B5BF4 /* ICCultureEntity.m */; };
 		0726408F17D93E81001B5BF4 /* ICCultureEntityMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0726408E17D93E81001B5BF4 /* ICCultureEntityMapper.m */; };
@@ -257,6 +259,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07054B8D17DD21E200D44114 /* ICCulturePageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCulturePageScrollViewController.h; sourceTree = "<group>"; };
+		07054B8E17DD21E200D44114 /* ICCulturePageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCulturePageScrollViewController.m; sourceTree = "<group>"; };
+		07054B9017DD220400D44114 /* ICCulturePageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCulturePageScrollView.h; sourceTree = "<group>"; };
+		07054B9117DD220400D44114 /* ICCulturePageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCulturePageScrollView.m; sourceTree = "<group>"; };
 		0726408817D93D93001B5BF4 /* coffee_culture.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee_culture.json; sourceTree = "<group>"; };
 		0726408A17D93E6B001B5BF4 /* ICCultureEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICCultureEntity.h; sourceTree = "<group>"; };
 		0726408B17D93E6B001B5BF4 /* ICCultureEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICCultureEntity.m; sourceTree = "<group>"; };
@@ -754,6 +760,8 @@
 				E76C690B17C0A959002BBF3C /* ICCultureView.m */,
 				076FB35D17D7E0BD00A09EFC /* ICCultureCell.h */,
 				076FB35E17D7E0BD00A09EFC /* ICCultureCell.m */,
+				07054B9017DD220400D44114 /* ICCulturePageScrollView.h */,
+				07054B9117DD220400D44114 /* ICCulturePageScrollView.m */,
 				076FB36317D7E2FD00A09EFC /* ICCultureDetailView.h */,
 				076FB36417D7E2FD00A09EFC /* ICCultureDetailView.m */,
 			);
@@ -838,6 +846,8 @@
 			children = (
 				E76C691C17C0AB6C002BBF3C /* ICCultureViewController.h */,
 				E76C691D17C0AB6C002BBF3C /* ICCultureViewController.m */,
+				07054B8D17DD21E200D44114 /* ICCulturePageScrollViewController.h */,
+				07054B8E17DD21E200D44114 /* ICCulturePageScrollViewController.m */,
 				076FB36017D7E2E100A09EFC /* ICCultureDetailViewController.h */,
 				076FB36117D7E2E100A09EFC /* ICCultureDetailViewController.m */,
 			);
@@ -1487,6 +1497,8 @@
 				E7F3136C17D850F6001FB987 /* ICBrewDetailView.m in Sources */,
 				0726408C17D93E6B001B5BF4 /* ICCultureEntity.m in Sources */,
 				0726408F17D93E81001B5BF4 /* ICCultureEntityMapper.m in Sources */,
+				07054B8F17DD21E200D44114 /* ICCulturePageScrollViewController.m in Sources */,
+				07054B9217DD220400D44114 /* ICCulturePageScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

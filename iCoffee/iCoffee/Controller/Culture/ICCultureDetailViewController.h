@@ -11,6 +11,6 @@
 
 @interface ICCultureDetailViewController : ICViewController
 
-@property (nonatomic, strong) ICCultureEntity *entity;
+- (id)initWithDelegate:(id)delegate page:(NSInteger)page cultureEntity:(ICCultureEntity *)entity;
 
 @end
