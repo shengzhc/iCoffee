@@ -13,6 +13,7 @@
 
 @property UIScrollView *scrollView;
 @property UILabel *titleLabel;
-@property UILabel *contentLabel;
+@property UITextView *contentField;
+@property ICView *backgroundView;
 
 @end

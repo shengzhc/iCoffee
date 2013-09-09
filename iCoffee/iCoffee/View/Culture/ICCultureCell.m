@@ -11,10 +11,8 @@
 
 #define BASICCOLORVALUE 255.0f
 #define COLORVALUE 250.0f
-#define VERTICALDIFF 10.0f
-#define HORIZONALDIFF 30.0f
-#define IMAGEHEIGHT 60.0f
-#define IMAGEWIDTH 90.0f
+#define IMAGEHEIGHT 48.0f
+#define IMAGEWIDTH IMAGEHEIGHT*3/2
 #define CELLCORNER 10.0f
 
 @implementation ICCultureCell
@@ -24,7 +22,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        
+                
         _cellBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];
         _cellBackgroundView.backgroundColor = [UIColor colorWithRed:COLORVALUE/BASICCOLORVALUE
                                                               green:COLORVALUE/BASICCOLORVALUE
@@ -38,9 +36,6 @@
                                                                  blue:35.0f/BASICCOLORVALUE
                                                                 alpha:1.0f].CGColor;
         _cellBackgroundView.layer.borderWidth = 1.0f;
-//        [_cellBackgroundView.layer setShadowColor:[UIColor blackColor].CGColor];
-//        [_cellBackgroundView.layer setShadowOpacity:0.8f];
-//        [_cellBackgroundView.layer setShadowOffset:CGSizeMake(0, 3.0f)];
         
         _flagImageView = [[UIImageView alloc] init];
         _flagImageView.backgroundColor = [UIColor clearColor];
@@ -52,6 +47,13 @@
         [self addSubview:_cellBackgroundView];
         [_cellBackgroundView addSubview:_flagImageView];
         [_cellBackgroundView addSubview:_countryLabel];
+        
+        
+        //Set selected background color and area.
+        _cellSelectedBackgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+        self.selectedBackgroundView = _cellSelectedBackgroundView;
+        self.selectedBackgroundView.backgroundColor = [UIColor lightGrayColor];
+        self.selectedBackgroundView.layer.cornerRadius = CELLCORNER;
     }
     return self;
 }
@@ -78,6 +80,8 @@
     self.countryLabel.frame = [self.countryLabel alignedRectInSuperviewForSize:self.countryLabel.bounds.size
                                                                         offset:CGSizeMake(self.flagImageView.horizontalEnding+20,frame.size.height/2)
                                                                        options:ICAlignmentOptionsVerticalCenter];
+    
+    self.selectedBackgroundView.frame = self.cellBackgroundView.frame;
 }
 
 @end

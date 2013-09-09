@@ -62,7 +62,7 @@
     ICCultureDetailView *cultureDetailView = (ICCultureDetailView *)self.view;
     
     cultureDetailView.titleLabel.text = self.entity.country;
-    cultureDetailView.contentLabel.text = self.entity.content;
+    cultureDetailView.contentField.text = self.entity.content;
     
 }
 

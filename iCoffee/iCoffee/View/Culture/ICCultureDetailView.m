@@ -7,6 +7,11 @@
 //
 
 #import "ICCultureDetailView.h"
+#import <QuartzCore/QuartzCore.h>
+
+
+#define HORIZONALFFSET 10
+#define VERTICALOFFSET 15
 
 @implementation ICCultureDetailView
 
@@ -18,21 +23,29 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor clearColor];
+        
         CGFloat width = CGRectGetWidth(self.bounds);
         CGFloat height = CGRectGetHeight(self.bounds);
         
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, width, 50)];
+        _backgroundView = [[ICView alloc] initWithFrame:CGRectMake(HORIZONALFFSET, VERTICALOFFSET, width - HORIZONALFFSET*2, height - 32 -44- VERTICALOFFSET*2)];
+        _backgroundView.layer.cornerRadius = 10.0f;
+        _backgroundView.layer.borderWidth = 1.0f;
+        _backgroundView.clipsToBounds = YES;
+        
+        width = CGRectGetWidth(_backgroundView.bounds);
+        height = CGRectGetHeight(_backgroundView.bounds);
+                
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(HORIZONALFFSET, 10, width - HORIZONALFFSET*2 , 50)];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont fontWithSize:20];
+        _titleLabel.font = [UIFont fontWithSize:25];
         
-        _contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,_titleLabel.verticalEnding + 15, width, height - 32 - _titleLabel.verticalEnding)];
-        _contentLabel.numberOfLines = 0;
-        _contentLabel.backgroundColor = [UIColor lightGrayColor];
+        _contentField = [[UITextView alloc] initWithFrame:CGRectMake(HORIZONALFFSET, _titleLabel.verticalEnding + VERTICALOFFSET, width - HORIZONALFFSET*2, height- _titleLabel.verticalEnding - VERTICALOFFSET*2)];
+        _contentField.userInteractionEnabled = NO;
+        _contentField.font = [UIFont fontWithSize:14];
         
-        [self addSubview:_titleLabel];
-        [self addSubview:_contentLabel];
-        
-    
+        [self addSubview:_backgroundView];
+        [_backgroundView addSubview:_titleLabel];
+        [_backgroundView addSubview:_contentField];
     }
     
     return self;
