@@ -71,9 +71,9 @@
 - (UILabel *)titleLabel
 {
     UILabel *titleLabel = [UILabel labelWithFrame:CGRectZero
-                                             text:@"culture"
+                                             text:@"Culture"
                                         alignment:NSTextAlignmentCenter
-                                             font:[UIFont icBoldFontWithSize:15]
+                                             font:[UIFont icBoldFontWithSize:20]
                                         textColor:[UIColor blackColor]];
     [titleLabel sizeToFit];
     return titleLabel;
