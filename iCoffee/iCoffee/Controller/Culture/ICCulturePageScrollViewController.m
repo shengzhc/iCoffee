@@ -9,6 +9,7 @@
 #import "ICCulturePageScrollViewController.h"
 #import "ICCulturePageScrollView.h"
 #import "ICCultureDetailViewController.h"
+#import "ICCultureEntity.h"
 
 @interface ICCulturePageScrollViewController ()
 
@@ -89,7 +90,9 @@
     
     ICCultureDetailViewController *detailViewController = (ICCultureDetailViewController *)[self.controllerArray objectAtIndex:pageNumber];
     if ((NSNull *)detailViewController == [NSNull null]) {
-        detailViewController = [[ICCultureDetailViewController alloc] initWithDelegate:self page:pageNumber];
+        ICCultureEntity *entity = [self.cultures objectAtIndex:pageNumber];
+        
+        detailViewController = [[ICCultureDetailViewController alloc] initWithDelegate:self page:pageNumber cultureEntity:entity];
         [self.controllerArray replaceObjectAtIndex:pageNumber withObject:detailViewController];
     }
     

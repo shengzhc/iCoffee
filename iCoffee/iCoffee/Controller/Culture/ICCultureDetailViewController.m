@@ -12,6 +12,7 @@
 @interface ICCultureDetailViewController ()
 
 @property NSInteger page;
+@property (nonatomic, strong) ICCultureEntity *entity;
 
 @end
 
@@ -19,11 +20,13 @@
 
 - (id)initWithDelegate:(id)delegate
                   page:(NSInteger)page
+         cultureEntity:(ICCultureEntity *)entity
     
 {
     self = [super initWithDelegate:delegate];
     if(self){
         _page = page;
+        _entity = entity;
     }
     return self;
 }
@@ -57,7 +60,9 @@
     [super viewWillAppear:animated];
 
     ICCultureDetailView *cultureDetailView = (ICCultureDetailView *)self.view;
-    cultureDetailView.contentLabel.text = [NSString stringWithFormat:@"Page: %d.", self.page];
+    
+    cultureDetailView.titleLabel.text = self.entity.country;
+    cultureDetailView.contentLabel.text = self.entity.content;
     
 }
 
