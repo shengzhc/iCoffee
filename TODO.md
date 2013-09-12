@@ -164,6 +164,16 @@ Aug.31st
 1. Add send email feature to setting. (RESOLVED) --- SC
 2. Set up the survey for send feed back. --- SC
 
+Sep.11st
+
+1. Compress image size, research and do it. --- ARK
+2. Do research on legal issue, and license. --- ARK/SC
+3. Music on/off added to settings. --- SC
+4. Welcome screen Top and brewing process image clicked	--- SC
+5. Bean/Brew/Culture data verify. --- SC/ARK
+6. Dismiss keyboard for find --- SC
+7. Remove borders for menu panel button --- SC
+
 Aug. 17th - Aug. 23 (Backend)
 1. Set up backend architecture
 2. Coffee bean object

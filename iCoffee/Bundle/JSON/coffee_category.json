@@ -1,18 +1,9 @@
 [
  {
-    "name":"Arusha",
-    "category":"Arabica",
-    "regions":"Mount Meru in Tanzania, and Papua New Guinea",
-    "desc":"either a Typica variety or a French Mission.",
-    "rate":0,
-    "logo":"bean_arusha_logo",
-    "image":"bean_arusha"
- },
- {
     "name":"Blue Mountain",
     "category":"Arabica",
-    "regions":"Blue Mountains region of Jamaica. Also grown in Kenya, Hawaii, Papua New Guinea (where it is known as PNG Gold) and Cameroon (where it is known as Boyo).",
-    "desc":"A unique mutation of Typica.",
+    "regions":"Blue Mountains region of Jamaica",
+    "desc":"Jamaican Blue Mountain Coffee or Jamaica Blue Mountain Coffee is a classification of coffee grown in the Blue Mountains of Jamaica. The best lots of Blue Mountain coffee are noted for their mild flavour and lack of bitterness. Over the last several decades, this coffee has developed a reputation that has made it one of the most expensive and sought-after coffees in the world. Over 80% of all Jamaican Blue Mountain Coffee is exported to Japan. In addition to its use for brewed coffee, the beans are the flavor base of Tia Maria coffee liqueur.\nJamaican Blue Mountain Coffee is a globally protected certification mark, meaning only coffee certified by the Coffee Industry Board of Jamaica can be labeled as such. It comes from a recognised growing region in the Blue Mountain region of Jamaica, and its cultivation is monitored by the Coffee Industry Board of Jamaica.\nThe Blue Mountains are generally located between Kingston to the south and Port Antonio to the north. Rising to 2,300 metres (7,500 ft), they are some of the highest mountains in the Caribbean. The climate of the region is cool and misty with high rainfall. The soil is rich, with excellent drainage. This combination of climate and soil is considered ideal for coffee.",
     "rate":0,
     "logo":"bean_blue_logo",
     "image":"bean_blue"
@@ -30,7 +21,7 @@
     "name":"Catuai",
     "category":"Arabica",
     "regions":"Latin America",
-    "desc":"This is a hybrid of Mundo Novo and Caturra bred in Brazil in the late 40s.[2]",
+    "desc":"Catuai is a dwarf variety that is highly resistant to the natural elements coffee trees face at high altitude and highly productive in terms of yield. Catuai, which originated in Brazil, is a hybrid of the Mondo Novo and Caturra. It is now found prevalently throughout Central America. Ripe Catuai can manifest with either red or yellow pigmentation. For years, nobody thought there was a difference between the two cherry colors. A few weeks of Central American cuppings in early 2007, however, led Stumptown to believe that the yellow strain produces inferior cup quality when compared to the red strain. Although both have big acidity, the Yellow Catuai seems to develop an unclean, petroleum-like mouthfeel as it cools, while the Red Catuai strain maintains its cleanliness.",
     "rate":0,
     "logo":"bean_catuai_logo",
     "image":"bean_catuai"
@@ -39,16 +30,16 @@
     "name":"Caturra",
     "category":"Arabica",
     "regions":"Latin and Central America",
-    "desc":"This is a mutation of the Bourbon variety, found near the town of Caturra, Brazil in the 1930s. It produces a higher yield than Bourbon, and this is generally due to the plant being shorter, higher yielding, and with less distance between the branches. A relatively recently selected botanical variety of the Coffea arabica species that generally matures more quickly, produces more coffee, and is more disease resistant than older, traditional arabica varieties.[3] In fact this mutation is not unique; it led to the formation of the Pacas variety in El Salvador (from Bourbon) and the Villa Sarchi in Costa Rica (from Bourbon). Genetically it is very similar to Bourbon although it usually produces a poorer cup quality but this is mainly due to the variety yielding more.[2]",
+    "desc":"This is a mutation of the Bourbon variety, found near the town of Caturra, Brazil in the 1930s. It produces a higher yield than Bourbon, and this is generally due to the plant being shorter, higher yielding, and with less distance between the branches. A relatively recently selected botanical variety of the Coffea arabica species that generally matures more quickly, produces more coffee, and is more disease resistant than older, traditional arabica varieties. In fact this mutation is not unique; it led to the formation of the Pacas variety in El Salvador (from Bourbon) and the Villa Sarchi in Costa Rica (from Bourbon). Genetically it is very similar to Bourbon although it usually produces a poorer cup quality but this is mainly due to the variety yielding more.",
     "rate":0,
     "logo":"bean_caturra_logo",
     "image":"bean_caturra"
  },
  {
     "name":"Charrieriana",
-    "category":"Arabica?",
+    "category":"Arabica",
     "regions":"Cameroon",
-    "desc":"This is a newly found variety from Cameroon. It has gained some press recently due to its caffeine-free nature. Not yet grown commercially, but it probably will be.[4]",
+    "desc":"Coffea charrieriana (or Charrier coffee) is a species of flowering plant in the Rubiaceae family. It is a caffeine-free coffee found in Cameroon. This plant is the only known caffeine-free coffee plant from Central Africa.Under the common name Charrier coffee, the plant was named after a scientist who managed coffee breeding research in central Africa’s diverse jungles for 30 years. Scientists posit that the new species could be used for breeding naturally caffeine-free coffees.\nThere is potential for this plant to replace the methylene chloride chemical extraction process used in most coffee production to remove caffeine (methylene chloride is a potential carcinogen and pollutant). How big is the market for decaf coffee.",
     "rate":0,
     "logo":"bean_charrieriana_logo",
     "image":"bean_charrieriana"
@@ -66,7 +57,7 @@
     "name":"Ethiopian Harar",
     "category":"Arabica",
     "regions":"Ethiopia",
-    "desc":"From the region of Harar, Ethiopia. Known for its complex, fruity flavor that resembles a dry red wine. All three Ethiopian varieties are trademarked names with the rights owned by Ethiopia.",
+    "desc":"Ethiopian coffee beans that are grown in either the Harar, Sidamo, Yirgacheffe or Limu regions are kept apart and marketed under their regional name. These regional varieties are trademarked names with the rights owned by Ethiopia.\nEthiopian Harar is a coffee bean of the species arabica that is grown in the region of Harar in the Eastern highlands of Ethiopia. It is one of the oldest coffee beans still produced and is known for its distinctive fruity, wine flavour. The bean is medium in size with a greenish-yellowish colour. It has medium acidity and full body and a distinctive mocha flavour. Harar is a dry processed coffee bean with sorting and processing done almost entirely by hand. Though processing is done by hand, the laborers are extremely knowledgeable of how each bean is categorized. Harar beans can be divided into three categories: Longberry, Shortberry, and Mocha. Longberry varieties consist of the largest beans and are often considered of the highest quality in both value and flavor. In some cases this is true but more often than not it's just a marketing pitch. Shortberry varieties are smaller than the Longberry beans but, are considered a high grade bean in Eastern Ethiopia where it originates. Also the Mocha variety is a highly prized commodity. Mocha Harars are known for their peaberry beans that often have complex chocolate, spice and citrus notes.",
     "rate":0,
     "logo":"bean_harar_logo",
     "image":"bean_harar"
@@ -75,7 +66,7 @@
     "name":"Ethiopian Sidamo",
     "category":"Arabica",
     "regions":"Ethiopia",
-    "desc":"From the Sidamo (now Oromia) region of Ethiopia as well. All three Ethiopian varieties are trademarked names with the rights owned by Ethiopia.",
+    "desc":"Ethiopia Sidamo is a type of Arabica coffee of single origin grown exclusively in the Sidamo Province of Ethiopia. Like most African coffees, Ethiopia Sidamo features a small and greyish bean, yet is valued for its deep, spice and wine or chocolate-like taste and floral aroma. The most distinctive flavour notes found in all Sidamo coffees are lemon and citrus with bright crisp acidity. Sidamo coffee includes Yirgachefe Coffee and Guji Coffee. Both coffee types are very high quality.",
     "rate":0,
     "logo":"bean_sidamo_logo",
     "image":"bean_sidamo"
@@ -84,7 +75,7 @@
     "name":"Ethiopian Yirgacheffe",
     "category":"Arabica",
     "regions":"Ethiopia",
-    "desc":"From the Yirgachefe district in the Gedeo Zone of the Southern Nations, Nationalities, and People's Region of Ethiopia. All three Ethiopian varieties are trademarked names with the rights owned by Ethiopia.[5]",
+    "desc":"From the Yirgachefe district in the Gedeo Zone of the Southern Nations, Nationalities, and People's Region of Ethiopia. All three Ethiopian varieties are trademarked names with the rights owned by Ethiopia.",
     "rate":0,
     "logo":"bean_yirgacheffe_logo",
     "image":"bean_yirgacheffe"
@@ -93,7 +84,7 @@
     "name":"French Mission",
     "category":"Arabica",
     "regions":"Africa",
-    "desc":"French Mission is actually Bourbon that was planted in East Africa by French Missionaries around 1897.[6]",
+    "desc":"The washed version of this now famous coffee is a great example of the inherent flavor this variety can offer. “French Mission” is one of the original bourbon varieties introduced by French missionaries in the late 1800’s.\nThe Harries family has been growing coffee for almost a century. In that time they have donated more than 50 acres of land to the Thika Municipal Council and co-founded the Wabeni Technical Institute. The institute seeks to teach underprivileged children practical skills that can help them make a living; dress making, motor mechanics, carpentry etc.\nWith over 76 centimetres of rain a year combined with deep red volcanic soil and temperatures of 22 to 28 degrees Celsius, this region has the perfect conditions to ensure this coffee is expressed at its absolute best. It’s a special coffee and worth exploring as both washed and natural.",
     "rate":0,
     "logo":"bean_french_logo",
     "image":"bean_french"
@@ -101,8 +92,8 @@
  {
     "name":"Gesha / Geisha T.2722",
     "category":"Arabica",
-    "regions":"Ethiopia, Tanzania, Costa Rica, Panama, Colombia, Peru",
-    "desc":"Gesha or Geisha variety, grown in the highlands of Boquete in Chiriquí Province, highly sought after by bidders in auctions, achieving high prices. Originally from the village of Gesha, Ethiopia. It was planted in the 1950s as a rust resistant crop and rediscovered in the early 2000s. The most expensive varietal at coffee auctions, fetching $170USD in 2010.[7]",
+    "regions":"Ethiopia, Tanzania, Panama, Colombia",
+    "desc":"Gesha or Geisha variety, grown in the highlands of Boquete in Chiriquí Province, highly sought after by bidders in auctions, achieving high prices. Originally from the village of Gesha, Ethiopia. It was planted in the 1950s as a rust resistant crop and rediscovered in the early 2000s. The most expensive varietal at coffee auctions, fetching $170USD in 2010.",
     "rate":0,
     "logo":"bean_gesha_logo",
     "image":"bean_gesha"
@@ -111,7 +102,7 @@
     "name":"Guadeloupe Bonifieur",
     "category":"Arabica",
     "regions":"Guadeloupe",
-    "desc":"",
+    "desc":"The Guadeloupe Bonifieur is a variety of coffee grown in Guadeloupe. Guadeloupe Bonifieur is the ancestor of Jamaican Blue Mountain Coffee and is very rare. The island has a long tradition of coffee growing which is now being rediscovered due to ecotourism. The fresh air, high altitude, and abundance of rain create ideal conditions for growing this Arabica variety. The variety is called Guadeloupe Bonifieur because of its high quality and great taste, and because, in the past, it was used to enhance lower quality blends. Connoisseurs consider it one of the best coffees in the world, even though it is only available from a few distributors.\nThe arabica coffee from Guadeloupe was used for a long time to improve commercial blends being traded around the world. The name Bonifieur comes from the French to improve, and is derived from the coffee's enhancing qualities. The Guadeloupe Bonifieur is considered by connoisseurs as one of the best coffees in the world. Nevertheless, there is no official definition of the Bonifieur. Producers refuse to establish a product characterisation because of the extreme diversity of cultural techniques and inconsistent quality.Some historians even have different version of the name's origin. According to some, the producers would keep the Guadeloupe Habitant, of superior quality, for themselves and the rest, of lesser quality was exported. According to others, the “café bonifieur” was of better quality, therefore was exported. Guadeloupe Bonifieur is notorious for its mystery, as some claim it to be mythical.",
     "rate":0,
     "logo":"bean_guadeloupe_logo",
     "image":"bean_guadeloupe"
@@ -120,34 +111,25 @@
     "name":"Hawaiian Kona",
     "category":"Arabica",
     "regions":"Hawaii",
-    "desc":"Grown on the slopes of Hualalai in the Kona District on the Big Island of Hawaii. Coffee was first introduced to the Islands by Chief Boki, the Governor of Oahu, in 1825.",
+    "desc":"The coffee plant was brought to the Kona district in 1828 by Samuel Reverend Ruggles, from Brazilian cuttings. English merchant Henry Nicholas Greenwell moved to the area and established Kona coffee as a recognized brand later in the 19th century. The former Greenwell Store and Kona Coffee Living History Farm have since become museums. In other parts of the Hawaiian islands, it was grown on large plantations, but the 1899 world coffee market crash caused plantation owners to lease land to their workers. Most were from Japan, brought to work on sugarcane plantations. They worked their leased parcels of between 5 and 12 acres (49,000 m2) as family concerns, producing large, quality crops. The tradition of family farms continued throughout Kona. The Japanese-origin families have been joined by Filipinos, mainland Americans, and Europeans. There are approximately 800 Kona coffee farms, with an average size of less than 5 acres (20,000 m2). In 1997 the total Kona coffee area was 2,290 acres (9 km2) and green coffee production just over two million pounds.",
     "rate":0,
     "logo":"bean_hawaiian_logo",
     "image":"bean_hawaiian"
  },
  {
     "name":"Java",
-    "category":"Arabica, Robusta and interspecific hybrids",
+    "category":"Arabica, interspecific hybrids",
     "regions":"Indonesia",
-    "desc":"From the island of Java, in Indonesia. This coffee was once so widely traded that \"java\" became a slang term for coffee. Java encompasses a regional style, not a cultivar of coffee.",
+    "desc":"ava's Arabica coffee production is centered on the Ijen Plateau, at the eastern end of Java, at an altitude of more than 1,400 meters. The coffee is primarily grown on large estates built by the Dutch in the 18th century. The five largest are Blawan (also spelled Belawan or Blauan), Jampit (or Djampit), Pancoer (or Pancur), Kayumas and Tugosari, covering in all more than 4,000 hectares. These estates transport ripe cherries quickly to their mills after harvest. The pulp is then fermented and washed off, using the wet process. This results in coffee with good, heavy body and a sweet overall impression. They are sometimes rustic in their flavor profiles, but display a lasting finish. At their best, they are smooth and supple and sometimes have a delicate herbaceous note in the aftertaste. Some estates age a portion of their coffee for up to three years. During this time, the coffee is monsooned, by exposing it to warm, moist air during the rainy season. As they age, the beans turn from green to light brown, and the flavor gains strength while losing acidity. These aged coffees are called Old Government, Old Brown or Old Java.",
     "rate":0,
     "logo":"bean_java_logo",
     "image":"bean_java"
  },
  {
-    "name":"K7",
-    "category":"Arabica",
-    "regions":"Africa",
-    "desc":"A Kenyan selection of French Mission Bourbon selected at Legelet Estate in Muhoroni, Kenya. Selected based on cupping trials.",
-    "rate":0,
-    "logo":"bean_k7_logo",
-    "image":"bean_k7"
- },
- {
     "name":"Maragogype",
     "category":"Arabica",
     "regions":"Latin America",
-    "desc":"Maragogype ('y') is considered to be a natural mutation from Typica. It was first discovered near Maragogipe ('i'), in Brazil's state Bahia. Maragogype is well known for producing big beans.",
+    "desc":"Maragogipe (also called elephant bean) is a variety of arabica that produces an extremely large, rather porous bean. It is a mutant that spontaneously appeared in Brazil, almost as though the giant of Latin-America thought regular beans were too puny and produced something in its own image. It was first discovered growing near the town of Maragogipe, in the northeastern state of Bahia. Subsequently it has been carried elsewhere in Latin America and generally adopts the flavor characteristics of the soil to which it has been transplanted.\nOpinions differ about the special qualities of the Maragogipe. William H. Ukers, one of the world's great authorities on coffee, found it tasted woody and disagreeable in 1928. Others have called it the finest coffee known and claim it has a heavier body than a comparable arabica coffee from the same region. Current opinion, which I share, is that it produces a thinner and less acidy cup than other traditional arabica varieties grown under the same conditions. This weakness in the cup coupled with low productivity has discouraged farmers from replanting Maragogipe, and it has become a rather rare, difficult-to-find coffee. Most Maragogipes sold in North America are grown in Mexico, Nicaragua, or Guatemala. Those from Chiapas, Mexico, and the Coban district of Guatemala have the best reputation.\nMaragogipe is a romantic's coffee curiosity, and deserves respect on that ground alone. An alternative for those aficionados who have trouble finding a Maragogipe, or who want a dramatically large bean with more consistent cup quality, might try the pacamara variety, a large-bean Maragogipe hybrid grown in El Salvador on Los Ausoles and Larin estates and impressively soft and full in the cup.",
     "rate":0,
     "logo":"bean_maragogype_logo",
     "image":"bean_maragogype"
@@ -156,7 +138,7 @@
     "name":"Mocha",
     "category":"Arabica",
     "regions":"Yemen",
-    "desc":"Yemeni coffee traded through the once major port of Mocha. Not to be confused with the preparation style (coffee with cocoa).",
+ "desc":"Café mocha, in its most basic formulation, can also be referred to as hot chocolate with (e.g. a shot of) espresso added. Like cappuccino, café mochas typically contain the well-known milk froth on top, although, as is common with hot chocolate, they are sometimes served with whipped cream instead. They are usually topped with a dusting of either cinnamon or cocoa powder and marshmallows may also be added on top for flavor and decoration. A variant is white café mocha, made with white chocolate instead of milk or dark. There are also variants of the drink that mix the two syrups; this mixture is referred to by several names, including black and white mocha, tan mocha, marble mocha, tuxedo mocha and zebra. Café mocha takes its name from the Red Sea coastal town of Mocha, Yemen, which as far back as the fifteenth century was a dominant exporter of coffee, especially to areas around the Arabian Peninsula. The caffeine content is approximately 10.9 mg/oz (370 mg/L), which is 175 mg for a 16 oz glass.",
     "rate":0,
     "logo":"bean_mocha_logo",
     "image":"bean_mocha"
@@ -165,7 +147,7 @@
     "name":"Mundo Novo",
     "category":"Arabica",
     "regions":"Latin America",
-    "desc":"Mundo Novo is a hybrid between Bourbon and Typica, crossed in the 1940s.",
+    "desc":"Mundo novo is particularly suited to the Brazil climate, and is well liked by the coffee farmer for its very high yield and its resistance to pest and disease and its ability to be planted very densely. This is also complimented by the height that the coffee plant can grow. The plant yields around about 30% more than the bourbon varietal. So you can see why it occupies around 40% of the coffee growing areas of Brazil. High yields tend to (anecdotal evidence) lower quality but Mundo Novo does regally make appearances in the Brazil cup of Excellence program. First documented in the 1940’s (no exact date known), in Brazil by the Agronomico of Campinas. Varietal characteristics: Sweet, thick mouthfeel, low acidity.",
     "rate":0,
     "logo":"bean_mundo_logo",
     "image":"bean_mundo"
@@ -174,25 +156,16 @@
     "name":"Pacamara",
     "category":"Arabica",
     "regions":"Latin America",
-    "desc":"Pacamara is a hybrid between the Bourbon mutation Pacas and Maragogype. It was bred in El Salvador in 1958 probably to achieve a Typica variety that produces larger beans.",
+    "desc":"Pacamara, a hybrid seed variety of the Pacas and Maragogype seed strains, seems to have been created in El Salvador. Like its Maragogype predecessor, Pacamara beans are very large. Pacamara tends to exhibit better cup quality when produced at higher elevations. The flavor profile can be outstanding, demonstrating sweet citric notes, exceptional balance and floral attributes.",
     "rate":0,
     "logo":"bean_pacamara_logo",
     "image":"bean_pacamara"
  },
  {
-    "name":"Pacas",
-    "category":"Arabica",
-    "regions":"Latin America",
-    "desc":"A natural mutation of the Bourbon variety found in El Salvador in 1949.",
-    "rate":0,
-    "logo":"bean_pacas_logo",
-    "image":"bean_pacas"
- },
- {
     "name":"Pache Colis",
     "category":"Arabica",
     "regions":"Latin America",
-    "desc":"Pache Colis is a hybrid between Pache Comum and Caturra. This variety produces distinctly larger fruit and roughly textured foliage.",
+    "desc":"Pache Colis is a hybrid between Pache Comum and Caturra. This variety produces distinctly larger fruit and roughly textured foliage. Pache colis was found in Mataquescuintla, Guatemala in a farm consisting of Caturra and Pache comum.  The coffee fruits are very large and the leaves are roughly textured.  Pache colis provides some resistance to phoma.  It has secondary and tertiary branching, and typically grows to 0.8-1.25 m.  It adapts well to altitudes of 3,000-6,000 feet with temperatures between 20-21°C.",
     "rate":0,
     "logo":"bean_pache_logo",
     "image":"bean_pache"
@@ -228,7 +201,7 @@
     "name":"Uganda",
     "category":"Arabica/Robusta",
     "regions":"",
-    "desc":"Although it mostly produces Robusta coffee, there is a quality Arabica bean grown there known as Bugishu around the Sipi Falls area.[citation needed]",
+    "desc":"Coffee is Uganda's top-earning export crop. In 1989 Uganda's coffee production capacity exceeded its quota of 2.3 million bags, but export volumes were still diminished by economic and security problems, and large amounts of coffee were still being smuggled out of Uganda for sale in neighbouring countries. Some coffee farmers cultivated cocoa trees on land already producing robusta coffee. Cocoa production declined in the 1970s and 1980s, however, and market conditions discouraged international investors from viewing it as a potential counterweight to Uganda's reliance on coffee exports. Locally produced cocoa was of high quality, however, and the government continued to seek ways to rehabilitate the industry. Production remained low during the late 1980s, rising from 1,000 tons in 1986 to only 5,000 tons in 1989. The Uganda Coffee Development Authority was formed in 1991 by government decree, in line with the liberalization of the coffee industry. Robusta coffee grows natively in the Kibale forest area. From 1999 to 2002 an effort was made to commercialize this coffee as a premium consumer brand, emulating and extending the success of shade grown in Central America. Revenue from the coffee production was intended to finance conservation management activities.",
     "rate":0,
     "logo":"bean_uganda_logo",
     "image":"bean_uganda"
