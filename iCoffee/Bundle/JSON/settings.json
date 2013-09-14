@@ -1,10 +1,14 @@
 [
  {
  "header":"contact us",
- "rows":[{"image":"setting_message", "text":"Send a general Feedback"}, {"image":"setting_survey", "text":"Fill a survey"}]
+ "rows":[{"image":"setting_message", "text":"Send a general Feedback"}]
  },
  {
  "header":"share the love",
  "rows":[{"image":"setting_facebook", "text":"Link to your Facebook"}, {"image":"setting_twitter", "text":"Link to your twitter"}]
+ },
+ {
+ "header":"music setting",
+ "rows":[{"image":"setting_music", "text":"Turn On/Off Noise"}]
  }
 ]

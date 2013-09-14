@@ -171,22 +171,5 @@ Sep.11st
 3. Music on/off added to settings. --- SC
 4. Welcome screen Top and brewing process image clicked	--- SC
 5. Bean/Brew/Culture data verify. --- SC/ARK
-6. Dismiss keyboard for find --- SC
-7. Remove borders for menu panel button --- SC
-
-Aug. 17th - Aug. 23 (Backend)
-1. Set up backend architecture
-2. Coffee bean object
-{
-	"name":string
-	"origin":string
-	"rating":decimal
-	"description":
-	"image":
-	"id":
-}
-return [{}, {}, {}]
-3. Coffee Make object
-{
-	TBD
-}
+6. Dismiss keyboard for find (RESOLVED) --- SC
+7. Remove borders for menu panel button (RESOLVED) --- SC
