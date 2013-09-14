@@ -185,6 +185,8 @@
 		E7AF151E17E4138A000C482D /* setting_music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7AF151A17E4138A000C482D /* setting_music@2x.png */; };
 		E7AF151F17E4138A000C482D /* setting_twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7AF151B17E4138A000C482D /* setting_twitter@2x.png */; };
 		E7AF152117E413EC000C482D /* setting_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7AF152017E413EC000C482D /* setting_message@2x.png */; };
+		E7AF152417E4CA6B000C482D /* ICPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AF152317E4CA6B000C482D /* ICPopoverViewController.m */; };
+		E7AF152717E4CA7C000C482D /* ICPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AF152617E4CA7C000C482D /* ICPopoverView.m */; };
 		E7BF70D517CA6AA900D3D5C5 /* ICDataButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BF70D417CA6AA900D3D5C5 /* ICDataButton.m */; };
 		E7BF70E217CC749B00D3D5C5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7BF70DD17CC749B00D3D5C5 /* Roboto-Bold.ttf */; };
 		E7BF70E317CC749B00D3D5C5 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7BF70DE17CC749B00D3D5C5 /* Roboto-Light.ttf */; };
@@ -251,9 +253,6 @@
 		E7F3134C17D83B86001FB987 /* setting_message.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130017D83B86001FB987 /* setting_message.png */; };
 		E7F3134E17D83B86001FB987 /* setting_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130217D83B86001FB987 /* setting_twitter.png */; };
 		E7F3135517D83B86001FB987 /* find_background.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130917D83B86001FB987 /* find_background.png */; };
-		E7F3135717D83B86001FB987 /* welcomescroll_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130B17D83B86001FB987 /* welcomescroll_1.png */; };
-		E7F3135817D83B86001FB987 /* welcomescroll_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130C17D83B86001FB987 /* welcomescroll_2.png */; };
-		E7F3135917D83B86001FB987 /* welcomescroll_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F3130D17D83B86001FB987 /* welcomescroll_3.png */; };
 		E7F3135C17D83C09001FB987 /* ICBrewEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F3135B17D83C09001FB987 /* ICBrewEntity.m */; };
 		E7F3135F17D83C16001FB987 /* ICBrewEntityMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F3135E17D83C16001FB987 /* ICBrewEntityMapper.m */; };
 		E7F3136317D83DE5001FB987 /* coffee_brew.json in Resources */ = {isa = PBXBuildFile; fileRef = E7F3136217D83DE5001FB987 /* coffee_brew.json */; };
@@ -478,6 +477,10 @@
 		E7AF151A17E4138A000C482D /* setting_music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_music@2x.png"; sourceTree = "<group>"; };
 		E7AF151B17E4138A000C482D /* setting_twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_twitter@2x.png"; sourceTree = "<group>"; };
 		E7AF152017E413EC000C482D /* setting_message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_message@2x.png"; sourceTree = "<group>"; };
+		E7AF152217E4CA6B000C482D /* ICPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPopoverViewController.h; sourceTree = "<group>"; };
+		E7AF152317E4CA6B000C482D /* ICPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPopoverViewController.m; sourceTree = "<group>"; };
+		E7AF152517E4CA7C000C482D /* ICPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPopoverView.h; sourceTree = "<group>"; };
+		E7AF152617E4CA7C000C482D /* ICPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPopoverView.m; sourceTree = "<group>"; };
 		E7BF70D317CA6AA900D3D5C5 /* ICDataButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICDataButton.h; sourceTree = "<group>"; };
 		E7BF70D417CA6AA900D3D5C5 /* ICDataButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICDataButton.m; sourceTree = "<group>"; };
 		E7BF70DD17CC749B00D3D5C5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -556,9 +559,6 @@
 		E7F3130017D83B86001FB987 /* setting_message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_message.png; sourceTree = "<group>"; };
 		E7F3130217D83B86001FB987 /* setting_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_twitter.png; sourceTree = "<group>"; };
 		E7F3130917D83B86001FB987 /* find_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_background.png; sourceTree = "<group>"; };
-		E7F3130B17D83B86001FB987 /* welcomescroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_1.png; sourceTree = "<group>"; };
-		E7F3130C17D83B86001FB987 /* welcomescroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_2.png; sourceTree = "<group>"; };
-		E7F3130D17D83B86001FB987 /* welcomescroll_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescroll_3.png; sourceTree = "<group>"; };
 		E7F3135A17D83C09001FB987 /* ICBrewEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBrewEntity.h; sourceTree = "<group>"; };
 		E7F3135B17D83C09001FB987 /* ICBrewEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICBrewEntity.m; sourceTree = "<group>"; };
 		E7F3135D17D83C16001FB987 /* ICBrewEntityMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICBrewEntityMapper.h; sourceTree = "<group>"; };
@@ -823,6 +823,8 @@
 			children = (
 				E76C68EE17C0A8BF002BBF3C /* ICWelcomeView.h */,
 				E76C68EF17C0A8BF002BBF3C /* ICWelcomeView.m */,
+				E7AF152517E4CA7C000C482D /* ICPopoverView.h */,
+				E7AF152617E4CA7C000C482D /* ICPopoverView.m */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -894,6 +896,8 @@
 			children = (
 				E76C690017C0A8DF002BBF3C /* ICWelcomeViewController.h */,
 				E76C690117C0A8DF002BBF3C /* ICWelcomeViewController.m */,
+				E7AF152217E4CA6B000C482D /* ICPopoverViewController.h */,
+				E7AF152317E4CA6B000C482D /* ICPopoverViewController.m */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -1163,9 +1167,6 @@
 				E780F2A417DB892800DE059E /* bean */,
 				E7F312DA17D83B86001FB987 /* buttons */,
 				E7F3130917D83B86001FB987 /* find_background.png */,
-				E7F3130B17D83B86001FB987 /* welcomescroll_1.png */,
-				E7F3130C17D83B86001FB987 /* welcomescroll_2.png */,
-				E7F3130D17D83B86001FB987 /* welcomescroll_3.png */,
 				E780F24117DAD20F00DE059E /* background.png */,
 			);
 			path = image;
@@ -1328,9 +1329,6 @@
 				E7F3134C17D83B86001FB987 /* setting_message.png in Resources */,
 				E7F3134E17D83B86001FB987 /* setting_twitter.png in Resources */,
 				E7F3135517D83B86001FB987 /* find_background.png in Resources */,
-				E7F3135717D83B86001FB987 /* welcomescroll_1.png in Resources */,
-				E7F3135817D83B86001FB987 /* welcomescroll_2.png in Resources */,
-				E7F3135917D83B86001FB987 /* welcomescroll_3.png in Resources */,
 				E7F3136317D83DE5001FB987 /* coffee_brew.json in Resources */,
 				0726408917D93D93001B5BF4 /* coffee_culture.json in Resources */,
 				072640BB17DA350F001B5BF4 /* culture_Austria.png in Resources */,
@@ -1515,6 +1513,8 @@
 				0726408F17D93E81001B5BF4 /* ICCultureEntityMapper.m in Sources */,
 				07054B8F17DD21E200D44114 /* ICCulturePageScrollViewController.m in Sources */,
 				07054B9217DD220400D44114 /* ICCulturePageScrollView.m in Sources */,
+				E7AF152417E4CA6B000C482D /* ICPopoverViewController.m in Sources */,
+				E7AF152717E4CA7C000C482D /* ICPopoverView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
