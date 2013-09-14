@@ -11,6 +11,7 @@
 #import "ICHeaderBarView.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+#import "ICMainMediator.h"
 
 @interface ICSettingViewController ()
 
@@ -123,6 +124,20 @@
         SLComposeViewController *composeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         [self presentViewController:composeViewController animated:YES completion:^(void){}];
 //        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/lfz_ark"]];
+    }
+    else if (indexPath.section == 2 && indexPath.row == 0)
+    {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        if (cell.accessoryType == UITableViewCellAccessoryNone)
+        {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        else
+        {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:CoffeeMusicNotification
+                                                            object:nil];
     }
 }
 

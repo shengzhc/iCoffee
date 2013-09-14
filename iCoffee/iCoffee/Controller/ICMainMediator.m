@@ -46,6 +46,11 @@
         _audioPlayer.numberOfLoops = -1;
         [_audioPlayer prepareToPlay];
         //[_audioPlayer play];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(updateCoffeeMusic:)
+                                                     name:CoffeeMusicNotification
+                                                   object:nil];
     }
     
     return self;
@@ -85,6 +90,18 @@
     }
     
     [self.navigationController pushViewController:self.welcomeViewController animated:NO];
+}
+
+- (void)updateCoffeeMusic:(NSNotification *)notification
+{
+    if (self.audioPlayer.isPlaying)
+    {
+        [self.audioPlayer pause];
+    }
+    else
+    {
+        [self.audioPlayer play];
+    }
 }
 ///////////////////////////////////////////
 ///////////////////////////////////////////
