@@ -228,6 +228,7 @@
 
 - (void)settingButtonClicked:(id)sender
 {
+    [self.view endEditing:YES];
     [self toggleBackView];
 }
 

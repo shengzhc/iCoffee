@@ -8,6 +8,8 @@
 
 #import "ICViewController.h"
 
+#define CoffeeMusicNotification @"CoffeeMusicNotification"
+
 @interface ICMainMediator : ICViewController 
 
 @end

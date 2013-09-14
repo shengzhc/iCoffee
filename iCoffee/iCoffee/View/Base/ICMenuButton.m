@@ -29,7 +29,7 @@
 
     if (self)
     {
-        UIImage *normalImage = [[UIImage imageNamed:imageName] imageWithBorderColor:[UIColor blackColor]];
+        UIImage *normalImage = [UIImage imageNamed:imageName];
         UIImage *hightlightedImage = [normalImage imageWithOverlayColor:[self hightlightColor]];
         self.buttonImageView = [[UIImageView alloc] initWithImage:normalImage
                                                  highlightedImage:hightlightedImage];
