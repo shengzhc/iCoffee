@@ -32,7 +32,6 @@
         self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
         [self.imageView addCornersWithRadius:[self cornerRadius]];
         self.imageView.layer.masksToBounds = YES;
-        [self.imageView sizeToFit];
         
         self.textLabel = [UILabel labelWithFrame:CGRectZero
                                             text:text
@@ -53,7 +52,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.imageView.frame = [self.imageView alignedRectInSuperviewForSize:self.imageView.image.size
+    self.imageView.frame = [self.imageView alignedRectInSuperviewForSize:CGSizeMake(300, 200)
                                            offset:CGSizeMake(0, 0)
                                           options:(ICAlignmentOptionsHorizontalCenter | ICAlignmentOptionsVerticalCenter)];
     

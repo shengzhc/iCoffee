@@ -168,7 +168,7 @@ Sep.11st
 
 1. Compress image size, research and do it. --- ARK
 2. Do research on legal issue, and license. --- ARK/SC
-3. Music on/off added to settings. --- SC
+3. Music on/off added to settings. (RESOLVED) --- SC
 4. Welcome screen Top and brewing process image clicked	--- SC
 5. Bean/Brew/Culture data verify. --- SC/ARK
 6. Dismiss keyboard for find (RESOLVED) --- SC
