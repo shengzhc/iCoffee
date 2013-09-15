@@ -5,7 +5,7 @@
  },
  {
  "header":"share the love",
- "rows":[{"image":"setting_facebook", "text":"Link to your Facebook"}, {"image":"setting_twitter", "text":"Link to your twitter"}]
+ "rows":[{"image":"setting_facebook", "text":"Share to Facebook"}, {"image":"setting_twitter", "text":"Share to twitter"}]
  },
  {
  "header":"music setting",
