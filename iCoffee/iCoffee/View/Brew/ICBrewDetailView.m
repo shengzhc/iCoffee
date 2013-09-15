@@ -44,7 +44,7 @@
                                               font:[UIFont icRegularFontWithSize:14]
                                          textColor:[UIColor blackColor]];
         self.detailLabel.numberOfLines = 0;
-        self.detailLabel.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
+        self.detailLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:self.contentView];
         [self.contentView addSubview:self.brewImageView];
         [self.contentView addSubview:self.nameLabel];
