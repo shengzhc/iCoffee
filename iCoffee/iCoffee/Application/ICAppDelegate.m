@@ -16,7 +16,16 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 7.0)
+    {
+        self.window.backgroundColor = [UIColor whiteColor];
+    }
+    else
+    {
+        self.window.backgroundColor = [UIColor clearColor];
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
+    }
+    
     ICMainMediator *mediator = [[ICMainMediator alloc] initWithDelegate:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[ICHeaderBarView class] toolbarClass:nil];
     [navigationController pushViewController:mediator animated:NO];

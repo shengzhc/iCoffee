@@ -77,7 +77,7 @@
 }
 
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
@@ -85,7 +85,7 @@
     
     if (!self.bottomBarView.superview)
     {
-        [[UIApplication sharedApplication].keyWindow addSubview:self.bottomBarView];
+        [[[UIApplication sharedApplication].windows objectAtIndex:0] addSubview:self.bottomBarView];
     }
     
     [self.navigationController pushViewController:self.welcomeViewController animated:NO];

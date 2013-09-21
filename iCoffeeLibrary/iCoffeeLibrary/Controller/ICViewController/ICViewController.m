@@ -23,6 +23,12 @@
     if (self)
     {
         self.delegate = delegate;
+        
+        if ([UIViewController instancesRespondToSelector:@selector(setEdgesForExtendedLayout:)])
+        {
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+        }
+
     }
     
     return self;
