@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ICCollectionViewCell : UICollectionReusableView
+@interface ICCollectionViewCell : UICollectionViewCell
 
 - (void)setBackgroundImage:(UIImage *)image;
 
