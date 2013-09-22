@@ -230,6 +230,9 @@
 		E7BF70E617CC749B00D3D5C5 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7BF70E117CC749B00D3D5C5 /* Roboto-Thin.ttf */; };
 		E7C268DC17C72468001347C1 /* ICMapPlaceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C268DB17C72468001347C1 /* ICMapPlaceEntity.m */; };
 		E7C268DF17C724FC001347C1 /* ICMapPlaceEntityMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C268DE17C724FC001347C1 /* ICMapPlaceEntityMapper.m */; };
+		E7CD532217EE7D2600F1546D /* icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = E7CD531F17EE7D2600F1546D /* icon-60.png */; };
+		E7CD532317EE7D2600F1546D /* icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = E7CD532017EE7D2600F1546D /* icon-76.png */; };
+		E7CD532417EE7D2600F1546D /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = E7CD532117EE7D2600F1546D /* icon-120.png */; };
 		E7DAB34C17AF203B00D575B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34B17AF203B00D575B7 /* UIKit.framework */; };
 		E7DAB34E17AF203B00D575B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34D17AF203B00D575B7 /* Foundation.framework */; };
 		E7DAB35017AF203B00D575B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DAB34F17AF203B00D575B7 /* CoreGraphics.framework */; };
@@ -522,7 +525,10 @@
 		E7C268DB17C72468001347C1 /* ICMapPlaceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMapPlaceEntity.m; sourceTree = "<group>"; };
 		E7C268DD17C724FC001347C1 /* ICMapPlaceEntityMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMapPlaceEntityMapper.h; sourceTree = "<group>"; };
 		E7C268DE17C724FC001347C1 /* ICMapPlaceEntityMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICMapPlaceEntityMapper.m; sourceTree = "<group>"; };
-		E7DAB34717AF203B00D575B7 /* iCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7CD531F17EE7D2600F1546D /* icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60.png"; sourceTree = "<group>"; };
+		E7CD532017EE7D2600F1546D /* icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-76.png"; sourceTree = "<group>"; };
+		E7CD532117EE7D2600F1546D /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
+		E7DAB34717AF203B00D575B7 /* illuminating Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "illuminating Coffee.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DAB34B17AF203B00D575B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7DAB34D17AF203B00D575B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7DAB34F17AF203B00D575B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1122,7 +1128,7 @@
 		E7DAB34817AF203B00D575B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7DAB34717AF203B00D575B7 /* iCoffee.app */,
+				E7DAB34717AF203B00D575B7 /* illuminating Coffee.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1181,6 +1187,9 @@
 		E7DAB3B217AF25FF00D575B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E7CD531F17EE7D2600F1546D /* icon-60.png */,
+				E7CD532017EE7D2600F1546D /* icon-76.png */,
+				E7CD532117EE7D2600F1546D /* icon-120.png */,
 				E7260ECC17EDEAA200069E46 /* iTunesArtwork.png */,
 				E7260ECD17EDEAA200069E46 /* iTunesArtwork@2x.png */,
 				E7260ECE17EDEAA200069E46 /* spotlight.png */,
@@ -1226,7 +1235,7 @@
 			);
 			name = iCoffee;
 			productName = iCoffee;
-			productReference = E7DAB34717AF203B00D575B7 /* iCoffee.app */;
+			productReference = E7DAB34717AF203B00D575B7 /* illuminating Coffee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1236,7 +1245,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = IC;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = iCoffee;
 			};
 			buildConfigurationList = E7DAB34117AF203A00D575B7 /* Build configuration list for PBXProject "iCoffee" */;
@@ -1311,6 +1320,7 @@
 				E7960EF317E5934100D71943 /* bean_mocha_logo.png in Resources */,
 				E7960EF417E5934100D71943 /* bean_mundo.png in Resources */,
 				E7960EF517E5934100D71943 /* bean_mundo_logo.png in Resources */,
+				E7CD532417EE7D2600F1546D /* icon-120.png in Resources */,
 				E7960EF617E5934100D71943 /* bean_pacamara.png in Resources */,
 				E7960EF717E5934100D71943 /* bean_pacamara_logo.png in Resources */,
 				E7960EF817E5934100D71943 /* bean_pacas.png in Resources */,
@@ -1327,6 +1337,7 @@
 				E7960F0317E5934100D71943 /* bean_typica_logo.png in Resources */,
 				E7960F0417E5934100D71943 /* bean_uganda.png in Resources */,
 				E7960F0517E5934100D71943 /* bean_uganda_logo.png in Resources */,
+				E7CD532217EE7D2600F1546D /* icon-60.png in Resources */,
 				E7960F0617E5934100D71943 /* bean_yirgacheffe.png in Resources */,
 				E7960F0717E5934100D71943 /* bean_yirgacheffe_logo.png in Resources */,
 				E7960F0817E5934100D71943 /* brew_aeropress.png in Resources */,
@@ -1341,6 +1352,7 @@
 				E7960F1117E5934100D71943 /* brew_espresso.png in Resources */,
 				E7960F1217E5934100D71943 /* brew_eva.png in Resources */,
 				E7960F1317E5934100D71943 /* brew_french.png in Resources */,
+				E7CD532317EE7D2600F1546D /* icon-76.png in Resources */,
 				E7960F1417E5934100D71943 /* brew_instant.png in Resources */,
 				E7960F1517E5934100D71943 /* brew_logo_aeropress.png in Resources */,
 				E7960F1617E5934100D71943 /* brew_logo_brazilian.png in Resources */,
@@ -1534,7 +1546,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1556,7 +1569,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
@@ -1568,8 +1581,7 @@
 		E7DAB36617AF203B00D575B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1581,7 +1593,7 @@
 				INFOPLIST_FILE = "Supporting Files/iCoffee-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/**";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "illuminating Coffee";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
@@ -1592,8 +1604,7 @@
 		E7DAB36717AF203B00D575B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1605,7 +1616,7 @@
 				INFOPLIST_FILE = "Supporting Files/iCoffee-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(TARGET_BUILD_DIR)/**";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "illuminating Coffee";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;

@@ -34,8 +34,7 @@
 {
     [super layoutSubviews];
     
-    CGRect frame = self.bounds;
-    frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height - 32);
+    CGRect frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height - 32);
     self.tableView.frame = frame;
 }
 
