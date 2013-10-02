@@ -47,8 +47,8 @@
 
     self.pageScrollView = (ICCulturePageScrollView *)self.view;
     self.pageScrollView.scrollView.delegate = self;
-    self.pageScrollView.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.pageScrollView.frame)*numberOfViews, CGRectGetHeight(self.pageScrollView.frame));
-
+    self.pageScrollView.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.pageScrollView.frame)*numberOfViews, CGRectGetHeight(self.pageScrollView.scrollView.frame));
+    
     NSInteger initPage = self.pathRow;
     
     if(initPage != 0) {
@@ -91,6 +91,7 @@
     }
     
     ICCultureDetailViewController *detailViewController = (ICCultureDetailViewController *)[self.controllerArray objectAtIndex:pageNumber];
+    
     if ((NSNull *)detailViewController == [NSNull null]) {
         ICCultureEntity *entity = [self.cultures objectAtIndex:pageNumber];
         

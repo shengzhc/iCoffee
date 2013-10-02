@@ -27,7 +27,7 @@
         CGFloat width = CGRectGetWidth(self.bounds);
         CGFloat height = CGRectGetHeight(self.bounds);
         
-        _backgroundView = [[ICView alloc] initWithFrame:CGRectMake(HORIZONALFFSET, VERTICALOFFSET, width - HORIZONALFFSET*2, height - 32 -44- VERTICALOFFSET*2)];
+        _backgroundView = [[ICView alloc] initWithFrame:CGRectMake(HORIZONALFFSET, VERTICALOFFSET, width - HORIZONALFFSET*2, height-32-44-VERTICALOFFSET*2)];
         _backgroundView.layer.cornerRadius = 10.0f;
         _backgroundView.layer.borderWidth = 1.0f;
         _backgroundView.clipsToBounds = YES;

@@ -15,22 +15,27 @@
     self = [super initWithFrame:frame
                        delegate:delegate];
     if (self) {
-        // Initialization code
-        
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor lightGrayColor];
         
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.pagingEnabled = YES;
-        _scrollView.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
         _scrollView.backgroundColor = [UIColor clearColor];
         _scrollView.alpha = 0.5f;
-        _scrollView.showsHorizontalScrollIndicator = NO;
-        _scrollView.showsVerticalScrollIndicator = NO;
+        _scrollView.showsHorizontalScrollIndicator = YES;
+        _scrollView.showsVerticalScrollIndicator = YES;
         _scrollView.scrollsToTop = NO;
         [self addSubview:_scrollView];
         
     }
     return self;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.scrollView.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) );
+
 }
 
 

@@ -80,10 +80,6 @@
     cell.countryLabel.text = cultureEntity.country;
     cell.flagImageView.image = [UIImage imageNamed:cultureEntity.imageURL];
     
-//    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.cellBackgroundView.frame];
-//    cell.selectedBackgroundView.backgroundColor = [UIColor lightGrayColor];
-//    cell.selectedBackgroundView.alpha = 0.3f;
-    
     return cell;
 }
 
